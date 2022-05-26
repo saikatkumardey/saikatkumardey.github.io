@@ -1,1 +1,642 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Essays on Saikat Kumar Dey</title><link>https://saikatkumardey.com/essays/</link><description>Essays</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://saikatkumardey.com/essays/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Essays on Saikat Kumar Dey</title><link>https://saikatkumardey.com/essays/</link><description>Essays</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 28 Sep 2021 10:06:23 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/essays/index.xml" rel="self" type="application/rss+xml"/><item><title>Building Pandas Dataframes From Ndarrays</title><link>https://saikatkumardey.com/essays/building-pandas-dataframes-from-ndarrays/</link><pubDate>Tue, 28 Sep 2021 10:06:23 +0530</pubDate><guid>https://saikatkumardey.com/essays/building-pandas-dataframes-from-ndarrays/</guid><description>&lt;p>At work, I have to switch between numpy &amp;amp; pandas depending on the computational needs. Numpy is faster. Pandas is easier to work with.&lt;/p>
+&lt;p>One of the tasks I&amp;rsquo;ve faced often was to convert a 3-dimensional ndarray to a pandas dataframe. I will share my preferred technique in this post today.&lt;/p>
+&lt;p>For the purpose of this exercise, I&amp;rsquo;ll generate dummy sales data for a retail company. The dimensions include products, locations, and sales.&lt;/p>
+&lt;h1 id="convert-ndarray-to-pandas-dataframe">Convert ndarray to pandas dataframe&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">import&lt;/span> pandas &lt;span style="color:#719e07">as&lt;/span> pd
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">import&lt;/span> numpy &lt;span style="color:#719e07">as&lt;/span> np
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="1d--dimension--sales">1d : dimension = sales&lt;/h2>
+&lt;p>Let&amp;rsquo;s start with 1d data. What if we only had sales info for all products and locations?&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>arr_1d &lt;span style="color:#719e07">=&lt;/span> np&lt;span style="color:#719e07">.&lt;/span>random&lt;span style="color:#719e07">.&lt;/span>randint(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> low&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> high&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">10&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> size&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">3&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">print&lt;/span>(arr_1d)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>[9 3 6]
+&lt;/code>&lt;/pre>
+&lt;p>That&amp;rsquo;s easy. Ideally, 1-d information should be represented as a Series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>df_1d &lt;span style="color:#719e07">=&lt;/span> pd&lt;span style="color:#719e07">.&lt;/span>DataFrame(arr_1d, columns&lt;span style="color:#719e07">=&lt;/span>[&lt;span style="color:#2aa198">&amp;#34;sales&amp;#34;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">print&lt;/span>(df_1d)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code> sales
+0 9
+1 3
+2 6
+&lt;/code>&lt;/pre>
+&lt;h2 id="2d-dimension--sales--product">2d: dimension = sales * product&lt;/h2>
+&lt;p>Let&amp;rsquo;s move on to 2 dimensions. Now, we have data corresponding to different products.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>arr_2d &lt;span style="color:#719e07">=&lt;/span> np&lt;span style="color:#719e07">.&lt;/span>random&lt;span style="color:#719e07">.&lt;/span>randint(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> low&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> high&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">10&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> size&lt;span style="color:#719e07">=&lt;/span>(&lt;span style="color:#2aa198">3&lt;/span>, &lt;span style="color:#2aa198">2&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">print&lt;/span>(arr_2d)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>[[4 6]
+[8 1]
+[2 7]]
+&lt;/code>&lt;/pre>
+&lt;p>Pandas DataFrame can handle 2-D ndarrays out of the box.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>df_2d &lt;span style="color:#719e07">=&lt;/span> pd&lt;span style="color:#719e07">.&lt;/span>DataFrame(arr_2d, columns&lt;span style="color:#719e07">=&lt;/span>[&lt;span style="color:#2aa198">&amp;#34;product&amp;#34;&lt;/span>, &lt;span style="color:#2aa198">&amp;#34;sales&amp;#34;&lt;/span>])&lt;span style="color:#719e07">.&lt;/span>set_index(&lt;span style="color:#2aa198">&amp;#34;product&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">print&lt;/span>(df_2d)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code> sales
+product
+4 6
+8 1
+2 7
+&lt;/code>&lt;/pre>
+&lt;h2 id="3d--dimension--location-x-product-x-sales">3d : dimension = location x product x sales&lt;/h2>
+&lt;p>Now, what if we have a ndarray corresponding to all products for several locations?&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># failure&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arr_3d &lt;span style="color:#719e07">=&lt;/span> np&lt;span style="color:#719e07">.&lt;/span>random&lt;span style="color:#719e07">.&lt;/span>randint(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> low&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> high&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">10&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> size&lt;span style="color:#719e07">=&lt;/span>(&lt;span style="color:#2aa198">5&lt;/span>, &lt;span style="color:#2aa198">3&lt;/span>, &lt;span style="color:#2aa198">1&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">print&lt;/span>(arr_3d)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>[[[9]
+[6]
+[2]]
+[[1]
+[4]
+[4]]
+[[2]
+[5]
+[6]]
+[[9]
+[6]
+[5]]
+[[1]
+[6]
+[1]]]
+&lt;/code>&lt;/pre>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># the following raises ValueError&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># pandas DataFrame expects a 2-d input&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df_3d &lt;span style="color:#719e07">=&lt;/span> pd&lt;span style="color:#719e07">.&lt;/span>DataFrame(arr_3d, columns&lt;span style="color:#719e07">=&lt;/span>[&lt;span style="color:#2aa198">&amp;#34;location&amp;#34;&lt;/span>, &lt;span style="color:#2aa198">&amp;#34;product&amp;#34;&lt;/span>, &lt;span style="color:#2aa198">&amp;#34;sales&amp;#34;&lt;/span>])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>pandas won&amp;rsquo;t work out of the box. It cannot handle more than 2 dimensions. So, it raises a &lt;code>ValueError&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bas" data-lang="bas">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">---------------------------------------------------------------------------&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ValueError Traceback (most recent call last)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">/&lt;/span>var&lt;span style="color:#719e07">/&lt;/span>folders&lt;span style="color:#719e07">/&lt;/span>jq&lt;span style="color:#719e07">/&lt;/span>ksxbjg7d58g9v9rrcl0f38380000gn&lt;span style="color:#719e07">/&lt;/span>T&lt;span style="color:#719e07">/&lt;/span>ipykernel_12628&lt;span style="color:#719e07">/&lt;/span>&lt;span style="color:#2aa198">1531564731&lt;/span>&lt;span style="color:#719e07">.&lt;/span>py in &lt;span style="color:#719e07">&amp;lt;&lt;/span>module&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">1&lt;/span> # the following raises ValueError
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">2&lt;/span> # pandas DataFrame expects a &lt;span style="color:#2aa198">2&lt;/span>&lt;span style="color:#719e07">-&lt;/span>d input
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">----&amp;gt;&lt;/span> &lt;span style="color:#2aa198">3&lt;/span> df_3d &lt;span style="color:#719e07">=&lt;/span> pd&lt;span style="color:#719e07">.&lt;/span>DataFrame(arr_3d, columns&lt;span style="color:#719e07">=&lt;/span>[&lt;span style="color:#2aa198">&amp;#34;location&amp;#34;&lt;/span>, &lt;span style="color:#2aa198">&amp;#34;product&amp;#34;&lt;/span>, &lt;span style="color:#2aa198">&amp;#34;sales&amp;#34;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ValueError: Must pass &lt;span style="color:#2aa198">2&lt;/span>&lt;span style="color:#719e07">-&lt;/span>d input&lt;span style="color:#719e07">.&lt;/span> shape&lt;span style="color:#719e07">=&lt;/span>(&lt;span style="color:#2aa198">5&lt;/span>, &lt;span style="color:#2aa198">3&lt;/span>, &lt;span style="color:#2aa198">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The solution?&lt;/p>
+&lt;p>&lt;code>MultiIndex&lt;/code>.&lt;/p>
+&lt;p>Assuming that the ndarray is ordered by location/products, we could prepare a multi-index, flatten our ndarray and let Pandas reshape it according to the provided index.&lt;/p>
+&lt;p>Sweet!&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>index &lt;span style="color:#719e07">=&lt;/span> pd&lt;span style="color:#719e07">.&lt;/span>MultiIndex&lt;span style="color:#719e07">.&lt;/span>from_product(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#b58900">range&lt;/span>(dim) &lt;span style="color:#719e07">for&lt;/span> dim &lt;span style="color:#719e07">in&lt;/span> arr_3d&lt;span style="color:#719e07">.&lt;/span>shape[:&lt;span style="color:#719e07">-&lt;/span>&lt;span style="color:#2aa198">1&lt;/span>]],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> names&lt;span style="color:#719e07">=&lt;/span>[&lt;span style="color:#2aa198">&amp;#34;location&amp;#34;&lt;/span>, &lt;span style="color:#2aa198">&amp;#34;product&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df_3d &lt;span style="color:#719e07">=&lt;/span> pd&lt;span style="color:#719e07">.&lt;/span>DataFrame(arr_3d&lt;span style="color:#719e07">.&lt;/span>flatten(), index&lt;span style="color:#719e07">=&lt;/span>index, columns&lt;span style="color:#719e07">=&lt;/span>[&lt;span style="color:#2aa198">&amp;#34;sales&amp;#34;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">print&lt;/span>(df_3d)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code> sales
+location product
+0 0 9
+1 6
+2 2
+1 0 1
+1 4
+2 4
+2 0 2
+1 5
+2 6
+3 0 9
+1 6
+2 5
+4 0 1
+1 6
+2 1
+&lt;/code>&lt;/pre>
+&lt;p>We just have sales corresponding to each location and product. What if the final &lt;code>sales&lt;/code> dimension includes sales for yesterday/today (or for every month, every week, etc.) ?&lt;/p>
+&lt;h2 id="3d--dimension--location-x-product-x-sales-multi">3d : dimension = location x product x sales (multi)&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>arr_3d &lt;span style="color:#719e07">=&lt;/span> np&lt;span style="color:#719e07">.&lt;/span>random&lt;span style="color:#719e07">.&lt;/span>randint(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> low&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> high&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">10&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> size&lt;span style="color:#719e07">=&lt;/span>(&lt;span style="color:#2aa198">5&lt;/span>, &lt;span style="color:#2aa198">3&lt;/span>, &lt;span style="color:#2aa198">2&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">print&lt;/span>(arr_3d)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>index &lt;span style="color:#719e07">=&lt;/span> pd&lt;span style="color:#719e07">.&lt;/span>MultiIndex&lt;span style="color:#719e07">.&lt;/span>from_product(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#b58900">range&lt;/span>(dim) &lt;span style="color:#719e07">for&lt;/span> dim &lt;span style="color:#719e07">in&lt;/span> arr_3d&lt;span style="color:#719e07">.&lt;/span>shape],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> names&lt;span style="color:#719e07">=&lt;/span>[&lt;span style="color:#2aa198">&amp;#34;location&amp;#34;&lt;/span>, &lt;span style="color:#2aa198">&amp;#34;product&amp;#34;&lt;/span>, &lt;span style="color:#2aa198">&amp;#34;sales&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>[[[1 9]
+[8 6]
+[9 4]]
+[[4 9]
+[3 9]
+[1 8]]
+[[5 2]
+[9 9]
+[1 9]]
+[[4 5]
+[7 4]
+[7 7]]
+[[6 9]
+[4 2]
+[7 1]]]
+&lt;/code>&lt;/pre>
+&lt;p>No major changes. Pandas should handle it just like before. Just unstack the sales dimension and rename the columns for readability.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>df_3d &lt;span style="color:#719e07">=&lt;/span> pd&lt;span style="color:#719e07">.&lt;/span>DataFrame(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> arr_3d&lt;span style="color:#719e07">.&lt;/span>flatten(),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> index&lt;span style="color:#719e07">=&lt;/span>index,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> columns&lt;span style="color:#719e07">=&lt;/span>[&lt;span style="color:#2aa198">&amp;#34;sales&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df_3d &lt;span style="color:#719e07">=&lt;/span> df_3d&lt;span style="color:#719e07">.&lt;/span>unstack(&lt;span style="color:#719e07">-&lt;/span>&lt;span style="color:#2aa198">1&lt;/span>)&lt;span style="color:#719e07">.&lt;/span>rename(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> columns&lt;span style="color:#719e07">=&lt;/span>{&lt;span style="color:#2aa198">0&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;yesterday&amp;#34;&lt;/span>, &lt;span style="color:#2aa198">1&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;today&amp;#34;&lt;/span>},
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">print&lt;/span>(df_3d)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span> sales yesterday today
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location product
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 0 0 1 9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 1 8 6
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 2 9 4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 1 0 4 9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 1 3 9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 2 1 8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 2 0 5 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 1 9 9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 2 1 9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 3 0 4 5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 1 7 4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 2 7 7
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 4 0 6 9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 1 4 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 2 7 1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Do you know of other ways to switch between ndarray and DataFrame? Comment below :)&lt;/p></description></item><item><title>Book notes: Show Your Work by Austin Kleon</title><link>https://saikatkumardey.com/essays/book-notes-show-your-work-by-austin-kleon/</link><pubDate>Wed, 22 Sep 2021 10:01:12 +0530</pubDate><guid>https://saikatkumardey.com/essays/book-notes-show-your-work-by-austin-kleon/</guid><description>&lt;p>“Find a scenius, pay attention to what others are sharing, and then start taking note of what they’re not sharing. Be on the lookout for voids that you can fill with your own efforts, no matter how bad they are at first. Don’t worry, for now, about how you’ll make money or a career off it. Forget about being an expert or a professional, and wear your amateurism (your heart, your love) on your sleeve. Share what you love, and the people who love the same things will find you.”&lt;/p>
+&lt;hr>
+&lt;p>“When George Lucas was a teenager, he almost died in a car accident. He decided “every day now is an extra day,” dedicated himself to film, and went on to direct Star Wars.”&lt;/p>
+&lt;p>“I realized I was going to die,” he says. “And when that gets into your mind . . . it utterly changed me . . . I thought, I’m not going to sit here and wait for things to happen, I’m going to make them happen, and if people think I’m an idiot I don’t care.”&lt;/p>
+&lt;hr>
+&lt;p>“To all viewers but yourself, what matters is the product: the finished artwork. To you, and you alone, what matters is the process: the experience of shaping the artwork.”&lt;/p>
+&lt;hr>
+&lt;p>“By letting go of our egos and sharing our process, we allow for the possibility of people having an ongoing connection with us and our work, which helps us move more of our product”&lt;/p>
+&lt;hr>
+&lt;p>“We’re not all artists or astronauts. A lot of us go about our work and feel like we have nothing to show for it at the end of the day.”&lt;/p>
+&lt;hr>
+&lt;p>“whatever the nature of your work, there is an art to what you do, and there are people who would be interested in that art, if only you presented it to them in the right way.”&lt;/p>
+&lt;hr>
+&lt;p>“sharing your process might actually be most valuable if the products of your work aren’t easily shared, if you’re still in the apprentice stage of your work, if you can’t just slap up a portfolio and call it a day, or if your process doesn’t necessarily lead to tangible finished products.”&lt;/p>
+&lt;hr>
+&lt;p>“No one is going to give a damn about your résumé; they want to see what you have made with your own little fingers.”&lt;/p>
+&lt;hr>
+&lt;p>“Once a day, after you’ve done your day’s work, go back to your documentation and find one little piece of your process that you can share”&lt;/p>
+&lt;hr>
+&lt;p>“Where you are in your process will determine what that piece is. If you’re in the very early stages, share your influences and what’s inspiring you. If you’re in the middle of executing a project, write about your methods or share works in progress. If you’ve just completed a project, show the final product, share scraps from the cutting-room floor, or write about what you learned”&lt;/p>
+&lt;hr>
+&lt;p>“The act of sharing is one of generosity—you’re putting something out there because you think it might be helpful or entertaining to someone on the other side of the screen.”&lt;/p>
+&lt;hr>
+&lt;p>“Build a good name. Keep your name clean. Don’t make compromises. Don’t worry about making a bunch of money or being successful. Be concerned with doing good work . . . and if you can build a good name, eventually that name will be its own currency.”&lt;/p>
+&lt;hr>
+&lt;p>“All it takes to uncover hidden gems is a clear eye, an open mind, and a willingness to search for inspiration in places other people aren’t willing or able to go.”&lt;/p>
+&lt;hr>
+&lt;p>“We all love things that other people think are garbage. You have to have the courage to keep loving your garbage, because what makes us unique is the diversity and breadth of our influences, the unique ways in which we mix up the parts of culture others have deemed “high” and the “low.”&lt;/p>
+&lt;hr>
+&lt;p>“When you find things you genuinely enjoy, don’t let anyone else make you feel bad about it. Don’t feel guilty about the pleasure you take in the things you enjoy. Celebrate them. When you share your taste and your influences, have the guts to own all of it. Don’t give in to the pressure to self-edit too much.”&lt;/p>
+&lt;hr>
+&lt;p>“A character wants something, goes after it despite opposition (perhaps including his own doubts), and so arrives at a win, lose, or draw.”&lt;/p>
+&lt;hr>
+&lt;p>“You get a great idea, you go through the hard work of executing the idea, and then you release the idea out into the world, coming to a win, lose, or draw. Sometimes the idea succeeds, sometimes it fails, and more often than not, it does nothing at all.”&lt;/p>
+&lt;hr>
+&lt;p>“A good pitch is set up in three acts: The first act is the past, the second act is the present, and the third act is the future.”
+“The first act is where you’ve been—what you want, how you came to want it, and what you’ve done so far to get it.”
+“The second act is where you are now in your work and how you’ve worked hard and used up most of your resources. The third act is where you’re going, and how exactly the person you’re pitching can help you get there. ”&lt;/p>
+&lt;hr>
+&lt;p>“Think about what you can share from your process that would inform the people you’re trying to reach. Have you learned a craft? What are your techniques? Are you skilled at using certain tools and materials? What kind of knowledge comes along with your job?”&lt;/p>
+&lt;hr>
+&lt;p>“The minute you learn something, turn around and teach it to others. Share your reading list. Point to helpful reference materials. Create some tutorials and post them online. Use pictures, words, and video. Take people step-by-step through part of your process. As blogger Kathy Sierra says, “Make people better at something they want to be better at.”&lt;/p>
+&lt;hr>
+&lt;p>“Teaching people doesn’t subtract value from what you do, it actually adds to it. When you teach someone how to do your work, you are, in effect, generating more interest in your work. People feel closer to your work because you’re letting them in on what you know.”&lt;/p>
+&lt;hr>
+&lt;p>“Don’t talk to people you don’t want to talk to, and don’t talk about stuff you don’t want to talk about.”&lt;/p>
+&lt;hr>
+&lt;p>“life is all about “who you know.” But who you know is largely dependent on who you are and what you do, and the people you know can’t do anything for you if you’re not doing good work.”&lt;/p>
+&lt;hr>
+&lt;p>“Make stuff you love and talk about stuff you love and you’ll attract people who love that kind of stuff. It’s that simple.”&lt;/p>
+&lt;hr>
+&lt;p>“Try new things. If an opportunity comes along that will allow you to do more of the kind of work you want to do, say Yes. If an opportunity comes along that would mean more money, but less of the kind of work you want to do, say No.”&lt;/p>
+&lt;hr>
+&lt;p>“You avoid stalling out in your career by never losing momentum.”&lt;/p>
+&lt;hr>
+&lt;p>“Instead of taking a break in between projects, waiting for feedback, and worrying about what’s next, use the end of one project to light up the next one. ”&lt;/p>
+&lt;hr>
+&lt;p>“Just do the work that’s in front of you, and when it’s finished, ask yourself what you missed, what you could’ve done better, or what you couldn’t get to, and jump right into the next project.”&lt;/p>
+&lt;hr>
+&lt;p>“When you throw out old work, what you’re really doing is making room for new work.”&lt;/p>
+&lt;hr>
+&lt;p>“Look for something new to learn, and when you find it, dedicate yourself to learning it out in the open. Document your progress and share as you go so that others can learn along with you. Show your work, and when the right people show up, pay close attention to them, because they’ll have a lot to show you.”&lt;/p></description></item><item><title>Book notes: Anything You Want by Derek Sivers</title><link>https://saikatkumardey.com/essays/book-notes-anything-you-want-by-derek-sivers/</link><pubDate>Wed, 22 Sep 2021 10:00:34 +0530</pubDate><guid>https://saikatkumardey.com/essays/book-notes-anything-you-want-by-derek-sivers/</guid><description>&lt;p>Don&amp;rsquo;t be on your deathbed someday, having squandered your one chance at life, full of regret because you pursued little distractions instead of big dreams.&lt;/p>
+&lt;hr>
+&lt;p>Once you&amp;rsquo;ve got a hit, suddenly all the locked doors open wide. People love the hit so much that it seems to promote itself. Instead of trying to create demand, you&amp;rsquo;re managing the huge demand&lt;/p>
+&lt;hr>
+&lt;p>Success comes from persistently improving and inventing, not from persistently doing what&amp;rsquo;s not working.&lt;/p>
+&lt;hr>
+&lt;p>We all have lots of ideas, creations, and projects. When you present one to the world, and it&amp;rsquo;s not a hit, don&amp;rsquo;t keep pushing it as-is. Instead, get back to improving and inventing.&lt;/p>
+&lt;hr>
+&lt;p>Present each new idea or improvement to the world. If multiple people are saying, “Wow! Yes! I need this! I&amp;rsquo;d be happy to pay you to do this!” then you should probably do it. But if the response is anything less, don&amp;rsquo;t pursue it.&lt;/p>
+&lt;hr>
+&lt;p>Don&amp;rsquo;t waste years fighting uphill battles against locked doors. Improve or invent until you get that huge response.&lt;/p>
+&lt;hr>
+&lt;p>No “yes.” Either “HELL YEAH!” or “no.”&lt;/p>
+&lt;hr>
+&lt;p>If you&amp;rsquo;re not saying “HELL YEAH!” about something, say “no.”&lt;/p>
+&lt;hr>
+&lt;p>When deciding whether to do something, if you feel anything less than “Wow! That would be amazing! Absolutely! Hell yeah!”—then say “no.”&lt;/p>
+&lt;hr>
+&lt;p>We&amp;rsquo;re all busy. We&amp;rsquo;ve all taken on too much. Saying yes to less is the way out.&lt;/p>
+&lt;hr>
+&lt;p>Start now. No funding needed.&lt;/p>
+&lt;hr>
+&lt;p>If you want to be useful, you can always start now, with only 1 percent of what you have in your grand vision. It&amp;rsquo;ll be a humble prototype version of your grand vision, but you&amp;rsquo;ll be in the game. You&amp;rsquo;ll be ahead of the rest, because you actually started, while others are waiting for the finish line to magically appear at the starting line.&lt;/p>
+&lt;hr>
+&lt;p>Starting small puts 100 percent of your energy on actually solving real problems for real people. It gives you a stronger foundation to grow from. It eliminates the friction of big infrastructure and gets right to the point. And it will let you change your plan in an instant, as you&amp;rsquo;re working closely with those first customers telling you what they really need.&lt;/p>
+&lt;hr>
+&lt;p>So no, your idea doesn&amp;rsquo;t need funding to start. (You also don&amp;rsquo;t need an MBA, a particular big client, a certain person&amp;rsquo;s endorsement, a lucky break, or any other common excuse not to start.)&lt;/p>
+&lt;hr>
+&lt;p>You need to confidently exclude people, and proudly say what you&amp;rsquo;re not. By doing so, you will win the hearts of the people you want.&lt;/p>
+&lt;hr>
+&lt;p>Are you helping people? Are they happy? Are you happy? Are you profitable? Isn&amp;rsquo;t that enough?
+How do you grade yourself?&lt;/p>
+&lt;hr>
+&lt;p>How do you grade yourself?
+It&amp;rsquo;s important to know in advance, to make sure you&amp;rsquo;re staying focused on what&amp;rsquo;s honestly important to you, instead of doing what others think you should.&lt;/p>
+&lt;hr>
+&lt;p>People fall in love with people who won&amp;rsquo;t give them the time of day.&lt;/p>
+&lt;hr>
+&lt;p>If you set up your business like you don&amp;rsquo;t need the money, people are happier to pay you.&lt;/p>
+&lt;hr>
+&lt;p>When someone&amp;rsquo;s doing something for love, being generous instead of stingy, trusting instead of fearful, it triggers this law: We want to give to those who give.&lt;/p>
+&lt;hr>
+&lt;p>It&amp;rsquo;s another Tao of business: Set up your business like you don&amp;rsquo;t need the money, and it&amp;rsquo;ll likely come your way.&lt;/p>
+&lt;hr>
+&lt;p>But no matter what business you&amp;rsquo;re in, it&amp;rsquo;s good to prepare for what would happen if business doubled.&lt;/p>
+&lt;hr>
+&lt;p>You might get bigger faster and make millions if you outsourced everything to the experts. But what&amp;rsquo;s the point of getting bigger and making millions? To be happy, right?&lt;/p>
+&lt;hr>
+&lt;p>In the end, it&amp;rsquo;s about what you want to be, not what you want to have.&lt;/p>
+&lt;hr>
+&lt;p>To have something (a finished recording, a business, or millions of dollars) is the means, not the end. To be something (a good singer, a skilled entrepreneur, or just plain happy) is the real point.&lt;/p>
+&lt;hr>
+&lt;p>When you sign up to run a marathon, you don&amp;rsquo;t want a taxi to take you to the finish line.&lt;/p>
+&lt;hr>
+&lt;p>To be a true business owner, make sure you could leave for a year, and when you came back, your business would be doing better than when you left.&lt;/p>
+&lt;hr>
+&lt;p>Never forget that you can make your role anything you want it to be.&lt;/p>
+&lt;hr>
+&lt;p>Anything you hate to do, someone else loves. So find that person and let him do it.&lt;/p>
+&lt;hr>
+&lt;p>For me, I loved sitting alone and programming, writing, planning, and inventing. Thinking of ideas and making them happen. This makes me happy, not business deals or management. So I found someone who liked doing business deals and put him in charge of all that.&lt;/p>
+&lt;hr>
+&lt;p>Delegate, but don&amp;rsquo;t abdicate.&lt;/p>
+&lt;hr>
+&lt;p>Just pay close attention to what excites you and what drains you. Pay close attention to when you&amp;rsquo;re being the real you and when you&amp;rsquo;re trying to impress an invisible jury.&lt;/p></description></item><item><title>A Simplified Implementation of Quicksort</title><link>https://saikatkumardey.com/essays/a-simplified-implementation-of-quicksort/</link><pubDate>Sun, 05 Sep 2021 09:59:45 +0530</pubDate><guid>https://saikatkumardey.com/essays/a-simplified-implementation-of-quicksort/</guid><description>&lt;p>Quicksort is a beautiful algorithm. It&amp;rsquo;s considered the fastest sorting algorithm in practice. Most implementations I&amp;rsquo;ve seen online are complicated. This post will demonstrate a simple implementation that trades space complexity for readability.&lt;/p>
+&lt;h2 id="how-does-quicksort-work">How does quicksort work?&lt;/h2>
+&lt;p>3 steps.&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Choose&lt;/strong> a pivot element.&lt;/li>
+&lt;li>&lt;strong>Partition&lt;/strong>: Put all elements smaller than the pivot in a smaller array, (say, smaller_subarray). Put all elements greater than the pivot in another array (say, greater_subarray).&lt;/li>
+&lt;li>&lt;strong>Recurse &amp;amp; Merge&lt;/strong>: Recursively sort the smaller and greater sub-arrays. Merge the sorted arrays with the pivot.&lt;/li>
+&lt;/ol>
+&lt;h2 id="how-do-we-implement-it-in-python">How do we implement it in Python?&lt;/h2>
+&lt;p>Let&amp;rsquo;s start with the high-level function &lt;code>quicksort()&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">def&lt;/span> &lt;span style="color:#268bd2">quicksort&lt;/span>(array: List[&lt;span style="color:#b58900">int&lt;/span>]) &lt;span style="color:#719e07">-&amp;gt;&lt;/span> List[&lt;span style="color:#b58900">int&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">&amp;#34;&amp;#34;&amp;#34;Recursive implementation of quicksort.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198"> Args:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198"> array (List[int]): a list of integers
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198"> Returns:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198"> List[int]: sorted array
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75"># Base case&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#b58900">len&lt;/span>(array) &lt;span style="color:#719e07">&amp;lt;=&lt;/span> &lt;span style="color:#2aa198">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> array
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75"># Step 1: choose a pivot&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pivot_idx &lt;span style="color:#719e07">=&lt;/span> random&lt;span style="color:#719e07">.&lt;/span>choice(&lt;span style="color:#b58900">range&lt;/span>(&lt;span style="color:#b58900">len&lt;/span>(array)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75"># Step 2: partition&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> smaller_subarray, greater_subarray &lt;span style="color:#719e07">=&lt;/span> partition(array, pivot_idx)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75"># Step 3: Recurse on smaller and greater subarrays.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> quicksort(smaller_subarray)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">+&lt;/span> [array[pivot_idx]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">+&lt;/span> quicksort(greater_subarray)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Let&amp;rsquo;s go line by line,&lt;/p>
+&lt;h3 id="base-case">Base case&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#b58900">len&lt;/span>(array) &lt;span style="color:#719e07">&amp;lt;=&lt;/span> &lt;span style="color:#2aa198">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> array
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Every recursive function must have one. If we have an empty or single-item array, there&amp;rsquo;s nothing to sort. We simply return the array.&lt;/p>
+&lt;h3 id="step-1-choose-a-pivot">Step 1: Choose a pivot&lt;/h3>
+&lt;p>&lt;code> pivot_idx = random.choice(range(len(array)))&lt;/code>&lt;/p>
+&lt;p>The choice of pivot is the difference between having an &lt;code>O(N log N)&lt;/code> vs &lt;code>O(N^2)&lt;/code> time complexity.&lt;/p>
+&lt;p>How so? Let&amp;rsquo;s take an example.&lt;/p>
+&lt;p>The worst-case involves having an already sorted array.&lt;/p>
+&lt;p>&lt;code>array = [1,2,3,4,5]&lt;/code>&lt;/p>
+&lt;p>The image below shows recursion trees using two different pivot selection strategies:&lt;/p>
+&lt;p>&lt;strong>Legend&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Blue lines =&amp;gt; the greater subarray.&lt;/li>
+&lt;li>Orange lines =&amp;gt; the smaller subarray.&lt;/li>
+&lt;li>Red lines =&amp;gt; the pivot.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1630829735302/4wvnJNbu8.png" alt="Screenshot 2021-09-05 at 1.45.23 PM.png">&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Left shows the case where we always choose the first/last item as the pivot. This leads to higher recursion depth as the subproblem size reduces by 1 at each level. We have roughly &lt;code>O(N)&lt;/code> levels / recursive calls. Since joining the sub-arrays with the pivot is &lt;code>O(N)&lt;/code>, this leads to &lt;code>O(N^2)&lt;/code> time complexity.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Right shows the ideal case where we choose the median as the pivot at every level. This leads to balanced sub-problems. The recursion depth is lower, roughly &lt;code>O(log N)&lt;/code>. This leads to &lt;code>O(N log N)&lt;/code> time complexity.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="https://www.cs.cmu.edu/afs/cs/academic/class/15451-s07/www/lecture_notes/lect0123.pdf">Choosing a random pivot leads to an &lt;em>expected&lt;/em> runtime of &lt;code>O(N log N)&lt;/code> time complexity&lt;/a>. We use that in this implementation.&lt;/p>
+&lt;p>Wait! There&amp;rsquo;s still one case where &lt;code>quicksort()&lt;/code> could be &lt;code>O(N^2)&lt;/code>, even after choosing a randomized/median pivot. This is the case when every item in the array is identical. We could add a check to avoid this case as well.&lt;/p>
+&lt;p>According to this &lt;a href="https://algs4.cs.princeton.edu/23quicksort/">source&lt;/a> ,&lt;/p>
+&lt;blockquote>
+&lt;p>The probability that quicksort will use a quadratic number of compares when sorting a large array on your computer is much less than the probability that your computer will be struck by lightning!&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="step-2-partition">Step 2: Partition&lt;/h3>
+&lt;p>We write the high-level function assuming that we have a magic function &lt;code>partition()&lt;/code> which returns two arrays.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>smaller_subarray&lt;/code>: all elements &lt;code>&amp;lt;=&lt;/code> the pivot&lt;/li>
+&lt;li>&lt;code>greater_subarray&lt;/code>: all elements &lt;code>&amp;gt;&lt;/code> the pivot&lt;/li>
+&lt;/ul>
+&lt;p>The implementation of &lt;code>partition()&lt;/code> is quite simple. We compare each item in the array with the pivot. If it&amp;rsquo;s &lt;code>&amp;lt;=&lt;/code> pivot, we add it to the smaller sub-array, else we add it to the greater sub-array.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">def&lt;/span> &lt;span style="color:#268bd2">partition&lt;/span>(array: List[&lt;span style="color:#b58900">int&lt;/span>], pivot_idx: &lt;span style="color:#b58900">int&lt;/span>) &lt;span style="color:#719e07">-&amp;gt;&lt;/span> Tuple[List[&lt;span style="color:#b58900">int&lt;/span>], List[&lt;span style="color:#b58900">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">&amp;#34;&amp;#34;&amp;#34;Parition array into subarrays smaller and greater than the pivot.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198"> Args:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198"> array (List[int]): input array
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198"> pivot_idx (int): index of the pivot
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198"> Returns:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198"> Tuple[List[int], List[int]]: smaller subarray, greater subarray
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> smaller_subarray, greater_subarray &lt;span style="color:#719e07">=&lt;/span> [], []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">for&lt;/span> idx, item &lt;span style="color:#719e07">in&lt;/span> &lt;span style="color:#b58900">enumerate&lt;/span>(array):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75"># we don&amp;#39;t want to add pivot to any of the sub-arrays&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> idx &lt;span style="color:#719e07">==&lt;/span> pivot_idx:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> item &lt;span style="color:#719e07">&amp;lt;=&lt;/span> array[pivot_idx]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> smaller_subarray&lt;span style="color:#719e07">.&lt;/span>append(item)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> greater_subarray&lt;span style="color:#719e07">.&lt;/span>append(item)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> smaller_subarray, greater_subarray
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3">Step 3:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> quicksort(smaller_subarray)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">+&lt;/span> [array[pivot_idx]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">+&lt;/span> quicksort(greater_subarray)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This step is quite exquisite. We recurse on the smaller and greater sub-arrays and place the pivot in between them. The beauty of a recursive implementation is that we could re-use our function with a smaller size of the input and trust that it would work.&lt;/p>
+&lt;p>Let&amp;rsquo;s unroll it a bit.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>quicksort(smaller_subarray)&lt;/code> =&amp;gt; returns a sorted version of the &lt;code>smaller_subarray&lt;/code>&lt;/li>
+&lt;li>&lt;code>[array[pivot_idx]]&lt;/code> =&amp;gt; out pivot in a list. It&amp;rsquo;s needed for concatenating it with the other two lists.&lt;/li>
+&lt;li>&lt;code>quicksort(greater_subarray)&lt;/code> =&amp;gt; returns a sorted version of the &lt;code>greater_subarray&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Now, we join the 3 lists including the pivot, and return the final sorted list.&lt;/p>
+&lt;h2 id="complexity">Complexity&lt;/h2>
+&lt;h3 id="time">Time&lt;/h3>
+&lt;p>&lt;strong>Expected&lt;/strong> run-time of &lt;code>O(N log N)&lt;/code> since it&amp;rsquo;s a randomized implementation.&lt;/p>
+&lt;p>We do &lt;code>O(N)&lt;/code> work at each &lt;code>quicksort()&lt;/code> call. The major components are &lt;code>partition()&lt;/code> and merge step - both are &lt;code>O(N)&lt;/code>.&lt;/p>
+&lt;p>For randomized implementation, we have O(log N) levels/recursive calls.&lt;/p>
+&lt;p>So, expected time complexity ~ &lt;code>Number of recursive calls&lt;/code> * &lt;code>work done per recursive call&lt;/code> ~ &lt;code>O(N) * O(log N)&lt;/code> ~ &lt;code>O(N log N)&lt;/code>&lt;/p>
+&lt;h3 id="space">Space&lt;/h3>
+&lt;p>&lt;code>O(N)&lt;/code> since we use extra space for storing the smaller and greater sub-arrays. The recursion stack also uses &lt;code>O(log N)&lt;/code> space. Overall, this implementation uses &lt;code>O(N)&lt;/code> space.&lt;/p>
+&lt;p>The in-place implementation without using auxiliary lists would lead to an &lt;code>O(log N)&lt;/code> space complexity.&lt;/p>
+&lt;h2 id="the-code">The code&lt;/h2>
+&lt;p>The implementation including the &lt;code>partition()&lt;/code> and tests are here.&lt;/p>
+&lt;p>%[https://gist.github.com/saikatkumardey/5c0eb3ed8d187046ed7d46ff4dab8fe1]&lt;/p></description></item><item><title>Deep Neural Networks for YouTube Recommendations</title><link>https://saikatkumardey.com/essays/deep-nn-for-youtube-recommendations/</link><pubDate>Sun, 29 Aug 2021 09:59:03 +0530</pubDate><guid>https://saikatkumardey.com/essays/deep-nn-for-youtube-recommendations/</guid><description>&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1629830470549/vXmBYRQ6P.png" alt="Screenshot 2021-08-25 at 12.11.06 AM.png">&lt;/p>
+&lt;p>YouTube has 100m+ daily active users who consume more than a billion hours&amp;rsquo; worth of content every day. 100s of hours of videos are uploaded every second. At that scale, recommending personalized videos is a colossal task.&lt;/p>
+&lt;p>I&amp;rsquo;ve always wondered how YouTube is always able to come up with relevant recommendations that kept me hooked! I found a very interesting paper on &lt;a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf">Deep Neural networks for YouTube Recommendations&lt;/a>. In this post, I will summarise the key ideas.&lt;/p>
+&lt;h2 id="the-problem">The Problem&lt;/h2>
+&lt;p>To able to come up with relevant &amp;amp; personalized recommendations for every user is a problem because of:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>scale&lt;/strong>: billions of users, billions of videos.&lt;/li>
+&lt;li>&lt;strong>freshness&lt;/strong>: massive volume of videos are uploaded every day. It&amp;rsquo;s an explore-exploit trade-off between popular vs new content.&lt;/li>
+&lt;li>&lt;strong>noise&lt;/strong>: only sparse implicit user feedback is available for modeling.&lt;/li>
+&lt;/ul>
+&lt;p>In this paper, the authors demonstrate the usage of deep learning techniques for improving recommendations as opposed to matrix-factorization techniques used earlier.&lt;/p>
+&lt;h2 id="key-ideas">Key Ideas&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>The problem of recommendations at scale is divided into 2 subproblems:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Candidate Generation&lt;/strong> - selects a small subset from the overall corpus which might be relevant to the user.&lt;/li>
+&lt;li>&lt;strong>Ranking&lt;/strong> - ranks the candidate videos based on their relative importance.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>For Candidate Generation, the objective is to predict the next video watch. User search/watch history, demographics, etc are used by a simple feed-forward network as embeddings which are jointly learned during the training.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For Ranking, the objective is to model an expected watch time. A score is assigned based on the expected watch time and videos are sorted accordingly.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Similar neural network architecture is used for both procedures.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Offline metrics like precision, recall, ranking loss, etc. are used during development. A/B test is used to determine the final effectiveness of the model. We&amp;rsquo;ve already explored the &lt;a href="https://saikatkumardey.com/predictive-model-performance-offline-and-online-evaluations">discrepancies between offline vs online evaluation&lt;/a> in a different post.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="model-architecture">Model Architecture&lt;/h2>
+&lt;h3 id="candidate-generation">Candidate generation&lt;/h3>
+&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1630224116536/RukzfmlR1.png" alt="Screenshot 2021-08-29 at 1.31.51 PM.png">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>** Problem Formulation:** Recommendation is formulated as an &lt;em>extreme multi-class classification&lt;/em>
+P(w_t = i | U,C) = softmax(v_i . u)
+where,
+w_t = video v_i watched at time t
+U = user
+C = context
+v_i = dense video embeddings
+u = dense user embeddings&lt;/p>
+&lt;ul>
+&lt;li>The task of the deep neural network is to learn the embeddings &lt;em>u&lt;/em> as a function of user history and context.&lt;/li>
+&lt;li>user completing a video watch is a positive example.&lt;/li>
+&lt;li>&lt;a href="https://www.tensorflow.org/extras/candidate_sampling.pdf">candidate sampling&lt;/a> &amp;amp; &lt;a href="https://en.wikipedia.org/wiki/Importance_sampling">importance weighting&lt;/a> is used to sample negative examples.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Embeddings describing the watch history, user query, demographics, etc are fed to a simple feed-forward neural network having a final softmax layer to learn the class probabilities.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>watch history&lt;/strong>: dense vector representation of watched video is learned from a sequence of video-ids (just like word2vec).&lt;/li>
+&lt;li>&lt;strong>user query&lt;/strong>: n-gram representations&lt;/li>
+&lt;li>&lt;strong>demographics&lt;/strong>: geographic region, device, age, etc. are used as numerical/categorical features&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>The embeddings are jointly learned while training the model via gradient descent back-propagation.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Age of the video is used to model the time-dependent nature of popular videos. Otherwise, the good old popular videos are going to be selected most of the times, isn&amp;rsquo;t it?&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>What&amp;rsquo;s interesting is that a lot of features were &amp;ldquo;engineered&amp;rdquo; as opposed to the promise of deep learning to reduce it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Training data &amp;amp; label:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>There&amp;rsquo;s an inherent sequence of video consumption. Hence, using random held-out data will be cheating since future information will leak into the training process. The model will overfit! Think about time-series forecasting. A random train-test split won&amp;rsquo;t work since the future data is not available in production during serving time.
+&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1630225522918/zoyaMC-Ae.png" alt="Screenshot 2021-08-29 at 1.55.18 PM.png">&lt;/li>
+&lt;li>The authors propose a model of predicting &lt;em>user&amp;rsquo;s next watch&lt;/em> instead of a randomly held-out watch. This makes sense, as we consume videos in a sequence. For example, if you&amp;rsquo;re watching a series with several episodes, recommending a random episode from that series doesn&amp;rsquo;t make sense.
+&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1630225542842/UAGeaWt8C.png" alt="Screenshot 2021-08-29 at 1.55.39 PM.png">&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Serving:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>To score millions of videos in latency of tens of milliseconds, a nearest neighbor-based search algorithm is used. Exact probability values of softmax() are not required. Hence, a dot product of user and video embeddings could be used to figure out the propensity score of a user &lt;em>u&lt;/em> for a particular video &lt;em>v_i&lt;/em>. A nearest neighbor search algorithm could be used to figure out the top K candidate videos based on the score.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="ranking">Ranking&lt;/h3>
+&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1630229225282/zDkuTAg45.png" alt="Screenshot 2021-08-29 at 2.56.54 PM.png">&lt;/p>
+&lt;ul>
+&lt;li>Candidate generation selects a few hundred out of millions of videos. The ranking procedure could make use of more video features as well as user&amp;rsquo;s interactions with it in order to figure out an order of recommendation.&lt;/li>
+&lt;li>The model architecture is similar to the candidate generation procedure. We assign a score to the videos using weighted logistic regression.&lt;/li>
+&lt;li>The objective to optimize is a function of expected watch time per impression.&lt;/li>
+&lt;li>Why not click-through rate? Well, that would promote clickbait videos instead of quality content. Watch time is a better signal that captures engagement.&lt;/li>
+&lt;li>&lt;strong>Modeling Expected Watch Time&lt;/strong>
+&lt;ul>
+&lt;li>&lt;strong>Objective&lt;/strong>: Predict expected watch time for a given video.&lt;/li>
+&lt;li>&lt;strong>Model&lt;/strong>: Weighted Logistic Regression, since the class distributions are imbalanced.
+&lt;ul>
+&lt;li>&lt;strong>Positive example&lt;/strong>: the video was watched.&lt;/li>
+&lt;li>&lt;strong>Negative example&lt;/strong>: the video was not clicked.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>**What are the weights in &amp;ldquo;weighted&amp;rdquo; logistic regression? **
+&lt;ul>
+&lt;li>Positive examples are weighted by the watch time.&lt;/li>
+&lt;li>Negative examples are given a weight of 1.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Loss&lt;/strong>: cross-entropy&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="references">References&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf">Deep Neural Networks for YouTube Recommendations&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://en.wikipedia.org/wiki/Softmax_function">Softmax&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Predictive Model Performance Online and Offline Eval</title><link>https://saikatkumardey.com/essays/predictive-model-performance-online-and-offline-eval/</link><pubDate>Wed, 25 Aug 2021 09:57:00 +0530</pubDate><guid>https://saikatkumardey.com/essays/predictive-model-performance-online-and-offline-eval/</guid><description>&lt;p>Evaluation is an important topic in every machine learning project. There are offline metrics that we compute on the historical data. It&amp;rsquo;s supposed to provide us an indication of our model performance on real data. However, we often see a discrepancy in offline vs online performance.&lt;/p>
+&lt;p>In &lt;a href="https://dl.acm.org/doi/abs/10.1145/2487575.2488215">Predictive model performance: Offline and online evaluations&lt;/a>, the authors investigate the offline/online model performance on advertisement data from Bing Search Engine.&lt;/p>
+&lt;h2 id="key-takeaways">Key takeaways&lt;/h2>
+&lt;ul>
+&lt;li>Evaluation metrics are important since it guides what the model optimizes on. Tuning on incorrect metrics might provide misleading results in offline settings that might surprise us in production.&lt;/li>
+&lt;li>AUC is a really good metric to determine model classification efficiency.&lt;/li>
+&lt;li>Offline evaluation using AUC doesn&amp;rsquo;t correlate to the online evaluation via A/B tests.&lt;/li>
+&lt;li>The authors propose the usage of a simulation metric that simulates user behavior based on historical logs, which works better in the online evaluation.&lt;/li>
+&lt;/ul>
+&lt;h2 id="details">Details&lt;/h2>
+&lt;p>&lt;strong>What is an offline evaluation?&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>In typical ML projects, we split our dataset into train/test sets.&lt;/li>
+&lt;li>Models are trained on the train set.&lt;/li>
+&lt;li>Evaluation is done on the test set.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>What is an online evaluation?&lt;/strong>&lt;/p>
+&lt;p>When our model is in production, we perform an A/B test.
+Typically, it has 2 variants.&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>control&lt;/em> group with our existing model&lt;/li>
+&lt;li>&lt;em>test&lt;/em> group with the new model.
+Live traffic is split into the two groups &amp;amp; metrics like conversion rate, revenue per visitor, etc are measured. If the new model&amp;rsquo;s performance is statistically significant, it&amp;rsquo;s selected for launch.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>The issue?&lt;/strong>&lt;/p>
+&lt;p>Offline performance doesn&amp;rsquo;t always correlate to online performance due to the dynamic nature of the latter.&lt;/p>
+&lt;h2 id="evaluation-metrics">Evaluation Metrics&lt;/h2>
+&lt;ul>
+&lt;li>The paper focuses on metrics used for click prediction problems that most search engines like Google, Bing, etc. face.&lt;/li>
+&lt;li>Click prediction problems estimates the CTRs of ads given a query.&lt;/li>
+&lt;li>This is treated as a binary classification problem.&lt;/li>
+&lt;/ul>
+&lt;p>We&amp;rsquo;ll review some important evaluation metrics for the use case.&lt;/p>
+&lt;h3 id="auc-area-under-curve">AUC (Area under curve)&lt;/h3>
+&lt;ul>
+&lt;li>Let&amp;rsquo;s say that we have a binary classifier that predicts a probability &lt;em>p&lt;/em> for an event to occur. Then, &lt;em>1-p&lt;/em> is the probability that the event doesn&amp;rsquo;t occur. We need a threshold to determine the class membership. AUC provides a single score that tells us how good a model is across all possible ranges of thresholds.&lt;/li>
+&lt;li>AUC is computed from a ROC (Receiver Operating Characteristics) curve.&lt;/li>
+&lt;li>ROC curve = a graphical representation of TPR (true positive rate) as a function of FPR (false positive rate) of a binary classifier across different thresholds.&lt;/li>
+&lt;/ul>
+&lt;h3 id="rig-relative-information-gain">RIG (Relative Information Gain)&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>RIG = 1 - log_loss/entropy(y)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>where,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>log_loss = - [ c*log(p) + (1-c)*log(1-p) ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>entropy(y) = - [ y*logy + (1-y)*log(1-y) ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c = observed click
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>p = probability of a click
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>y = CTR
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Higher is better.&lt;/p>
+&lt;h3 id="prediction-error-pe">Prediction Error (PE)&lt;/h3>
+&lt;p>&lt;code>PE = avg(p)/y - 1&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>PE = 0 when average(p) exactly matches the click-through rate.&lt;/li>
+&lt;li>It could also be 0 if there&amp;rsquo;s a mix of over-estimation/under-estimation of the CTR as long the average is closer to CTR.&lt;/li>
+&lt;li>It&amp;rsquo;s not a reliable metric.&lt;/li>
+&lt;/ul>
+&lt;h3 id="simulation-metric">Simulation Metric&lt;/h3>
+&lt;p>This part is really important. It teaches us a way to simulate different model performances offline without having to run expensive A/B tests.&lt;/p>
+&lt;ul>
+&lt;li>A/B tests run with a fixed set of model parameters.
+&lt;ul>
+&lt;li>It could be expensive to run multiple experiments with different model parameters.&lt;/li>
+&lt;li>It could also ruin the user experience, make losses if the new model underperforms&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>The paper proposes a simulation of the user behavior offline aka auction simulation.&lt;/li>
+&lt;li>Auction simulation reruns ad auctions offline for a given query and selects a set of ads based on the new model prediction scores.&lt;/li>
+&lt;li>user clicks are estimated in the following way:
+&lt;ul>
+&lt;li>if (user, ad) pair is found in the logs
+&lt;ul>
+&lt;li>if it&amp;rsquo;s in the same position in history as in the simulation, use the historic CTR directly as the expected CTR&lt;/li>
+&lt;li>if it&amp;rsquo;s not in the same position, the expected CTR is calibrated based on the position.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>if (user, ad) pair is not found, average CTR is used as the expected CTR.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="issues">Issues&lt;/h2>
+&lt;h3 id="auc">AUC&lt;/h3>
+&lt;ul>
+&lt;li>ignores predicted probability values. It&amp;rsquo;s insensitive to the ranking based on the probability score. It&amp;rsquo;s possible to have different rankings with similar AUC scores.&lt;/li>
+&lt;li>summarizes the test performance over the entire range of the ROC space, even where one would rarely operate on. Higher ROC doesn&amp;rsquo;t mean a better ranking.&lt;/li>
+&lt;li>It weights false-positive and false negatives equally. In real life, the cost of not showing a relevant ad (false negatives) is way more than showing a sub-optimal ad (false positive).&lt;/li>
+&lt;li>highly dependent on the underlying data distribution.&lt;/li>
+&lt;/ul>
+&lt;h3 id="rig">RIG&lt;/h3>
+&lt;ul>
+&lt;li>Highly sensitive to underlying data distribution.&lt;/li>
+&lt;li>We can&amp;rsquo;t judge a model by just using RIG alone.&lt;/li>
+&lt;li>We could compare the relative performance of different models trained/tested on the same data.&lt;/li>
+&lt;/ul>
+&lt;h2 id="offline-vs-online-discrepancy">Offline vs Online discrepancy&lt;/h2>
+&lt;p>The authors compare 2 models&lt;/p>
+&lt;ul>
+&lt;li>model 1 (baseline): tuned on offline metrics like AUC &amp;amp; RIG&lt;/li>
+&lt;li>model 2 (test): tuned on the simulation metric&lt;/li>
+&lt;/ul>
+&lt;p>The finding: model performs well on offline metrics but has a significant dip on online metrics.&lt;/p>
+&lt;p>&lt;strong>Why do we see this?&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1629743092351/g_2-BgJ8G.png" alt="Screenshot 2021-08-23 at 11.54.47 PM.png">&lt;/p>
+&lt;ul>
+&lt;li>Tuning a model on offline metrics like AUC/RIG over-estimates the probability scores at the lower end of the score range.&lt;/li>
+&lt;li>Over-estimation of the probability score at the higher end of the score range doesn&amp;rsquo;t matter much since they&amp;rsquo;ll be selected by either model.&lt;/li>
+&lt;li>Over-estimation at the lower end of the score range is bad since irrelevant ads are more likely to be shown in that case.&lt;/li>
+&lt;li>Offline metrics like AUC/RIG provide an overall score based on the entire range of probability scores - they&amp;rsquo;re not able to capture the intended effect.&lt;/li>
+&lt;li>Tuning a model based on the simulation metric correlates better with online performance tests via A/B tests.&lt;/li>
+&lt;/ul>
+&lt;h2 id="references">References&lt;/h2>
+&lt;p>&lt;a href="https://dl.acm.org/doi/abs/10.1145/2487575.2488215">Predictive Model Performance: Offline and Online Evaluations&lt;/a>&lt;/p></description></item></channel></rss>
