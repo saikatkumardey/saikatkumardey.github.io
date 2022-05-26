@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 26 May 2022 08:29:24 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Remote work</title><link>https://saikatkumardey.com/daily/2022-05-26/</link><pubDate>Thu, 26 May 2022 08:29:24 +0530</pubDate><guid>https://saikatkumardey.com/daily/2022-05-26/</guid><description>&lt;h3 id="remote-work-set-up-is-good">Remote work set-up is good.&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 27 May 2022 00:44:31 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Hosting on Github Pages</title><link>https://saikatkumardey.com/daily/2022-05-27/</link><pubDate>Fri, 27 May 2022 00:44:31 +0530</pubDate><guid>https://saikatkumardey.com/daily/2022-05-27/</guid><description>&lt;ul>
+&lt;li>
+&lt;p>Make sure you have a &lt;a href="https://github.com/saikatkumardey/saikatkumardey.github.io/blob/main/CNAME">CNAME&lt;/a> file with your custom website in it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ensure that you have configured the CNAME in your DNS provider&amp;rsquo;s console. I am using &lt;a href="https://www.cloudflare.com/">Cloudflare&lt;/a>. So, I have configured 2 records&lt;/p>
+&lt;ul>
+&lt;li>CNAME to redirect &amp;ldquo;saikatkumardey.com&amp;rdquo; to &amp;ldquo;saikatkumardey.github.io&amp;rdquo;.&lt;/li>
+&lt;li>CNAME to redirect &amp;ldquo;&lt;a href="https://www.saikatkumardey.com">www.saikatkumardey.com&lt;/a>&amp;rdquo; to &amp;ldquo;saikatkumardey.github.io&amp;rdquo;.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Make sure that you set the Source of your Github Pages site to be built from the gh-pages branch. Go to Settings &amp;gt; Pages &amp;gt; Source. Check if it&amp;rsquo;s set to gh-pages. This cause me so much pain. It&amp;rsquo;s set to &amp;ldquo;main&amp;rdquo; by default.&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Remote work</title><link>https://saikatkumardey.com/daily/2022-05-26/</link><pubDate>Thu, 26 May 2022 08:29:24 +0530</pubDate><guid>https://saikatkumardey.com/daily/2022-05-26/</guid><description>&lt;h3 id="remote-work-set-up-is-good">Remote work set-up is good.&lt;/h3>
 &lt;p>You get to be with your family.&lt;/p>
 &lt;p>You get to save a lot on rent, commute and overall high cost of living.&lt;/p>
 &lt;p>You could do &lt;a href="https://www.calnewport.com/books/deep-work/">deep work&lt;/a>. Tuning out all the notifications is easy. You could focus on getting things done.&lt;/p>
@@ -425,8 +439,7 @@ It&amp;rsquo;s important to know in advance, to make sure you&amp;rsquo;re stayi
 &lt;p>&lt;code>O(N)&lt;/code> since we use extra space for storing the smaller and greater sub-arrays. The recursion stack also uses &lt;code>O(log N)&lt;/code> space. Overall, this implementation uses &lt;code>O(N)&lt;/code> space.&lt;/p>
 &lt;p>The in-place implementation without using auxiliary lists would lead to an &lt;code>O(log N)&lt;/code> space complexity.&lt;/p>
 &lt;h2 id="the-code">The code&lt;/h2>
-&lt;p>The implementation including the &lt;code>partition()&lt;/code> and tests are here.&lt;/p>
-&lt;p>%[https://gist.github.com/saikatkumardey/5c0eb3ed8d187046ed7d46ff4dab8fe1]&lt;/p></description></item><item><title>Deep Neural Networks for YouTube Recommendations</title><link>https://saikatkumardey.com/essays/deep-nn-for-youtube-recommendations/</link><pubDate>Sun, 29 Aug 2021 09:59:03 +0530</pubDate><guid>https://saikatkumardey.com/essays/deep-nn-for-youtube-recommendations/</guid><description>&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1629830470549/vXmBYRQ6P.png" alt="Screenshot 2021-08-25 at 12.11.06 AM.png">&lt;/p>
+&lt;p>The implementation including the &lt;code>partition()&lt;/code> and tests are &lt;a href="https://gist.github.com/saikatkumardey/5c0eb3ed8d187046ed7d46ff4dab8fe1">here&lt;/a>.&lt;/p></description></item><item><title>Deep Neural Networks for YouTube Recommendations</title><link>https://saikatkumardey.com/essays/deep-nn-for-youtube-recommendations/</link><pubDate>Sun, 29 Aug 2021 09:59:03 +0530</pubDate><guid>https://saikatkumardey.com/essays/deep-nn-for-youtube-recommendations/</guid><description>&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1629830470549/vXmBYRQ6P.png" alt="Screenshot 2021-08-25 at 12.11.06 AM.png">&lt;/p>
 &lt;p>YouTube has 100m+ daily active users who consume more than a billion hours&amp;rsquo; worth of content every day. 100s of hours of videos are uploaded every second. At that scale, recommending personalized videos is a colossal task.&lt;/p>
 &lt;p>I&amp;rsquo;ve always wondered how YouTube is always able to come up with relevant recommendations that kept me hooked! I found a very interesting paper on &lt;a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf">Deep Neural networks for YouTube Recommendations&lt;/a>. In this post, I will summarise the key ideas.&lt;/p>
 &lt;h2 id="the-problem">The Problem&lt;/h2>

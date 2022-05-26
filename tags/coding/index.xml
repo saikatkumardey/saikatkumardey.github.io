@@ -119,5 +119,4 @@
 &lt;p>&lt;code>O(N)&lt;/code> since we use extra space for storing the smaller and greater sub-arrays. The recursion stack also uses &lt;code>O(log N)&lt;/code> space. Overall, this implementation uses &lt;code>O(N)&lt;/code> space.&lt;/p>
 &lt;p>The in-place implementation without using auxiliary lists would lead to an &lt;code>O(log N)&lt;/code> space complexity.&lt;/p>
 &lt;h2 id="the-code">The code&lt;/h2>
-&lt;p>The implementation including the &lt;code>partition()&lt;/code> and tests are here.&lt;/p>
-&lt;p>%[https://gist.github.com/saikatkumardey/5c0eb3ed8d187046ed7d46ff4dab8fe1]&lt;/p></description></item></channel></rss>
+&lt;p>The implementation including the &lt;code>partition()&lt;/code> and tests are &lt;a href="https://gist.github.com/saikatkumardey/5c0eb3ed8d187046ed7d46ff4dab8fe1">here&lt;/a>.&lt;/p></description></item></channel></rss>
