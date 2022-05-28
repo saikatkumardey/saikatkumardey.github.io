@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>daily on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/daily/</link><description>daily</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 27 May 2022 00:44:31 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/daily/index.xml" rel="self" type="application/rss+xml"/><item><title>Hosting on Github Pages</title><link>https://saikatkumardey.com/daily/2022-05-27/</link><pubDate>Fri, 27 May 2022 00:44:31 +0530</pubDate><guid>https://saikatkumardey.com/daily/2022-05-27/</guid><description>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>daily on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/daily/</link><description>daily</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 28 May 2022 21:03:26 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/daily/index.xml" rel="self" type="application/rss+xml"/><item><title>Keep Investing</title><link>https://saikatkumardey.com/daily/keep-investing/</link><pubDate>Sat, 28 May 2022 21:03:26 +0530</pubDate><guid>https://saikatkumardey.com/daily/keep-investing/</guid><description>&lt;p>If you have money to spare, invest it.&lt;/p>
+&lt;p>When the market is down, it&amp;rsquo;s giving you an opportunity to buy equity at a discount.&lt;/p>
+&lt;p>Do not pick individual stocks. You&amp;rsquo;re not a trader. Invest into index funds &amp;amp; ETFs instead. Read up on &lt;a href="https://www.bogleheads.org/wiki/Getting_started">Bogleheads Philosophy&lt;/a>.&lt;/p>
+&lt;p>Automate your investments. SIPs are the way to go. Time in the market is more important than timing the market.&lt;/p>
+&lt;p>The real fruit of your investments will be seen years later. Let compound interest do her thing silently.&lt;/p>
+&lt;p>You should focus on being the best at what you do. Worrying about the market is a waste of your time which could be utilised in honing your craft.&lt;/p>
+&lt;p>When the market is up, keep buying. When the market is down, buy more.&lt;/p></description></item><item><title>Hosting on Github Pages</title><link>https://saikatkumardey.com/daily/hosting-on-github-pages/</link><pubDate>Fri, 27 May 2022 00:44:31 +0530</pubDate><guid>https://saikatkumardey.com/daily/hosting-on-github-pages/</guid><description>&lt;ul>
 &lt;li>
 &lt;p>Make sure you have a &lt;a href="https://github.com/saikatkumardey/saikatkumardey.github.io/blob/main/CNAME">CNAME&lt;/a> file with your custom website in it. Make sure that you have it in your &amp;ldquo;gh-pages&amp;rdquo; branch.&lt;/p>
 &lt;/li>
@@ -12,7 +18,7 @@
 &lt;li>
 &lt;p>Make sure that you set the Source of your Github Pages site to be built from the gh-pages branch. Go to Settings &amp;gt; Pages &amp;gt; Source. Check if it&amp;rsquo;s set to gh-pages. This caused me a lot of pain. It&amp;rsquo;s set to &amp;ldquo;main&amp;rdquo; by default.&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Remote work</title><link>https://saikatkumardey.com/daily/2022-05-26/</link><pubDate>Thu, 26 May 2022 08:29:24 +0530</pubDate><guid>https://saikatkumardey.com/daily/2022-05-26/</guid><description>&lt;h3 id="remote-work-set-up-is-good">Remote work set-up is good.&lt;/h3>
+&lt;/ul></description></item><item><title>Remote work</title><link>https://saikatkumardey.com/daily/remote-work/</link><pubDate>Thu, 26 May 2022 08:29:24 +0530</pubDate><guid>https://saikatkumardey.com/daily/remote-work/</guid><description>&lt;h3 id="remote-work-set-up-is-good">Remote work set-up is good.&lt;/h3>
 &lt;p>You get to be with your family.&lt;/p>
 &lt;p>You get to save a lot on rent, commute and overall high cost of living.&lt;/p>
 &lt;p>You could do &lt;a href="https://www.calnewport.com/books/deep-work/">deep work&lt;/a>. Tuning out all the notifications is easy. You could focus on getting things done.&lt;/p>
