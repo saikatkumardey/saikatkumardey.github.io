@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 31 May 2022 23:06:43 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>FIFA World Cup 2022</title><link>https://saikatkumardey.com/daily/7-world-cup-2022/</link><pubDate>Tue, 31 May 2022 23:06:43 +0530</pubDate><guid>https://saikatkumardey.com/daily/7-world-cup-2022/</guid><description>&lt;p>I got tickets to watch Brazil play in the FIFA World Cup 2022.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 01 Jun 2022 23:34:18 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>pre-commit hooks</title><link>https://saikatkumardey.com/daily/8-pre-commit-hooks/</link><pubDate>Wed, 01 Jun 2022 23:34:18 +0530</pubDate><guid>https://saikatkumardey.com/daily/8-pre-commit-hooks/</guid><description>&lt;p>Code smells should be identified before they&amp;rsquo;re pushed committed.&lt;/p>
+&lt;p>&lt;a href="https://pre-commit.com/">pre-commit&lt;/a> hooks allow you to define a standard for your codebase.&lt;/p>
+&lt;p>You don&amp;rsquo;t need to worry if the latest PR follows the &lt;a href="https://peps.python.org/pep-0008/">PEP 8&lt;/a> conventions. Simply add a &lt;a href="https://github.com/PyCQA/flake8">flake8&lt;/a> hook to your pre-commit config file. Even better, add a &lt;a href="https://github.com/psf/black">black&lt;/a> config to ensure your code formatting is PEP 8 compliant.&lt;/p>
+&lt;p>Adding a large-file to staging? No problem, pre-commit hooks will point it out.&lt;/p>
+&lt;p>Forgot to remove debug statements in your latest patch? pre-commit hooks got you!&lt;/p>
+&lt;p>Forgot to add a huge file from staging? pre-commit hook will help you!&lt;/p>
+&lt;p>pre-commit hooks will prevent anyone from committing changes to your code-base with such known issues.&lt;/p>
+&lt;p>It will allow the reviewers to focus on core contribution of a pull-request instead of trivial issues which could be avoided.&lt;/p>
+&lt;p>What are you waiting for ? Go get yourself some &lt;a href="https://pre-commit.com/">pre-commit&lt;/a> hooks for your freshly minted repository!&lt;/p></description></item><item><title>FIFA World Cup 2022</title><link>https://saikatkumardey.com/daily/7-world-cup-2022/</link><pubDate>Tue, 31 May 2022 23:06:43 +0530</pubDate><guid>https://saikatkumardey.com/daily/7-world-cup-2022/</guid><description>&lt;p>I got tickets to watch Brazil play in the FIFA World Cup 2022.&lt;/p>
 &lt;p>This would be a dream come true. I am super excited to watch Neymar play in a stadium.&lt;/p>
 &lt;p>Now, I just need to plan the logistics.&lt;/p>
 &lt;p>Stay tuned for updates! :)&lt;/p></description></item><item><title>Relax</title><link>https://saikatkumardey.com/daily/6-relax/</link><pubDate>Mon, 30 May 2022 10:43:27 +0530</pubDate><guid>https://saikatkumardey.com/daily/6-relax/</guid><description>&lt;p>Some days, you&amp;rsquo;ll be pulled into so many different directions that you won&amp;rsquo;t know what to do.&lt;/p>
@@ -30,7 +38,7 @@
 &lt;h2 id="football">Football&lt;/h2>
 &lt;p>I got tickets to the FIFA World Cup 2022. If all goes well, I will be able to see Brazil &amp;amp; Neymar play live! 😍&lt;/p>
 &lt;hr>
-&lt;p>&lt;em>Thanks to &lt;a href="(https://sive.rs/now)">Derek Sivers&lt;/a> for sharing the idea of having a now page&lt;/em>&lt;/p></description></item><item><title>Hosting on Github Pages</title><link>https://saikatkumardey.com/daily/2-hosting-on-github-pages/</link><pubDate>Fri, 27 May 2022 00:44:31 +0530</pubDate><guid>https://saikatkumardey.com/daily/2-hosting-on-github-pages/</guid><description>&lt;ul>
+&lt;p>&lt;em>Thanks to &lt;a href="https://sive.rs/now">Derek Sivers&lt;/a> for sharing the idea of having a now page&lt;/em>&lt;/p></description></item><item><title>Hosting on Github Pages</title><link>https://saikatkumardey.com/daily/2-hosting-on-github-pages/</link><pubDate>Fri, 27 May 2022 00:44:31 +0530</pubDate><guid>https://saikatkumardey.com/daily/2-hosting-on-github-pages/</guid><description>&lt;ul>
 &lt;li>
 &lt;p>Make sure you have a &lt;a href="https://github.com/saikatkumardey/saikatkumardey.github.io/blob/main/CNAME">CNAME&lt;/a> file with your custom website in it. Make sure that you have it in your &amp;ldquo;gh-pages&amp;rdquo; branch.&lt;/p>
 &lt;/li>
@@ -225,65 +233,4 @@ location product
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 4 0 6 9
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 1 4 2
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 2 7 1
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Do you know of other ways to switch between ndarray and DataFrame? Comment below :)&lt;/p></description></item><item><title>Book notes: Show Your Work by Austin Kleon</title><link>https://saikatkumardey.com/essays/book-notes-show-your-work-by-austin-kleon/</link><pubDate>Wed, 22 Sep 2021 10:01:12 +0530</pubDate><guid>https://saikatkumardey.com/essays/book-notes-show-your-work-by-austin-kleon/</guid><description>&lt;p>“Find a scenius, pay attention to what others are sharing, and then start taking note of what they’re not sharing. Be on the lookout for voids that you can fill with your own efforts, no matter how bad they are at first. Don’t worry, for now, about how you’ll make money or a career off it. Forget about being an expert or a professional, and wear your amateurism (your heart, your love) on your sleeve. Share what you love, and the people who love the same things will find you.”&lt;/p>
-&lt;hr>
-&lt;p>“When George Lucas was a teenager, he almost died in a car accident. He decided “every day now is an extra day,” dedicated himself to film, and went on to direct Star Wars.”&lt;/p>
-&lt;p>“I realized I was going to die,” he says. “And when that gets into your mind . . . it utterly changed me . . . I thought, I’m not going to sit here and wait for things to happen, I’m going to make them happen, and if people think I’m an idiot I don’t care.”&lt;/p>
-&lt;hr>
-&lt;p>“To all viewers but yourself, what matters is the product: the finished artwork. To you, and you alone, what matters is the process: the experience of shaping the artwork.”&lt;/p>
-&lt;hr>
-&lt;p>“By letting go of our egos and sharing our process, we allow for the possibility of people having an ongoing connection with us and our work, which helps us move more of our product”&lt;/p>
-&lt;hr>
-&lt;p>“We’re not all artists or astronauts. A lot of us go about our work and feel like we have nothing to show for it at the end of the day.”&lt;/p>
-&lt;hr>
-&lt;p>“whatever the nature of your work, there is an art to what you do, and there are people who would be interested in that art, if only you presented it to them in the right way.”&lt;/p>
-&lt;hr>
-&lt;p>“sharing your process might actually be most valuable if the products of your work aren’t easily shared, if you’re still in the apprentice stage of your work, if you can’t just slap up a portfolio and call it a day, or if your process doesn’t necessarily lead to tangible finished products.”&lt;/p>
-&lt;hr>
-&lt;p>“No one is going to give a damn about your résumé; they want to see what you have made with your own little fingers.”&lt;/p>
-&lt;hr>
-&lt;p>“Once a day, after you’ve done your day’s work, go back to your documentation and find one little piece of your process that you can share”&lt;/p>
-&lt;hr>
-&lt;p>“Where you are in your process will determine what that piece is. If you’re in the very early stages, share your influences and what’s inspiring you. If you’re in the middle of executing a project, write about your methods or share works in progress. If you’ve just completed a project, show the final product, share scraps from the cutting-room floor, or write about what you learned”&lt;/p>
-&lt;hr>
-&lt;p>“The act of sharing is one of generosity—you’re putting something out there because you think it might be helpful or entertaining to someone on the other side of the screen.”&lt;/p>
-&lt;hr>
-&lt;p>“Build a good name. Keep your name clean. Don’t make compromises. Don’t worry about making a bunch of money or being successful. Be concerned with doing good work . . . and if you can build a good name, eventually that name will be its own currency.”&lt;/p>
-&lt;hr>
-&lt;p>“All it takes to uncover hidden gems is a clear eye, an open mind, and a willingness to search for inspiration in places other people aren’t willing or able to go.”&lt;/p>
-&lt;hr>
-&lt;p>“We all love things that other people think are garbage. You have to have the courage to keep loving your garbage, because what makes us unique is the diversity and breadth of our influences, the unique ways in which we mix up the parts of culture others have deemed “high” and the “low.”&lt;/p>
-&lt;hr>
-&lt;p>“When you find things you genuinely enjoy, don’t let anyone else make you feel bad about it. Don’t feel guilty about the pleasure you take in the things you enjoy. Celebrate them. When you share your taste and your influences, have the guts to own all of it. Don’t give in to the pressure to self-edit too much.”&lt;/p>
-&lt;hr>
-&lt;p>“A character wants something, goes after it despite opposition (perhaps including his own doubts), and so arrives at a win, lose, or draw.”&lt;/p>
-&lt;hr>
-&lt;p>“You get a great idea, you go through the hard work of executing the idea, and then you release the idea out into the world, coming to a win, lose, or draw. Sometimes the idea succeeds, sometimes it fails, and more often than not, it does nothing at all.”&lt;/p>
-&lt;hr>
-&lt;p>“A good pitch is set up in three acts: The first act is the past, the second act is the present, and the third act is the future.”
-“The first act is where you’ve been—what you want, how you came to want it, and what you’ve done so far to get it.”
-“The second act is where you are now in your work and how you’ve worked hard and used up most of your resources. The third act is where you’re going, and how exactly the person you’re pitching can help you get there. ”&lt;/p>
-&lt;hr>
-&lt;p>“Think about what you can share from your process that would inform the people you’re trying to reach. Have you learned a craft? What are your techniques? Are you skilled at using certain tools and materials? What kind of knowledge comes along with your job?”&lt;/p>
-&lt;hr>
-&lt;p>“The minute you learn something, turn around and teach it to others. Share your reading list. Point to helpful reference materials. Create some tutorials and post them online. Use pictures, words, and video. Take people step-by-step through part of your process. As blogger Kathy Sierra says, “Make people better at something they want to be better at.”&lt;/p>
-&lt;hr>
-&lt;p>“Teaching people doesn’t subtract value from what you do, it actually adds to it. When you teach someone how to do your work, you are, in effect, generating more interest in your work. People feel closer to your work because you’re letting them in on what you know.”&lt;/p>
-&lt;hr>
-&lt;p>“Don’t talk to people you don’t want to talk to, and don’t talk about stuff you don’t want to talk about.”&lt;/p>
-&lt;hr>
-&lt;p>“life is all about “who you know.” But who you know is largely dependent on who you are and what you do, and the people you know can’t do anything for you if you’re not doing good work.”&lt;/p>
-&lt;hr>
-&lt;p>“Make stuff you love and talk about stuff you love and you’ll attract people who love that kind of stuff. It’s that simple.”&lt;/p>
-&lt;hr>
-&lt;p>“Try new things. If an opportunity comes along that will allow you to do more of the kind of work you want to do, say Yes. If an opportunity comes along that would mean more money, but less of the kind of work you want to do, say No.”&lt;/p>
-&lt;hr>
-&lt;p>“You avoid stalling out in your career by never losing momentum.”&lt;/p>
-&lt;hr>
-&lt;p>“Instead of taking a break in between projects, waiting for feedback, and worrying about what’s next, use the end of one project to light up the next one. ”&lt;/p>
-&lt;hr>
-&lt;p>“Just do the work that’s in front of you, and when it’s finished, ask yourself what you missed, what you could’ve done better, or what you couldn’t get to, and jump right into the next project.”&lt;/p>
-&lt;hr>
-&lt;p>“When you throw out old work, what you’re really doing is making room for new work.”&lt;/p>
-&lt;hr>
-&lt;p>“Look for something new to learn, and when you find it, dedicate yourself to learning it out in the open. Document your progress and share as you go so that others can learn along with you. Show your work, and when the right people show up, pay close attention to them, because they’ll have a lot to show you.”&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Do you know of other ways to switch between ndarray and DataFrame? Comment below :)&lt;/p></description></item></channel></rss>
