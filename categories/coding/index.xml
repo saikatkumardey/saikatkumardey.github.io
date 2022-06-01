@@ -4,6 +4,7 @@
 &lt;p>Accidentally added a large-file to staging? No problem, pre-commit hooks will point it out.&lt;/p>
 &lt;p>Forgot to remove debug statements in your latest patch? pre-commit hooks got you!&lt;/p>
 &lt;p>Forgot to add a huge file from staging? pre-commit hook will help you!&lt;/p>
+&lt;p>Sometimes we commit massive jupyter notebooks (due to output) which makes the repository heavy &amp;amp; difficult to work with. pre-commit hooks could automatically strip the output from our notebooks before you commit.&lt;/p>
 &lt;p>pre-commit hooks will prevent anyone from committing changes to your code-base with such known issues.&lt;/p>
 &lt;p>It will allow the reviewers to focus on core contribution of a pull-request instead of trivial issues which could be avoided.&lt;/p>
 &lt;p>What are you waiting for ? Go get yourself some &lt;a href="https://pre-commit.com/">pre-commit&lt;/a> hooks for your freshly minted repository!&lt;/p></description></item><item><title>Building Pandas Dataframes From Ndarrays</title><link>https://saikatkumardey.com/essays/building-pandas-dataframes-from-ndarrays/</link><pubDate>Tue, 28 Sep 2021 10:06:23 +0530</pubDate><guid>https://saikatkumardey.com/essays/building-pandas-dataframes-from-ndarrays/</guid><description>&lt;p>At work, I have to switch between numpy &amp;amp; pandas depending on the computational needs. Numpy is faster. Pandas is easier to work with.&lt;/p>

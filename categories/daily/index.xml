@@ -4,6 +4,7 @@
 &lt;p>Accidentally added a large-file to staging? No problem, pre-commit hooks will point it out.&lt;/p>
 &lt;p>Forgot to remove debug statements in your latest patch? pre-commit hooks got you!&lt;/p>
 &lt;p>Forgot to add a huge file from staging? pre-commit hook will help you!&lt;/p>
+&lt;p>Sometimes we commit massive jupyter notebooks (due to output) which makes the repository heavy &amp;amp; difficult to work with. pre-commit hooks could automatically strip the output from our notebooks before you commit.&lt;/p>
 &lt;p>pre-commit hooks will prevent anyone from committing changes to your code-base with such known issues.&lt;/p>
 &lt;p>It will allow the reviewers to focus on core contribution of a pull-request instead of trivial issues which could be avoided.&lt;/p>
 &lt;p>What are you waiting for ? Go get yourself some &lt;a href="https://pre-commit.com/">pre-commit&lt;/a> hooks for your freshly minted repository!&lt;/p></description></item><item><title>FIFA World Cup 2022</title><link>https://saikatkumardey.com/daily/7-world-cup-2022/</link><pubDate>Tue, 31 May 2022 23:06:43 +0530</pubDate><guid>https://saikatkumardey.com/daily/7-world-cup-2022/</guid><description>&lt;p>I got tickets to watch Brazil play in the FIFA World Cup 2022.&lt;/p>
