@@ -178,11 +178,11 @@ p > code {
 .resp-sharing-button__link {
     text-decoration: none;
     color: #fff;
-    margin: 0.5em
+    margin: 0.2em
 }
 
 .resp-sharing-button {
-    font-size: 1em;
+    font-size: 0.7rem;
     border-radius: 5px;
     transition: 25ms ease-out;
     padding: 0.5em 0.75em;
@@ -353,4 +353,19 @@ p > code {
 .resp-sharing-button--whatsapp:active {
     background-color: #1DA851;
     border-color: #1DA851;
+}
+
+
+.social-icons {
+    color: #000000;
+    padding: 12px 0;
+}
+
+.social-icons a:not(:last-of-type) {
+    margin-inline-end: 12px;
+}
+
+.social-icons a svg {
+    height: 26px;
+    width: 26px;
 }
