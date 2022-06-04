@@ -4,19 +4,19 @@
  */
  @media screen and (max-width: 768px) {
     body {
-        font-size:20px;
+        font-size:28px;
     }
 }
 
 @media screen and (max-width: 640px) {
     body {
-        font-size:18px;
+        font-size:26px;
     }
 }
 
 @media screen and (max-width: 480px) {
     body {
-        font-size:16px;
+        font-size:24px;
     }
 }
 
