@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 04 Jun 2022 00:24:09 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Secret of Success by Mark Twain</title><link>https://saikatkumardey.com/daily/9-secret-of-success-by-mark-twain/</link><pubDate>Sat, 04 Jun 2022 00:24:09 +0530</pubDate><guid>https://saikatkumardey.com/daily/9-secret-of-success-by-mark-twain/</guid><description>&lt;p>The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one.&lt;/p></description></item><item><title>pre-commit hooks</title><link>https://saikatkumardey.com/daily/8-pre-commit-hooks/</link><pubDate>Wed, 01 Jun 2022 23:34:18 +0530</pubDate><guid>https://saikatkumardey.com/daily/8-pre-commit-hooks/</guid><description>&lt;p>Code smells should be identified before they&amp;rsquo;re pushed committed.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 04 Jun 2022 23:35:55 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Life Is Short and So Is This Book</title><link>https://saikatkumardey.com/daily/10-life-is-short-and-so-is-this-book/</link><pubDate>Sat, 04 Jun 2022 23:35:55 +0530</pubDate><guid>https://saikatkumardey.com/daily/10-life-is-short-and-so-is-this-book/</guid><description>&lt;p>The best part about the book is that it&amp;rsquo;s short and isn&amp;rsquo;t filled with fluff.
+Almost everything in this book is common sense found in most self-help books.
+But common sense isn&amp;rsquo;t common right? We need reminders to keep us on our path. This is the book that aggregates the advice found in most self-help books.&lt;/p>
+&lt;p>Here are some of the points that resonated with me:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>people who are most productive tend to say no to things that are unimportant to them and focus on what they believe matters.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The fear of death follows from the fear of life. A man who lives fully is prepared to die at any time.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>I’ve found the only way people have the stamina to outwork others, year after year, is when they love what they do.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ideally, you want a job you’d do even if you weren’t paid to do it. That’s not an economic reality for most of us, but it’s the right goal to shoot for. If you can get paid to do what you perceive as play, you have a great job.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To make changes in your life, focus on taking small steps in the right direction. Whether you want to change your health, your job, or your relationship, you can’t do it overnight. And you can’t become great at anything without a lot of repeated practice.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>If you want to start a business, write a book, invent some new device, learn to play an instrument, get better at a sport, or be a good parent. Remember: take small steps. They work. Big steps often don’t. Over time, small steps add up, and you end up in a different place.&lt;/p></description></item><item><title>Secret of Success by Mark Twain</title><link>https://saikatkumardey.com/daily/9-secret-of-success-by-mark-twain/</link><pubDate>Sat, 04 Jun 2022 00:24:09 +0530</pubDate><guid>https://saikatkumardey.com/daily/9-secret-of-success-by-mark-twain/</guid><description>&lt;p>The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one.&lt;/p></description></item><item><title>pre-commit hooks</title><link>https://saikatkumardey.com/daily/8-pre-commit-hooks/</link><pubDate>Wed, 01 Jun 2022 23:34:18 +0530</pubDate><guid>https://saikatkumardey.com/daily/8-pre-commit-hooks/</guid><description>&lt;p>Code smells should be identified before they&amp;rsquo;re pushed committed.&lt;/p>
 &lt;p>&lt;a href="https://pre-commit.com/">pre-commit&lt;/a> hooks allow you to define a standard for your codebase.&lt;/p>
 &lt;p>You don&amp;rsquo;t need to worry if the latest PR follows the &lt;a href="https://peps.python.org/pep-0008/">PEP 8&lt;/a> conventions. Simply add a &lt;a href="https://github.com/PyCQA/flake8">flake8&lt;/a> hook to your pre-commit config file. Even better, add a &lt;a href="https://github.com/psf/black">black&lt;/a> config to ensure your code formatting is PEP 8 compliant.&lt;/p>
 &lt;p>Accidentally added a large-file to staging? No problem, pre-commit hooks will point it out.&lt;/p>
@@ -52,15 +73,4 @@
 &lt;li>
 &lt;p>Make sure that you set the Source of your Github Pages site to be built from the gh-pages branch. Go to Settings &amp;gt; Pages &amp;gt; Source. Check if it&amp;rsquo;s set to gh-pages. This caused me a lot of pain. It&amp;rsquo;s set to &amp;ldquo;main&amp;rdquo; by default.&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Remote work</title><link>https://saikatkumardey.com/daily/1-remote-work/</link><pubDate>Thu, 26 May 2022 08:29:24 +0530</pubDate><guid>https://saikatkumardey.com/daily/1-remote-work/</guid><description>&lt;h3 id="remote-work-set-up-is-good">Remote work set-up is good.&lt;/h3>
-&lt;p>You get to be with your family.&lt;/p>
-&lt;p>You get to save a lot on rent, commute and overall high cost of living.&lt;/p>
-&lt;p>You could do &lt;a href="https://www.calnewport.com/books/deep-work/">deep work&lt;/a>. Tuning out all the notifications is easy. You could focus on getting things done.&lt;/p>
-&lt;hr>
-&lt;h3 id="remote-work-set-up-is-bad">Remote work set-up is bad.&lt;/h3>
-&lt;p>You don&amp;rsquo;t get to meet your team-mates regularly.&lt;/p>
-&lt;p>Building trust takes a longer time.&lt;/p>
-&lt;p>You&amp;rsquo;re not fully engaged with the company.&lt;/p>
-&lt;p>Brainstorming with your colleagues is not seamless. In office, you could just walk up to their desk and ask for their suggestion.&lt;/p>
-&lt;hr>
-&lt;p>Hybrid work set-up is the way. We need the flexibility to do &amp;ldquo;deep work&amp;rdquo; from home most of the times as well as to meet our team every couple of months.&lt;/p></description></item></channel></rss>
+&lt;/ul></description></item></channel></rss>
