@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 04 Jun 2022 23:35:55 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Life Is Short and So Is This Book</title><link>https://saikatkumardey.com/daily/10-life-is-short-and-so-is-this-book/</link><pubDate>Sat, 04 Jun 2022 23:35:55 +0530</pubDate><guid>https://saikatkumardey.com/daily/10-life-is-short-and-so-is-this-book/</guid><description>&lt;p>The best part about the book is that it&amp;rsquo;s short and isn&amp;rsquo;t filled with fluff.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 05 Jun 2022 21:22:53 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Best of Reddit</title><link>https://saikatkumardey.com/daily/11-best-of-reddit/</link><pubDate>Sun, 05 Jun 2022 21:22:53 +0530</pubDate><guid>https://saikatkumardey.com/daily/11-best-of-reddit/</guid><description>&lt;p>I love reddit.&lt;/p>
+&lt;p>It&amp;rsquo;s so much fun to learn from people from all over the world who are kind enough to unconditionally share their experiences.&lt;/p>
+&lt;p>IMO, the best resources are buried deep inside reddit comments that could be discovered if you&amp;rsquo;re hungry enough!&lt;/p>
+&lt;p>Here are the best content I discovered so far:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.reddit.com/r/kaidomac/">r/kaidomac&lt;/a>: subreddit for aggregating knowledge from user &lt;a href="https://www.reddit.com/user/kaidomac/">u/kaidomac&lt;/a>, managed by the author himself. Some of his best posts:
+&lt;ul>
+&lt;li>&lt;a href="https://www.reddit.com/r/kaidomac/comments/rqyk6a/the_wpp_approach_to_planning_out_your_day/">The WPP Approach to planning out your day
+&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.reddit.com/r/IWantToLearn/comments/qg3thy/deleted_by_user/hi5ex16/?context=3">Life planning&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.reddit.com/r/bodyweightfitness/comments/d0rxv6/muscle_growth/ezebxg9/?context=3">Macros tutorial&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="https://www.reddit.com/r/theXeffect/">r/theXeffect&lt;/a>: People here are on a 50-day journey to create/break one or more habits by simply making a 7x7 grid on a card and crossing off each day with a fat-ass felt marker, because your willpower is like a muscle, and it gets stronger and stronger as you exercise it.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>I will continue to update this as I discover new items.&lt;/em>&lt;/p></description></item><item><title>Life Is Short and So Is This Book</title><link>https://saikatkumardey.com/daily/10-life-is-short-and-so-is-this-book/</link><pubDate>Sat, 04 Jun 2022 23:35:55 +0530</pubDate><guid>https://saikatkumardey.com/daily/10-life-is-short-and-so-is-this-book/</guid><description>&lt;p>The best part about the book is that it&amp;rsquo;s short and isn&amp;rsquo;t filled with fluff.
 Almost everything in this book is common sense found in most self-help books.
 But common sense isn&amp;rsquo;t common right? We need reminders to keep us on our path. This is the book that aggregates the advice found in most self-help books.&lt;/p>
 &lt;p>Here are some of the points that resonated with me:&lt;/p>
@@ -59,18 +74,4 @@ But common sense isn&amp;rsquo;t common right? We need reminders to keep us on o
 &lt;h2 id="football">Football&lt;/h2>
 &lt;p>I got tickets to the FIFA World Cup 2022. If all goes well, I will be able to see Brazil &amp;amp; Neymar play live! 😍&lt;/p>
 &lt;hr>
-&lt;p>&lt;em>Thanks to &lt;a href="https://sive.rs/now">Derek Sivers&lt;/a> for sharing the idea of having a now page&lt;/em>&lt;/p></description></item><item><title>Hosting on Github Pages</title><link>https://saikatkumardey.com/daily/2-hosting-on-github-pages/</link><pubDate>Fri, 27 May 2022 00:44:31 +0530</pubDate><guid>https://saikatkumardey.com/daily/2-hosting-on-github-pages/</guid><description>&lt;ul>
-&lt;li>
-&lt;p>Make sure you have a &lt;a href="https://github.com/saikatkumardey/saikatkumardey.github.io/blob/main/CNAME">CNAME&lt;/a> file with your custom website in it. Make sure that you have it in your &amp;ldquo;gh-pages&amp;rdquo; branch.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Ensure that you have configured the CNAME in your DNS provider&amp;rsquo;s console. I am using &lt;a href="https://www.cloudflare.com/">Cloudflare&lt;/a>. So, I have configured 2 records&lt;/p>
-&lt;ul>
-&lt;li>CNAME to redirect &amp;ldquo;saikatkumardey.com&amp;rdquo; to &amp;ldquo;saikatkumardey.github.io&amp;rdquo;.&lt;/li>
-&lt;li>CNAME to redirect &amp;ldquo;&lt;a href="https://www.saikatkumardey.com">www.saikatkumardey.com&lt;/a>&amp;rdquo; to &amp;ldquo;saikatkumardey.github.io&amp;rdquo;.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Make sure that you set the Source of your Github Pages site to be built from the gh-pages branch. Go to Settings &amp;gt; Pages &amp;gt; Source. Check if it&amp;rsquo;s set to gh-pages. This caused me a lot of pain. It&amp;rsquo;s set to &amp;ldquo;main&amp;rdquo; by default.&lt;/p>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;p>&lt;em>Thanks to &lt;a href="https://sive.rs/now">Derek Sivers&lt;/a> for sharing the idea of having a now page&lt;/em>&lt;/p></description></item></channel></rss>
