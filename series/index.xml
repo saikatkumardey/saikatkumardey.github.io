@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Series on Saikat Kumar Dey</title><link>https://saikatkumardey.com/series/</link><description>Series</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 06 Jun 2022 23:19:39 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/series/index.xml" rel="self" type="application/rss+xml"/><item><title>C1: Reliable Scalable and Maintainable Applications</title><link>https://saikatkumardey.com/series/1-reliable-scalable-and-maintainable-applications/</link><pubDate>Mon, 06 Jun 2022 23:19:39 +0530</pubDate><guid>https://saikatkumardey.com/series/1-reliable-scalable-and-maintainable-applications/</guid><description>&lt;h2 id="intro">Intro&lt;/h2>
+&lt;ul>
+&lt;li>Applications today are data-intensive as opposed to compute-intensive.&lt;/li>
+&lt;li>Standard building blocks of data-intensive applications
+&lt;ul>
+&lt;li>Store data in &lt;em>databases&lt;/em> to make searching easier.&lt;/li>
+&lt;li>Speed up reads by storing them in &lt;em>caches&lt;/em>&lt;/li>
+&lt;li>Full-text search using &lt;em>search indexes&lt;/em>&lt;/li>
+&lt;li>Async data handling via &lt;em>stream processing&lt;/em>&lt;/li>
+&lt;li>crunch large amount of data via &lt;em>batch processing&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>For each building blocks mentioned above, there are many different options available to us. It could be difficult to know how to combine the tools as per our requirement.&lt;/li>
+&lt;/ul>
+&lt;h2 id="thinking-about-data-systems">Thinking about data systems&lt;/h2>
+&lt;p>Three important concerns in most software systems:&lt;/p>
+&lt;ul>
+&lt;li>Reliability: system should continue to work correctly even in the face of adversity&lt;/li>
+&lt;li>Scalability: system should be able to handle growth in traffic&lt;/li>
+&lt;li>Maintainability: different people should be able to work on the system productively.&lt;/li>
+&lt;/ul>
+&lt;h2 id="reliability">Reliability&lt;/h2>
+&lt;ul>
+&lt;li>Reliability means, &amp;ldquo;continuing to work correctly, even when things go wrong&amp;rdquo;.&lt;/li>
+&lt;li>Systems that anticipate faults and can cope with them are called fault-tolerant or resilient.&lt;/li>
+&lt;li>Fault is different from failure. Fault means that a part of the system doesn&amp;rsquo;t work as intended, failure means the entire system stops working altogether. Our objective is to ensure that a fault doesn&amp;rsquo;t lead to failure. As they say, prevention is better than cure!&lt;/li>
+&lt;li>Reliability is important not just for critical applications like nuclear power plants &amp;amp; air traffic controls but for non-critical applications (like, say a photo sharing app). Why? We have a responsibility to our users.&lt;/li>
+&lt;li>Only situation where we could sacrifice reliability is when we&amp;rsquo;re building prototypes or minimizing operational costs for a service with a narrow margin. However, we should be aware of when we&amp;rsquo;re cutting corners.&lt;/li>
+&lt;/ul>
+&lt;h2 id="scalability">Scalability&lt;/h2>
+&lt;ul>
+&lt;li>We use the term &lt;em>scalability&lt;/em> to describe a system&amp;rsquo;s ability to cope with increased load.&lt;/li>
+&lt;li>If our system grows in a particular way, what are our options for coping with the growth? How can we add computing resources to handle additional load?&lt;/li>
+&lt;li>Before we address growth questions, we need to describe the current load on the system.&lt;/li>
+&lt;li>What is load?
+&lt;ul>
+&lt;li>load can be defined using load parameters.&lt;/li>
+&lt;li>load parameters depend on the architecture of the system. It could be
+&lt;ul>
+&lt;li>requests per second for a web server&lt;/li>
+&lt;li>reads:writes in a database&lt;/li>
+&lt;li>concurrent users in a chat room&lt;/li>
+&lt;li>hit rate on a cache, etc&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Example: Distribution of followers per user is a key load parameter for scalability of twitter since it determines the fan-out load.
+&lt;ul>
+&lt;li>fan-out: number of requests to other services that we need to make to serve one incoming request.&lt;/li>
+&lt;li>context: each user follows many people and each user is followed by many people.&lt;/li>
+&lt;li>for simple users with few followers/following people, it&amp;rsquo;s easy to join different tables to display user&amp;rsquo;s timeline.&lt;/li>
+&lt;li>for &amp;ldquo;celebrities&amp;rdquo; with millions of followers, the simple approach won&amp;rsquo;t work. Celebrity tweets for the followers of a celebrity are cached in their respective timeline &amp;ldquo;caches&amp;rdquo;.&lt;/li>
+&lt;li>twitter uses a hybrid approach for treating different types of users.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>
