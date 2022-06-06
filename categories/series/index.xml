@@ -47,7 +47,7 @@
 &lt;ul>
 &lt;li>fan-out: number of requests to other services that we need to make to serve one incoming request.&lt;/li>
 &lt;li>context: each user follows many people and each user is followed by many people.&lt;/li>
-&lt;li>for simple users with few followers/following people, it&amp;rsquo;s easy to join different tables to display user&amp;rsquo;s timeline.&lt;/li>
+&lt;li>for simple users with few followers/following few people, it&amp;rsquo;s easy to join different tables to display user&amp;rsquo;s timeline.&lt;/li>
 &lt;li>for &amp;ldquo;celebrities&amp;rdquo; with millions of followers, the simple approach won&amp;rsquo;t work. Celebrity tweets for the followers of a celebrity are cached in their respective timeline &amp;ldquo;caches&amp;rdquo;.&lt;/li>
 &lt;li>twitter uses a hybrid approach for treating different types of users.&lt;/li>
 &lt;/ul>
