@@ -1,4 +1,91 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ml on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/ml/</link><description>ml</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 29 Aug 2021 09:59:03 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/ml/index.xml" rel="self" type="application/rss+xml"/><item><title>Deep Neural Networks for YouTube Recommendations</title><link>https://saikatkumardey.com/essays/deep-nn-for-youtube-recommendations/</link><pubDate>Sun, 29 Aug 2021 09:59:03 +0530</pubDate><guid>https://saikatkumardey.com/essays/deep-nn-for-youtube-recommendations/</guid><description>&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1629830470549/vXmBYRQ6P.png" alt="Screenshot 2021-08-25 at 12.11.06 AM.png">&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ml on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/ml/</link><description>ml</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 07 Jun 2022 10:25:15 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/ml/index.xml" rel="self" type="application/rss+xml"/><item><title>Accuracy Is a Poor evaluation Metric</title><link>https://saikatkumardey.com/daily/12-accuracy-is-a-poor-error-metric/</link><pubDate>Tue, 07 Jun 2022 10:25:15 +0530</pubDate><guid>https://saikatkumardey.com/daily/12-accuracy-is-a-poor-error-metric/</guid><description>&lt;p>For classification problems, something like Cross-entropy is a good metric for minimizing your model&amp;rsquo;s loss.
+However, we need something easier to convey to the stakeholders.
+Accuracy is a very easy way to show our model performances. The caveat? Accuracy would be misleading for imbalanced classes.&lt;/p>
+&lt;p>Here&amp;rsquo;s why.&lt;/p>
+&lt;p>Let&amp;rsquo;s say that you&amp;rsquo;ve built a model for detecting cancer.
+Here&amp;rsquo;s how the confusion matrix would look like for a dataset on cancer cases.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>Predicted Cancer&lt;/th>
+&lt;th>Predicted cancer-free&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Actual cancer cases&lt;/td>
+&lt;td>10 (TP)&lt;/td>
+&lt;td>5 (FN)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Actual cancer-free cases&lt;/td>
+&lt;td>150 (FP)&lt;/td>
+&lt;td>800 (TN)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The dataset has 950 cancer-free patients and 15 patients with cancer.
+The accuracy of the model = fraction of correct predictions = (10 + 800) / (10 + 5 + 150 + 800) = 0.84.&lt;/p>
+&lt;p>Well, the cancer cases are quite rare, so it barely has any effect on the accuracy.&lt;/p>
+&lt;p>If the model had predicted every case as cancer-free, the confusion matrix would look like the following:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>Predicted Cancer&lt;/th>
+&lt;th>Predicted cancer-free&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Actual cancer cases&lt;/td>
+&lt;td>0 (TP)&lt;/td>
+&lt;td>15 (FN)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Actual cancer-free cases&lt;/td>
+&lt;td>0 (FP)&lt;/td>
+&lt;td>950 (TN)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Accuracy = 950/(950 + 15) = 0.984%.&lt;/p>
+&lt;p>That is not what we want to report to our stakeholders.&lt;/p>
+&lt;p>What are our options?&lt;/p>
+&lt;p>In such cases with class imbalance, we usually look at &lt;em>precision&lt;/em> and &lt;em>recall&lt;/em>.&lt;/p>
+&lt;p>&lt;strong>Precision&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>precision = TP/(TP + FP)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Precision is &lt;em>out of all the cancer diagnosis made by the model, how many of them actually have cancer&lt;/em>. In the first case, model predicted 165 cases as having cancer but only 15 of them actually had cancer. So, the precision is 15/165 which is quite low!&lt;/p>
+&lt;p>&lt;strong>Recall&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>recall = TP/(TP/FN)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Recall is &lt;em>out of all the actual cancer cases, how many could the model detect?&lt;/em>
+In the first case, model detected 15 out of 20 cancer cases. So, the recall is 15/20 = 0.75. That&amp;rsquo;s not bad!&lt;/p>
+&lt;p>Our objective is to detect as many cancer cases as we can (TP) while minimizing the false diagnosis of cancer (FP). In other words, we want to have high recall with high precision.&lt;/p>
+&lt;p>All of these metrics rely on the probability threshold chosen to classify each sample as having cancer or not. If prediction probability &amp;gt; threshold, predict cancer.&lt;/p>
+&lt;p>For example, if you choose 0.9 as the threshold, you might only classify cases where the model is highly confident ie, high precision. However, you might miss out on many cases at that threshold ie, low recall. Instead, if you keep 0.1 as the threshold, you might capture all the cancer cases but you&amp;rsquo;d be scaring a lot of other cancer-free patients with misdiagnosis as well.&lt;/p>
+&lt;p>By varying the probability threshold, you could check the trade-off between precision &amp;amp; recall, also called the precision-recall curve.&lt;/p>
+&lt;p>Sometimes, precision &amp;amp; recall are combined together into one metric, called F1 score.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>F1 = 2 / (1/precision + 1/recall)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>There&amp;rsquo;s another variant of the precision-recall curve which is agnostic to the probability threshold selected. It&amp;rsquo;s called the ROC curve (Receiver Operating Characteristics). The area under the curve (AUC) is demonstrative of the overall model performance. AUC is useful to know how well the model is in classifying both the classes.&lt;/p>
+&lt;p>&lt;strong>Conclusion&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Do not use accuracy metric when there&amp;rsquo;s a class imbalance.&lt;/li>
+&lt;li>Use F1 or ROC-AUC instead.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;strong>Reference&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="https://www.oreilly.com/library/view/practical-machine-learning/9781098102357/">Practical Machine Learning for Computer Vision&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision Recall&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">ROC Curve&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>Deep Neural Networks for YouTube Recommendations</title><link>https://saikatkumardey.com/essays/deep-nn-for-youtube-recommendations/</link><pubDate>Sun, 29 Aug 2021 09:59:03 +0530</pubDate><guid>https://saikatkumardey.com/essays/deep-nn-for-youtube-recommendations/</guid><description>&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1629830470549/vXmBYRQ6P.png" alt="Screenshot 2021-08-25 at 12.11.06 AM.png">&lt;/p>
 &lt;p>YouTube has 100m+ daily active users who consume more than a billion hours&amp;rsquo; worth of content every day. 100s of hours of videos are uploaded every second. At that scale, recommending personalized videos is a colossal task.&lt;/p>
 &lt;p>I&amp;rsquo;ve always wondered how YouTube is always able to come up with relevant recommendations that kept me hooked! I found a very interesting paper on &lt;a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf">Deep Neural networks for YouTube Recommendations&lt;/a>. In this post, I will summarise the key ideas.&lt;/p>
 &lt;h2 id="the-problem">The Problem&lt;/h2>
