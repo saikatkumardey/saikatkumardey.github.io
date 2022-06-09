@@ -58,7 +58,7 @@ The accuracy of the model = fraction of correct predictions = (10 + 800) / (10 +
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>precision = TP/(TP + FP)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Precision is &lt;em>out of all the cancer diagnosis made by the model, how many of them actually have cancer&lt;/em>. In the first case, model predicted 165 cases as having cancer but only 15 of them actually had cancer. So, the precision is 15/165 which is quite low!&lt;/p>
 &lt;p>&lt;strong>Recall&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>recall = TP/(TP/FN)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>recall = TP/(TP+FN)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Recall is &lt;em>out of all the actual cancer cases, how many could the model detect?&lt;/em>
 In the first case, model detected 15 out of 20 cancer cases. So, the recall is 15/20 = 0.75. That&amp;rsquo;s not bad!&lt;/p>
 &lt;p>Our objective is to detect as many cancer cases as we can (TP) while minimizing the false diagnosis of cancer (FP). In other words, we want to have high recall with high precision.&lt;/p>
@@ -141,7 +141,17 @@ In the first case, model detected 15 out of 20 cancer cases. So, the recall is 1
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Best of Reddit</title><link>https://saikatkumardey.com/daily/11-best-of-reddit/</link><pubDate>Sun, 05 Jun 2022 21:22:53 +0530</pubDate><guid>https://saikatkumardey.com/daily/11-best-of-reddit/</guid><description>&lt;p>I love reddit.&lt;/p>
+&lt;/ul>
+&lt;h2 id="describing-performance">Describing Performance&lt;/h2>
+&lt;p>How to investigate the impact of load increase on your system?&lt;/p>
+&lt;ul>
+&lt;li>When you increase a load parameter and keep the system resources unchanged, how is the performance of the system affected?&lt;/li>
+&lt;li>When you increase a load parameter, how much do you need to increase the system resources to keep the performance unchanged?&lt;/li>
+&lt;/ul>
+&lt;p>We need a performance measure to answer these questions.&lt;/p>
+&lt;p>For web services, usually &amp;ldquo;response time&amp;rdquo; is of interest. Often times, &amp;ldquo;average response time&amp;rdquo; is stated which is not helpful - it doesn&amp;rsquo;t tell us how many users experienced the delay. Use percentiles instead.&lt;/p>
+&lt;p>To figure out how bad your outliers are, look at 95th, 99th and 99.9th percentiles aka p95, p99 and p999.
+If the 95th percentile response time is 1.5 sec, that means 95 out of 100 requests take less than 1.5 secs.&lt;/p></description></item><item><title>Best of Reddit</title><link>https://saikatkumardey.com/daily/11-best-of-reddit/</link><pubDate>Sun, 05 Jun 2022 21:22:53 +0530</pubDate><guid>https://saikatkumardey.com/daily/11-best-of-reddit/</guid><description>&lt;p>I love reddit.&lt;/p>
 &lt;p>It&amp;rsquo;s so much fun to learn from people from all over the world who are kind enough to unconditionally share their experiences.&lt;/p>
 &lt;p>IMO, the best resources are buried deep inside reddit comments that could be discovered if you&amp;rsquo;re hungry enough!&lt;/p>
 &lt;p>Here are the best content I discovered so far:&lt;/p>

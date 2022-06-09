@@ -58,7 +58,7 @@ The accuracy of the model = fraction of correct predictions = (10 + 800) / (10 +
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>precision = TP/(TP + FP)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Precision is &lt;em>out of all the cancer diagnosis made by the model, how many of them actually have cancer&lt;/em>. In the first case, model predicted 165 cases as having cancer but only 15 of them actually had cancer. So, the precision is 15/165 which is quite low!&lt;/p>
 &lt;p>&lt;strong>Recall&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>recall = TP/(TP/FN)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>recall = TP/(TP+FN)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Recall is &lt;em>out of all the actual cancer cases, how many could the model detect?&lt;/em>
 In the first case, model detected 15 out of 20 cancer cases. So, the recall is 15/20 = 0.75. That&amp;rsquo;s not bad!&lt;/p>
 &lt;p>Our objective is to detect as many cancer cases as we can (TP) while minimizing the false diagnosis of cancer (FP). In other words, we want to have high recall with high precision.&lt;/p>

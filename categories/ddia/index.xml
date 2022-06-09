@@ -54,4 +54,14 @@
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul>
+&lt;h2 id="describing-performance">Describing Performance&lt;/h2>
+&lt;p>How to investigate the impact of load increase on your system?&lt;/p>
+&lt;ul>
+&lt;li>When you increase a load parameter and keep the system resources unchanged, how is the performance of the system affected?&lt;/li>
+&lt;li>When you increase a load parameter, how much do you need to increase the system resources to keep the performance unchanged?&lt;/li>
+&lt;/ul>
+&lt;p>We need a performance measure to answer these questions.&lt;/p>
+&lt;p>For web services, usually &amp;ldquo;response time&amp;rdquo; is of interest. Often times, &amp;ldquo;average response time&amp;rdquo; is stated which is not helpful - it doesn&amp;rsquo;t tell us how many users experienced the delay. Use percentiles instead.&lt;/p>
+&lt;p>To figure out how bad your outliers are, look at 95th, 99th and 99.9th percentiles aka p95, p99 and p999.
+If the 95th percentile response time is 1.5 sec, that means 95 out of 100 requests take less than 1.5 secs.&lt;/p></description></item></channel></rss>
