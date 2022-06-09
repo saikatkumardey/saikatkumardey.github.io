@@ -151,7 +151,15 @@ In the first case, model detected 15 out of 20 cancer cases. So, the recall is 1
 &lt;p>We need a performance measure to answer these questions.&lt;/p>
 &lt;p>For web services, usually &amp;ldquo;response time&amp;rdquo; is of interest. Often times, &amp;ldquo;average response time&amp;rdquo; is stated which is not helpful - it doesn&amp;rsquo;t tell us how many users experienced the delay. Use percentiles instead.&lt;/p>
 &lt;p>To figure out how bad your outliers are, look at 95th, 99th and 99.9th percentiles aka p95, p99 and p999.
-If the 95th percentile response time is 1.5 sec, that means 95 out of 100 requests take less than 1.5 secs.&lt;/p></description></item><item><title>Best of Reddit</title><link>https://saikatkumardey.com/daily/11-best-of-reddit/</link><pubDate>Sun, 05 Jun 2022 21:22:53 +0530</pubDate><guid>https://saikatkumardey.com/daily/11-best-of-reddit/</guid><description>&lt;p>I love reddit.&lt;/p>
+If the 95th percentile response time is 1.5 sec, that means 95 out of 100 requests take less than 1.5 secs.&lt;/p>
+&lt;p>When several backend calls are needed to serve a request, it takes just a single slow request to slow down the entire end-user request.&lt;/p>
+&lt;h2 id="approaches-for-coping-with-load">Approaches for coping with load&lt;/h2>
+&lt;p>scaling up aka vertical scaling means upgrading to a more powerful machine.&lt;/p>
+&lt;p>scaling out aka horizontal scaling means distributing the load across several smaller machines. This is also called shared-nothing architecture.&lt;/p>
+&lt;p>A good architecture is a pragmatic mixture of both.&lt;/p>
+&lt;p>Elastic systems automatically add computing resources when they detect a load increase. Such systems are good when the load is highly unpredictable but manually scaled systems are simpler.&lt;/p>
+&lt;p>There&amp;rsquo;s no magic scaling sauce. The architecture depends on the problem at hand - volume of reads/writes, volume of data to store, etc. For example, a system that handles 100k RPS, each 1KB in size is very different from a system that handles 3 RPS, each 2 GB in size.&lt;/p>
+&lt;p>Before scaling, think about which operations are common and which ones are rare. Figure out the load parameters. As a startup with an unproven product idea, you should be able to iterate quickly rather than trying to scale some hypothetical feature load that might come in the future. See &lt;a href="https://www.youtube.com/watch?v=PE4gwstWhmc">How We&amp;rsquo;ve Scaled Dropbox&lt;/a> for some inspiration!&lt;/p></description></item><item><title>Best of Reddit</title><link>https://saikatkumardey.com/daily/11-best-of-reddit/</link><pubDate>Sun, 05 Jun 2022 21:22:53 +0530</pubDate><guid>https://saikatkumardey.com/daily/11-best-of-reddit/</guid><description>&lt;p>I love reddit.&lt;/p>
 &lt;p>It&amp;rsquo;s so much fun to learn from people from all over the world who are kind enough to unconditionally share their experiences.&lt;/p>
 &lt;p>IMO, the best resources are buried deep inside reddit comments that could be discovered if you&amp;rsquo;re hungry enough!&lt;/p>
 &lt;p>Here are the best content I discovered so far:&lt;/p>
