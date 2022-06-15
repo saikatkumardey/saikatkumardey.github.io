@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>daily on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/daily/</link><description>daily</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 10 Jun 2022 21:43:04 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/daily/index.xml" rel="self" type="application/rss+xml"/><item><title>CS 329s - Machine Learning Systems Design</title><link>https://saikatkumardey.com/daily/12-cs-329/</link><pubDate>Fri, 10 Jun 2022 21:43:04 +0530</pubDate><guid>https://saikatkumardey.com/daily/12-cs-329/</guid><description>&lt;p>This is going to be a super-short post, as I want to post a daily note here. :D&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>daily on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/daily/</link><description>daily</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 15 Jun 2022 19:26:47 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/daily/index.xml" rel="self" type="application/rss+xml"/><item><title>Walking helps you solve difficult bugs</title><link>https://saikatkumardey.com/daily/14-walk/</link><pubDate>Wed, 15 Jun 2022 19:26:47 +0530</pubDate><guid>https://saikatkumardey.com/daily/14-walk/</guid><description>&lt;p>How do you solve a difficult bug?&lt;/p>
+&lt;ul>
+&lt;li>Write the problem down.&lt;/li>
+&lt;li>Read it aloud.&lt;/li>
+&lt;li>Go for a walk.&lt;/li>
+&lt;/ul>
+&lt;p>When you let your mind wander, magic happens. Taking your conscious mind off a problem allows your mind to figure out non-linear solutions.&lt;/p>
+&lt;p>Where else could I apply this?&lt;/p></description></item><item><title>Brave Dark Mode</title><link>https://saikatkumardey.com/daily/13-brave-dark-mode/</link><pubDate>Sun, 12 Jun 2022 12:09:19 +0530</pubDate><guid>https://saikatkumardey.com/daily/13-brave-dark-mode/</guid><description>&lt;p>Dark mode is a must these days, isn&amp;rsquo;t it?&lt;/p>
+&lt;p>Not all browsers support it by default.&lt;/p>
+&lt;p>The option for most of us is to use an extension. I am apprehensive about using an extension due to privacy concerns.&lt;/p>
+&lt;p>So, how do I enable dark mode in brave?&lt;/p>
+&lt;p>Simply go to &lt;a href="brave://flags/#enable-force-dark">Brave flags&lt;/a> and &amp;ldquo;Enable&amp;rdquo; it.&lt;/p>
+&lt;p>That&amp;rsquo;s it.&lt;/p></description></item><item><title>CS 329s - Machine Learning Systems Design</title><link>https://saikatkumardey.com/daily/12-cs-329/</link><pubDate>Fri, 10 Jun 2022 21:43:04 +0530</pubDate><guid>https://saikatkumardey.com/daily/12-cs-329/</guid><description>&lt;p>This is going to be a super-short post, as I want to post a daily note here. :D&lt;/p>
 &lt;p>Discovered &lt;a href="https://stanford-cs329s.github.io/">CS 329s&lt;/a>, taught by &lt;a href="https://huyenchip.com/">Chip Huyen&lt;/a> at Stanford.&lt;/p>
 &lt;p>Going by the &lt;a href="https://stanford-cs329s.github.io/syllabus.html">syllabus&lt;/a> and a quick look through the content, this looks like an amazing resource for Machine Learning Engineers.&lt;/p>
 &lt;p>I plan to audit the course and share my learnings here.&lt;/p>
@@ -47,10 +59,7 @@ But common sense isn&amp;rsquo;t common right? We need reminders to keep us on o
 &lt;p>Sometimes we commit massive jupyter notebooks (due to output) which makes the repository heavy &amp;amp; difficult to work with. pre-commit hooks could automatically strip the output from our notebooks before you commit.&lt;/p>
 &lt;p>pre-commit hooks will prevent anyone from committing changes to your code-base with such known issues.&lt;/p>
 &lt;p>It will allow the reviewers to focus on core contribution of a pull-request instead of trivial issues which could be avoided.&lt;/p>
-&lt;p>What are you waiting for ? Go get yourself some &lt;a href="https://pre-commit.com/">pre-commit&lt;/a> hooks for your freshly minted repository!&lt;/p></description></item><item><title>FIFA World Cup 2022</title><link>https://saikatkumardey.com/daily/7-world-cup-2022/</link><pubDate>Tue, 31 May 2022 23:06:43 +0530</pubDate><guid>https://saikatkumardey.com/daily/7-world-cup-2022/</guid><description>&lt;p>I got tickets to watch Brazil play in the FIFA World Cup 2022.&lt;/p>
-&lt;p>This would be a dream come true. I am super excited to watch Neymar play in a stadium.&lt;/p>
-&lt;p>Now, I just need to plan the logistics.&lt;/p>
-&lt;p>Stay tuned for updates! :)&lt;/p></description></item><item><title>Relax</title><link>https://saikatkumardey.com/daily/6-relax/</link><pubDate>Mon, 30 May 2022 10:43:27 +0530</pubDate><guid>https://saikatkumardey.com/daily/6-relax/</guid><description>&lt;p>Some days, you&amp;rsquo;ll be pulled into so many different directions that you won&amp;rsquo;t know what to do.&lt;/p>
+&lt;p>What are you waiting for ? Go get yourself some &lt;a href="https://pre-commit.com/">pre-commit&lt;/a> hooks for your freshly minted repository!&lt;/p></description></item><item><title>Relax</title><link>https://saikatkumardey.com/daily/6-relax/</link><pubDate>Mon, 30 May 2022 10:43:27 +0530</pubDate><guid>https://saikatkumardey.com/daily/6-relax/</guid><description>&lt;p>Some days, you&amp;rsquo;ll be pulled into so many different directions that you won&amp;rsquo;t know what to do.&lt;/p>
 &lt;p>Take a step back and breathe.&lt;/p>
 &lt;p>Nothing is more important than inner peace.&lt;/p>
 &lt;p>Focus on one and only one thing and finish that.&lt;/p>
@@ -60,10 +69,4 @@ But common sense isn&amp;rsquo;t common right? We need reminders to keep us on o
 &lt;p>I have many ideas jotted down across multiple platforms, apps and yes, text files on my devices. From now on, I will use this website as my own digital garden to keep it all. I will start gathering all my posts from the past scattered across different platforms and share them in this space.&lt;/p></description></item><item><title>Never Too Late</title><link>https://saikatkumardey.com/daily/4-never-too-late/</link><pubDate>Sun, 29 May 2022 22:40:51 +0530</pubDate><guid>https://saikatkumardey.com/daily/4-never-too-late/</guid><description>&lt;p>Van Gogh started painting seriously at 27.&lt;/p>
 &lt;p>He created over 2000 artworks over a decade, most of which were created in the last 2 years of his life.&lt;/p>
 &lt;p>It&amp;rsquo;s never too late to start anything and become world class at it.&lt;/p>
-&lt;p>Van Gogh did it. You could do it too.&lt;/p></description></item><item><title>Keep Investing</title><link>https://saikatkumardey.com/daily/3-keep-investing/</link><pubDate>Sat, 28 May 2022 21:03:26 +0530</pubDate><guid>https://saikatkumardey.com/daily/3-keep-investing/</guid><description>&lt;p>If you have money to spare, invest it.&lt;/p>
-&lt;p>When the market is down, it&amp;rsquo;s giving you an opportunity to buy equity at a discount.&lt;/p>
-&lt;p>Do not pick individual stocks. You&amp;rsquo;re not a trader. Invest into index funds &amp;amp; ETFs instead. Read up on &lt;a href="https://www.bogleheads.org/wiki/Getting_started">Bogleheads Philosophy&lt;/a>.&lt;/p>
-&lt;p>Automate your investments. SIPs are the way to go. Time in the market is more important than timing the market.&lt;/p>
-&lt;p>The real fruit of your investments will be seen years later. Let compound interest do her thing silently.&lt;/p>
-&lt;p>You should focus on being the best at what you do. Worrying about the market is a waste of your time which could be utilised in honing your craft.&lt;/p>
-&lt;p>When the market is up, keep buying. When the market is down, buy more.&lt;/p></description></item></channel></rss>
+&lt;p>Van Gogh did it. You could do it too.&lt;/p></description></item></channel></rss>
