@@ -9,7 +9,7 @@
 &lt;p>Not all browsers support it by default.&lt;/p>
 &lt;p>The option for most of us is to use an extension. I am apprehensive about using an extension due to privacy concerns.&lt;/p>
 &lt;p>So, how do I enable dark mode in brave?&lt;/p>
-&lt;p>Simply go to &lt;a href="brave://flags/#enable-force-dark">Brave flags&lt;/a> and &amp;ldquo;Enable&amp;rdquo; it.&lt;/p>
+&lt;p>Simply go to &lt;code>brave://flags/#enable-force-dark&lt;/code> and &amp;ldquo;Enable&amp;rdquo; it.&lt;/p>
 &lt;p>That&amp;rsquo;s it.&lt;/p></description></item><item><title>CS 329s - Machine Learning Systems Design</title><link>https://saikatkumardey.com/daily/12-cs-329/</link><pubDate>Fri, 10 Jun 2022 21:43:04 +0530</pubDate><guid>https://saikatkumardey.com/daily/12-cs-329/</guid><description>&lt;p>This is going to be a super-short post, as I want to post a daily note here. :D&lt;/p>
 &lt;p>Discovered &lt;a href="https://stanford-cs329s.github.io/">CS 329s&lt;/a>, taught by &lt;a href="https://huyenchip.com/">Chip Huyen&lt;/a> at Stanford.&lt;/p>
 &lt;p>Going by the &lt;a href="https://stanford-cs329s.github.io/syllabus.html">syllabus&lt;/a> and a quick look through the content, this looks like an amazing resource for Machine Learning Engineers.&lt;/p>
