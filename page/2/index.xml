@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 25 Jun 2022 13:06:10 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Relax</title><link>https://saikatkumardey.com/daily/6-relax/</link><pubDate>Mon, 30 May 2022 10:43:27 +0530</pubDate><guid>https://saikatkumardey.com/daily/6-relax/</guid><description>&lt;p>Some days, you&amp;rsquo;ll be pulled into so many different directions that you won&amp;rsquo;t know what to do.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 02 Jul 2022 09:40:42 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>pre-commit hooks</title><link>https://saikatkumardey.com/daily/8-pre-commit-hooks/</link><pubDate>Wed, 01 Jun 2022 23:34:18 +0530</pubDate><guid>https://saikatkumardey.com/daily/8-pre-commit-hooks/</guid><description>&lt;p>Code smells should be identified before they&amp;rsquo;re pushed committed.&lt;/p>
+&lt;p>&lt;a href="https://pre-commit.com/">pre-commit&lt;/a> hooks allow you to define a standard for your codebase.&lt;/p>
+&lt;p>You don&amp;rsquo;t need to worry if the latest PR follows the &lt;a href="https://peps.python.org/pep-0008/">PEP 8&lt;/a> conventions. Simply add a &lt;a href="https://github.com/PyCQA/flake8">flake8&lt;/a> hook to your pre-commit config file. Even better, add a &lt;a href="https://github.com/psf/black">black&lt;/a> config to ensure your code formatting is PEP 8 compliant.&lt;/p>
+&lt;p>Accidentally added a large-file to staging? No problem, pre-commit hooks will point it out.&lt;/p>
+&lt;p>Forgot to remove debug statements in your latest patch? pre-commit hooks got you!&lt;/p>
+&lt;p>Forgot to add a huge file from staging? pre-commit hook will help you!&lt;/p>
+&lt;p>Sometimes we commit massive jupyter notebooks (due to output) which makes the repository heavy &amp;amp; difficult to work with. pre-commit hooks could automatically strip the output from our notebooks before you commit.&lt;/p>
+&lt;p>pre-commit hooks will prevent anyone from committing changes to your code-base with such known issues.&lt;/p>
+&lt;p>It will allow the reviewers to focus on core contribution of a pull-request instead of trivial issues which could be avoided.&lt;/p>
+&lt;p>What are you waiting for ? Go get yourself some &lt;a href="https://pre-commit.com/">pre-commit&lt;/a> hooks for your freshly minted repository!&lt;/p></description></item><item><title>Relax</title><link>https://saikatkumardey.com/daily/6-relax/</link><pubDate>Mon, 30 May 2022 10:43:27 +0530</pubDate><guid>https://saikatkumardey.com/daily/6-relax/</guid><description>&lt;p>Some days, you&amp;rsquo;ll be pulled into so many different directions that you won&amp;rsquo;t know what to do.&lt;/p>
 &lt;p>Take a step back and breathe.&lt;/p>
 &lt;p>Nothing is more important than inner peace.&lt;/p>
 &lt;p>Focus on one and only one thing and finish that.&lt;/p>
@@ -283,68 +292,4 @@ location product
 &lt;hr>
 &lt;p>“When you throw out old work, what you’re really doing is making room for new work.”&lt;/p>
 &lt;hr>
-&lt;p>“Look for something new to learn, and when you find it, dedicate yourself to learning it out in the open. Document your progress and share as you go so that others can learn along with you. Show your work, and when the right people show up, pay close attention to them, because they’ll have a lot to show you.”&lt;/p></description></item><item><title>Anything You Want by Derek Sivers</title><link>https://saikatkumardey.com/essays/book-notes-anything-you-want-by-derek-sivers/</link><pubDate>Wed, 22 Sep 2021 10:00:34 +0530</pubDate><guid>https://saikatkumardey.com/essays/book-notes-anything-you-want-by-derek-sivers/</guid><description>&lt;p>Don&amp;rsquo;t be on your deathbed someday, having squandered your one chance at life, full of regret because you pursued little distractions instead of big dreams.&lt;/p>
-&lt;hr>
-&lt;p>Once you&amp;rsquo;ve got a hit, suddenly all the locked doors open wide. People love the hit so much that it seems to promote itself. Instead of trying to create demand, you&amp;rsquo;re managing the huge demand&lt;/p>
-&lt;hr>
-&lt;p>Success comes from persistently improving and inventing, not from persistently doing what&amp;rsquo;s not working.&lt;/p>
-&lt;hr>
-&lt;p>We all have lots of ideas, creations, and projects. When you present one to the world, and it&amp;rsquo;s not a hit, don&amp;rsquo;t keep pushing it as-is. Instead, get back to improving and inventing.&lt;/p>
-&lt;hr>
-&lt;p>Present each new idea or improvement to the world. If multiple people are saying, “Wow! Yes! I need this! I&amp;rsquo;d be happy to pay you to do this!” then you should probably do it. But if the response is anything less, don&amp;rsquo;t pursue it.&lt;/p>
-&lt;hr>
-&lt;p>Don&amp;rsquo;t waste years fighting uphill battles against locked doors. Improve or invent until you get that huge response.&lt;/p>
-&lt;hr>
-&lt;p>No “yes.” Either “HELL YEAH!” or “no.”&lt;/p>
-&lt;hr>
-&lt;p>If you&amp;rsquo;re not saying “HELL YEAH!” about something, say “no.”&lt;/p>
-&lt;hr>
-&lt;p>When deciding whether to do something, if you feel anything less than “Wow! That would be amazing! Absolutely! Hell yeah!”—then say “no.”&lt;/p>
-&lt;hr>
-&lt;p>We&amp;rsquo;re all busy. We&amp;rsquo;ve all taken on too much. Saying yes to less is the way out.&lt;/p>
-&lt;hr>
-&lt;p>Start now. No funding needed.&lt;/p>
-&lt;hr>
-&lt;p>If you want to be useful, you can always start now, with only 1 percent of what you have in your grand vision. It&amp;rsquo;ll be a humble prototype version of your grand vision, but you&amp;rsquo;ll be in the game. You&amp;rsquo;ll be ahead of the rest, because you actually started, while others are waiting for the finish line to magically appear at the starting line.&lt;/p>
-&lt;hr>
-&lt;p>Starting small puts 100 percent of your energy on actually solving real problems for real people. It gives you a stronger foundation to grow from. It eliminates the friction of big infrastructure and gets right to the point. And it will let you change your plan in an instant, as you&amp;rsquo;re working closely with those first customers telling you what they really need.&lt;/p>
-&lt;hr>
-&lt;p>So no, your idea doesn&amp;rsquo;t need funding to start. (You also don&amp;rsquo;t need an MBA, a particular big client, a certain person&amp;rsquo;s endorsement, a lucky break, or any other common excuse not to start.)&lt;/p>
-&lt;hr>
-&lt;p>You need to confidently exclude people, and proudly say what you&amp;rsquo;re not. By doing so, you will win the hearts of the people you want.&lt;/p>
-&lt;hr>
-&lt;p>Are you helping people? Are they happy? Are you happy? Are you profitable? Isn&amp;rsquo;t that enough?
-How do you grade yourself?&lt;/p>
-&lt;hr>
-&lt;p>How do you grade yourself?
-It&amp;rsquo;s important to know in advance, to make sure you&amp;rsquo;re staying focused on what&amp;rsquo;s honestly important to you, instead of doing what others think you should.&lt;/p>
-&lt;hr>
-&lt;p>People fall in love with people who won&amp;rsquo;t give them the time of day.&lt;/p>
-&lt;hr>
-&lt;p>If you set up your business like you don&amp;rsquo;t need the money, people are happier to pay you.&lt;/p>
-&lt;hr>
-&lt;p>When someone&amp;rsquo;s doing something for love, being generous instead of stingy, trusting instead of fearful, it triggers this law: We want to give to those who give.&lt;/p>
-&lt;hr>
-&lt;p>It&amp;rsquo;s another Tao of business: Set up your business like you don&amp;rsquo;t need the money, and it&amp;rsquo;ll likely come your way.&lt;/p>
-&lt;hr>
-&lt;p>But no matter what business you&amp;rsquo;re in, it&amp;rsquo;s good to prepare for what would happen if business doubled.&lt;/p>
-&lt;hr>
-&lt;p>You might get bigger faster and make millions if you outsourced everything to the experts. But what&amp;rsquo;s the point of getting bigger and making millions? To be happy, right?&lt;/p>
-&lt;hr>
-&lt;p>In the end, it&amp;rsquo;s about what you want to be, not what you want to have.&lt;/p>
-&lt;hr>
-&lt;p>To have something (a finished recording, a business, or millions of dollars) is the means, not the end. To be something (a good singer, a skilled entrepreneur, or just plain happy) is the real point.&lt;/p>
-&lt;hr>
-&lt;p>When you sign up to run a marathon, you don&amp;rsquo;t want a taxi to take you to the finish line.&lt;/p>
-&lt;hr>
-&lt;p>To be a true business owner, make sure you could leave for a year, and when you came back, your business would be doing better than when you left.&lt;/p>
-&lt;hr>
-&lt;p>Never forget that you can make your role anything you want it to be.&lt;/p>
-&lt;hr>
-&lt;p>Anything you hate to do, someone else loves. So find that person and let him do it.&lt;/p>
-&lt;hr>
-&lt;p>For me, I loved sitting alone and programming, writing, planning, and inventing. Thinking of ideas and making them happen. This makes me happy, not business deals or management. So I found someone who liked doing business deals and put him in charge of all that.&lt;/p>
-&lt;hr>
-&lt;p>Delegate, but don&amp;rsquo;t abdicate.&lt;/p>
-&lt;hr>
-&lt;p>Just pay close attention to what excites you and what drains you. Pay close attention to when you&amp;rsquo;re being the real you and when you&amp;rsquo;re trying to impress an invisible jury.&lt;/p></description></item></channel></rss>
+&lt;p>“Look for something new to learn, and when you find it, dedicate yourself to learning it out in the open. Document your progress and share as you go so that others can learn along with you. Show your work, and when the right people show up, pay close attention to them, because they’ll have a lot to show you.”&lt;/p></description></item></channel></rss>
