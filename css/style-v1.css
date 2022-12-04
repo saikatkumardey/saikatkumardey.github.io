@@ -35,11 +35,11 @@ body {
     font-weight: 100;
     line-height: 1.45;
     color: rgb(0, 0, 0);
-    text-align: justify;
 }
 
 p {
     margin-bottom: 1.1em;
+    text-align: justify;
 }
 
 h1,
@@ -190,6 +190,7 @@ p>code {
     font-size: 0.84em;
     padding: 0.1em 0.3em 0;
     border-radius: 3px;
+    text-align: left;
 }
 
 .meta {
