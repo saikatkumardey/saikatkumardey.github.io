@@ -71,7 +71,7 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>As shown in the table, focal loss has several advantages over undersampling and oversampling for dealing with class imbalance. It does not require changing the distribution of the training data, and it can be easily implemented in any machine learning model. However, it does require tuning of the hyperparameters $\alpha$ and $\gamma$ to achieve optimal performance.&lt;/p>
+&lt;p>As shown in the table, focal loss has several advantages over undersampling and oversampling for dealing with class imbalance. It does not require changing the distribution of the training data, and it can be easily implemented in any machine learning model. However, it does require tuning of the hyperparameters &lt;code>alpha&lt;/code> and &lt;code>gamma&lt;/code> to achieve optimal performance.&lt;/p>
 &lt;h2 id="example">Example&lt;/h2>
 &lt;p>In this example, we will demonstrate the effectiveness of focal loss for solving class imbalance in a machine learning model. We will use a real-world example of a binary classification problem to illustrate how focal loss can improve the performance of a model on an imbalanced dataset.&lt;/p>
 &lt;p>Class imbalance is a common problem in medical imaging applications where the number of positive examples (e.g. diseased images) is often much smaller than the number of negative examples (e.g. healthy images). In this case study, we will consider a dataset of medical images and a binary classification task of predicting whether an image is healthy or diseased. The dataset is imbalanced, with a large number of healthy images and a small number of diseased images.&lt;/p>
