@@ -1,29 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>research on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/research/</link><description>research</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 25 Aug 2021 09:57:00 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/research/index.xml" rel="self" type="application/rss+xml"/><item><title>Predictive Model Performance Online and Offline Eval</title><link>https://saikatkumardey.com/posts/predictive-model-performance-online-and-offline-eval/</link><pubDate>Wed, 25 Aug 2021 09:57:00 +0530</pubDate><guid>https://saikatkumardey.com/posts/predictive-model-performance-online-and-offline-eval/</guid><description>&lt;div class="toc">
-&lt;h3>Table of contents&lt;/h3>
-&lt;nav id="TableOfContents">
-&lt;ul>
-&lt;li>&lt;a href="#key-takeaways">Key takeaways&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#details">Details&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#evaluation-metrics">Evaluation Metrics&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#auc-area-under-curve">AUC (Area under curve)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#rig-relative-information-gain">RIG (Relative Information Gain)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#prediction-error-pe">Prediction Error (PE)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#simulation-metric">Simulation Metric&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#issues">Issues&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#auc">AUC&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#rig">RIG&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#offline-vs-online-discrepancy">Offline vs Online discrepancy&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#references">References&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/nav>
-&lt;/div>
-&lt;p>Evaluation is an important topic in every machine learning project. There are offline metrics that we compute on the historical data. It&amp;rsquo;s supposed to provide us an indication of our model performance on real data. However, we often see a discrepancy in offline vs online performance.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>research on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/research/</link><description>research</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 25 Aug 2021 09:57:00 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/research/index.xml" rel="self" type="application/rss+xml"/><item><title>Predictive Model Performance Online and Offline Eval</title><link>https://saikatkumardey.com/posts/predictive-model-performance-online-and-offline-eval/</link><pubDate>Wed, 25 Aug 2021 09:57:00 +0530</pubDate><guid>https://saikatkumardey.com/posts/predictive-model-performance-online-and-offline-eval/</guid><description>&lt;p>Evaluation is an important topic in every machine learning project. There are offline metrics that we compute on the historical data. It&amp;rsquo;s supposed to provide us an indication of our model performance on real data. However, we often see a discrepancy in offline vs online performance.&lt;/p>
 &lt;p>In &lt;a href="https://dl.acm.org/doi/abs/10.1145/2487575.2488215">Predictive model performance: Offline and online evaluations&lt;/a>, the authors investigate the offline/online model performance on advertisement data from Bing Search Engine.&lt;/p>
 &lt;h2 id="key-takeaways">Key takeaways&lt;/h2>
 &lt;ul>

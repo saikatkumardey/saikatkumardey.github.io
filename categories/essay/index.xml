@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>essay on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/essay/</link><description>essay</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 01 Dec 2022 20:49:34 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/essay/index.xml" rel="self" type="application/rss+xml"/><item><title>Solving Class Imbalance with Focal Loss</title><link>https://saikatkumardey.com/posts/focal-loss/</link><pubDate>Thu, 01 Dec 2022 20:49:34 +0530</pubDate><guid>https://saikatkumardey.com/posts/focal-loss/</guid><description>&lt;p>Class imbalance occurs when the number of observations in one or more classes is significantly different from the number of observations in other classes. This can lead to poor model performance, particularly when the minority class is important to predict accurately.&lt;/p>
 &lt;p>Focal loss is a loss function that down-weights the contribution of well-classified examples and focuses on hard-to-classify examples. This can help to improve the performance of a machine learning model when dealing with class imbalance.&lt;/p>
 &lt;p>In this post, we will explain the concept of focal loss and how it can be implemented in a machine learning model. We will also compare its effectiveness to other methods for solving class imbalance.&lt;/p>
-&lt;div class="toc">
-&lt;h3>Table of contents&lt;/h3>
-&lt;nav id="TableOfContents">
-&lt;ul>
-&lt;li>&lt;a href="#focal-loss">Focal loss&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#focal-loss-parameters---alpha-and-gamma">Focal loss parameters - alpha and gamma&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#code-sample">Code sample&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#thoughts-on-parameter-tuning">Thoughts on parameter tuning&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;ul>
-&lt;li>&lt;a href="#example">Example&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#conclusion">Conclusion&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/nav>
-&lt;/div>
 &lt;h2 id="focal-loss">Focal loss&lt;/h2>
 &lt;p>Focal loss is a variant of the cross-entropy loss function that is specifically designed to address class imbalance. It is defined as:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>FL(p) = -alpha * (1-p)^gamma * log(p)

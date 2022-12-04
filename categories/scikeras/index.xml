@@ -1,20 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>scikeras on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/scikeras/</link><description>scikeras</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 25 Jun 2022 13:06:10 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/scikeras/index.xml" rel="self" type="application/rss+xml"/><item><title>Training Image Classification Models with scikeras</title><link>https://saikatkumardey.com/posts/scikeras/</link><pubDate>Sat, 25 Jun 2022 13:06:10 +0530</pubDate><guid>https://saikatkumardey.com/posts/scikeras/</guid><description>&lt;div class="toc">
-&lt;h3>Table of contents&lt;/h3>
-&lt;nav id="TableOfContents">
-&lt;ul>
-&lt;li>&lt;a href="#introduction-to-scikeras">Introduction to scikeras&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#download-dataset">Download dataset&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#import-necessary-libraries">Import necessary libraries&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#setup-constants">Setup Constants&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#loader-for-reading-data-in-batches">Loader for reading data in batches&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#define-your-tensorflow-model-architecture">Define your Tensorflow model architecture&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#define-scikeras-interface">Define scikeras interface&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#training-loop">Training loop&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#conclusion">Conclusion&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/nav>
-&lt;/div>
-&lt;h2 id="introduction-to-scikeras">Introduction to scikeras&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>scikeras on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/scikeras/</link><description>scikeras</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 25 Jun 2022 13:06:10 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/scikeras/index.xml" rel="self" type="application/rss+xml"/><item><title>Training Image Classification Models with scikeras</title><link>https://saikatkumardey.com/posts/scikeras/</link><pubDate>Sat, 25 Jun 2022 13:06:10 +0530</pubDate><guid>https://saikatkumardey.com/posts/scikeras/</guid><description>&lt;h2 id="introduction-to-scikeras">Introduction to scikeras&lt;/h2>
 &lt;p>Scikeras is a powerful tool that allows users to combine the capabilities of TensorFlow and scikit-learn in order to train image classification models. By using scikeras, users can take advantage of the strengths of both TensorFlow and scikit-learn, and benefit from the ease of use and flexibility of scikit-learn&amp;rsquo;s API.&lt;/p>
 &lt;p>In this blog post, we will demonstrate how to use scikeras to train a model using a large dataset of images stored on disk. We will show how to use TensorFlow&amp;rsquo;s &lt;code>ImageDataGenerator()&lt;/code> function to load images in batches and apply real-time augmentation, and how to use scikeras&amp;rsquo;s &lt;code>KerasClassifier()&lt;/code> to create a scikit-learn compatible interface for training the model. We will also demonstrate how to use &lt;code>partial_fit()&lt;/code> to train the model on smaller batches of data and retain the history of model weights and parameters.&lt;/p>
 &lt;h2 id="download-dataset">Download dataset&lt;/h2>

@@ -1,15 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Saikat Kumar Dey</title><link>https://saikatkumardey.com/posts/</link><description>Posts</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 02 Dec 2022 11:15:58 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Building Pandas Dataframes From Ndarrays</title><link>https://saikatkumardey.com/posts/building-pandas-dataframes-from-ndarrays/</link><pubDate>Tue, 28 Sep 2021 10:06:23 +0530</pubDate><guid>https://saikatkumardey.com/posts/building-pandas-dataframes-from-ndarrays/</guid><description>&lt;div class="toc">
-&lt;h3>Table of contents&lt;/h3>
-&lt;nav id="TableOfContents">
-&lt;ul>
-&lt;li>&lt;a href="#1d--dimension--sales">1d : dimension = sales&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#2d-dimension--sales--product">2d: dimension = sales * product&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#3d--dimension--location-x-product-x-sales">3d : dimension = location x product x sales&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#3d--dimension--location-x-product-x-sales-multi">3d : dimension = location x product x sales (multi)&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/nav>
-&lt;/div>
-&lt;p>At work, I have to switch between numpy &amp;amp; pandas depending on the computational needs. Numpy is faster. Pandas is easier to work with.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Saikat Kumar Dey</title><link>https://saikatkumardey.com/posts/</link><description>Posts</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 02 Dec 2022 11:15:58 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Building Pandas Dataframes From Ndarrays</title><link>https://saikatkumardey.com/posts/building-pandas-dataframes-from-ndarrays/</link><pubDate>Tue, 28 Sep 2021 10:06:23 +0530</pubDate><guid>https://saikatkumardey.com/posts/building-pandas-dataframes-from-ndarrays/</guid><description>&lt;p>At work, I have to switch between numpy &amp;amp; pandas depending on the computational needs. Numpy is faster. Pandas is easier to work with.&lt;/p>
 &lt;p>One of the tasks I&amp;rsquo;ve faced often was to convert a 3-dimensional ndarray to a pandas dataframe. I will share my preferred technique in this post today.&lt;/p>
 &lt;p>For the purpose of this exercise, I&amp;rsquo;ll generate dummy sales data for a retail company. The dimensions include products, locations, and sales.&lt;/p>
 &lt;h1 id="convert-ndarray-to-pandas-dataframe">Convert ndarray to pandas dataframe&lt;/h1>
@@ -84,6 +73,7 @@ product
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">df_3d&lt;/span> &lt;span style="color:#000">=&lt;/span> &lt;span style="color:#000">pd&lt;/span>&lt;span style="color:#000">.&lt;/span>&lt;span style="color:#000">DataFrame&lt;/span>(&lt;span style="color:#000">arr_3d&lt;/span>, &lt;span style="color:#000">columns&lt;/span>&lt;span style="color:#000">=&lt;/span>[&lt;span style="color:#c41a16">&amp;#34;location&amp;#34;&lt;/span>, &lt;span style="color:#c41a16">&amp;#34;product&amp;#34;&lt;/span>, &lt;span style="color:#c41a16">&amp;#34;sales&amp;#34;&lt;/span>])
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>pandas won&amp;rsquo;t work out of the box. It cannot handle more than 2 dimensions. So, it raises a &lt;code>ValueError&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bas" data-lang="bas">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">---------------------------------------------------------------------------&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">ValueError&lt;/span> &lt;span style="color:#000">Traceback&lt;/span> (&lt;span style="color:#000">most&lt;/span> &lt;span style="color:#000">recent&lt;/span> &lt;span style="color:#000">call&lt;/span> &lt;span style="color:#000">last&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -305,29 +295,6 @@ It&amp;rsquo;s important to know in advance, to make sure you&amp;rsquo;re stayi
 &lt;p>Delegate, but don&amp;rsquo;t abdicate.&lt;/p>
 &lt;hr>
 &lt;p>Just pay close attention to what excites you and what drains you. Pay close attention to when you&amp;rsquo;re being the real you and when you&amp;rsquo;re trying to impress an invisible jury.&lt;/p></description></item><item><title>A Simplified Implementation of Quicksort</title><link>https://saikatkumardey.com/posts/a-simplified-implementation-of-quicksort/</link><pubDate>Sun, 05 Sep 2021 09:59:45 +0530</pubDate><guid>https://saikatkumardey.com/posts/a-simplified-implementation-of-quicksort/</guid><description>&lt;p>Quicksort is a beautiful algorithm. It&amp;rsquo;s considered the fastest sorting algorithm in practice. Most implementations I&amp;rsquo;ve seen online are complicated. This post will demonstrate a simple implementation that trades space complexity for readability.&lt;/p>
-&lt;div class="toc">
-&lt;h3>Table of contents&lt;/h3>
-&lt;nav id="TableOfContents">
-&lt;ul>
-&lt;li>&lt;a href="#how-does-quicksort-work">How does quicksort work?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#how-do-we-implement-it-in-python">How do we implement it in Python?&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#base-case">Base case&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#step-1-choose-a-pivot">Step 1: Choose a pivot&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#step-2-partition">Step 2: Partition&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#step-3-merge">Step 3: Merge&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#complexity">Complexity&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#time">Time&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#space">Space&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#the-code">The code&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/nav>
-&lt;/div>
 &lt;h2 id="how-does-quicksort-work">How does quicksort work?&lt;/h2>
 &lt;p>3 steps.&lt;/p>
 &lt;ol>
@@ -448,23 +415,7 @@ It&amp;rsquo;s important to know in advance, to make sure you&amp;rsquo;re stayi
 &lt;p>&lt;code>O(N)&lt;/code> since we use extra space for storing the smaller and greater sub-arrays. The recursion stack also uses &lt;code>O(log N)&lt;/code> space. Overall, this implementation uses &lt;code>O(N)&lt;/code> space.&lt;/p>
 &lt;p>The in-place implementation without using auxiliary lists would lead to an &lt;code>O(log N)&lt;/code> space complexity.&lt;/p>
 &lt;h2 id="the-code">The code&lt;/h2>
-&lt;p>The implementation including the &lt;code>partition()&lt;/code> and tests are &lt;a href="https://gist.github.com/saikatkumardey/5c0eb3ed8d187046ed7d46ff4dab8fe1">here&lt;/a>.&lt;/p></description></item><item><title>Deep Neural Networks for YouTube Recommendations</title><link>https://saikatkumardey.com/posts/deep-nn-for-youtube-recommendations/</link><pubDate>Sun, 29 Aug 2021 09:59:03 +0530</pubDate><guid>https://saikatkumardey.com/posts/deep-nn-for-youtube-recommendations/</guid><description>&lt;div class="toc">
-&lt;h3>Table of contents&lt;/h3>
-&lt;nav id="TableOfContents">
-&lt;ul>
-&lt;li>&lt;a href="#the-problem">The Problem&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#key-ideas">Key Ideas&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#model-architecture">Model Architecture&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#candidate-generation">Candidate generation&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#ranking">Ranking&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#references">References&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/nav>
-&lt;/div>
-&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1629830470549/vXmBYRQ6P.png" alt="Screenshot 2021-08-25 at 12.11.06 AM.png">&lt;/p>
+&lt;p>The implementation including the &lt;code>partition()&lt;/code> and tests are &lt;a href="https://gist.github.com/saikatkumardey/5c0eb3ed8d187046ed7d46ff4dab8fe1">here&lt;/a>.&lt;/p></description></item><item><title>Deep Neural Networks for YouTube Recommendations</title><link>https://saikatkumardey.com/posts/deep-nn-for-youtube-recommendations/</link><pubDate>Sun, 29 Aug 2021 09:59:03 +0530</pubDate><guid>https://saikatkumardey.com/posts/deep-nn-for-youtube-recommendations/</guid><description>&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1629830470549/vXmBYRQ6P.png" alt="Screenshot 2021-08-25 at 12.11.06 AM.png">&lt;/p>
 &lt;p>YouTube has 100m+ daily active users who consume more than a billion hours&amp;rsquo; worth of content every day. 100s of hours of videos are uploaded every second. At that scale, recommending personalized videos is a colossal task.&lt;/p>
 &lt;p>I&amp;rsquo;ve always wondered how YouTube is always able to come up with relevant recommendations that kept me hooked! I found a very interesting paper on &lt;a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf">Deep Neural networks for YouTube Recommendations&lt;/a>. In this post, I will summarise the key ideas.&lt;/p>
 &lt;h2 id="the-problem">The Problem&lt;/h2>
@@ -579,32 +530,7 @@ u = dense user embeddings&lt;/p>
 &lt;ol>
 &lt;li>&lt;a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf">Deep Neural Networks for YouTube Recommendations&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://en.wikipedia.org/wiki/Softmax_function">Softmax&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>Predictive Model Performance Online and Offline Eval</title><link>https://saikatkumardey.com/posts/predictive-model-performance-online-and-offline-eval/</link><pubDate>Wed, 25 Aug 2021 09:57:00 +0530</pubDate><guid>https://saikatkumardey.com/posts/predictive-model-performance-online-and-offline-eval/</guid><description>&lt;div class="toc">
-&lt;h3>Table of contents&lt;/h3>
-&lt;nav id="TableOfContents">
-&lt;ul>
-&lt;li>&lt;a href="#key-takeaways">Key takeaways&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#details">Details&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#evaluation-metrics">Evaluation Metrics&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#auc-area-under-curve">AUC (Area under curve)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#rig-relative-information-gain">RIG (Relative Information Gain)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#prediction-error-pe">Prediction Error (PE)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#simulation-metric">Simulation Metric&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#issues">Issues&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#auc">AUC&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#rig">RIG&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#offline-vs-online-discrepancy">Offline vs Online discrepancy&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#references">References&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/nav>
-&lt;/div>
-&lt;p>Evaluation is an important topic in every machine learning project. There are offline metrics that we compute on the historical data. It&amp;rsquo;s supposed to provide us an indication of our model performance on real data. However, we often see a discrepancy in offline vs online performance.&lt;/p>
+&lt;/ol></description></item><item><title>Predictive Model Performance Online and Offline Eval</title><link>https://saikatkumardey.com/posts/predictive-model-performance-online-and-offline-eval/</link><pubDate>Wed, 25 Aug 2021 09:57:00 +0530</pubDate><guid>https://saikatkumardey.com/posts/predictive-model-performance-online-and-offline-eval/</guid><description>&lt;p>Evaluation is an important topic in every machine learning project. There are offline metrics that we compute on the historical data. It&amp;rsquo;s supposed to provide us an indication of our model performance on real data. However, we often see a discrepancy in offline vs online performance.&lt;/p>
 &lt;p>In &lt;a href="https://dl.acm.org/doi/abs/10.1145/2487575.2488215">Predictive model performance: Offline and online evaluations&lt;/a>, the authors investigate the offline/online model performance on advertisement data from Bing Search Engine.&lt;/p>
 &lt;h2 id="key-takeaways">Key takeaways&lt;/h2>
 &lt;ul>

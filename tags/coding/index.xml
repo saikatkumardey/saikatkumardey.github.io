@@ -1,27 +1,4 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>coding on Saikat Kumar Dey</title><link>https://saikatkumardey.com/tags/coding/</link><description>coding</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 05 Sep 2021 09:59:45 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/tags/coding/index.xml" rel="self" type="application/rss+xml"/><item><title>A Simplified Implementation of Quicksort</title><link>https://saikatkumardey.com/posts/a-simplified-implementation-of-quicksort/</link><pubDate>Sun, 05 Sep 2021 09:59:45 +0530</pubDate><guid>https://saikatkumardey.com/posts/a-simplified-implementation-of-quicksort/</guid><description>&lt;p>Quicksort is a beautiful algorithm. It&amp;rsquo;s considered the fastest sorting algorithm in practice. Most implementations I&amp;rsquo;ve seen online are complicated. This post will demonstrate a simple implementation that trades space complexity for readability.&lt;/p>
-&lt;div class="toc">
-&lt;h3>Table of contents&lt;/h3>
-&lt;nav id="TableOfContents">
-&lt;ul>
-&lt;li>&lt;a href="#how-does-quicksort-work">How does quicksort work?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#how-do-we-implement-it-in-python">How do we implement it in Python?&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#base-case">Base case&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#step-1-choose-a-pivot">Step 1: Choose a pivot&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#step-2-partition">Step 2: Partition&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#step-3-merge">Step 3: Merge&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#complexity">Complexity&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#time">Time&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#space">Space&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#the-code">The code&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/nav>
-&lt;/div>
 &lt;h2 id="how-does-quicksort-work">How does quicksort work?&lt;/h2>
 &lt;p>3 steps.&lt;/p>
 &lt;ol>

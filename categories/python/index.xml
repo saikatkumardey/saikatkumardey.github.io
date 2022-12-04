@@ -1,15 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>python on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/python/</link><description>python</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 28 Sep 2021 10:06:23 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Building Pandas Dataframes From Ndarrays</title><link>https://saikatkumardey.com/posts/building-pandas-dataframes-from-ndarrays/</link><pubDate>Tue, 28 Sep 2021 10:06:23 +0530</pubDate><guid>https://saikatkumardey.com/posts/building-pandas-dataframes-from-ndarrays/</guid><description>&lt;div class="toc">
-&lt;h3>Table of contents&lt;/h3>
-&lt;nav id="TableOfContents">
-&lt;ul>
-&lt;li>&lt;a href="#1d--dimension--sales">1d : dimension = sales&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#2d-dimension--sales--product">2d: dimension = sales * product&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#3d--dimension--location-x-product-x-sales">3d : dimension = location x product x sales&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#3d--dimension--location-x-product-x-sales-multi">3d : dimension = location x product x sales (multi)&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/nav>
-&lt;/div>
-&lt;p>At work, I have to switch between numpy &amp;amp; pandas depending on the computational needs. Numpy is faster. Pandas is easier to work with.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>python on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/python/</link><description>python</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 28 Sep 2021 10:06:23 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Building Pandas Dataframes From Ndarrays</title><link>https://saikatkumardey.com/posts/building-pandas-dataframes-from-ndarrays/</link><pubDate>Tue, 28 Sep 2021 10:06:23 +0530</pubDate><guid>https://saikatkumardey.com/posts/building-pandas-dataframes-from-ndarrays/</guid><description>&lt;p>At work, I have to switch between numpy &amp;amp; pandas depending on the computational needs. Numpy is faster. Pandas is easier to work with.&lt;/p>
 &lt;p>One of the tasks I&amp;rsquo;ve faced often was to convert a 3-dimensional ndarray to a pandas dataframe. I will share my preferred technique in this post today.&lt;/p>
 &lt;p>For the purpose of this exercise, I&amp;rsquo;ll generate dummy sales data for a retail company. The dimensions include products, locations, and sales.&lt;/p>
 &lt;h1 id="convert-ndarray-to-pandas-dataframe">Convert ndarray to pandas dataframe&lt;/h1>
@@ -84,6 +73,7 @@ product
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">df_3d&lt;/span> &lt;span style="color:#000">=&lt;/span> &lt;span style="color:#000">pd&lt;/span>&lt;span style="color:#000">.&lt;/span>&lt;span style="color:#000">DataFrame&lt;/span>(&lt;span style="color:#000">arr_3d&lt;/span>, &lt;span style="color:#000">columns&lt;/span>&lt;span style="color:#000">=&lt;/span>[&lt;span style="color:#c41a16">&amp;#34;location&amp;#34;&lt;/span>, &lt;span style="color:#c41a16">&amp;#34;product&amp;#34;&lt;/span>, &lt;span style="color:#c41a16">&amp;#34;sales&amp;#34;&lt;/span>])
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>pandas won&amp;rsquo;t work out of the box. It cannot handle more than 2 dimensions. So, it raises a &lt;code>ValueError&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bas" data-lang="bas">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">---------------------------------------------------------------------------&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">ValueError&lt;/span> &lt;span style="color:#000">Traceback&lt;/span> (&lt;span style="color:#000">most&lt;/span> &lt;span style="color:#000">recent&lt;/span> &lt;span style="color:#000">call&lt;/span> &lt;span style="color:#000">last&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>

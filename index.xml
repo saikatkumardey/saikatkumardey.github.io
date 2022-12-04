@@ -84,21 +84,6 @@ On the other hand, if you want to emphasize recall over precision, you can use a
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In the code above, y_pred is a list of binary predictions, and y_true is a list of ground-truth labels. We can then use the fbeta_score function from scikit-learn to compute the Fbeta_score. By default, this will compute the F1 score (i.e. beta=1.0), but you can adjust the value of beta to change the balance between precision and recall.&lt;/p></description></item><item><title>Solving Class Imbalance with Focal Loss</title><link>https://saikatkumardey.com/posts/focal-loss/</link><pubDate>Thu, 01 Dec 2022 20:49:34 +0530</pubDate><guid>https://saikatkumardey.com/posts/focal-loss/</guid><description>&lt;p>Class imbalance occurs when the number of observations in one or more classes is significantly different from the number of observations in other classes. This can lead to poor model performance, particularly when the minority class is important to predict accurately.&lt;/p>
 &lt;p>Focal loss is a loss function that down-weights the contribution of well-classified examples and focuses on hard-to-classify examples. This can help to improve the performance of a machine learning model when dealing with class imbalance.&lt;/p>
 &lt;p>In this post, we will explain the concept of focal loss and how it can be implemented in a machine learning model. We will also compare its effectiveness to other methods for solving class imbalance.&lt;/p>
-&lt;div class="toc">
-&lt;h3>Table of contents&lt;/h3>
-&lt;nav id="TableOfContents">
-&lt;ul>
-&lt;li>&lt;a href="#focal-loss">Focal loss&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#focal-loss-parameters---alpha-and-gamma">Focal loss parameters - alpha and gamma&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#code-sample">Code sample&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#thoughts-on-parameter-tuning">Thoughts on parameter tuning&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;ul>
-&lt;li>&lt;a href="#example">Example&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#conclusion">Conclusion&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/nav>
-&lt;/div>
 &lt;h2 id="focal-loss">Focal loss&lt;/h2>
 &lt;p>Focal loss is a variant of the cross-entropy loss function that is specifically designed to address class imbalance. It is defined as:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>FL(p) = -alpha * (1-p)^gamma * log(p)
@@ -237,28 +222,7 @@ On the other hand, if you want to emphasize recall over precision, you can use a
 &lt;li>&lt;a href="https://arxiv.org/abs/1708.02002">Focal Loss for Dense Object Detection&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.svds.com/learning-imbalanced-data/">Learning from Imbalanced Data&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.sciencedirect.com/science/article/pii/S0167947312000490">Resampling techniques for imbalanced data sets&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Leetcode Patterns</title><link>https://saikatkumardey.com/posts/leetcode-patterns/</link><pubDate>Thu, 01 Dec 2022 10:25:29 +0530</pubDate><guid>https://saikatkumardey.com/posts/leetcode-patterns/</guid><description>&lt;div class="toc">
-&lt;h3>Table of contents&lt;/h3>
-&lt;nav id="TableOfContents">
-&lt;ul>
-&lt;li>&lt;a href="#1-sliding-window">1. Sliding Window&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#2-two-pointers">2. Two pointers&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#3-fast-and-slow-pointers">3. Fast and slow pointers&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#4-merge-intervals">4. Merge Intervals&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#5-cyclic-sort">5. Cyclic sort&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#6-in-place-reversal-of-linked-list">6. In-place reversal of linked-list&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#7-tree-bfs">7. Tree BFS&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#8-tree-dfs">8. Tree DFS&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#9-two-heaps">9. Two heaps&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#10-subsets">10. Subsets&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#11-modified-binary-search">11. Modified Binary Search&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#12-top-k-elements">12. Top K elements&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#13-k-way-merge-using-heap">13. K-way Merge (using heap)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#14-topological-sort">14. Topological Sort&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/nav>
-&lt;/div>
-&lt;h2 id="1-sliding-window">1. Sliding Window&lt;/h2>
+&lt;/ul></description></item><item><title>Leetcode Patterns</title><link>https://saikatkumardey.com/posts/leetcode-patterns/</link><pubDate>Thu, 01 Dec 2022 10:25:29 +0530</pubDate><guid>https://saikatkumardey.com/posts/leetcode-patterns/</guid><description>&lt;h2 id="1-sliding-window">1. Sliding Window&lt;/h2>
 &lt;p>The sliding window pattern is a common technique used to solve problems involving arrays or strings. It involves using a fixed-size &amp;ldquo;window&amp;rdquo; that slides through the array or string, and performs some operation on each sub-array or sub-string that it covers. This allows you to perform the operation on each possible sub-array or sub-string without having to create a new array or string for each one.&lt;/p>
 &lt;p>Here is a simple template in Python that you can use to solve any problem that uses the sliding window pattern:&lt;/p>
 &lt;p>&lt;strong>Template&lt;/strong>&lt;/p>
@@ -284,11 +248,11 @@ On the other hand, if you want to emphasize recall over precision, you can use a
 &lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the sliding window pattern:&lt;/p>
 &lt;ul>
-&lt;li>Longest Substring Without Repeating Characters: This problem involves finding the longest substring in a string that does not contain any repeating characters. The sliding window pattern can be used to efficiently search for this substring.&lt;/li>
-&lt;li>Smallest Subarray with a Given Sum: This problem involves finding the smallest subarray in an array that has a given sum. The sliding window pattern can be used to efficiently search for this subarray.&lt;/li>
-&lt;li>Permutation in String: This problem involves checking whether one string is a permutation of another string. The sliding window pattern can be used to efficiently compare the two strings and check for a permutation.
-Longest Substring with At Most Two Distinct Characters: This problem involves finding the longest substring in a string that contains at most two distinct characters. The sliding window pattern can be used to efficiently search for this substring.&lt;/li>
-&lt;li>Minimum Window Substring: This problem involves finding the smallest substring in a string that contains all of the characters in another string. The sliding window pattern can be used to efficiently search for this substring.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Longest Substring Without Repeating Characters&lt;/a>: This problem involves finding the longest substring in a string that does not contain any repeating characters. The sliding window pattern can be used to efficiently search for this substring.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/minimum-size-subarray-sum/">Minimum Size Subarray Sum&lt;/a>: This problem involves finding the smallest subarray in an array that has a given sum. The sliding window pattern can be used to efficiently search for this subarray.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/permutation-in-string/">Permutation in String&lt;/a>: This problem involves checking whether one string is a permutation of another string. The sliding window pattern can be used to efficiently compare the two strings and check for a permutation.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/">Longest Substring with At Most Two Distinct Characters&lt;/a> 💰: This problem involves finding the longest substring in a string that contains at most two distinct characters. The sliding window pattern can be used to efficiently search for this substring.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/minimum-window-substring/">Minimum Window Substring&lt;/a>: This problem involves finding the smallest substring in a string that contains all of the characters in another string. The sliding window pattern can be used to efficiently search for this substring.&lt;/li>
 &lt;/ul>
 &lt;h2 id="2-two-pointers">2. Two pointers&lt;/h2>
 &lt;p>The two pointers pattern is a common technique used to solve problems involving arrays or strings. It involves using two &amp;ldquo;pointers&amp;rdquo; that point to different elements in the array or string, and moving them in a specific way to perform some operation on the sub-array or sub-string they cover. This allows you to perform the operation on each possible sub-array or sub-string without having to create a new array or string for each one.&lt;/p>
@@ -315,11 +279,10 @@ Longest Substring with At Most Two Distinct Characters: This problem involves fi
 &lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the two pointers pattern:&lt;/p>
 &lt;ul>
-&lt;li>Two Sum: This problem involves finding two numbers in an array that add up to a given target number. The two pointers pattern can be used to efficiently search for these numbers by moving the pointers in opposite directions.&lt;/li>
-&lt;li>Remove Duplicates from Sorted Array: This problem involves removing duplicate elements from a sorted array. The two pointers pattern can be used to efficiently remove the duplicates by comparing the elements at each pointer and moving them as necessary.&lt;/li>
-&lt;li>Container With Most Water: This problem involves finding the maximum area of a container formed by two lines on a graph. The two pointers pattern can be used to efficiently search for the maximum area by moving the pointers in opposite directions.&lt;/li>
-&lt;li>Minimum Size Subarray Sum: This problem involves finding the smallest subarray in an array that has a given sum. The two pointers pattern can be used to efficiently search for this subarray by moving the pointers inwards from the ends of the array.&lt;/li>
-&lt;li>Trapping Rain Water: This problem involves finding the amount of rainwater that can be trapped between bars on a histogram. The two pointers pattern can be used to efficiently calculate the trapped water by moving the pointers inwards from the ends of the array.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/two-sum/">Two Sum&lt;/a>: This problem involves finding two numbers in an array that add up to a given target number. The two pointers pattern can be used to efficiently search for these numbers by moving the pointers in opposite directions.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">Remove Duplicates from Sorted Array&lt;/a>: This problem involves removing duplicate elements from a sorted array. The two pointers pattern can be used to efficiently remove the duplicates by comparing the elements at each pointer and moving them as necessary.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/container-with-most-water/">Container With Most Water&lt;/a>: This problem involves finding the maximum area of a container formed by two lines on a graph. The two pointers pattern can be used to efficiently search for the maximum area by moving the pointers in opposite directions.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/trapping-rain-water/">Trapping Rain Water&lt;/a>: This problem involves finding the amount of rainwater that can be trapped between bars on a histogram. The two pointers pattern can be used to efficiently calculate the trapped water by moving the pointers inwards from the ends of the array.&lt;/li>
 &lt;/ul>
 &lt;h2 id="3-fast-and-slow-pointers">3. Fast and slow pointers&lt;/h2>
 &lt;p>The fast and slow pointers pattern is a common technique used to solve problems involving linked lists. It involves using two pointers that traverse the linked list at different speeds. The &amp;ldquo;slow&amp;rdquo; pointer moves one step at a time, while the &amp;ldquo;fast&amp;rdquo; pointer moves two steps at a time. This allows the fast pointer to &amp;ldquo;lap&amp;rdquo; the slow pointer, and makes it possible to detect when the two pointers are pointing to the same node (i.e., they have &amp;ldquo;collided&amp;rdquo;).&lt;/p>
@@ -350,8 +313,8 @@ Longest Substring with At Most Two Distinct Characters: This problem involves fi
 &lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the fast and slow pointers pattern:&lt;/p>
 &lt;ul>
-&lt;li>Linked List Cycle: This problem involves detecting whether a linked list contains a cycle. The fast and slow pointers pattern can be used to efficiently detect the cycle by moving the pointers at different speeds and checking for overlap.&lt;/li>
-&lt;li>Middle of the Linked List: This problem involves finding the middle element of a linked list. The fast and slow pointers pattern can be used to efficiently find the middle element by moving the pointers at different speeds and stopping when the fast pointer reaches the end of the list.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/linked-list-cycle/">Linked List Cycle&lt;/a>: This problem involves detecting whether a linked list contains a cycle. The fast and slow pointers pattern can be used to efficiently detect the cycle by moving the pointers at different speeds and checking for overlap.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/middle-of-the-linked-list/">Middle of the Linked List&lt;/a>: This problem involves finding the middle element of a linked list. The fast and slow pointers pattern can be used to efficiently find the middle element by moving the pointers at different speeds and stopping when the fast pointer reaches the end of the list.&lt;/li>
 &lt;li>Happy Number: This problem involves determining whether a number is a happy number. The fast and slow pointers pattern can be used to efficiently check for happiness by moving the pointers at different speeds and checking for a cycle.
 Reorder List: This problem involves reordering the elements of a linked list in a specific way. The fast and slow pointers pattern can be used to efficiently reorder the elements by moving the pointers at different speeds and rearranging the elements as necessary.&lt;/li>
 &lt;li>Palindrome Linked List: This problem involves checking whether a linked list is a palindrome. The fast and slow pointers pattern can be used to efficiently check for palindromicity by moving the pointers at different speeds and comparing the elements at each pointer.&lt;/li>
@@ -801,23 +764,7 @@ It&amp;rsquo;s an overview of the &lt;a href="https://designgurus.org/link/pvL2W
 &lt;/ul></description></item><item><title>How to love what you do?</title><link>https://saikatkumardey.com/posts/15/</link><pubDate>Sat, 02 Jul 2022 09:40:42 +0530</pubDate><guid>https://saikatkumardey.com/posts/15/</guid><description>&lt;p>Finding the work you love can often seem like a daunting task, but there&amp;rsquo;s no secret ingredient to it. Instead, the key is to simply start producing. Whether you&amp;rsquo;re a writer, an artist, a musician, or anything else, the most important thing is to just get started and begin creating.&lt;/p>
 &lt;p>At first, it&amp;rsquo;s okay to focus on quantity rather than quality. Don&amp;rsquo;t worry about making everything perfect from the beginning – just keep producing and putting yourself out there. As you continue to create, you will naturally start to get better at it. And as you improve, you will begin to find more and more enjoyment in the work itself.&lt;/p>
 &lt;p>It&amp;rsquo;s important to remember that finding the work you love isn&amp;rsquo;t something that happens overnight. It takes time and effort to develop your skills and find your passion. But by simply starting to produce and focusing on improving, you will gradually start to love the work you&amp;rsquo;re doing.&lt;/p>
-&lt;p>So don&amp;rsquo;t worry about trying to find that elusive secret ingredient – just start creating and let the love for your work develop naturally over time. Keep producing, keep improving, and eventually you will find the work that truly brings you joy and fulfillment.&lt;/p></description></item><item><title>Training Image Classification Models with scikeras</title><link>https://saikatkumardey.com/posts/scikeras/</link><pubDate>Sat, 25 Jun 2022 13:06:10 +0530</pubDate><guid>https://saikatkumardey.com/posts/scikeras/</guid><description>&lt;div class="toc">
-&lt;h3>Table of contents&lt;/h3>
-&lt;nav id="TableOfContents">
-&lt;ul>
-&lt;li>&lt;a href="#introduction-to-scikeras">Introduction to scikeras&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#download-dataset">Download dataset&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#import-necessary-libraries">Import necessary libraries&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#setup-constants">Setup Constants&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#loader-for-reading-data-in-batches">Loader for reading data in batches&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#define-your-tensorflow-model-architecture">Define your Tensorflow model architecture&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#define-scikeras-interface">Define scikeras interface&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#training-loop">Training loop&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#conclusion">Conclusion&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/nav>
-&lt;/div>
-&lt;h2 id="introduction-to-scikeras">Introduction to scikeras&lt;/h2>
+&lt;p>So don&amp;rsquo;t worry about trying to find that elusive secret ingredient – just start creating and let the love for your work develop naturally over time. Keep producing, keep improving, and eventually you will find the work that truly brings you joy and fulfillment.&lt;/p></description></item><item><title>Training Image Classification Models with scikeras</title><link>https://saikatkumardey.com/posts/scikeras/</link><pubDate>Sat, 25 Jun 2022 13:06:10 +0530</pubDate><guid>https://saikatkumardey.com/posts/scikeras/</guid><description>&lt;h2 id="introduction-to-scikeras">Introduction to scikeras&lt;/h2>
 &lt;p>Scikeras is a powerful tool that allows users to combine the capabilities of TensorFlow and scikit-learn in order to train image classification models. By using scikeras, users can take advantage of the strengths of both TensorFlow and scikit-learn, and benefit from the ease of use and flexibility of scikit-learn&amp;rsquo;s API.&lt;/p>
 &lt;p>In this blog post, we will demonstrate how to use scikeras to train a model using a large dataset of images stored on disk. We will show how to use TensorFlow&amp;rsquo;s &lt;code>ImageDataGenerator()&lt;/code> function to load images in batches and apply real-time augmentation, and how to use scikeras&amp;rsquo;s &lt;code>KerasClassifier()&lt;/code> to create a scikit-learn compatible interface for training the model. We will also demonstrate how to use &lt;code>partial_fit()&lt;/code> to train the model on smaller batches of data and retain the history of model weights and parameters.&lt;/p>
 &lt;h2 id="download-dataset">Download dataset&lt;/h2>
