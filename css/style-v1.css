@@ -30,18 +30,12 @@
 }
 
 
-html {
-    font-size: 1.5em;
-}
-
-/*19px*/
-
 body {
     background-color: #ffffff;
-    font-weight: 400;
+    font-weight: 100;
     line-height: 1.45;
     color: rgb(0, 0, 0);
-    text-align: left;
+    text-align: justify;
 }
 
 p {
@@ -87,7 +81,7 @@ small,
 /* Styles */
 
 body {
-    font-family: 'Source Sans Pro', 'sans-serif';
+    font-family: 'Helvetica', 'Source Sans Pro', 'sans-serif';
 }
 
 #content h1,
@@ -149,11 +143,11 @@ img {
     display: flex;
 }
 
-.essays li .meta {
+.essays li>.meta {
     margin-right: 10px;
     min-width: 50px;
     width: 10%;
-    font-size: 1.5em
+    font-size: 1em
 }
 
 .essays ul {
@@ -199,8 +193,8 @@ p>code {
 }
 
 .meta {
-    font-size: small;
-    color: #9eadbd;
+    font-size: 2px;
+    color: slategray;
 }
 
 /* social-media buttons */
@@ -393,14 +387,31 @@ p>code {
 
 .social-icons {
     color: #000000;
-    padding: 12px 0;
+    padding: 1em 0;
 }
 
 .social-icons a:not(:last-of-type) {
-    margin-inline-end: 12px;
+    margin-inline-end: 1em;
 }
 
 .social-icons a svg {
-    height: 26px;
-    width: 26px;
+    height: 1em;
+    width: 1em;
+}
+
+#TableOfContents>ul {
+    display: contents;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+td {
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
+    padding: 0.5rem;
 }
