@@ -52,9 +52,9 @@
 &lt;p>In this post, we have covered the steps for setting up a personal blog using Hugo, GitHub Pages, and Cloudflare. You now have a fast and secure blog that you can customize to your heart&amp;rsquo;s content.&lt;/p>
 &lt;p>Some possible next steps for customizing your Hugo blog include:&lt;/p>
 &lt;ul>
-&lt;li>Choosing a theme from the &lt;a href="https://themes.gohugo.io/">Hugo themes&lt;/a> library to give your site a unique look and feel.&lt;/li>
-&lt;li>Adding additional functionality to your site using Hugo&amp;rsquo;s &lt;a href="https://gohugo.io/getting-started/extended/">extended version&lt;/a> and &lt;a href="https://gohugo.io/content-management/shortcodes/">shortcodes&lt;/a>.&lt;/li>
-&lt;li>Integrating your blog with social media and other online platforms using the &lt;a href="https://gohugo.io/hugo-pipes/">Hugo Pipes&lt;/a> feature.&lt;/li>
+&lt;li>Choose a theme from the &lt;a href="https://themes.gohugo.io/">Hugo themes&lt;/a> library to give your site a unique look and feel.&lt;/li>
+&lt;li>Add functionality to your site using Hugo&amp;rsquo;s &lt;a href="https://gohugo.io/content-management/shortcodes/">shortcodes&lt;/a>.&lt;/li>
+&lt;li>Integrate your blog with social media and other online platforms using the &lt;a href="https://gohugo.io/hugo-pipes/">Hugo Pipes&lt;/a> feature.&lt;/li>
 &lt;/ul>
 &lt;p>With these tools and resources, you can take your Hugo blog to the next level and create a truly unique and engaging online presence.&lt;/p>
 &lt;h2 id="conclusion">Conclusion&lt;/h2>
