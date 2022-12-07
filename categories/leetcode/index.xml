@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>leetcode on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/leetcode/</link><description>leetcode</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 01 Dec 2022 10:25:29 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/leetcode/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode Patterns</title><link>https://saikatkumardey.com/posts/leetcode-patterns/</link><pubDate>Thu, 01 Dec 2022 10:25:29 +0530</pubDate><guid>https://saikatkumardey.com/posts/leetcode-patterns/</guid><description>&lt;h2 id="1-sliding-window">1. Sliding Window&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>leetcode on Saikat Kumar Dey</title><link>https://saikatkumardey.com/categories/leetcode/</link><description>leetcode</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 01 Dec 2022 10:25:29 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/categories/leetcode/index.xml" rel="self" type="application/rss+xml"/><item><title>Mastering Common Patterns to Solve Leetcode Problems</title><link>https://saikatkumardey.com/posts/leetcode-patterns/</link><pubDate>Thu, 01 Dec 2022 10:25:29 +0530</pubDate><guid>https://saikatkumardey.com/posts/leetcode-patterns/</guid><description>&lt;p>In this post, I will introduce you to 14 important patterns that can help you solve most of the problems on Leetcode. I will provide a template for each pattern to help you quickly apply it to a problem, as well as a list of important problems to practice with. By the end of this post, you will have a powerful set of tools to enhance your problem-solving skills on Leetcode and beyond. Let&amp;rsquo;s get started!&lt;/p>
+&lt;h2 id="1-sliding-window">1. Sliding Window&lt;/h2>
 &lt;p>The sliding window pattern is a common technique used to solve problems involving arrays or strings. It involves using a fixed-size &amp;ldquo;window&amp;rdquo; that slides through the array or string, and performs some operation on each sub-array or sub-string that it covers. This allows you to perform the operation on each possible sub-array or sub-string without having to create a new array or string for each one.&lt;/p>
 &lt;p>Here is a simple template in Python that you can use to solve any problem that uses the sliding window pattern:&lt;/p>
 &lt;p>&lt;strong>Template&lt;/strong>&lt;/p>
@@ -85,15 +86,15 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#177500"># return the final result&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a90d91">return&lt;/span> &lt;span style="color:#000">result&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to define the update_result() function, which should take in the current values of the slow and fast pointers, and the current result, and return an updated result. The exact details of what this function does will depend on the specific problem you&amp;rsquo;re trying to solve.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to define the update_result() function, which should take in the current values of the slow and fast pointers, and the current result, and return an updated result.&lt;/p>
 &lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the fast and slow pointers pattern:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://leetcode.com/problems/linked-list-cycle/">Linked List Cycle&lt;/a>: This problem involves detecting whether a linked list contains a cycle. The fast and slow pointers pattern can be used to efficiently detect the cycle by moving the pointers at different speeds and checking for overlap.&lt;/li>
 &lt;li>&lt;a href="https://leetcode.com/problems/middle-of-the-linked-list/">Middle of the Linked List&lt;/a>: This problem involves finding the middle element of a linked list. The fast and slow pointers pattern can be used to efficiently find the middle element by moving the pointers at different speeds and stopping when the fast pointer reaches the end of the list.&lt;/li>
-&lt;li>Happy Number: This problem involves determining whether a number is a happy number. The fast and slow pointers pattern can be used to efficiently check for happiness by moving the pointers at different speeds and checking for a cycle.
+&lt;li>&lt;a href="https://leetcode.com/problems/happy-number/">Happy Number&lt;/a>: This problem involves determining whether a number is a happy number. The fast and slow pointers pattern can be used to efficiently check for happiness by moving the pointers at different speeds and checking for a cycle.
 Reorder List: This problem involves reordering the elements of a linked list in a specific way. The fast and slow pointers pattern can be used to efficiently reorder the elements by moving the pointers at different speeds and rearranging the elements as necessary.&lt;/li>
-&lt;li>Palindrome Linked List: This problem involves checking whether a linked list is a palindrome. The fast and slow pointers pattern can be used to efficiently check for palindromicity by moving the pointers at different speeds and comparing the elements at each pointer.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/palindrome-linked-list/">Palindrome Linked List&lt;/a>: This problem involves checking whether a linked list is a palindrome. The fast and slow pointers pattern can be used to efficiently check for palindromicity by moving the pointers at different speeds and comparing the elements at each pointer.&lt;/li>
 &lt;/ul>
 &lt;h2 id="4-merge-intervals">4. Merge Intervals&lt;/h2>
 &lt;p>The merge intervals pattern is a common technique used to solve problems involving sets of intervals. It involves sorting the intervals by their start time, and then merging any intervals that overlap. This allows you to take a set of potentially overlapping intervals and convert it into a set of non-overlapping intervals.&lt;/p>
@@ -121,15 +122,15 @@ Reorder List: This problem involves reordering the elements of a linked list in 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#177500"># return the final result&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a90d91">return&lt;/span> &lt;span style="color:#000">result&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to provide a list of intervals (in the form of tuples of start and end times), and the template will return a list of non-overlapping intervals. The exact details of how the intervals are represented will depend on the specific problem you&amp;rsquo;re trying to solve.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to provide a list of intervals (in the form of tuples of start and end times), and the template will return a list of non-overlapping intervals.&lt;/p>
 &lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the merge intervals pattern:&lt;/p>
+&lt;p>-&lt;a href="https://leetcode.com/problems/merge-intervals">Merge Intervals&lt;/a>: This problem involves merging a list of intervals that may overlap.&lt;/p>
 &lt;ul>
-&lt;li>Merge Intervals: This problem involves merging a list of intervals that may overlap. The merge intervals pattern can be used to efficiently combine the overlapping intervals into a single interval.&lt;/li>
-&lt;li>Insert Interval: This problem involves inserting a new interval into a list of intervals that may overlap. The merge intervals pattern can be used to efficiently combine the overlapping intervals and insert the new interval into the resulting list.&lt;/li>
-&lt;li>Meeting Rooms: This problem involves checking whether it is possible to attend all of the meetings in a list of intervals. The merge intervals pattern can be used to efficiently combine the overlapping intervals and check whether any conflicts exist.&lt;/li>
-&lt;li>Meeting Rooms II: This problem involves finding the minimum number of rooms needed to hold all of the meetings in a list of intervals. The merge intervals pattern can be used to efficiently combine the overlapping intervals and calculate the minimum number of rooms required.&lt;/li>
-&lt;li>Minimum Number of Arrows to Burst Balloons: This problem involves finding the minimum number of arrows needed to burst a given set of balloons. The merge intervals pattern can be used to efficiently combine the overlapping intervals representing the balloons and calculate the minimum number of arrows required&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/insert-interval">Insert Interval&lt;/a>: This problem involves inserting a new interval into a list of intervals that may overlap.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/meeting-rooms">Meeting Rooms&lt;/a>: This problem involves checking whether it is possible to attend all of the meetings in a list of intervals.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/meeting-rooms-ii">Meeting Rooms II&lt;/a>: This problem involves finding the minimum number of rooms needed to hold all of the meetings in a list of intervals.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons">Minimum Number of Arrows to Burst Balloons&lt;/a>: This problem involves finding the minimum number of arrows needed to burst a given set of balloons.&lt;/li>
 &lt;/ul>
 &lt;h2 id="5-cyclic-sort">5. Cyclic sort&lt;/h2>
 &lt;p>Cyclic sort is a technique used to sort a list of numbers that are in a certain range, but not necessarily in the correct order. It involves looping through the list and &amp;ldquo;cycling&amp;rdquo; the numbers into the correct positions. For example, if the list is [3, 1, 5, 4, 2] and the range is 1 to 5, the first step would be to put the 1 in its correct position at index 0, the second step would be to put the 2 in its correct position at index 1, and so on.&lt;/p>
@@ -154,15 +155,14 @@ Reorder List: This problem involves reordering the elements of a linked list in 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#177500"># return the sorted array&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a90d91">return&lt;/span> &lt;span style="color:#000">arr&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to provide a list of numbers that are in a certain range, and the template will return the sorted list. The exact details of how the list is represented and the range of numbers will depend on the specific problem you&amp;rsquo;re trying to solve.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to provide a list of numbers that are in a certain range, and the template will return the sorted list.&lt;/p>
 &lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the cyclic sort pattern:&lt;/p>
 &lt;ul>
-&lt;li>Find the Duplicate Number: This problem involves finding the duplicate element in an array of numbers that are in the range 1 to n.&lt;/li>
-&lt;li>Find the Missing Number: This problem involves finding the missing element in an array of numbers that are in the range 1 to n.&lt;/li>
-&lt;li>Find the Smallest Missing Positive Number: This problem involves finding the smallest missing positive number in an array of numbers.&lt;/li>
-&lt;li>Find All Duplicates in an Array: This problem involves finding all of the duplicate elements in an array of numbers.&lt;/li>
-&lt;li>Find the Rank of a Number: This problem involves finding the rank of a given number in an array of numbers that are in a cyclic order.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/find-the-duplicate-number">Find the Duplicate Number&lt;/a>: This problem involves finding the duplicate element in an array of numbers that are in the range 1 to n.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/find-the-missing-number">Find the Missing Number&lt;/a>: This problem involves finding the missing element in an array of numbers that are in the range 1 to n.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/first-missing-positive/">First Missing Positive&lt;/a>: This problem involves finding the smallest missing positive number in an array of numbers.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/find-all-duplicates-in-an-array">Find All Duplicates in an Array&lt;/a>: This problem involves finding all of the duplicate elements in an array of numbers.&lt;/li>
 &lt;/ul>
 &lt;h2 id="6-in-place-reversal-of-linked-list">6. In-place reversal of linked-list&lt;/h2>
 &lt;p>&amp;ldquo;In-place reversal of a linked list&amp;rdquo; refers to a technique for reversing the order of the nodes in a linked list without using any additional data structures. This is done by changing the links between the nodes in the linked list so that the nodes are connected in the opposite order.&lt;/p>
@@ -186,15 +186,15 @@ Reorder List: This problem involves reordering the elements of a linked list in 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#177500"># set the head of the linked list to the new start node&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">linked_list&lt;/span>&lt;span style="color:#000">.&lt;/span>&lt;span style="color:#000">head&lt;/span> &lt;span style="color:#000">=&lt;/span> &lt;span style="color:#000">prev_node&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to provide a linked list object and the template will reverse the order of the nodes in the linked list. The exact details of how the linked list is represented will depend on the specific problem you&amp;rsquo;re trying to solve.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to provide a linked list object and the template will reverse the order of the nodes in the linked list.&lt;/p>
 &lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the in-place reversal of linked list pattern:&lt;/p>
 &lt;ul>
-&lt;li>Reverse Linked List: This problem involves reversing the order of elements in a linked list.&lt;/li>
-&lt;li>Reverse Linked List II: This problem involves reversing a portion of a linked list.&lt;/li>
-&lt;li>Palindrome Linked List: This problem involves checking whether a linked list is a palindrome.&lt;/li>
-&lt;li>Reorder List: This problem involves reordering the elements of a linked list in a specific way.&lt;/li>
-&lt;li>Swap Nodes in Pairs: This problem involves swapping the nodes in a linked list in pairs.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/reverse-linked-list">Reverse Linked List&lt;/a>: This problem involves reversing the order of elements in a linked list.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/reverse-linked-list-ii">Reverse Linked List II&lt;/a>: This problem involves reversing a portion of a linked list.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/palindrome-linked-list">Palindrome Linked List&lt;/a>: This problem involves checking whether a linked list is a palindrome.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/reorder-list">Reorder List&lt;/a>: This problem involves reordering the elements of a linked list in a specific way.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/swap-nodes-in-pairs">Swap Nodes in Pairs&lt;/a>: This problem involves swapping the nodes in a linked list in pairs.&lt;/li>
 &lt;/ul>
 &lt;h2 id="7-tree-bfs">7. Tree BFS&lt;/h2>
 &lt;p>The tree BFS (Breadth-First Search) pattern is a technique used to traverse the nodes of a tree in a level-by-level order. In the case of a binary tree (i.e., a tree in which each node has at most two children), the tree BFS algorithm can be implemented as follows:&lt;/p>
@@ -221,15 +221,15 @@ Reorder List: This problem involves reordering the elements of a linked list in 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#177500"># return the final result&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a90d91">return&lt;/span> &lt;span style="color:#000">result&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to provide the root node of the binary tree and define the update_result() function, which should take in the current node and the current result, and return an updated result. The exact details of what this function does will depend on the specific problem you&amp;rsquo;re trying to solve.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to provide the root node of the binary tree and define the update_result() function, which should take in the current node and the current result, and return an updated result.&lt;/p>
 &lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the tree BFS pattern:&lt;/p>
 &lt;ul>
-&lt;li>Binary Tree Level Order Traversal: This problem involves performing a level-order traversal of a binary tree.&lt;/li>
-&lt;li>Minimum Depth of Binary Tree: This problem involves finding the minimum depth of a binary tree.&lt;/li>
-&lt;li>Symmetric Tree: This problem involves checking whether a binary tree is symmetric.&lt;/li>
-&lt;li>Binary Tree Zigzag Level Order Traversal: This problem involves performing a zigzag-level-order traversal of a binary tree.&lt;/li>
-&lt;li>Serialize and Deserialize Binary Tree: This problem involves serializing and deserializing a binary tree.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/binary-tree-level-order-traversal">Binary Tree Level Order Traversal&lt;/a>: This problem involves performing a level-order traversal of a binary tree.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/minimum-depth-of-binary-tree">Minimum Depth of Binary Tree&lt;/a>: This problem involves finding the minimum depth of a binary tree.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/symmetric-tree">Symmetric Tree&lt;/a>: This problem involves checking whether a binary tree is symmetric.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal">Binary Tree Zigzag Level Order Traversal&lt;/a>: This problem involves performing a zigzag-level-order traversal of a binary tree.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree">Serialize and Deserialize Binary Tree&lt;/a>: This problem involves serializing and deserializing a binary tree.&lt;/li>
 &lt;/ul>
 &lt;h2 id="8-tree-dfs">8. Tree DFS&lt;/h2>
 &lt;p>The tree DFS (Depth-First Search) pattern is a technique used to traverse the nodes of a tree in a depth-first manner. In the case of a binary tree (i.e., a tree in which each node has at most two children), the tree DFS algorithm can be implemented as follows:&lt;/p>
@@ -252,15 +252,13 @@ Reorder List: This problem involves reordering the elements of a linked list in 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">traverse&lt;/span>(&lt;span style="color:#000">node&lt;/span>&lt;span style="color:#000">.&lt;/span>&lt;span style="color:#000">left&lt;/span>, &lt;span style="color:#000">result&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a90d91">if&lt;/span> &lt;span style="color:#000">node&lt;/span>&lt;span style="color:#000">.&lt;/span>&lt;span style="color:#000">right&lt;/span> &lt;span style="color:#000">is&lt;/span> &lt;span style="color:#000">not&lt;/span> &lt;span style="color:#a90d91">None&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">traverse&lt;/span>(&lt;span style="color:#000">node&lt;/span>&lt;span style="color:#000">.&lt;/span>&lt;span style="color:#000">right&lt;/span>, &lt;span style="color:#000">result&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to provide the root node of the binary tree and define the update_result() function, which should take in the current node and the current result, and return an updated result. The exact details of what this function does will depend on the specific problem you&amp;rsquo;re trying to solve.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to provide the root node of the binary tree and define the update_result() function, which should take in the current node and the current result, and return an updated result.&lt;/p>
 &lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the tree DFS pattern:&lt;/p>
 &lt;ul>
-&lt;li>Binary Tree Preorder Traversal: This problem involves performing a preorder traversal of a binary tree.&lt;/li>
-&lt;li>Binary Tree Inorder Traversal: This problem involves performing an inorder traversal of a binary tree.&lt;/li>
-&lt;li>Binary Tree Postorder Traversal: This problem involves performing a postorder traversal of a binary tree.&lt;/li>
-&lt;li>Validate Binary Search Tree: This problem involves checking whether a binary tree is a valid binary search tree.&lt;/li>
-&lt;li>Maximum Depth of Binary Tree: This problem involves finding the maximum depth of a binary tree.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/binary-tree-preorder-traversal">Binary Tree Preorder Traversal&lt;/a>: This problem involves performing a preorder traversal of a binary tree.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/validate-binary-search-tree">Validate Binary Search Tree&lt;/a>: This problem involves checking whether a binary tree is a valid binary search tree.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/maximum-depth-of-binary-tree">Maximum Depth of Binary Tree&lt;/a>: This problem involves finding the maximum depth of a binary tree.&lt;/li>
 &lt;/ul>
 &lt;h2 id="9-two-heaps">9. Two heaps&lt;/h2>
 &lt;p>The &amp;ldquo;two heaps&amp;rdquo; pattern is a common technique used to solve problems involving sets of numbers. It involves using two heaps (i.e., data structures that provide efficient ways to insert and remove items, and to find the minimum or maximum item) to store the numbers in the set. This allows you to efficiently maintain certain properties of the numbers in the set, and to quickly perform operations on the numbers when needed.&lt;/p>
@@ -292,7 +290,7 @@ Reorder List: This problem involves reordering the elements of a linked list in 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#177500"># return the final result&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a90d91">return&lt;/span> &lt;span style="color:#000">result&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to provide a list of numbers and define the condition1, condition2, condition3, and update_variables() functions. These functions should determine which heap to insert the current number into, whether the heaps need to be balanced, and how to update any other variables you need. The exact details of what these functions do will depend on the specific problem you&amp;rsquo;re trying to solve.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this template, you just need to provide a list of numbers and define the condition1, condition2, condition3, and update_variables() functions. These functions should determine which heap to insert the current number into, whether the heaps need to be balanced, and how to update any other variables you need.&lt;/p>
 &lt;p>For example, if you want to use the two heaps pattern to find the median of a set of numbers, you could define the following functions:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#177500"># insert the number into the smaller_half heap if it is smaller than the current median,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#177500"># or into the larger_half heap if it is larger or equal to the current median&lt;/span>
@@ -318,11 +316,11 @@ Reorder List: This problem involves reordering the elements of a linked list in 
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the two heaps pattern:&lt;/p>
 &lt;ul>
-&lt;li>Kth Largest Element in an Array: This problem involves finding the kth largest element in an array.&lt;/li>
-&lt;li>Median of Two Sorted Arrays: This problem involves finding the median of two sorted arrays.&lt;/li>
-&lt;li>Sliding Window Median: This problem involves finding the median of the elements in a sliding window of an array.&lt;/li>
-&lt;li>Top K Frequent Elements: This problem involves finding the k most frequent elements in an array.&lt;/li>
-&lt;li>Kth Smallest Element in a Sorted Matrix: This problem involves finding the kth smallest element in a sorted matrix.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/kth-largest-element-in-an-array">Kth Largest Element in an Array&lt;/a>: This problem involves finding the kth largest element in an array.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/median-of-two-sorted-arrays">Median of Two Sorted Arrays&lt;/a>: This problem involves finding the median of two sorted arrays.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/sliding-window-median">Sliding Window Median&lt;/a>: This problem involves finding the median of the elements in a sliding window of an array.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/top-k-frequent-elements">Top K Frequent Elements&lt;/a>: This problem involves finding the k most frequent elements in an array.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix">Kth Smallest Element in a Sorted Matrix&lt;/a>: This problem involves finding the kth smallest element in a sorted matrix.&lt;/li>
 &lt;/ul>
 &lt;h2 id="10-subsets">10. Subsets&lt;/h2>
 &lt;p>The &amp;ldquo;subsets&amp;rdquo; pattern is a common technique used to solve problems involving sets of numbers. It involves generating all possible subsets of the set and then performing some operation on each subset to find the desired result. This allows you to consider all possible combinations of numbers in the set and to efficiently compute the result for each combination.&lt;/p>
@@ -358,11 +356,11 @@ Reorder List: This problem involves reordering the elements of a linked list in 
 &lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the subsets pattern:&lt;/p>
 &lt;ul>
-&lt;li>Subsets: This problem involves generating all of the subsets of a given set of elements.&lt;/li>
-&lt;li>Subsets II: This problem involves generating all of the subsets of a given set of elements, allowing for duplicates.&lt;/li>
-&lt;li>Permutations: This problem involves generating all of the permutations of a given set of elements.&lt;/li>
-&lt;li>Permutations II: This problem involves generating all of the permutations of a given set of elements, allowing for duplicates.&lt;/li>
-&lt;li>Combination Sum: This problem involves finding all of the combinations of a given set of elements that add up to a specific target sum.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/subsets">Subsets&lt;/a>: This problem involves generating all of the subsets of a given set of elements.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/subsets-ii">Subsets II&lt;/a>: This problem involves generating all of the subsets of a given set of elements, allowing for duplicates.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/permutations">Permutations&lt;/a>: This problem involves generating all of the permutations of a given set of elements.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/permutations-ii">Permutations II&lt;/a>: This problem involves generating all of the permutations of a given set of elements, allowing for duplicates.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/combination-sum">Combination Sum&lt;/a>: This problem involves finding all of the combinations of a given set of elements that add up to a specific target sum.&lt;/li>
 &lt;/ul>
 &lt;h2 id="11-modified-binary-search">11. Modified Binary Search&lt;/h2>
 &lt;p>The &amp;ldquo;modified binary search&amp;rdquo; pattern is a common technique used to solve problems involving a sorted array of numbers. It is similar to regular binary search, but it allows you to modify the condition used to determine whether to search the left or right half of the array. This can be useful if the problem you&amp;rsquo;re trying to solve involves finding the position of an element in the array that satisfies a certain condition, or if the array has duplicate elements and you need to find the first or last occurrence of a given element.&lt;/p>
@@ -391,11 +389,11 @@ Reorder List: This problem involves reordering the elements of a linked list in 
 &lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the modified binary search pattern:&lt;/p>
 &lt;ul>
-&lt;li>Search in Rotated Sorted Array: This problem involves searching for an element in a rotated sorted array.&lt;/li>
-&lt;li>Find Minimum in Rotated Sorted Array: This problem involves finding the minimum element in a rotated sorted array.&lt;/li>
-&lt;li>Search in Rotated Sorted Array II: This problem involves searching for an element in a rotated sorted array that may contain duplicates.&lt;/li>
-&lt;li>Find Peak Element: This problem involves finding a peak element in an array.&lt;/li>
-&lt;li>Find K Closest Elements: This problem involves finding the k closest elements to a given target in an array.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/search-in-rotated-sorted-array">Search in Rotated Sorted Array&lt;/a>: This problem involves searching for an element in a rotated sorted array.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array">Find Minimum in Rotated Sorted Array&lt;/a>: This problem involves finding the minimum element in a rotated sorted array.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/search-in-rotated-sorted-array-ii">Search in Rotated Sorted Array II&lt;/a>: This problem involves searching for an element in a rotated sorted array that may contain duplicates.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/find-peak-element">Find Peak Element&lt;/a>: This problem involves finding a peak element in an array.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/find-k-closest-elements">Find K Closest Elements&lt;/a>: This problem involves finding the k closest elements to a given target in an array.&lt;/li>
 &lt;/ul>
 &lt;h2 id="12-top-k-elements">12. Top K elements&lt;/h2>
 &lt;p>The &amp;ldquo;top k elements&amp;rdquo; pattern is a common technique used to solve problems involving a large set of numbers. It involves finding the largest or smallest k elements in the set and then performing some operation on those elements to find the desired result. This allows you to efficiently select the most important elements from the set and to compute the result using only those elements.&lt;/p>
@@ -421,11 +419,11 @@ Reorder List: This problem involves reordering the elements of a linked list in 
 &lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the top k elements pattern:&lt;/p>
 &lt;ul>
-&lt;li>Kth Largest Element in an Array: This problem involves finding the kth largest element in an array.&lt;/li>
-&lt;li>Top K Frequent Elements: This problem involves finding the k most frequent elements in an array.&lt;/li>
-&lt;li>Kth Smallest Element in a Sorted Matrix: This problem involves finding the kth smallest element in a sorted matrix.&lt;/li>
-&lt;li>Sort Colors: This problem involves sorting an array of colors (represented as numbers) in place.&lt;/li>
-&lt;li>Minimum Cost to Hire K Workers: This problem involves finding the minimum cost to hire k workers, given their wage and productivity.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/kth-largest-element-in-an-array">Kth Largest Element in an Array&lt;/a>: This problem involves finding the kth largest element in an array.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/top-k-frequent-elements">Top K Frequent Elements&lt;/a>: This problem involves finding the k most frequent elements in an array.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix">Kth Smallest Element in a Sorted Matrix&lt;/a>: This problem involves finding the kth smallest element in a sorted matrix.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/sort-colors">Sort Colors&lt;/a>: This problem involves sorting an array of colors (represented as numbers) in place.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/minimum-cost-to-hire-k-workers">Minimum Cost to Hire K Workers&lt;/a>: This problem involves finding the minimum cost to hire k workers, given their wage and productivity.&lt;/li>
 &lt;/ul>
 &lt;h2 id="13-k-way-merge-using-heap">13. K-way Merge (using heap)&lt;/h2>
 &lt;p>The k-way merge pattern using a heap is a common technique used to merge k sorted arrays into a single sorted array. It involves using a heap data structure to efficiently select the smallest element from the k arrays and to add it to the result. This allows you to efficiently combine the k arrays into a single sorted array and to perform further operations on that array.&lt;/p>
@@ -454,11 +452,10 @@ Reorder List: This problem involves reordering the elements of a linked list in 
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the k-way merge (using heap) pattern:&lt;/p>
 &lt;ul>
-&lt;li>Merge k Sorted Lists: This problem involves merging k sorted linked lists into a single sorted linked list.&lt;/li>
-&lt;li>Merge Intervals: This problem involves merging a list of intervals that may overlap.&lt;/li>
-&lt;li>The Skyline Problem: This problem involves finding the skyline of a set of buildings.&lt;/li>
-&lt;li>Minimum Cost to Connect Sticks: This problem involves connecting a set of sticks with minimum total cost.&lt;/li>
-&lt;li>Maximum Number of Events That Can Be Attended: This problem involves finding the maximum number of events that a person can attend, given a list of events with start and end times.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/merge-k-sorted-lists">Merge k Sorted Lists&lt;/a>: This problem involves merging k sorted linked lists into a single sorted linked list.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/the-skyline-problem">The Skyline Problem&lt;/a>: This problem involves finding the skyline of a set of buildings.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/minimum-cost-to-connect-sticks">Minimum Cost to Connect Sticks&lt;/a>: This problem involves connecting a set of sticks with minimum total cost.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended">Maximum Number of Events That Can Be Attended&lt;/a>: This problem involves finding the maximum number of events that a person can attend, given a list of events with start and end times.&lt;/li>
 &lt;/ul>
 &lt;h2 id="14-topological-sort">14. Topological Sort&lt;/h2>
 &lt;p>Topological sort is an algorithm that is used to arrange the vertices of a directed acyclic graph (DAG) in a linear order such that, for every directed edge uv from vertex u to vertex v, u comes before v in the ordering. This is useful for problems where a certain set of dependencies must be satisfied, such as scheduling tasks or determining the order in which to assemble a product.&lt;/p>
@@ -515,11 +512,11 @@ Reorder List: This problem involves reordering the elements of a linked list in 
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Practise&lt;/strong>&lt;/p>
 &lt;p>Here are some important problems on leetcode that can be solved using the topological sort pattern:&lt;/p>
 &lt;ul>
-&lt;li>Course Schedule: This problem involves checking whether a given set of courses can be completed, given the dependencies between the courses.&lt;/li>
-&lt;li>Course Schedule II: This problem involves finding the order in which the courses should be taken in order to complete them all.&lt;/li>
-&lt;li>Alien Dictionary: This problem involves reconstructing the order of the letters in an alien language, given a list of words.&lt;/li>
-&lt;li>Sequence Reconstruction: This problem involves checking whether a given sequence can be reconstructed from a given set of subsequences.&lt;/li>
-&lt;li>Minimum Height Trees: This problem involves finding the root(s) of a tree with minimum height.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/course-schedule">Course Schedule&lt;/a>: This problem involves checking whether a given set of courses can be completed, given the dependencies between the courses.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/course-schedule-ii">Course Schedule II&lt;/a>: This problem involves finding the order in which the courses should be taken in order to complete them all.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/alien-dictionary">Alien Dictionary&lt;/a>: This problem involves reconstructing the order of the letters in an alien language, given a list of words.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/sequence-reconstruction">Sequence Reconstruction&lt;/a>: This problem involves checking whether a given sequence can be reconstructed from a given set of subsequences.&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/minimum-height-trees">Minimum Height Trees&lt;/a>: This problem involves finding the root(s) of a tree with minimum height.&lt;/li>
 &lt;/ul>
 &lt;h1 id="references">References&lt;/h1>
 &lt;ul>
