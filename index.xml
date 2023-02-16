@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 02 Dec 2022 11:15:58 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Side-Projects</title><link>https://saikatkumardey.com/projects/</link><pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/projects/</guid><description>&lt;h2 id="quizgenai">QuizgenAI&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 02 Dec 2022 11:15:58 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Side-Projects</title><link>https://saikatkumardey.com/projects/</link><pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/projects/</guid><description>&lt;h2 id="promptquesthttpspromptqueststreamlitapp">&lt;a href="https://promptquest.streamlit.app/">PromptQuest&lt;/a>&lt;/h2>
+&lt;p>Explore a world of midjourney prompts.&lt;/p>
+&lt;h2 id="aidochttpsgithubcomsaikatkumardeyaidoc">&lt;a href="https://github.com/saikatkumardey/aidoc">aidoc&lt;/a>&lt;/h2>
+&lt;p>&lt;code>aidoc&lt;/code> is a command line interface (CLI) tool that uses AI to automatically generate documentation for your code.&lt;/p>
+&lt;p align="center">
+&lt;img width="600" src="https://github.com/saikatkumardey/aidoc/blob/main/demo/demo.svg">
+&lt;/p>
+&lt;h2 id="quizgenai">QuizgenAI&lt;/h2>
 &lt;p>Generate quiz (question &amp;amp; answers) from text automatically.&lt;/p>
 &lt;p>Demo:&lt;/p>
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/CR0tPmZPHQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
