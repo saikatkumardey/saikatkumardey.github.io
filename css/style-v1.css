@@ -128,12 +128,12 @@ footer {
 
 a {
     text-decoration: none;
-    color: rgba(220, 20, 60, 0.761);
+    color: rgb(255, 0, 0);
 }
 
 a:hover {
-    background: crimson;
-    color: white;
+    background: white;
+    color: black;
 }
 
 img {
