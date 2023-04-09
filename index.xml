@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 02 Dec 2022 11:15:58 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Side-Projects</title><link>https://saikatkumardey.com/projects/</link><pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/projects/</guid><description>&lt;h2 id="conversohttpsconversome">&lt;a href="https://converso.me/">Converso&lt;/a>&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Saikat Kumar Dey</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 02 Dec 2022 11:15:58 +0530</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Side-Projects</title><link>https://saikatkumardey.com/projects/</link><pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/projects/</guid><description>&lt;h2 id="bots">Bots&lt;/h2>
+&lt;p>Here are a list of fun bots that I have built on &lt;a href="poe.com">Poe&lt;/a>. I will keep on adding more bots to this list.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://poe.com/GitaBot">GitaBot&lt;/a> - Get solutions from Gita to your problems&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://poe.com/TheMichaelScott">TheMichaelScott&lt;/a> - Talk to Michael Scott from The Office&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://poe.com/ELI5Bot">ELI5Bot&lt;/a> - Let AI explain a topic as if you were 5 years old&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://poe.com/TwentyQuestions">TwentyQuestions&lt;/a> - Play 20 questions with AI&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="conversohttpsconversome">&lt;a href="https://converso.me/">Converso&lt;/a>&lt;/h2>
 &lt;p>Converso is a chatbot that matches your mood. Chat with Converso on Telegram and choose from 10 different personalities.&lt;/p>
 &lt;h2 id="promptquesthttpspromptqueststreamlitapp">&lt;a href="https://promptquest.streamlit.app/">PromptQuest&lt;/a>&lt;/h2>
 &lt;p>Explore a world of midjourney prompts.&lt;/p>
