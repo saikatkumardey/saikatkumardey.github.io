@@ -1,0 +1,173 @@
+<!doctype html><html dir=ltr lang=en data-theme class="html theme--light"><head><title>Building Pandas Dataframes From Ndarrays |
+Saikat Kumar Dey</title><meta charset=utf-8><meta name=generator content="Hugo 0.111.3"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name=author content="Saikat Kumar Dey"><meta name=description content="Machine Learning Engineer"><link rel=stylesheet href=/scss/main.min.1147aa5bacb4bce677a0e264073829caedb82fd18ea07a5f1d80521f539d1c45.css integrity="sha256-EUeqW6y0vOZ3oOJkBzgpyu24L9GOoHpfHYBSH1OdHEU=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/fontawesome/css/solid.min.55d8333481b07a08e07cf6f37319753a2b47e99f4c395394c5747b48b495aa9b.css integrity="sha256-VdgzNIGwegjgfPbzcxl1OitH6Z9MOVOUxXR7SLSVqps=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/fontawesome/css/regular.min.a7448d02590b43449364b6b5922ed9af5410abb4de4238412a830316dedb850b.css integrity="sha256-p0SNAlkLQ0STZLa1ki7Zr1QQq7TeQjhBKoMDFt7bhQs=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/fontawesome/css/brands.min.9ed75a5d670c953fe4df935937674b4646f92674367e9e66eb995bb04e821647.css integrity="sha256-ntdaXWcMlT/k35NZN2dLRkb5JnQ2fp5m65lbsE6CFkc=" crossorigin=anonymous type=text/css><link rel="shortcut icon" href=/favicons/favicon.ico type=image/x-icon><link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png><link rel=canonical href=https://saikatkumardey.com/post/building-pandas-dataframes-from-ndarrays/><script type=text/javascript src=/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js integrity="sha256-+RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc=" crossorigin=anonymous></script><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://saikatkumardey.com/images/site-feature-image.png"><meta name=twitter:title content="Building Pandas Dataframes From Ndarrays"><meta name=twitter:description content="How to convert multi-dimensional numpy arrays to pandas dataframe?"><meta property="og:title" content="Building Pandas Dataframes From Ndarrays"><meta property="og:description" content="How to convert multi-dimensional numpy arrays to pandas dataframe?"><meta property="og:type" content="article"><meta property="og:url" content="https://saikatkumardey.com/post/building-pandas-dataframes-from-ndarrays/"><meta property="og:image" content="https://saikatkumardey.com/images/site-feature-image.png"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-09-28T10:06:23+05:30"><meta property="article:modified_time" content="2021-09-28T10:06:23+05:30"><meta property="og:site_name" content="Saikat Kumar Dey"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","articleSection":"post","name":"Building Pandas Dataframes From Ndarrays","headline":"Building Pandas Dataframes From Ndarrays","alternativeHeadline":"","description":"
+      
+        How to convert multi-dimensional numpy arrays to pandas dataframe?
+
+
+      
+
+
+    ","inLanguage":"en","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/saikatkumardey.com\/post\/building-pandas-dataframes-from-ndarrays\/"},"author":{"@type":"Person","name":"Saikat Kumar Dey"},"creator":{"@type":"Person","name":"Saikat Kumar Dey"},"accountablePerson":{"@type":"Person","name":"Saikat Kumar Dey"},"copyrightHolder":{"@type":"Person","name":"Saikat Kumar Dey"},"copyrightYear":"2021","dateCreated":"2021-09-28T10:06:23.00Z","datePublished":"2021-09-28T10:06:23.00Z","dateModified":"2021-09-28T10:06:23.00Z","publisher":{"@type":"Organization","name":"Saikat Kumar Dey","url":"https://saikatkumardey.com","logo":{"@type":"ImageObject","url":"https:\/\/saikatkumardey.com\/favicons\/favicon-32x32.png","width":"32","height":"32"}},"image":["https://saikatkumardey.com/images/site-feature-image.png"],"url":"https:\/\/saikatkumardey.com\/post\/building-pandas-dataframes-from-ndarrays\/","wordCount":"613","genre":["coding","python"],"keywords":[]}</script></head><body class=body><div class=wrapper><aside class=wrapper__sidebar><div class="sidebar
+animated fadeInDown"><div class=sidebar__content><div class=sidebar__introduction><img class=sidebar__introduction-profileimage src=/images/dp.jpg alt="profile picture"><div class=sidebar__introduction-title><a href=/>Saikat Kumar Dey</a></div><div class=sidebar__introduction-description><p>Machine Learning Engineer</p></div></div><ul class=sidebar__list><li class=sidebar__list-item><a href=https://linkedin.com/in/saikatkumardey target=_blank rel="noopener me" aria-label=Linkedin title=Linkedin><i class="fab fa-linkedin fa-2x" aria-hidden=true></i></a></li><li class=sidebar__list-item><a href=https://github.com/saikatkumardey/ target=_blank rel="noopener me" aria-label=GitHub title=GitHub><i class="fab fa-github fa-2x" aria-hidden=true></i></a></li><li class=sidebar__list-item><a href=https://www.instagram.com/saikatkumardey/ target=_blank rel="noopener me" aria-label=instagram title=instagram><i class="fab fa-instagram fa-2x" aria-hidden=true></i></a></li><li class=sidebar__list-item><a href=https://twitter.com/saikatkrdey target=_blank rel="noopener me" aria-label=twitter title=twitter><i class="fab fa-twitter fa-2x" aria-hidden=true></i></a></li></ul></div><footer class="footer footer__sidebar"><ul class=footer__list><li class=footer__item>&copy;
+Saikat Kumar Dey
+2023</li></ul></footer><script type=text/javascript src=/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ=" crossorigin=anonymous></script></div></aside><main class=wrapper__main><header class=header><div class="animated fadeInDown"><a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false><span aria-hidden=true class=navbar-burger__line></span>
+<span aria-hidden=true class=navbar-burger__line></span>
+<span aria-hidden=true class=navbar-burger__line></span></a><nav class=nav><ul class=nav__list id=navMenu><li class=nav__list-item><a href=/ title>Home</a></li><li class=nav__list-item><a href=/post/ title>Posts</a></li><li class=nav__list-item><a href=/projects/ title>Projects</a></li><li class=nav__list-item><a href=/now/ title>Now</a></li><li class=nav__list-item><a href=/contact/ title>Contact</a></li></ul><ul class="nav__list nav__list--end"><li class=nav__list-item><div class=themeswitch><a title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></li></ul></nav></div></header><div class="post
+animated fadeInDown"><div class=post__content><h1>Building Pandas Dataframes From Ndarrays</h1><ul class=post__meta><li class=post__meta-item><em class="fas fa-calendar-day post__meta-icon"></em>
+<span class=post__meta-text>28/9/2021</span></li><li class=post__meta-item><em class="fas fa-stopwatch post__meta-icon"></em>
+<span class=post__meta-text>3-minute read</span></li></ul><p>At work, I have to switch between numpy & pandas depending on the computational needs. Numpy is faster. Pandas is easier to work with.</p><p>One of the tasks I&rsquo;ve faced often was to convert a 3-dimensional ndarray to a pandas dataframe. I will share my preferred technique in this post today.</p><p>For the purpose of this exercise, I&rsquo;ll generate dummy sales data for a retail company. The dimensions include products, locations, and sales.</p><h1 id=convert-ndarray-to-pandas-dataframe>Convert ndarray to pandas dataframe</h1><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pandas</span> <span class=k>as</span> <span class=nn>pd</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>numpy</span> <span class=k>as</span> <span class=nn>np</span>
+</span></span></code></pre></div><h2 id=1d--dimension--sales>1d : dimension = sales</h2><p>Let&rsquo;s start with 1d data. What if we only had sales info for all products and locations?</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>arr_1d</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=n>random</span><span class=o>.</span><span class=n>randint</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>low</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>high</span><span class=o>=</span><span class=mi>10</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>size</span><span class=o>=</span><span class=mi>3</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>arr_1d</span><span class=p>)</span>
+</span></span></code></pre></div><pre><code>[9 3 6]
+</code></pre><p>That&rsquo;s easy. Ideally, 1-d information should be represented as a Series.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>df_1d</span> <span class=o>=</span> <span class=n>pd</span><span class=o>.</span><span class=n>DataFrame</span><span class=p>(</span><span class=n>arr_1d</span><span class=p>,</span> <span class=n>columns</span><span class=o>=</span><span class=p>[</span><span class=s2>&#34;sales&#34;</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>df_1d</span><span class=p>)</span>
+</span></span></code></pre></div><pre><code>   sales
+0      9
+1      3
+2      6
+</code></pre><h2 id=2d-dimension--sales--product>2d: dimension = sales * product</h2><p>Let&rsquo;s move on to 2 dimensions. Now, we have data corresponding to different products.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>arr_2d</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=n>random</span><span class=o>.</span><span class=n>randint</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>low</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>high</span><span class=o>=</span><span class=mi>10</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>size</span><span class=o>=</span><span class=p>(</span><span class=mi>3</span><span class=p>,</span> <span class=mi>2</span><span class=p>),</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>arr_2d</span><span class=p>)</span>
+</span></span></code></pre></div><pre><code>[[4 6]
+ [8 1]
+ [2 7]]
+</code></pre><p>Pandas DataFrame can handle 2-D ndarrays out of the box.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>df_2d</span> <span class=o>=</span> <span class=n>pd</span><span class=o>.</span><span class=n>DataFrame</span><span class=p>(</span><span class=n>arr_2d</span><span class=p>,</span> <span class=n>columns</span><span class=o>=</span><span class=p>[</span><span class=s2>&#34;product&#34;</span><span class=p>,</span> <span class=s2>&#34;sales&#34;</span><span class=p>])</span><span class=o>.</span><span class=n>set_index</span><span class=p>(</span><span class=s2>&#34;product&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>df_2d</span><span class=p>)</span>
+</span></span></code></pre></div><pre><code>         sales
+product       
+4            6
+8            1
+2            7
+</code></pre><h2 id=3d--dimension--location-x-product-x-sales>3d : dimension = location x product x sales</h2><p>Now, what if we have a ndarray corresponding to all products for several locations?</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># failure</span>
+</span></span><span class=line><span class=cl><span class=n>arr_3d</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=n>random</span><span class=o>.</span><span class=n>randint</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>low</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>high</span><span class=o>=</span><span class=mi>10</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>size</span><span class=o>=</span><span class=p>(</span><span class=mi>5</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>1</span><span class=p>),</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>arr_3d</span><span class=p>)</span>
+</span></span></code></pre></div><pre><code>[[[9]
+  [6]
+  [2]]
+
+ [[1]
+  [4]
+  [4]]
+
+ [[2]
+  [5]
+  [6]]
+
+ [[9]
+  [6]
+  [5]]
+
+ [[1]
+  [6]
+  [1]]]
+</code></pre><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># the following raises ValueError</span>
+</span></span><span class=line><span class=cl><span class=c1># pandas DataFrame expects a 2-d input</span>
+</span></span><span class=line><span class=cl><span class=n>df_3d</span> <span class=o>=</span> <span class=n>pd</span><span class=o>.</span><span class=n>DataFrame</span><span class=p>(</span><span class=n>arr_3d</span><span class=p>,</span> <span class=n>columns</span><span class=o>=</span><span class=p>[</span><span class=s2>&#34;location&#34;</span><span class=p>,</span> <span class=s2>&#34;product&#34;</span><span class=p>,</span> <span class=s2>&#34;sales&#34;</span><span class=p>])</span>
+</span></span></code></pre></div><p>pandas won&rsquo;t work out of the box. It cannot handle more than 2 dimensions. So, it raises a <code>ValueError</code>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bas data-lang=bas><span class=line><span class=cl><span class=w>    </span><span class=o>---------------------------------------------------------------------------</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=w>    </span><span class=vg>ValueError</span><span class=w>                                </span><span class=vg>Traceback</span><span class=w> </span><span class=p>(</span><span class=vg>most</span><span class=w> </span><span class=vg>recent</span><span class=w> </span><span class=vg>call</span><span class=w> </span><span class=vg>last</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=w>    </span><span class=o>/</span><span class=vg>var</span><span class=o>/</span><span class=vg>folders</span><span class=o>/</span><span class=vg>jq</span><span class=o>/</span><span class=vg>ksxbjg7d58g9v9rrcl0f38380000gn</span><span class=o>/</span><span class=vg>T</span><span class=o>/</span><span class=vg>ipykernel_12628</span><span class=o>/</span><span class=il>1531564731</span><span class=o>.</span><span class=vg>py</span><span class=w> </span><span class=vg>in</span><span class=w> </span><span class=o>&lt;</span><span class=vg>module</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl><span class=w>          </span><span class=il>1</span><span class=w> </span><span class=err>#</span><span class=w> </span><span class=vg>the</span><span class=w> </span><span class=vg>following</span><span class=w> </span><span class=vg>raises</span><span class=w> </span><span class=vg>ValueError</span>
+</span></span><span class=line><span class=cl><span class=w>          </span><span class=il>2</span><span class=w> </span><span class=err>#</span><span class=w> </span><span class=vg>pandas</span><span class=w> </span><span class=vg>DataFrame</span><span class=w> </span><span class=vg>expects</span><span class=w> </span><span class=vg>a</span><span class=w> </span><span class=il>2</span><span class=o>-</span><span class=vg>d</span><span class=w> </span><span class=vg>input</span>
+</span></span><span class=line><span class=cl><span class=w>    </span><span class=o>----&gt;</span><span class=w> </span><span class=il>3</span><span class=w> </span><span class=vg>df_3d</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=vg>pd</span><span class=o>.</span><span class=vg>DataFrame</span><span class=p>(</span><span class=vg>arr_3d</span><span class=p>,</span><span class=w> </span><span class=vg>columns</span><span class=o>=</span><span class=p>[</span><span class=s2>&#34;location&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;product&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;sales&#34;</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=w>    </span><span class=o>.</span>
+</span></span><span class=line><span class=cl><span class=w>    </span><span class=o>.</span>
+</span></span><span class=line><span class=cl><span class=w>    </span><span class=o>.</span>
+</span></span><span class=line><span class=cl><span class=w>    </span><span class=nl>ValueError:</span><span class=w> </span><span class=vg>Must</span><span class=w> </span><span class=vg>pass</span><span class=w> </span><span class=il>2</span><span class=o>-</span><span class=vg>d</span><span class=w> </span><span class=vg>input</span><span class=o>.</span><span class=w> </span><span class=vg>shape</span><span class=o>=</span><span class=p>(</span><span class=il>5</span><span class=p>,</span><span class=w> </span><span class=il>3</span><span class=p>,</span><span class=w> </span><span class=il>1</span><span class=p>)</span>
+</span></span></code></pre></div><p>The solution?</p><p><code>MultiIndex</code>.</p><p>Assuming that the ndarray is ordered by location/products, we could prepare a multi-index, flatten our ndarray and let Pandas reshape it according to the provided index.</p><p>Sweet!</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>index</span> <span class=o>=</span> <span class=n>pd</span><span class=o>.</span><span class=n>MultiIndex</span><span class=o>.</span><span class=n>from_product</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=p>[</span><span class=nb>range</span><span class=p>(</span><span class=n>dim</span><span class=p>)</span> <span class=k>for</span> <span class=n>dim</span> <span class=ow>in</span> <span class=n>arr_3d</span><span class=o>.</span><span class=n>shape</span><span class=p>[:</span><span class=o>-</span><span class=mi>1</span><span class=p>]],</span>
+</span></span><span class=line><span class=cl>    <span class=n>names</span><span class=o>=</span><span class=p>[</span><span class=s2>&#34;location&#34;</span><span class=p>,</span> <span class=s2>&#34;product&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>df_3d</span> <span class=o>=</span> <span class=n>pd</span><span class=o>.</span><span class=n>DataFrame</span><span class=p>(</span><span class=n>arr_3d</span><span class=o>.</span><span class=n>flatten</span><span class=p>(),</span> <span class=n>index</span><span class=o>=</span><span class=n>index</span><span class=p>,</span> <span class=n>columns</span><span class=o>=</span><span class=p>[</span><span class=s2>&#34;sales&#34;</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>df_3d</span><span class=p>)</span>
+</span></span></code></pre></div><pre><code>                  sales
+location product       
+0        0            9
+         1            6
+         2            2
+1        0            1
+         1            4
+         2            4
+2        0            2
+         1            5
+         2            6
+3        0            9
+         1            6
+         2            5
+4        0            1
+         1            6
+         2            1
+</code></pre><p>We just have sales corresponding to each location and product. What if the final <code>sales</code> dimension includes sales for yesterday/today (or for every month, every week, etc.) ?</p><h2 id=3d--dimension--location-x-product-x-sales-multi>3d : dimension = location x product x sales (multi)</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>arr_3d</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=n>random</span><span class=o>.</span><span class=n>randint</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>low</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>high</span><span class=o>=</span><span class=mi>10</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>size</span><span class=o>=</span><span class=p>(</span><span class=mi>5</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>2</span><span class=p>),</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>arr_3d</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>index</span> <span class=o>=</span> <span class=n>pd</span><span class=o>.</span><span class=n>MultiIndex</span><span class=o>.</span><span class=n>from_product</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=p>[</span><span class=nb>range</span><span class=p>(</span><span class=n>dim</span><span class=p>)</span> <span class=k>for</span> <span class=n>dim</span> <span class=ow>in</span> <span class=n>arr_3d</span><span class=o>.</span><span class=n>shape</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>    <span class=n>names</span><span class=o>=</span><span class=p>[</span><span class=s2>&#34;location&#34;</span><span class=p>,</span> <span class=s2>&#34;product&#34;</span><span class=p>,</span> <span class=s2>&#34;sales&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span></code></pre></div><pre><code>[[[1 9]
+  [8 6]
+  [9 4]]
+
+ [[4 9]
+  [3 9]
+  [1 8]]
+
+ [[5 2]
+  [9 9]
+  [1 9]]
+
+ [[4 5]
+  [7 4]
+  [7 7]]
+
+ [[6 9]
+  [4 2]
+  [7 1]]]
+</code></pre><p>No major changes. Pandas should handle it just like before. Just unstack the sales dimension and rename the columns for readability.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>df_3d</span> <span class=o>=</span> <span class=n>pd</span><span class=o>.</span><span class=n>DataFrame</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>arr_3d</span><span class=o>.</span><span class=n>flatten</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>    <span class=n>index</span><span class=o>=</span><span class=n>index</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>columns</span><span class=o>=</span><span class=p>[</span><span class=s2>&#34;sales&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>df_3d</span> <span class=o>=</span> <span class=n>df_3d</span><span class=o>.</span><span class=n>unstack</span><span class=p>(</span><span class=o>-</span><span class=mi>1</span><span class=p>)</span><span class=o>.</span><span class=n>rename</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>columns</span><span class=o>=</span><span class=p>{</span><span class=mi>0</span><span class=p>:</span> <span class=s2>&#34;yesterday&#34;</span><span class=p>,</span> <span class=mi>1</span><span class=p>:</span> <span class=s2>&#34;today&#34;</span><span class=p>},</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>df_3d</span><span class=p>)</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>    sales            yesterday today
+</span></span><span class=line><span class=cl>    location product                
+</span></span><span class=line><span class=cl>    0        0               1     9
+</span></span><span class=line><span class=cl>             1               8     6
+</span></span><span class=line><span class=cl>             2               9     4
+</span></span><span class=line><span class=cl>    1        0               4     9
+</span></span><span class=line><span class=cl>             1               3     9
+</span></span><span class=line><span class=cl>             2               1     8
+</span></span><span class=line><span class=cl>    2        0               5     2
+</span></span><span class=line><span class=cl>             1               9     9
+</span></span><span class=line><span class=cl>             2               1     9
+</span></span><span class=line><span class=cl>    3        0               4     5
+</span></span><span class=line><span class=cl>             1               7     4
+</span></span><span class=line><span class=cl>             2               7     7
+</span></span><span class=line><span class=cl>    4        0               6     9
+</span></span><span class=line><span class=cl>             1               4     2
+</span></span><span class=line><span class=cl>             2               7     1
+</span></span></code></pre></div><p>Do you know of other ways to switch between ndarray and DataFrame? Comment below :)</p></div><div class=post__footer><span><a class=category href=/categories/coding/>coding</a><a class=category href=/categories/python/>python</a></span></div></div></main></div><footer class="footer footer__base"><ul class=footer__list><li class=footer__item>&copy;
+Saikat Kumar Dey
+2023</li></ul></footer><script type=text/javascript src=/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ=" crossorigin=anonymous></script></body></html>
