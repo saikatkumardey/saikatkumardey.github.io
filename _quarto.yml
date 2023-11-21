@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "SKD"
+  navbar:
+    right:
+      # - about.qmd
+      - icon: github
+        href: https://github.com/saikatkumardey
+      - icon: twitter
+        href: https://x.com/saikatkrdey
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    css: styles.css
+
+
+

@@ -1,0 +1,15 @@
+---
+# title: "Machine learning 🚀"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: table
+  fields: [date, title,description]
+  categories: cloud
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: false
+---
+
+
