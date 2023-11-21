@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>SKD</title>
+<title>SKD - About</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,12 +30,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -63,43 +60,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -135,243 +101,44 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="ai"><span class="quarto-category-count category-cloud-1">ai</span></div><div class="category" data-category="algorithms"><span class="quarto-category-count category-cloud-1">algorithms</span></div><div class="category" data-category="claude"><span class="quarto-category-count category-cloud-1">claude</span></div><div class="category" data-category="clip"><span class="quarto-category-count category-cloud-1">clip</span></div><div class="category" data-category="coding"><span class="quarto-category-count category-cloud-1">coding</span></div><div class="category" data-category="computer vision"><span class="quarto-category-count category-cloud-1">computer vision</span></div><div class="category" data-category="indiehacking"><span class="quarto-category-count category-cloud-1">indiehacking</span></div><div class="category" data-category="interview"><span class="quarto-category-count category-cloud-1">interview</span></div><div class="category" data-category="investment"><span class="quarto-category-count category-cloud-1">investment</span></div><div class="category" data-category="ios"><span class="quarto-category-count category-cloud-1">ios</span></div><div class="category" data-category="langchain"><span class="quarto-category-count category-cloud-1">langchain</span></div><div class="category" data-category="leetcode"><span class="quarto-category-count category-cloud-1">leetcode</span></div><div class="category" data-category="llm"><span class="quarto-category-count category-cloud-2">llm</span></div><div class="category" data-category="ml"><span class="quarto-category-count category-cloud-3">ml</span></div><div class="category" data-category="ollama"><span class="quarto-category-count category-cloud-1">ollama</span></div><div class="category" data-category="openai"><span class="quarto-category-count category-cloud-1">openai</span></div><div class="category" data-category="personal-finance"><span class="quarto-category-count category-cloud-1">personal-finance</span></div><div class="category" data-category="productivity"><span class="quarto-category-count category-cloud-1">productivity</span></div><div class="category" data-category="python"><span class="quarto-category-count category-cloud-1">python</span></div><div class="category" data-category="thoughts"><span class="quarto-category-count category-cloud-1">thoughts</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
-
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Title
-</th>
-<th>
-Description
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="computer vision,clip,openai" data-listing-date-sort="1699900200000" data-listing-file-modified-sort="1700544408531" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="SnapSort - Sorting your photos locally using OpenAI's CLIP model" data-listing-filename-sort="18-snapsort.md">
-<td>
-<span class="listing-date">Nov 14, 2023</span>
-</td>
-<td>
-<a href="./posts/18-snapsort.html" class="title listing-title">SnapSort - Sorting your photos locally using OpenAI’s CLIP model</a>
-</td>
-<td>
-<span class="listing-description">SnapSort is a CLI tool that uses OpenAI’s CLIP model to sort your photos locally.</span>
-</td>
-</tr>
-<tr data-index="1" data-categories="llm,ollama" data-listing-date-sort="1696876200000" data-listing-file-modified-sort="1700544408537" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="How to Run Large Language Models on Your Laptop with Ollama.ai" data-listing-filename-sort="17-ollama.md">
-<td>
-<span class="listing-date">Oct 10, 2023</span>
-</td>
-<td>
-<a href="./posts/17-ollama.html" class="title listing-title">How to Run Large Language Models on Your Laptop with Ollama.ai</a>
-</td>
-<td>
-<span class="listing-description">You can easily run LLMs on your laptop with Ollama.ai. This post shows you how.</span>
-</td>
-</tr>
-<tr data-index="2" data-categories="ios,indiehacking" data-listing-date-sort="1689013800000" data-listing-file-modified-sort="1700544408513" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-title-sort="Minimalist iOS Habit Tracking App" data-listing-filename-sort="15-minimalist-habit-tracking-ios-app.md">
-<td>
-<span class="listing-date">Jul 11, 2023</span>
-</td>
-<td>
-<a href="./posts/ios-app/15-minimalist-habit-tracking-ios-app.html" class="title listing-title">Minimalist iOS Habit Tracking App</a>
-</td>
-<td>
-<span class="listing-description">I built a simple, offline habit tracking app for myself using SwiftUI to learn practical iOS development skills and end up with a custom productivity tool tailored to my needs.</span>
-</td>
-</tr>
-<tr data-index="3" data-categories="productivity" data-listing-date-sort="1684652877000" data-listing-file-modified-sort="1700544408540" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="How to Live on 24 Hours a Day by Arnold Bennett" data-listing-filename-sort="12-how-to-live-on-24-hours-a-day.md">
-<td>
-<span class="listing-date">May 21, 2023</span>
-</td>
-<td>
-<a href="./posts/12-how-to-live-on-24-hours-a-day.html" class="title listing-title">How to Live on 24 Hours a Day by Arnold Bennett</a>
-</td>
-<td>
-<span class="listing-description">A short review</span>
-</td>
-</tr>
-<tr data-index="4" data-categories="llm,ai,claude,langchain" data-listing-date-sort="1684420437000" data-listing-file-modified-sort="1700544408538" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="I summarised a 3 hour long youtube video using Langchain + Claude" data-listing-filename-sort="8-claude+langchain+youtube.md">
-<td>
-<span class="listing-date">May 18, 2023</span>
-</td>
-<td>
-<a href="./posts/8-claude+langchain+youtube.html" class="title listing-title">I summarised a 3 hour long youtube video using Langchain + Claude</a>
-</td>
-<td>
-<span class="listing-description">I used Langchain + Claude to summarise Sam Altman’s testimony to the US Senate on AI. The video is 3 hours long and the transcript has about 30k+ tokens. I used Langchain to extract the transcript and Claude to summarise it. The result is a 1 page…</span>
-</td>
-</tr>
-<tr data-index="5" data-categories="ml" data-listing-date-sort="1669909108000" data-listing-file-modified-sort="1700544408539" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="Beyond F1: using the Fbeta_score for better model evaluation" data-listing-filename-sort="10-fbeta.md">
-<td>
-<span class="listing-date">Dec 1, 2022</span>
-</td>
-<td>
-<a href="./posts/10-fbeta.html" class="title listing-title">Beyond F1: using the Fbeta_score for better model evaluation</a>
-</td>
-<td>
-<span class="listing-description">Learn how to use the Fbeta_score, a powerful and flexible evaluation metric for classification tasks that allows the user to adjust the balance between precision and recall.</span>
-</td>
-</tr>
-<tr data-index="6" data-categories="ml" data-listing-date-sort="1669907974000" data-listing-file-modified-sort="1700544408509" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-title-sort="Solving Class Imbalance with Focal Loss" data-listing-filename-sort="11-focal-loss.md">
-<td>
-<span class="listing-date">Dec 1, 2022</span>
-</td>
-<td>
-<a href="./posts/11-focal-loss.html" class="title listing-title">Solving Class Imbalance with Focal Loss</a>
-</td>
-<td>
-<span class="listing-description">Focal loss is an effective technique for addressing class imbalance in machine learning by weighting the loss function to focus on hard-to-classify examples.</span>
-</td>
-</tr>
-<tr data-index="7" data-listing-date-sort="1656735042000" data-listing-file-modified-sort="1700544408536" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="How to love what you do" data-listing-filename-sort="14-love-what-you-do.md">
-<td>
-<span class="listing-date">Jul 2, 2022</span>
-</td>
-<td>
-<a href="./posts/14-love-what-you-do.html" class="title listing-title">How to love what you do</a>
-</td>
-<td>
-<span class="listing-description">Thoughts on creating passion for your work</span>
-</td>
-</tr>
-<tr data-index="8" data-categories="leetcode,interview,algorithms" data-listing-date-sort="1656613800000" data-listing-file-modified-sort="1700544408532" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-title-sort="Mastering Common Patterns to Solve Leetcode Problems" data-listing-filename-sort="13-leetcode-patterns.md">
-<td>
-<span class="listing-date">Jul 1, 2022</span>
-</td>
-<td>
-<a href="./posts/13-leetcode-patterns.html" class="title listing-title">Mastering Common Patterns to Solve Leetcode Problems</a>
-</td>
-<td>
-<span class="listing-description">Knowing these patterns can help you solve most of the problems in leetcode.</span>
-</td>
-</tr>
-<tr data-index="9" data-listing-date-sort="1655301407000" data-listing-file-modified-sort="1700544408538" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Walking helps you solve difficult bugs" data-listing-filename-sort="4-walk.md">
-<td>
-<span class="listing-date">Jun 15, 2022</span>
-</td>
-<td>
-<a href="./posts/4-walk.html" class="title listing-title">Walking helps you solve difficult bugs</a>
-</td>
-<td>
-<span class="listing-description">Walking helps you think better</span>
-</td>
-</tr>
-<tr data-index="10" data-categories="ml" data-listing-date-sort="1654577715000" data-listing-file-modified-sort="1700544408532" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Accuracy Is a Poor evaluation Metric" data-listing-filename-sort="6-accuracy-is-a-poor-error-metric.md">
-<td>
-<span class="listing-date">Jun 7, 2022</span>
-</td>
-<td>
-<a href="./posts/6-accuracy-is-a-poor-error-metric.html" class="title listing-title">Accuracy Is a Poor evaluation Metric</a>
-</td>
-<td>
-<span class="listing-description">Issues with using accuracy as an evaluation metric and what you should use instead</span>
-</td>
-</tr>
-<tr data-index="11" data-listing-date-sort="1654282449000" data-listing-file-modified-sort="1700544408533" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Secret of Success by Mark Twain" data-listing-filename-sort="3-secret-of-success-by-mark-twain.md">
-<td>
-<span class="listing-date">Jun 4, 2022</span>
-</td>
-<td>
-<a href="./posts/3-secret-of-success-by-mark-twain.html" class="title listing-title">Secret of Success by Mark Twain</a>
-</td>
-<td>
-<span class="listing-description">Timeless wisdom</span>
-</td>
-</tr>
-<tr data-index="12" data-categories="thoughts" data-listing-date-sort="1653887607000" data-listing-file-modified-sort="1700544408531" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="The Importance of Focusing on One Thing at a Time" data-listing-filename-sort="2-relax.md">
-<td>
-<span class="listing-date">May 30, 2022</span>
-</td>
-<td>
-<a href="./posts/2-relax.html" class="title listing-title">The Importance of Focusing on One Thing at a Time</a>
-</td>
-<td>
-<span class="listing-description">Take a step back and breathe</span>
-</td>
-</tr>
-<tr data-index="13" data-listing-date-sort="1653844251000" data-listing-file-modified-sort="1700544408536" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Never Too Late: The Inspiring Story of Van Gogh" data-listing-filename-sort="16-never-too-late.md">
-<td>
-<span class="listing-date">May 29, 2022</span>
-</td>
-<td>
-<a href="./posts/16-never-too-late.html" class="title listing-title">Never Too Late: The Inspiring Story of Van Gogh</a>
-</td>
-<td>
-<span class="listing-description">It’s never too late to start pursuing your dreams</span>
-</td>
-</tr>
-<tr data-index="14" data-categories="investment,personal-finance" data-listing-date-sort="1653752006000" data-listing-file-modified-sort="1700544408534" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="The Power of Consistent Investing" data-listing-filename-sort="1-keep-investing.md">
-<td>
-<span class="listing-date">May 28, 2022</span>
-</td>
-<td>
-<a href="./posts/1-keep-investing.html" class="title listing-title">The Power of Consistent Investing</a>
-</td>
-<td>
-<span class="listing-description">Note to self on investment.</span>
-</td>
-</tr>
-<tr data-index="15" data-categories="coding,python" data-listing-date-sort="1632803783000" data-listing-file-modified-sort="1700544408539" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-title-sort="Building Pandas Dataframes From Ndarrays" data-listing-filename-sort="7-building-pandas-dataframes-from-ndarrays.md">
-<td>
-<span class="listing-date">Sep 28, 2021</span>
-</td>
-<td>
-<a href="./posts/7-building-pandas-dataframes-from-ndarrays.html" class="title listing-title">Building Pandas Dataframes From Ndarrays</a>
-</td>
-<td>
-<span class="listing-description">How to convert multi-dimensional numpy arrays to pandas dataframe?</span>
-</td>
-</tr>
-<tr data-index="16" data-listing-date-sort="1630816185000" data-listing-file-modified-sort="1700544408535" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="A Simplified Implementation of Quicksort" data-listing-filename-sort="5-a-simplified-implementation-of-quicksort.md">
-<td>
-<span class="listing-date">Sep 5, 2021</span>
-</td>
-<td>
-<a href="./posts/5-a-simplified-implementation-of-quicksort.html" class="title listing-title">A Simplified Implementation of Quicksort</a>
-</td>
-<td>
-<span class="listing-description">A simple implementation of quicksort that trades space complexity for readability</span>
-</td>
-</tr>
-<tr data-index="17" data-categories="ml" data-listing-date-sort="1630211343000" data-listing-file-modified-sort="1700544408538" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Deep Neural Networks for YouTube Recommendations" data-listing-filename-sort="9-deep-nn-for-youtube-recommendations.md">
-<td>
-<span class="listing-date">Aug 29, 2021</span>
-</td>
-<td>
-<a href="./posts/9-deep-nn-for-youtube-recommendations.html" class="title listing-title">Deep Neural Networks for YouTube Recommendations</a>
-</td>
-<td>
-<span class="listing-description">Paper summary on how to generate relevant YouTube recommendations</span>
-</td>
-</tr>
-</tbody>
-
-</table>
-<div class="listing-no-matching d-none">
-No matching items
+<div class="quarto-about-trestles">
+  <div class="about-entity">
+    <img src="profile.jpg" class="about-image
+  rounded " style="width: 20em;">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">About</h1>
 </div>
-</div></main> <!-- /main -->
+<div class="quarto-title-meta">
+  </div>
+</header>
+    <div class="about-links">
+  <a href="https://twitter.com" class="about-link" rel="" target="">
+    <i class="bi bi-twitter"></i>
+     <span class="about-link-text">Twitter</span>
+  </a>
+  <a href="https://linkedin.com" class="about-link" rel="" target="">
+    <i class="bi bi-linkedin"></i>
+     <span class="about-link-text">LinkedIn</span>
+  </a>
+  <a href="https://github.com" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github</span>
+  </a>
+</div>
+  </div>
+  <div class="about-contents"><main class="content" id="quarto-document-content">
+<p>About this blog</p>
+
+
+</main></div>
+</div>
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -507,13 +274,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
