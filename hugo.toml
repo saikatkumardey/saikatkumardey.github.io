@@ -1,0 +1,5 @@
+baseURL = 'https://saikatkumardey.com/'
+languageCode = 'en-us'
+title = 'Saikat Kumar Dey'
+theme = 'hugo-bearblog'
+publishDir = 'docs'

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500&display=swap');
+
+:root {
+    --text: #1a1a1a;
+    --text-muted: #666;
+    --bg: #fafafa;
+    --accent: #2a2a2a;
+    --border: #e0e0e0;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #e8e8e8;
+        --text-muted: #999;
+        --bg: #111;
+        --accent: #fff;
+        --border: #333;
+    }
+    code {
+        background-color: #222 !important;
+    }
+}
+
+body {
+    font-family: 'Source Serif 4', Georgia, serif !important;
+    background: var(--bg) !important;
+    color: var(--text) !important;
+    line-height: 1.7 !important;
+    max-width: 680px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif !important;
+    color: var(--text) !important;
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: 2.5rem !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.02em !important;
+}
+
+h2 {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: var(--text-muted) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em !important;
+}
+
+p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+
+a {
+    color: var(--text) !important;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: var(--text-muted) !important;
+}
+
+nav a {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+}
+
+.title h2 {
+    text-transform: none !important;
+    font-size: 1.5rem !important;
+    color: var(--text) !important;
+}
+
+blockquote {
+    border-left: 2px solid var(--border) !important;
+    padding-left: 1.5rem;
+    color: var(--text-muted) !important;
+    font-style: italic;
+}
+
+footer {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted) !important;
+    border-top: 1px solid var(--border);
+}
+
+ul.blog-posts li span {
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+}
+
+code {
+    font-size: 0.9em;
+}
