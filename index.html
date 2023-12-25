@@ -37,12 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -99,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -128,21 +126,18 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="ai"><span class="quarto-category-count category-cloud-1">ai</span></div><div class="category" data-category="algorithms"><span class="quarto-category-count category-cloud-1">algorithms</span></div><div class="category" data-category="claude"><span class="quarto-category-count category-cloud-1">claude</span></div><div class="category" data-category="clip"><span class="quarto-category-count category-cloud-1">clip</span></div><div class="category" data-category="cnn"><span class="quarto-category-count category-cloud-1">cnn</span></div><div class="category" data-category="coding"><span class="quarto-category-count category-cloud-1">coding</span></div><div class="category" data-category="computer vision"><span class="quarto-category-count category-cloud-2">computer vision</span></div><div class="category" data-category="indiehacking"><span class="quarto-category-count category-cloud-1">indiehacking</span></div><div class="category" data-category="interview"><span class="quarto-category-count category-cloud-1">interview</span></div><div class="category" data-category="investment"><span class="quarto-category-count category-cloud-1">investment</span></div><div class="category" data-category="ios"><span class="quarto-category-count category-cloud-1">ios</span></div><div class="category" data-category="langchain"><span class="quarto-category-count category-cloud-1">langchain</span></div><div class="category" data-category="leetcode"><span class="quarto-category-count category-cloud-1">leetcode</span></div><div class="category" data-category="llm"><span class="quarto-category-count category-cloud-2">llm</span></div><div class="category" data-category="ml"><span class="quarto-category-count category-cloud-3">ml</span></div><div class="category" data-category="mobilenets"><span class="quarto-category-count category-cloud-1">mobilenets</span></div><div class="category" data-category="ollama"><span class="quarto-category-count category-cloud-1">ollama</span></div><div class="category" data-category="openai"><span class="quarto-category-count category-cloud-1">openai</span></div><div class="category" data-category="personal-finance"><span class="quarto-category-count category-cloud-1">personal-finance</span></div><div class="category" data-category="productivity"><span class="quarto-category-count category-cloud-1">productivity</span></div><div class="category" data-category="python"><span class="quarto-category-count category-cloud-1">python</span></div><div class="category" data-category="thoughts"><span class="quarto-category-count category-cloud-1">thoughts</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
@@ -152,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="computer vision,cnn,mobilenets" data-listing-date-sort="1700956800000" data-listing-file-modified-sort="1703492252546" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="0" data-categories="computer vision,cnn,mobilenets" data-listing-date-sort="1700956800000" data-listing-file-modified-sort="1703512789978" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
 <div class="body">
 <a href="./posts/19-mobilenets/19-mobilenet-v1.html">
 <h3 class="no-anchor listing-title">
@@ -174,7 +169,7 @@ Nov 26, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="computer vision,clip,openai" data-listing-date-sort="1699920000000" data-listing-file-modified-sort="1703492252542" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="1" data-categories="computer vision,clip,openai" data-listing-date-sort="1699920000000" data-listing-file-modified-sort="1703512789978" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <div class="body">
 <a href="./posts/18-snapsort.html">
 <h3 class="no-anchor listing-title">
@@ -196,7 +191,7 @@ Nov 14, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="llm,ollama" data-listing-date-sort="1696896000000" data-listing-file-modified-sort="1703492252542" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="2" data-categories="llm,ollama" data-listing-date-sort="1696896000000" data-listing-file-modified-sort="1703512789978" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
 <div class="body">
 <a href="./posts/17-ollama.html">
 <h3 class="no-anchor listing-title">
@@ -218,7 +213,7 @@ Oct 10, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="ios,indiehacking" data-listing-date-sort="1689033600000" data-listing-file-modified-sort="1703492252546" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="3" data-categories="ios,indiehacking" data-listing-date-sort="1689033600000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
 <div class="body">
 <a href="./posts/ios-app/15-minimalist-habit-tracking-ios-app.html">
 <h3 class="no-anchor listing-title">
@@ -240,7 +235,7 @@ Jul 11, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="productivity" data-listing-date-sort="1684652877000" data-listing-file-modified-sort="1703492252542" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="4" data-categories="productivity" data-listing-date-sort="1684652877000" data-listing-file-modified-sort="1703512789974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <div class="body">
 <a href="./posts/12-how-to-live-on-24-hours-a-day.html">
 <h3 class="no-anchor listing-title">
@@ -262,7 +257,7 @@ May 21, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="llm,ai,claude,langchain" data-listing-date-sort="1684420437000" data-listing-file-modified-sort="1703492252546" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="5" data-categories="llm,ai,claude,langchain" data-listing-date-sort="1684420437000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <div class="body">
 <a href="./posts/8-claude+langchain+youtube.html">
 <h3 class="no-anchor listing-title">
@@ -284,7 +279,7 @@ May 18, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="ml" data-listing-date-sort="1669909108000" data-listing-file-modified-sort="1703492252542" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="6" data-categories="ml" data-listing-date-sort="1669909108000" data-listing-file-modified-sort="1703512789974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <div class="body">
 <a href="./posts/10-fbeta.html">
 <h3 class="no-anchor listing-title">
@@ -306,7 +301,7 @@ Dec 1, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="ml" data-listing-date-sort="1669907974000" data-listing-file-modified-sort="1703492252542" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="7" data-categories="ml" data-listing-date-sort="1669907974000" data-listing-file-modified-sort="1703512789974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
 <div class="body">
 <a href="./posts/11-focal-loss.html">
 <h3 class="no-anchor listing-title">
@@ -328,7 +323,7 @@ Dec 1, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1656735042000" data-listing-file-modified-sort="1703492252542" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1656735042000" data-listing-file-modified-sort="1703512789974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="body">
 <a href="./posts/14-love-what-you-do.html">
 <h3 class="no-anchor listing-title">
@@ -350,7 +345,7 @@ Jul 2, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="leetcode,interview,algorithms" data-listing-date-sort="1656633600000" data-listing-file-modified-sort="1703492252542" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27">
+<div class="quarto-post image-right" data-index="9" data-categories="leetcode,interview,algorithms" data-listing-date-sort="1656633600000" data-listing-file-modified-sort="1703512789974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27">
 <div class="body">
 <a href="./posts/13-leetcode-patterns.html">
 <h3 class="no-anchor listing-title">
@@ -372,7 +367,7 @@ Jul 1, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-listing-date-sort="1655301407000" data-listing-file-modified-sort="1703492252546" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="10" data-listing-date-sort="1655301407000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="body">
 <a href="./posts/4-walk.html">
 <h3 class="no-anchor listing-title">
@@ -394,7 +389,7 @@ Jun 15, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="ml" data-listing-date-sort="1654577715000" data-listing-file-modified-sort="1703492252546" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="11" data-categories="ml" data-listing-date-sort="1654577715000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <div class="body">
 <a href="./posts/6-accuracy-is-a-poor-error-metric.html">
 <h3 class="no-anchor listing-title">
@@ -416,7 +411,7 @@ Jun 7, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-listing-date-sort="1654282449000" data-listing-file-modified-sort="1703492252546" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="12" data-listing-date-sort="1654282449000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="body">
 <a href="./posts/3-secret-of-success-by-mark-twain.html">
 <h3 class="no-anchor listing-title">
@@ -438,7 +433,7 @@ Jun 3, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="thoughts" data-listing-date-sort="1653887607000" data-listing-file-modified-sort="1703492252546" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="13" data-categories="thoughts" data-listing-date-sort="1653887607000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="body">
 <a href="./posts/2-relax.html">
 <h3 class="no-anchor listing-title">
@@ -460,7 +455,7 @@ May 30, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-listing-date-sort="1653844251000" data-listing-file-modified-sort="1703492252542" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="14" data-listing-date-sort="1653844251000" data-listing-file-modified-sort="1703512789978" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="body">
 <a href="./posts/16-never-too-late.html">
 <h3 class="no-anchor listing-title">
@@ -482,7 +477,7 @@ May 29, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="investment,personal-finance" data-listing-date-sort="1653752006000" data-listing-file-modified-sort="1703492252542" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="15" data-categories="investment,personal-finance" data-listing-date-sort="1653752006000" data-listing-file-modified-sort="1703512789974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="body">
 <a href="./posts/1-keep-investing.html">
 <h3 class="no-anchor listing-title">
@@ -504,7 +499,7 @@ May 28, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="coding,python" data-listing-date-sort="1632803783000" data-listing-file-modified-sort="1703492252546" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="16" data-categories="coding,python" data-listing-date-sort="1632803783000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
 <div class="body">
 <a href="./posts/7-building-pandas-dataframes-from-ndarrays.html">
 <h3 class="no-anchor listing-title">
@@ -526,7 +521,7 @@ Sep 28, 2021
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-listing-date-sort="1630816185000" data-listing-file-modified-sort="1703492252546" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="17" data-listing-date-sort="1630816185000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
 <div class="body">
 <a href="./posts/5-a-simplified-implementation-of-quicksort.html">
 <h3 class="no-anchor listing-title">
@@ -548,7 +543,7 @@ Sep 5, 2021
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="ml" data-listing-date-sort="1630211343000" data-listing-file-modified-sort="1703492252546" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="18" data-categories="ml" data-listing-date-sort="1630211343000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <div class="body">
 <a href="./posts/9-deep-nn-for-youtube-recommendations.html">
 <h3 class="no-anchor listing-title">
@@ -595,121 +590,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
