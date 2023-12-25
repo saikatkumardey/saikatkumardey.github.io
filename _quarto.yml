@@ -13,9 +13,7 @@ website:
         href: https://x.com/saikatkrdey
 format:
   html:
-    theme:
-      light: flatly
-      dark: darkly
+    theme: simplex
     css: styles.css
 
 execute:

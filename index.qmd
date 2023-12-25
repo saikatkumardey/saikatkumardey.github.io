@@ -4,12 +4,9 @@ listing:
   contents: posts
   sort: "date desc"
   type: default
-  fields: [date, title,description]
-  categories: cloud
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: false
+  fields: [date, title, description]
+page-layout: article
+title-block-banner: true
 ---
 
 
