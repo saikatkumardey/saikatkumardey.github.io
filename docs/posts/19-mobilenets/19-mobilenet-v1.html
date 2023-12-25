@@ -157,8 +157,8 @@ ul.task-list li input[type="checkbox"] {
 <figcaption class="figure-caption">Mobilenetv1 Architecture</figcaption>
 </figure>
 </div>
-<section id="depth-wise-separable-convolutions" class="level2">
-<h2 class="anchored" data-anchor-id="depth-wise-separable-convolutions">Depth-wise separable convolutions</h2>
+<section id="idea-1-depth-wise-separable-convolutions" class="level2">
+<h2 class="anchored" data-anchor-id="idea-1-depth-wise-separable-convolutions">Idea 1: Depth-wise separable convolutions</h2>
 <p>Depth-wise separable convolutions are the core building blocks of mobilenets. They are a variant of standard convolutions that decompose the convolution operation into two steps: depth-wise and point-wise.</p>
 <p>A standard convolution applies a set of filters to the input feature map, producing an output feature map. Each filter has the same spatial dimensions as the input, but a different number of channels. The filter slides over the input, performing element-wise multiplication and summation at each position, and generating a scalar output. The output feature map has the same spatial dimensions as the input, but a different number of channels, depending on the number of filters.</p>
 <p>A depth-wise convolution applies a single filter per input channel, producing an intermediate feature map. The filter has the same spatial dimensions as the input, but only one channel. The filter slides over the input, performing element-wise multiplication and summation at each position, and generating a scalar output. The intermediate feature map has the same spatial dimensions and number of channels as the input.</p>
@@ -200,8 +200,8 @@ C_d = H \times W \times K \times K \times C_i + H \times W \times C_i \times C_o
 \]</span></p>
 <p>As we can see, the ratio depends on the filter size and the number of output channels. For a typical filter size of 3x3 and a large number of output channels, depth-wise separable convolutions can <strong>reduce the number of parameters and computations by ~10x.</strong></p>
 </section>
-<section id="width-and-resolution-multipliers" class="level2">
-<h2 class="anchored" data-anchor-id="width-and-resolution-multipliers">Width and resolution multipliers</h2>
+<section id="idea-2-width-and-resolution-multipliers" class="level2">
+<h2 class="anchored" data-anchor-id="idea-2-width-and-resolution-multipliers">Idea 2: Width and resolution multipliers</h2>
 <p>Width and resolution multipliers are two global hyperparameters that mobilenets use to control the width and resolution of the network. They allow for fine-grained trade-off between network size, accuracy, and resource consumption.</p>
 <p>The width multiplier, denoted by <span class="math inline">\(\alpha\)</span>, is used to adjust the number of filters in each layer. It is applied uniformly to all layers, except the first and the last ones. The number of filters in layer <span class="math inline">\(l\)</span> is given by:</p>
 <p><span class="math display">\[
@@ -228,6 +228,11 @@ C_\beta = \beta^2 \times C_1
 \]</span></p>
 <p>where <span class="math inline">\(P_1\)</span> and <span class="math inline">\(C_1\)</span> are the number of parameters and computations for the original network (<span class="math inline">\(\beta = 1\)</span>). As we can see, the resolution multiplier does not affect the number of parameters, but reduces the number of computations quadratically.</p>
 <p>The optimal values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> depend on the resource constraints and accuracy requirements of the application. For example, if the application requires high accuracy and has sufficient resources, then <span class="math inline">\(\alpha = 1\)</span> and <span class="math inline">\(\beta = 1\)</span> would be the best choice. However, if the application requires low latency and has limited resources, then smaller values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> would be more suitable.</p>
+</section>
+<section id="wrapping-up" class="level1">
+<h1>Wrapping up</h1>
+<p>In this blog post, we have learned about mobilenets, a family of efficient and compact neural networks for mobile and embedded vision applications. We have explained how mobilenets use depth-wise separable convolutions to reduce the number of parameters and computations compared to standard convolutions. We have also discussed how mobilenets use width and resolution multipliers to control the network size and accuracy trade-off.</p>
+<p>We hope that this blog post has given you a basic understanding of mobilenets and inspired you to explore them further. In the next blog posts, we will dive deeper into MobileNetV2 and MobileNetV3.</p>
 
 
 </section>

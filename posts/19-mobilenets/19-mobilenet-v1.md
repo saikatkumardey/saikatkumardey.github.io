@@ -21,7 +21,7 @@ In this blog post, we will explain the main ideas behind mobilenet-v1 and how th
 
 
 
-## Depth-wise separable convolutions
+## Idea 1: Depth-wise separable convolutions
 
 Depth-wise separable convolutions are the core building blocks of mobilenets. They are a variant of standard convolutions that decompose the convolution operation into two steps: depth-wise and point-wise.
 
@@ -74,7 +74,7 @@ $$
 As we can see, the ratio depends on the filter size and the number of output channels. For a typical filter size of 3x3 and a large number of output channels, depth-wise separable convolutions can **reduce the number of parameters and computations by ~10x.**
 
 
-## Width and resolution multipliers
+## Idea 2: Width and resolution multipliers
 
 Width and resolution multipliers are two global hyperparameters that mobilenets use to control the width and resolution of the network. They allow for fine-grained trade-off between network size, accuracy, and resource consumption.
 
@@ -115,3 +115,10 @@ $$
 where $P_1$ and $C_1$ are the number of parameters and computations for the original network ($\beta = 1$). As we can see, the resolution multiplier does not affect the number of parameters, but reduces the number of computations quadratically.
 
 The optimal values of $\alpha$ and $\beta$ depend on the resource constraints and accuracy requirements of the application. For example, if the application requires high accuracy and has sufficient resources, then $\alpha = 1$ and $\beta = 1$ would be the best choice. However, if the application requires low latency and has limited resources, then smaller values of $\alpha$ and $\beta$ would be more suitable.
+
+
+# Wrapping up
+
+In this blog post, we have learned about mobilenets, a family of efficient and compact neural networks for mobile and embedded vision applications. We have explained how mobilenets use depth-wise separable convolutions to reduce the number of parameters and computations compared to standard convolutions. We have also discussed how mobilenets use width and resolution multipliers to control the network size and accuracy trade-off.
+
+We hope that this blog post has given you a basic understanding of mobilenets and inspired you to explore them further. In the next blog posts, we will dive deeper into MobileNetV2 and MobileNetV3.
