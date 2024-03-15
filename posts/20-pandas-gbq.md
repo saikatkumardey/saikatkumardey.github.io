@@ -7,7 +7,7 @@ ogImage: ""
 categories:
   - python
   - bq
-description: How to access BQ from Python?
+description:
 ---
 
 You need to install pandas-gbq first.
