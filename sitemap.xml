@@ -1,87 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://saikatkumardey.com/posts/11-focal-loss.html</loc>
-    <lastmod>2023-12-25T14:00:09.542Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saikatkumardey.com/posts/4-walk.html</loc>
-    <lastmod>2023-12-25T14:00:08.782Z</lastmod>
+    <loc>https://saikatkumardey.com/index.html</loc>
+    <lastmod>2024-03-15T17:07:52.182Z</lastmod>
   </url>
   <url>
     <loc>https://saikatkumardey.com/posts/17-ollama.html</loc>
-    <lastmod>2023-12-25T14:00:08.294Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saikatkumardey.com/posts/19-mobilenets/19-mobilenet-v1.html</loc>
-    <lastmod>2023-12-25T14:00:07.690Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saikatkumardey.com/posts/9-deep-nn-for-youtube-recommendations.html</loc>
-    <lastmod>2023-12-25T14:00:07.022Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saikatkumardey.com/posts/5-a-simplified-implementation-of-quicksort.html</loc>
-    <lastmod>2023-12-25T14:00:05.622Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saikatkumardey.com/posts/18-snapsort.html</loc>
-    <lastmod>2023-12-25T14:00:04.938Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saikatkumardey.com/posts/3-secret-of-success-by-mark-twain.html</loc>
-    <lastmod>2023-12-25T14:00:04.338Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saikatkumardey.com/posts/2-relax.html</loc>
-    <lastmod>2023-12-25T14:00:03.602Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saikatkumardey.com/posts/ios-app/15-minimalist-habit-tracking-ios-app.html</loc>
-    <lastmod>2023-12-25T14:00:02.990Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saikatkumardey.com/about.html</loc>
-    <lastmod>2023-12-25T14:00:01.262Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saikatkumardey.com/index.html</loc>
-    <lastmod>2023-12-25T14:00:02.522Z</lastmod>
+    <lastmod>2024-03-15T17:07:52.182Z</lastmod>
   </url>
   <url>
     <loc>https://saikatkumardey.com/posts/6-accuracy-is-a-poor-error-metric.html</loc>
-    <lastmod>2023-12-25T14:00:03.322Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saikatkumardey.com/posts/7-building-pandas-dataframes-from-ndarrays.html</loc>
-    <lastmod>2023-12-25T14:00:04.090Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saikatkumardey.com/posts/16-never-too-late.html</loc>
-    <lastmod>2023-12-25T14:00:04.610Z</lastmod>
+    <lastmod>2024-03-15T17:07:52.186Z</lastmod>
   </url>
   <url>
     <loc>https://saikatkumardey.com/posts/10-fbeta.html</loc>
-    <lastmod>2023-12-25T14:00:05.258Z</lastmod>
+    <lastmod>2024-03-15T17:07:52.182Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/posts/16-never-too-late.html</loc>
+    <lastmod>2024-03-15T17:07:52.182Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/posts/5-a-simplified-implementation-of-quicksort.html</loc>
+    <lastmod>2024-03-15T17:07:52.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/posts/11-focal-loss.html</loc>
+    <lastmod>2024-03-15T17:07:52.182Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/posts/7-building-pandas-dataframes-from-ndarrays.html</loc>
+    <lastmod>2024-03-15T17:07:52.186Z</lastmod>
   </url>
   <url>
     <loc>https://saikatkumardey.com/posts/13-leetcode-patterns.html</loc>
-    <lastmod>2023-12-25T14:00:06.618Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saikatkumardey.com/posts/12-how-to-live-on-24-hours-a-day.html</loc>
-    <lastmod>2023-12-25T14:00:07.322Z</lastmod>
+    <lastmod>2024-03-15T17:07:52.182Z</lastmod>
   </url>
   <url>
     <loc>https://saikatkumardey.com/posts/1-keep-investing.html</loc>
-    <lastmod>2023-12-25T14:00:07.958Z</lastmod>
+    <lastmod>2024-03-15T17:07:52.182Z</lastmod>
   </url>
   <url>
-    <loc>https://saikatkumardey.com/posts/14-love-what-you-do.html</loc>
-    <lastmod>2023-12-25T14:00:08.530Z</lastmod>
+    <loc>https://saikatkumardey.com/posts/20-pandas-gbq.html</loc>
+    <lastmod>2024-03-15T17:07:52.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/posts/2-relax.html</loc>
+    <lastmod>2024-03-15T17:07:52.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/posts/19-mobilenets/19-mobilenet-v1.html</loc>
+    <lastmod>2024-03-15T17:07:52.182Z</lastmod>
   </url>
   <url>
     <loc>https://saikatkumardey.com/posts/8-claude+langchain+youtube.html</loc>
-    <lastmod>2023-12-25T14:00:09.070Z</lastmod>
+    <lastmod>2024-03-15T17:07:52.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/posts/14-love-what-you-do.html</loc>
+    <lastmod>2024-03-15T17:07:52.182Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/posts/ios-app/15-minimalist-habit-tracking-ios-app.html</loc>
+    <lastmod>2024-03-15T17:07:52.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/posts/9-deep-nn-for-youtube-recommendations.html</loc>
+    <lastmod>2024-03-15T17:07:52.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/posts/18-snapsort.html</loc>
+    <lastmod>2024-03-15T17:07:52.182Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/posts/12-how-to-live-on-24-hours-a-day.html</loc>
+    <lastmod>2024-03-15T17:07:52.182Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/posts/3-secret-of-success-by-mark-twain.html</loc>
+    <lastmod>2024-03-15T17:07:52.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/posts/4-walk.html</loc>
+    <lastmod>2024-03-15T17:07:52.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saikatkumardey.com/about.html</loc>
+    <lastmod>2024-03-15T17:07:52.158Z</lastmod>
   </url>
 </urlset>

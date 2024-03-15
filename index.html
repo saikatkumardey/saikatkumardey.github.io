@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -94,16 +101,43 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Saikat Kumar Dey</span>
     </a>
@@ -115,19 +149,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/saikatkumardey" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/saikatkumardey"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://x.com/saikatkrdey" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://x.com/saikatkrdey"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -145,420 +179,403 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="computer vision,cnn,mobilenets" data-listing-date-sort="1700956800000" data-listing-file-modified-sort="1703512789978" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="0" data-categories="python,bq" data-listing-date-sort="1710460800000" data-listing-file-modified-sort="1710522472186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="121">
 <div class="body">
-<a href="./posts/19-mobilenets/19-mobilenet-v1.html">
 <h3 class="no-anchor listing-title">
-Why are mobilenets so fast?
+<a href="./posts/20-pandas-gbq.html" class="no-external">Access BQ from Python</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/20-pandas-gbq.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Let’s try to understand what differentiates mobilenets from standard CNN architectures</p>
+<a href="./posts/20-pandas-gbq.html" class="no-external">How to access BQ from Python?</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/20-pandas-gbq.html" class="no-external">
+<div class="listing-date">
+Mar 15, 2024
 </div>
 </a>
 </div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="computer vision,cnn,mobilenets" data-listing-date-sort="1700956800000" data-listing-file-modified-sort="1710522472182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1166">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/19-mobilenets/19-mobilenet-v1.html" class="no-external">Why are mobilenets so fast?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/19-mobilenets/19-mobilenet-v1.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./posts/19-mobilenets/19-mobilenet-v1.html" class="no-external">Let’s try to understand what differentiates mobilenets from standard CNN architectures</a>
+</div>
+</div>
 <div class="metadata">
-<a href="./posts/19-mobilenets/19-mobilenet-v1.html">
+<a href="./posts/19-mobilenets/19-mobilenet-v1.html" class="no-external">
 <div class="listing-date">
 Nov 26, 2023
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="computer vision,clip,openai" data-listing-date-sort="1699920000000" data-listing-file-modified-sort="1703512789978" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="2" data-categories="computer vision,clip,openai" data-listing-date-sort="1699920000000" data-listing-file-modified-sort="1710522472182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="494">
 <div class="body">
-<a href="./posts/18-snapsort.html">
 <h3 class="no-anchor listing-title">
-SnapSort - Sorting your photos locally using OpenAI’s CLIP model
+<a href="./posts/18-snapsort.html" class="no-external">SnapSort - Sorting your photos locally using OpenAI’s CLIP model</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/18-snapsort.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>SnapSort is a CLI tool that uses OpenAI’s CLIP model to sort your photos locally.</p>
+<a href="./posts/18-snapsort.html" class="no-external">SnapSort is a CLI tool that uses OpenAI’s CLIP model to sort your photos locally.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/18-snapsort.html">
+<a href="./posts/18-snapsort.html" class="no-external">
 <div class="listing-date">
 Nov 14, 2023
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="llm,ollama" data-listing-date-sort="1696896000000" data-listing-file-modified-sort="1703512789978" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="3" data-categories="llm,ollama" data-listing-date-sort="1696896000000" data-listing-file-modified-sort="1710522472182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1030">
 <div class="body">
-<a href="./posts/17-ollama.html">
 <h3 class="no-anchor listing-title">
-How to Run Large Language Models on Your Laptop with Ollama.ai
+<a href="./posts/17-ollama.html" class="no-external">How to Run Large Language Models on Your Laptop with Ollama.ai</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/17-ollama.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>You can easily run LLMs on your laptop with Ollama.ai. This post shows you how.</p>
+<a href="./posts/17-ollama.html" class="no-external">You can easily run LLMs on your laptop with Ollama.ai. This post shows you how.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/17-ollama.html">
+<a href="./posts/17-ollama.html" class="no-external">
 <div class="listing-date">
 Oct 10, 2023
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="ios,indiehacking" data-listing-date-sort="1689033600000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="4" data-categories="ios,indiehacking" data-listing-date-sort="1689033600000" data-listing-file-modified-sort="1710522472186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1221">
 <div class="body">
-<a href="./posts/ios-app/15-minimalist-habit-tracking-ios-app.html">
 <h3 class="no-anchor listing-title">
-Minimalist iOS Habit Tracking App
+<a href="./posts/ios-app/15-minimalist-habit-tracking-ios-app.html" class="no-external">Minimalist iOS Habit Tracking App</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/ios-app/15-minimalist-habit-tracking-ios-app.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>I built a simple, offline habit tracking app for myself using SwiftUI to learn practical iOS development skills and end up with a custom productivity tool tailored to my needs.</p>
+<a href="./posts/ios-app/15-minimalist-habit-tracking-ios-app.html" class="no-external">I built a simple, offline habit tracking app for myself using SwiftUI to learn practical iOS development skills and end up with a custom productivity tool tailored to my needs.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/ios-app/15-minimalist-habit-tracking-ios-app.html">
+<a href="./posts/ios-app/15-minimalist-habit-tracking-ios-app.html" class="no-external">
 <div class="listing-date">
 Jul 11, 2023
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="productivity" data-listing-date-sort="1684652877000" data-listing-file-modified-sort="1703512789974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="5" data-categories="productivity" data-listing-date-sort="1684652877000" data-listing-file-modified-sort="1710522472182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="475">
 <div class="body">
-<a href="./posts/12-how-to-live-on-24-hours-a-day.html">
 <h3 class="no-anchor listing-title">
-How to Live on 24 Hours a Day by Arnold Bennett
+<a href="./posts/12-how-to-live-on-24-hours-a-day.html" class="no-external">How to Live on 24 Hours a Day by Arnold Bennett</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/12-how-to-live-on-24-hours-a-day.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>A short review</p>
+<a href="./posts/12-how-to-live-on-24-hours-a-day.html" class="no-external">A short review</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/12-how-to-live-on-24-hours-a-day.html">
+<a href="./posts/12-how-to-live-on-24-hours-a-day.html" class="no-external">
 <div class="listing-date">
 May 21, 2023
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="llm,ai,claude,langchain" data-listing-date-sort="1684420437000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="6" data-categories="llm,ai,claude,langchain" data-listing-date-sort="1684420437000" data-listing-file-modified-sort="1710522472186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="755">
 <div class="body">
-<a href="./posts/8-claude+langchain+youtube.html">
 <h3 class="no-anchor listing-title">
-I summarised a 3 hour long youtube video using Langchain + Claude
+<a href="./posts/8-claude+langchain+youtube.html" class="no-external">I summarised a 3 hour long youtube video using Langchain + Claude</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/8-claude+langchain+youtube.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-I used Langchain + Claude to summarise Sam Altman’s testimony to the US Senate on AI. The video is 3 hours long and the transcript has about 30k+ tokens. I used Langchain to extract the transcript and Claude to summarise it. The result is a 1 page…
+<a href="./posts/8-claude+langchain+youtube.html" class="no-external">I used Langchain + Claude to summarise Sam Altman’s testimony to the US Senate on AI. The video is 3 hours long and the transcript has about 30k+ tokens. I used Langchain to…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/8-claude+langchain+youtube.html">
+<a href="./posts/8-claude+langchain+youtube.html" class="no-external">
 <div class="listing-date">
 May 18, 2023
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="ml" data-listing-date-sort="1669909108000" data-listing-file-modified-sort="1703512789974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="7" data-categories="ml" data-listing-date-sort="1669909108000" data-listing-file-modified-sort="1710522472182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="543">
 <div class="body">
-<a href="./posts/10-fbeta.html">
 <h3 class="no-anchor listing-title">
-Beyond F1: using the Fbeta_score for better model evaluation
+<a href="./posts/10-fbeta.html" class="no-external">Beyond F1: using the Fbeta_score for better model evaluation</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/10-fbeta.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Learn how to use the Fbeta_score, a powerful and flexible evaluation metric for classification tasks that allows the user to adjust the balance between precision and recall.</p>
+<a href="./posts/10-fbeta.html" class="no-external">Learn how to use the Fbeta_score, a powerful and flexible evaluation metric for classification tasks that allows the user to adjust the balance between precision and recall.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/10-fbeta.html">
+<a href="./posts/10-fbeta.html" class="no-external">
 <div class="listing-date">
 Dec 1, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="ml" data-listing-date-sort="1669907974000" data-listing-file-modified-sort="1703512789974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="8" data-categories="ml" data-listing-date-sort="1669907974000" data-listing-file-modified-sort="1710522472182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1996">
 <div class="body">
-<a href="./posts/11-focal-loss.html">
 <h3 class="no-anchor listing-title">
-Solving Class Imbalance with Focal Loss
+<a href="./posts/11-focal-loss.html" class="no-external">Solving Class Imbalance with Focal Loss</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/11-focal-loss.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Focal loss is an effective technique for addressing class imbalance in machine learning by weighting the loss function to focus on hard-to-classify examples.</p>
+<a href="./posts/11-focal-loss.html" class="no-external">Focal loss is an effective technique for addressing class imbalance in machine learning by weighting the loss function to focus on hard-to-classify examples.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/11-focal-loss.html">
+<a href="./posts/11-focal-loss.html" class="no-external">
 <div class="listing-date">
 Dec 1, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1656735042000" data-listing-file-modified-sort="1703512789974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="9" data-listing-date-sort="1656735042000" data-listing-file-modified-sort="1710522472182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="199">
 <div class="body">
-<a href="./posts/14-love-what-you-do.html">
 <h3 class="no-anchor listing-title">
-How to love what you do
+<a href="./posts/14-love-what-you-do.html" class="no-external">How to love what you do</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/14-love-what-you-do.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Thoughts on creating passion for your work</p>
+<a href="./posts/14-love-what-you-do.html" class="no-external">Thoughts on creating passion for your work</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/14-love-what-you-do.html">
+<a href="./posts/14-love-what-you-do.html" class="no-external">
 <div class="listing-date">
 Jul 2, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="leetcode,interview,algorithms" data-listing-date-sort="1656633600000" data-listing-file-modified-sort="1703512789974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27">
+<div class="quarto-post image-right" data-index="10" data-categories="leetcode,interview,algorithms" data-listing-date-sort="1656633600000" data-listing-file-modified-sort="1710522472182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5246">
 <div class="body">
-<a href="./posts/13-leetcode-patterns.html">
 <h3 class="no-anchor listing-title">
-Mastering Common Patterns to Solve Leetcode Problems
+<a href="./posts/13-leetcode-patterns.html" class="no-external">Mastering Common Patterns to Solve Leetcode Problems</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/13-leetcode-patterns.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Knowing these patterns can help you solve most of the problems in leetcode.</p>
+<a href="./posts/13-leetcode-patterns.html" class="no-external">Knowing these patterns can help you solve most of the problems in leetcode.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/13-leetcode-patterns.html">
+<a href="./posts/13-leetcode-patterns.html" class="no-external">
 <div class="listing-date">
 Jul 1, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-listing-date-sort="1655301407000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="11" data-listing-date-sort="1655301407000" data-listing-file-modified-sort="1710522472186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="274">
 <div class="body">
-<a href="./posts/4-walk.html">
 <h3 class="no-anchor listing-title">
-Walking helps you solve difficult bugs
+<a href="./posts/4-walk.html" class="no-external">Walking helps you solve difficult bugs</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/4-walk.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Walking helps you think better</p>
+<a href="./posts/4-walk.html" class="no-external">Walking helps you think better</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/4-walk.html">
+<a href="./posts/4-walk.html" class="no-external">
 <div class="listing-date">
 Jun 15, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="ml" data-listing-date-sort="1654577715000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="12" data-categories="ml" data-listing-date-sort="1654577715000" data-listing-file-modified-sort="1710522472186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="699">
 <div class="body">
-<a href="./posts/6-accuracy-is-a-poor-error-metric.html">
 <h3 class="no-anchor listing-title">
-Accuracy Is a Poor evaluation Metric
+<a href="./posts/6-accuracy-is-a-poor-error-metric.html" class="no-external">Accuracy Is a Poor evaluation Metric</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/6-accuracy-is-a-poor-error-metric.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Issues with using accuracy as an evaluation metric and what you should use instead</p>
+<a href="./posts/6-accuracy-is-a-poor-error-metric.html" class="no-external">Issues with using accuracy as an evaluation metric and what you should use instead</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/6-accuracy-is-a-poor-error-metric.html">
+<a href="./posts/6-accuracy-is-a-poor-error-metric.html" class="no-external">
 <div class="listing-date">
 Jun 7, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-listing-date-sort="1654282449000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="13" data-listing-date-sort="1654282449000" data-listing-file-modified-sort="1710522472186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="212">
 <div class="body">
-<a href="./posts/3-secret-of-success-by-mark-twain.html">
 <h3 class="no-anchor listing-title">
-Secret of Success by Mark Twain
+<a href="./posts/3-secret-of-success-by-mark-twain.html" class="no-external">Secret of Success by Mark Twain</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/3-secret-of-success-by-mark-twain.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Timeless wisdom</p>
+<a href="./posts/3-secret-of-success-by-mark-twain.html" class="no-external">Timeless wisdom</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/3-secret-of-success-by-mark-twain.html">
+<a href="./posts/3-secret-of-success-by-mark-twain.html" class="no-external">
 <div class="listing-date">
 Jun 3, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="thoughts" data-listing-date-sort="1653887607000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="14" data-categories="thoughts" data-listing-date-sort="1653887607000" data-listing-file-modified-sort="1710522472186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="276">
 <div class="body">
-<a href="./posts/2-relax.html">
 <h3 class="no-anchor listing-title">
-The Importance of Focusing on One Thing at a Time
+<a href="./posts/2-relax.html" class="no-external">The Importance of Focusing on One Thing at a Time</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2-relax.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Take a step back and breathe</p>
+<a href="./posts/2-relax.html" class="no-external">Take a step back and breathe</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2-relax.html">
+<a href="./posts/2-relax.html" class="no-external">
 <div class="listing-date">
 May 30, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-listing-date-sort="1653844251000" data-listing-file-modified-sort="1703512789978" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="15" data-listing-date-sort="1653844251000" data-listing-file-modified-sort="1710522472182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="237">
 <div class="body">
-<a href="./posts/16-never-too-late.html">
 <h3 class="no-anchor listing-title">
-Never Too Late: The Inspiring Story of Van Gogh
+<a href="./posts/16-never-too-late.html" class="no-external">Never Too Late: The Inspiring Story of Van Gogh</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/16-never-too-late.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>It’s never too late to start pursuing your dreams</p>
+<a href="./posts/16-never-too-late.html" class="no-external">It’s never too late to start pursuing your dreams</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/16-never-too-late.html">
+<a href="./posts/16-never-too-late.html" class="no-external">
 <div class="listing-date">
 May 29, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="investment,personal-finance" data-listing-date-sort="1653752006000" data-listing-file-modified-sort="1703512789974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="16" data-categories="investment,personal-finance" data-listing-date-sort="1653752006000" data-listing-file-modified-sort="1710522472182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="356">
 <div class="body">
-<a href="./posts/1-keep-investing.html">
 <h3 class="no-anchor listing-title">
-The Power of Consistent Investing
+<a href="./posts/1-keep-investing.html" class="no-external">The Power of Consistent Investing</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/1-keep-investing.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Note to self on investment.</p>
+<a href="./posts/1-keep-investing.html" class="no-external">Note to self on investment.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/1-keep-investing.html">
+<a href="./posts/1-keep-investing.html" class="no-external">
 <div class="listing-date">
 May 28, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="coding,python" data-listing-date-sort="1632803783000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="17" data-categories="coding,python" data-listing-date-sort="1632803783000" data-listing-file-modified-sort="1710522472186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1748">
 <div class="body">
-<a href="./posts/7-building-pandas-dataframes-from-ndarrays.html">
 <h3 class="no-anchor listing-title">
-Building Pandas Dataframes From Ndarrays
+<a href="./posts/7-building-pandas-dataframes-from-ndarrays.html" class="no-external">Building Pandas Dataframes From Ndarrays</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/7-building-pandas-dataframes-from-ndarrays.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>How to convert multi-dimensional numpy arrays to pandas dataframe?</p>
+<a href="./posts/7-building-pandas-dataframes-from-ndarrays.html" class="no-external">How to convert multi-dimensional numpy arrays to pandas dataframe?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/7-building-pandas-dataframes-from-ndarrays.html">
+<a href="./posts/7-building-pandas-dataframes-from-ndarrays.html" class="no-external">
 <div class="listing-date">
 Sep 28, 2021
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-listing-date-sort="1630816185000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="18" data-listing-date-sort="1630816185000" data-listing-file-modified-sort="1710522472186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1019">
 <div class="body">
-<a href="./posts/5-a-simplified-implementation-of-quicksort.html">
 <h3 class="no-anchor listing-title">
-A Simplified Implementation of Quicksort
+<a href="./posts/5-a-simplified-implementation-of-quicksort.html" class="no-external">A Simplified Implementation of Quicksort</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/5-a-simplified-implementation-of-quicksort.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>A simple implementation of quicksort that trades space complexity for readability</p>
+<a href="./posts/5-a-simplified-implementation-of-quicksort.html" class="no-external">A simple implementation of quicksort that trades space complexity for readability</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/5-a-simplified-implementation-of-quicksort.html">
+<a href="./posts/5-a-simplified-implementation-of-quicksort.html" class="no-external">
 <div class="listing-date">
 Sep 5, 2021
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="ml" data-listing-date-sort="1630211343000" data-listing-file-modified-sort="1703512789982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="19" data-categories="ml" data-listing-date-sort="1630211343000" data-listing-file-modified-sort="1710522472186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="933">
 <div class="body">
-<a href="./posts/9-deep-nn-for-youtube-recommendations.html">
 <h3 class="no-anchor listing-title">
-Deep Neural Networks for YouTube Recommendations
+<a href="./posts/9-deep-nn-for-youtube-recommendations.html" class="no-external">Deep Neural Networks for YouTube Recommendations</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/9-deep-nn-for-youtube-recommendations.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Paper summary on how to generate relevant YouTube recommendations</p>
+<a href="./posts/9-deep-nn-for-youtube-recommendations.html" class="no-external">Paper summary on how to generate relevant YouTube recommendations</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/9-deep-nn-for-youtube-recommendations.html">
+<a href="./posts/9-deep-nn-for-youtube-recommendations.html" class="no-external">
 <div class="listing-date">
 Aug 29, 2021
 </div>
@@ -649,10 +666,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/saikatkumardey\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -662,8 +696,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -675,7 +718,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -719,6 +885,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -744,6 +911,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -804,6 +997,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
