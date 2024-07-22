@@ -1,4 +1,4 @@
-## Hi, I'm Saikat Kumar Dey
+**Hi, I'm Saikat Kumar Dey**
 
 I am a Machine Learning Engineer. 
 I work on improving in-house Map capabilities at Gojek.

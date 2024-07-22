@@ -45,7 +45,6 @@ class BlogGenerator:
         <nav>{nav_html}</nav>
     </header>
     <main>
-        <h2>{title}</h2>
         {content}
     </main>
 </body>
@@ -86,8 +85,9 @@ class BlogGenerator:
             if filename.endswith('.md') and filename != 'index.md':
                 post = self.parse_post(os.path.join(self.posts_dir, filename))
                 self.posts.append(post)
-                
-                post_content = markdown.markdown(post["content"])
+        
+                content = f"""# {post['title']}\n\n{post["content"]}"""
+                post_content = markdown.markdown(content)
                 post_html = self.generate_html(post['title'], post_content, "Blog")
                 with open(os.path.join(self.output_dir, post['filename']), 'w') as f:
                     f.write(post_html)
@@ -101,11 +101,11 @@ class BlogGenerator:
             f.write(blog_html)
 
     def generate_home_page(self):
-        with open('index.md', 'r') as f:
-            home_content = f.read()
+
+        home_post = self.parse_post('index.md')
         
         # Convert markdown to HTML
-        home_content = markdown.markdown(home_content)
+        home_content = markdown.markdown(home_post["title"] + "\n\n" + home_post["content"])
         
         # Add the list of recent posts
         popular_posts = self.posts[:3]  # Assuming the first 5 are the most popular
@@ -116,7 +116,7 @@ class BlogGenerator:
 
         output_dir = 'docs'
         os.makedirs(output_dir, exist_ok=True)
-        
+
         with open(os.path.join(self.output_dir, 'index.html'), 'w') as f:
             f.write(index_html)
 
