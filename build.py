@@ -113,6 +113,10 @@ class BlogGenerator:
         home_content += f"<h3>My latest posts</h3>{popular_posts_html}"
 
         index_html = self.generate_html("Saikat's Blog", home_content, "Home")
+
+        output_dir = 'docs'
+        os.makedirs(output_dir, exist_ok=True)
+        
         with open(os.path.join(self.output_dir, 'index.html'), 'w') as f:
             f.write(index_html)
 
