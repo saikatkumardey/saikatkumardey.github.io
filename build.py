@@ -21,35 +21,68 @@ class BlogGenerator:
         nav_html = ''.join(nav_html)
         
         return f"""
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
-    <style>
-        body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }}
-        a {{ color: #0366d6; text-decoration: none; }}
-        h1, h2 {{ margin-top: 1.5em; }}
-        nav {{ margin-bottom: 20px; }}
-        nav a {{ margin-right: 15px; }}
-        nav a.active {{ font-weight: bold; }}
-        .post-list {{ list-style-type: none; padding: 0; }}
-        .post-list li {{ margin-bottom: 10px; }}
-        .post-date {{ color: #6a737d; margin-right: 10px; }}
-    </style>
-</head>
-<body>
-    <header>
-        <h1>✦ (^‿^) ✦ Saikat's blog</h1>
-        <nav>{nav_html}</nav>
-    </header>
-    <main>
-        {content}
-    </main>
-</body>
-</html>
-"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{title}</title>
+        <style>
+            body {{
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                font-size: 16px;
+            }}
+            a {{ color: #0366d6; text-decoration: none; }}
+            a:hover {{ text-decoration: underline; }}
+            h1, h2 {{ margin-top: 1.5em; }}
+            nav {{ margin-bottom: 20px; }}
+            nav a {{ margin-right: 15px; }}
+            nav a.active {{ font-weight: bold; }}
+            .post-list {{ list-style-type: none; padding: 0; }}
+            .post-list li {{ margin-bottom: 10px; }}
+            .post-date {{ color: #6a737d; margin-right: 10px; }}
+            img {{ max-width: 100%; height: auto; }}
+            pre {{ overflow-x: auto; }}
+            @media (max-width: 600px) {{
+                body {{ 
+                    font-size: 14px;
+                    padding: 10px;
+                }}
+                h1 {{ font-size: 24px; }}
+                h2 {{ font-size: 20px; }}
+                nav {{ 
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }}
+                nav a {{ 
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }}
+                .post-list li {{ 
+                    display: flex;
+                    flex-direction: column;
+                }}
+                .post-date {{ margin-bottom: 5px; }}
+            }}
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>✦ (^‿^) ✦ Saikat's blog</h1>
+            <nav>{nav_html}</nav>
+        </header>
+        <main>
+            {content}
+        </main>
+    </body>
+    </html>
+    """
 
     def parse_post(self, filename):
         try:
