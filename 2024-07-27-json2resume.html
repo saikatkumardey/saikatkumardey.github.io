@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Saikat's Blog</title>
+        <title>json2resume</title>
         <style>
             body {
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -53,25 +53,16 @@
     <body>
         <header>
             <h1>✦ (^‿^) ✦ Saikat's blog</h1>
-            <nav><a href="index.html" class="active">Home</a><a href="blog.html">Blog</a><a href="projects.html">Projects</a></nav>
+            <nav><a href="index.html">Home</a><a href="blog.html" class="active">Blog</a><a href="projects.html">Projects</a></nav>
         </header>
         <main>
-            <p><strong>Hi, I'm Saikat Kumar Dey</strong></p>
-<p>I am a Machine Learning Engineer. 
-I work on improving in-house Map capabilities at Gojek.
-I love building things - such as this <a href="blog.html">blog</a>.</p><h3>My latest posts</h3><ul class='post-list'>
-            <li>
-                <span class='post-date'>27 Jul, 2024</span>
-                <a href='2024-07-27-json2resume.html'>json2resume</a>
-            </li>
-            <li>
-                <span class='post-date'>24 Jul, 2024</span>
-                <a href='2024-07-24-your-life.html'>Your Life Visualized</a>
-            </li>
-            <li>
-                <span class='post-date'>22 Jul, 2024</span>
-                <a href='2024-07-22-hello-world.html'>Hello World</a>
-            </li></ul>
+            <h1>json2resume</h1>
+<p>I built a simple tool called <a href="https://saikatkumardey.com/json2resume">json2resume</a> that converts JSON to a resume.</p>
+<p>The input is a standard JSON object based on the <a href="https://jsonresume.org/schema">jsonresume.org</a> schema. The output is a resume in HTML format. </p>
+<p>You could customize the look and feel of the resume. When you're happy with the result, you can download the resume as a PDF.</p>
+<p>I am working on a complementary tool called resume2json that converts a resume in PDF format to a standard JSON as per the schema. I can then take the JSON and use it in json2resume to convert it back to a resume.</p>
+<p>Why? I wanted to standardize my resume so it is easier to maintain and update. Usually, I use <a href="https://www.sharelatex.com">ShareLaTeX</a> to create my resume. But I wanted to build something simpler and easy to use.</p>
+<p>I am still tinkering with these ideas. Maybe we could build a resume builder out of this. Let's see where this goes.</p>
         </main>
     </body>
     </html>
