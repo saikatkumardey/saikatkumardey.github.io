@@ -6,47 +6,145 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Saikat's Blog</title>
         <style>
+            :root {
+                --primary-color: #3498db;
+                --secondary-color: #2c3e50;
+                --background-color: #f8f9fa;
+                --text-color: #333;
+                --link-color: #2980b9;
+                --border-color: #e0e0e0;
+            }
             body {
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-                line-height: 1.6;
-                color: #333;
+                line-height: 1.8;
+                color: var(--text-color);
+                background-color: var(--background-color);
                 max-width: 800px;
                 margin: 0 auto;
                 padding: 20px;
-                font-size: 16px;
+                font-size: 18px;
             }
-            a { color: #0366d6; text-decoration: none; }
-            a:hover { text-decoration: underline; }
-            h1, h2 { margin-top: 1.5em; }
-            nav { margin-bottom: 20px; }
-            nav a { margin-right: 15px; }
-            nav a.active { font-weight: bold; }
-            .post-list { list-style-type: none; padding: 0; }
-            .post-list li { margin-bottom: 10px; }
-            .post-date { color: #6a737d; margin-right: 10px; }
-            img { max-width: 100%; height: auto; }
-            pre { overflow-x: auto; }
+            a { 
+                color: var(--link-color); 
+                text-decoration: none; 
+                transition: color 0.3s ease;
+            }
+            a:hover { 
+                color: var(--primary-color);
+                text-decoration: underline; 
+            }
+            h1, h2 { 
+                margin-top: 1.5em;
+                color: var(--secondary-color);
+            }
+            header {
+                background-color: black;
+                color: white;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 30px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            header h1 {
+                margin: 0;
+                font-size: 2.5em;
+                color: white;
+            }
+            nav { 
+                margin-top: 20px; 
+                display: flex;
+                justify-content: center;
+            }
+            nav a { 
+                margin: 0 15px;
+                color: white;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 0.9em;
+                position: relative;
+            }
+            nav a::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                background-color: white;
+                transition: width 0.3s ease;
+            }
+            nav a:hover::after {
+                width: 100%;
+            }
+            nav a.active { 
+                font-weight: bold;
+            }
+            nav a.active::after {
+                width: 100%;
+            }
+            .post-list { 
+                list-style-type: none; 
+                padding: 0; 
+            }
+            .post-list li { 
+                margin-bottom: 20px;
+                padding: 15px;
+                background-color: white;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+                transition: transform 0.3s ease;
+            }
+            .post-list li:hover {
+                transform: translateY(-3px);
+            }
+            .post-date { 
+                color: #6a737d; 
+                margin-right: 10px;
+                font-size: 0.9em;
+            }
+            img { 
+                max-width: 100%; 
+                height: auto;
+                border-radius: 5px;
+                margin: 20px 0;
+            }
+            pre { 
+                overflow-x: auto;
+                background-color: #f0f0f0;
+                padding: 15px;
+                border-radius: 5px;
+            }
+            blockquote {
+                border-left: 4px solid var(--primary-color);
+                padding-left: 20px;
+                margin-left: 0;
+                font-style: italic;
+                color: #555;
+            }
             @media (max-width: 600px) {
                 body { 
-                    font-size: 14px;
+                    font-size: 16px;
                     padding: 10px;
+                }
+                header {
+                    padding: 15px;
+                }
+                header h1 {
+                    font-size: 2em;
                 }
                 h1 { font-size: 24px; }
                 h2 { font-size: 20px; }
                 nav { 
-                    display: flex;
                     flex-direction: column;
                     align-items: center;
                 }
                 nav a { 
-                    margin-right: 0;
-                    margin-bottom: 10px;
+                    margin: 5px 0;
                 }
                 .post-list li { 
-                    display: flex;
-                    flex-direction: column;
+                    padding: 10px;
                 }
-                .post-date { margin-bottom: 5px; }
             }
         </style>
     </head>
@@ -59,7 +157,7 @@
             <p><strong>Hi, I'm Saikat Kumar Dey</strong></p>
 <p>I am a Machine Learning Engineer. 
 I work on improving in-house Map capabilities at Gojek.
-I love building things - such as this <a href="blog.html">blog</a>.</p><h3>My latest posts</h3><ul class='post-list'>
+I love building things - such as these fun <a href="projects.html">projects</a>.</p><h2>Recent Posts</h2><ul class='post-list'>
             <li>
                 <span class='post-date'>27 Jul, 2024</span>
                 <a href='2024-07-27-json2resume.html'>json2resume</a>
@@ -73,6 +171,9 @@ I love building things - such as this <a href="blog.html">blog</a>.</p><h3>My la
                 <a href='2024-07-22-hello-world.html'>Hello World</a>
             </li></ul>
         </main>
+        <footer style="text-align: center; margin-top: 50px; color: #777; font-size: 0.9em;">
+            © 2024 Saikat's Blog. All rights reserved.
+        </footer>
     </body>
     </html>
     
