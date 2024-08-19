@@ -11,47 +11,145 @@ POST_TEMPLATE = """
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{title}</title>
         <style>
+            :root {{
+                --primary-color: #3498db;
+                --secondary-color: #2c3e50;
+                --background-color: #f8f9fa;
+                --text-color: #333;
+                --link-color: #2980b9;
+                --border-color: #e0e0e0;
+            }}
             body {{
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-                line-height: 1.6;
-                color: #333;
+                line-height: 1.8;
+                color: var(--text-color);
+                background-color: var(--background-color);
                 max-width: 800px;
                 margin: 0 auto;
                 padding: 20px;
-                font-size: 16px;
+                font-size: 18px;
             }}
-            a {{ color: #0366d6; text-decoration: none; }}
-            a:hover {{ text-decoration: underline; }}
-            h1, h2 {{ margin-top: 1.5em; }}
-            nav {{ margin-bottom: 20px; }}
-            nav a {{ margin-right: 15px; }}
-            nav a.active {{ font-weight: bold; }}
-            .post-list {{ list-style-type: none; padding: 0; }}
-            .post-list li {{ margin-bottom: 10px; }}
-            .post-date {{ color: #6a737d; margin-right: 10px; }}
-            img {{ max-width: 100%; height: auto; }}
-            pre {{ overflow-x: auto; }}
+            a {{ 
+                color: var(--link-color); 
+                text-decoration: none; 
+                transition: color 0.3s ease;
+            }}
+            a:hover {{ 
+                color: var(--primary-color);
+                text-decoration: underline; 
+            }}
+            h1, h2 {{ 
+                margin-top: 1.5em;
+                color: var(--secondary-color);
+            }}
+            header {{
+                background-color: black;
+                color: white;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 30px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }}
+            header h1 {{
+                margin: 0;
+                font-size: 2.5em;
+                color: white;
+            }}
+            nav {{ 
+                margin-top: 20px; 
+                display: flex;
+                justify-content: center;
+            }}
+            nav a {{ 
+                margin: 0 15px;
+                color: white;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 0.9em;
+                position: relative;
+            }}
+            nav a::after {{
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                background-color: white;
+                transition: width 0.3s ease;
+            }}
+            nav a:hover::after {{
+                width: 100%;
+            }}
+            nav a.active {{ 
+                font-weight: bold;
+            }}
+            nav a.active::after {{
+                width: 100%;
+            }}
+            .post-list {{ 
+                list-style-type: none; 
+                padding: 0; 
+            }}
+            .post-list li {{ 
+                margin-bottom: 20px;
+                padding: 15px;
+                background-color: white;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+                transition: transform 0.3s ease;
+            }}
+            .post-list li:hover {{
+                transform: translateY(-3px);
+            }}
+            .post-date {{ 
+                color: #6a737d; 
+                margin-right: 10px;
+                font-size: 0.9em;
+            }}
+            img {{ 
+                max-width: 100%; 
+                height: auto;
+                border-radius: 5px;
+                margin: 20px 0;
+            }}
+            pre {{ 
+                overflow-x: auto;
+                background-color: #f0f0f0;
+                padding: 15px;
+                border-radius: 5px;
+            }}
+            blockquote {{
+                border-left: 4px solid var(--primary-color);
+                padding-left: 20px;
+                margin-left: 0;
+                font-style: italic;
+                color: #555;
+            }}
             @media (max-width: 600px) {{
                 body {{ 
-                    font-size: 14px;
+                    font-size: 16px;
                     padding: 10px;
+                }}
+                header {{
+                    padding: 15px;
+                }}
+                header h1 {{
+                    font-size: 2em;
                 }}
                 h1 {{ font-size: 24px; }}
                 h2 {{ font-size: 20px; }}
                 nav {{ 
-                    display: flex;
                     flex-direction: column;
                     align-items: center;
                 }}
                 nav a {{ 
-                    margin-right: 0;
-                    margin-bottom: 10px;
+                    margin: 5px 0;
                 }}
                 .post-list li {{ 
-                    display: flex;
-                    flex-direction: column;
+                    padding: 10px;
                 }}
-                .post-date {{ margin-bottom: 5px; }}
             }}
         </style>
     </head>
@@ -63,6 +161,9 @@ POST_TEMPLATE = """
         <main>
             {content}
         </main>
+        <footer style="text-align: center; margin-top: 50px; color: #777; font-size: 0.9em;">
+            © {current_year} Saikat's Blog. All rights reserved.
+        </footer>
     </body>
     </html>
     """
@@ -86,7 +187,7 @@ class BlogGenerator:
             nav_html.append(f'<a href="{url}"{class_attr}>{page}</a>')
         nav_html = "".join(nav_html)
         return POST_TEMPLATE.format(
-            title=title, content=content, nav_html=nav_html
+            title=title, content=content, nav_html=nav_html, current_year=datetime.now().year
         )
 
     def parse_post(self, filename):
@@ -96,7 +197,6 @@ class BlogGenerator:
             )
         except ValueError:
             date = None
-            # return None
 
         with open(filename, "r") as f:
             content = f.read().split("\n", 2)
@@ -146,7 +246,7 @@ class BlogGenerator:
         self.posts.sort(key=lambda x: x["date"], reverse=True)
 
     def generate_blog_page(self):
-        blog_content = self.generate_post_list(self.posts)
+        blog_content = "<h1>Blog Posts</h1>" + self.generate_post_list(self.posts)
         blog_html = self.generate_html(
             "Blog - Saikat's Blog", blog_content, "Blog"
         )
@@ -154,10 +254,8 @@ class BlogGenerator:
             f.write(blog_html)
 
     def generate_home_page(self):
-
         home_page_path = os.path.join(self.posts_dir, "index.md")
         home_post = self.parse_post(home_page_path)
-        print(home_post)
 
         # Convert markdown to HTML
         home_content = markdown.markdown(
@@ -165,16 +263,11 @@ class BlogGenerator:
         )
 
         # Add the list of recent posts
-        popular_posts = self.posts[
-            :3
-        ]  # Assuming the first 5 are the most popular
-        popular_posts_html = self.generate_post_list(popular_posts)
-        home_content += f"<h3>My latest posts</h3>{popular_posts_html}"
+        recent_posts = self.posts[:3]  # Get the 3 most recent posts
+        recent_posts_html = self.generate_post_list(recent_posts)
+        home_content += f"<h2>Recent Posts</h2>{recent_posts_html}"
 
         index_html = self.generate_html("Saikat's Blog", home_content, "Home")
-
-        output_dir = "docs"
-        os.makedirs(output_dir, exist_ok=True)
 
         with open(os.path.join(self.output_dir, "index.html"), "w") as f:
             f.write(index_html)
@@ -183,9 +276,7 @@ class BlogGenerator:
         projects_post = self.parse_post(
             os.path.join(self.posts_dir, "projects.md")
         )
-        content = (
-            f"""**{projects_post['title']}**\n\n{projects_post["content"]}"""
-        )
+        content = f"""# {projects_post['title']}\n\n{projects_post["content"]}"""
         projects_content = markdown.markdown(content)
         projects_html = self.generate_html(
             "Projects - Saikat's Blog", projects_content, "Projects"

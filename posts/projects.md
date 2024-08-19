@@ -1,4 +1,9 @@
-## Tiny Projects
-
-- [Your Life](/your-life)
-- [json2resume](/json2resume)
+# Projects
+- [Your Life](/your-life) Visualize your life in weeks.
+- [json2resume](/json2resume) Generate a web resume from a standard JSON file.
+- [HabitHub](https://github.com/saikatkumardey/habithub) iOS app for tracking your habits.
+- [Converso](https://converso.fly.dev/) GPT-powered chatbot that lets you talk to multiple personalities.
+- [Snapsort](https://github.com/saikatkumardey/snapsort) categorise images automatically using OpenAI CLIP
+- [aidoc](https://github.com/saikatkumardey/aidoc) CLI tool to generate docstrings and type-hints for the entire repo.
+- [QuickreadAI](https://github.com/saikatkumardey/quickreadai) Effortlessly absorb the key takeaways from non-fiction books.
+- [DuckduckLLM](https://github.com/saikatkumardey/duckduckllm) DuckDuckGo + Open-source LLM to perform web-search and answer user queries directly.
