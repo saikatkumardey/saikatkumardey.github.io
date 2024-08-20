@@ -2,178 +2,14 @@ import os
 import shutil
 import markdown
 from datetime import datetime
-
-POST_TEMPLATE = """
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{title}</title>
-        <style>
-            :root {{
-                --primary-color: #3498db;
-                --secondary-color: #2c3e50;
-                --background-color: #f8f9fa;
-                --text-color: #333;
-                --link-color: #2980b9;
-                --border-color: #e0e0e0;
-            }}
-            body {{
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-                line-height: 1.8;
-                color: var(--text-color);
-                background-color: var(--background-color);
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 20px;
-                font-size: 18px;
-            }}
-            a {{ 
-                color: var(--link-color); 
-                text-decoration: none; 
-                transition: color 0.3s ease;
-            }}
-            a:hover {{ 
-                color: var(--primary-color);
-                text-decoration: underline; 
-            }}
-            h1, h2 {{ 
-                margin-top: 1.5em;
-                color: var(--secondary-color);
-            }}
-            header {{
-                background-color: black;
-                color: white;
-                padding: 20px;
-                border-radius: 5px;
-                margin-bottom: 30px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            }}
-            header h1 {{
-                margin: 0;
-                font-size: 2.5em;
-                color: white;
-            }}
-            nav {{ 
-                margin-top: 20px; 
-                display: flex;
-                justify-content: center;
-            }}
-            nav a {{ 
-                margin: 0 15px;
-                color: white;
-                font-weight: bold;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                font-size: 0.9em;
-                position: relative;
-            }}
-            nav a::after {{
-                content: '';
-                position: absolute;
-                width: 0;
-                height: 2px;
-                bottom: -5px;
-                left: 0;
-                background-color: white;
-                transition: width 0.3s ease;
-            }}
-            nav a:hover::after {{
-                width: 100%;
-            }}
-            nav a.active {{ 
-                font-weight: bold;
-            }}
-            nav a.active::after {{
-                width: 100%;
-            }}
-            .post-list {{ 
-                list-style-type: none; 
-                padding: 0; 
-            }}
-            .post-list li {{ 
-                margin-bottom: 20px;
-                padding: 15px;
-                background-color: white;
-                border-radius: 5px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-                transition: transform 0.3s ease;
-            }}
-            .post-list li:hover {{
-                transform: translateY(-3px);
-            }}
-            .post-date {{ 
-                color: #6a737d; 
-                margin-right: 10px;
-                font-size: 0.9em;
-            }}
-            img {{ 
-                max-width: 100%; 
-                height: auto;
-                border-radius: 5px;
-                margin: 20px 0;
-            }}
-            pre {{ 
-                overflow-x: auto;
-                background-color: #f0f0f0;
-                padding: 15px;
-                border-radius: 5px;
-            }}
-            blockquote {{
-                border-left: 4px solid var(--primary-color);
-                padding-left: 20px;
-                margin-left: 0;
-                font-style: italic;
-                color: #555;
-            }}
-            @media (max-width: 600px) {{
-                body {{ 
-                    font-size: 16px;
-                    padding: 10px;
-                }}
-                header {{
-                    padding: 15px;
-                }}
-                header h1 {{
-                    font-size: 2em;
-                }}
-                h1 {{ font-size: 24px; }}
-                h2 {{ font-size: 20px; }}
-                nav {{ 
-                    flex-direction: column;
-                    align-items: center;
-                }}
-                nav a {{ 
-                    margin: 5px 0;
-                }}
-                .post-list li {{ 
-                    padding: 10px;
-                }}
-            }}
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>✦ (^‿^) ✦ Saikat's blog</h1>
-            <nav>{nav_html}</nav>
-        </header>
-        <main>
-            {content}
-        </main>
-        <footer style="text-align: center; margin-top: 50px; color: #777; font-size: 0.9em;">
-            © {current_year} Saikat's Blog. All rights reserved.
-        </footer>
-    </body>
-    </html>
-    """
-
+from template import POST_TEMPLATE
 
 class BlogGenerator:
     def __init__(self, posts_dir="posts", output_dir="docs"):
         self.posts_dir = posts_dir
         self.output_dir = output_dir
         self.posts = []
+        self.md = markdown.Markdown(extensions=['fenced_code', 'codehilite'])
 
     def generate_html(self, title, content, active_page):
         nav_items = {
@@ -234,7 +70,7 @@ class BlogGenerator:
                 self.posts.append(post)
 
                 content = f"""# {post['title']}\n\n{post["content"]}"""
-                post_content = markdown.markdown(content)
+                post_content = self.md.convert(content)
                 post_html = self.generate_html(
                     post["title"], post_content, "Blog"
                 )
@@ -244,6 +80,7 @@ class BlogGenerator:
                     f.write(post_html)
 
         self.posts.sort(key=lambda x: x["date"], reverse=True)
+
 
     def generate_blog_page(self):
         blog_content = "<h1>Blog Posts</h1>" + self.generate_post_list(self.posts)
@@ -258,7 +95,7 @@ class BlogGenerator:
         home_post = self.parse_post(home_page_path)
 
         # Convert markdown to HTML
-        home_content = markdown.markdown(
+        home_content = self.md.convert(
             home_post["title"] + "\n\n" + home_post["content"]
         )
 
@@ -272,12 +109,13 @@ class BlogGenerator:
         with open(os.path.join(self.output_dir, "index.html"), "w") as f:
             f.write(index_html)
 
+
     def generate_projects_page(self):
         projects_post = self.parse_post(
             os.path.join(self.posts_dir, "projects.md")
         )
         content = f"""# {projects_post['title']}\n\n{projects_post["content"]}"""
-        projects_content = markdown.markdown(content)
+        projects_content = self.md.convert(content)
         projects_html = self.generate_html(
             "Projects - Saikat's Blog", projects_content, "Projects"
         )
