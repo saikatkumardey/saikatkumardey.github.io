@@ -11,6 +11,19 @@ class BlogGenerator:
         self.posts = []
         self.md = markdown.Markdown(extensions=['fenced_code', 'codehilite'])
 
+    def copy_images(self):
+        for root, _, files in os.walk(self.posts_dir):
+            for file in files:
+                if file.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg')):
+                    src_path = os.path.join(root, file)
+                    rel_path = os.path.relpath(root, self.posts_dir)
+                    dest_path = os.path.join(self.output_dir, rel_path, file)
+                    
+                    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                    shutil.copy2(src_path, dest_path)
+                    print(f"Copied image: {src_path} -> {dest_path}")
+
+
     def generate_html(self, title, content, active_page):
         nav_items = {
             "Home": "index.html",
@@ -116,6 +129,7 @@ class BlogGenerator:
         self.generate_blog_page()
         self.generate_home_page()
         self.generate_projects_page()
+        self.copy_images()
         print("Site built successfully!")
 
 if __name__ == "__main__":

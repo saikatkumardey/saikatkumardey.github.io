@@ -10,10 +10,10 @@ Ready to unlock the power of PyTorch and build your own deep learning models? Th
 
 **What will you learn?**
 
-* **Day 1: Tensors - The Building Blocks of Deep Learning**
+* [**Day 1: Tensors - The Building Blocks of Deep Learning**](/pytorch/2024-08-20-intro-to-pytorch.html)
     * **Morning:** Create, manipulate, and understand tensors.
     * **Afternoon:** Build a simple linear regression model from scratch.
-* **Day 2: Autograd -  The Magic of Automatic Differentiation**
+* [**Day 2: Autograd -  The Magic of Automatic Differentiation**](/pytorch/2024-08-21-autograd.html)
     * **Morning:** Demystify how PyTorch calculates gradients for learning.
     * **Afternoon:**  Train a logistic regression model for classification.
 * **Day 3: Neural Networks - Stacking Layers Like a Pro**
