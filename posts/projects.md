@@ -1,4 +1,6 @@
 # Projects
+- [MF Overlap](https://mf-overlap.fly.dev) A tool to compare mutual fund holdings.
+- [TallOrNot](https://tallornot.fly.dev) A tool to estimate someone's height from a photo.
 - [Your Life](/your-life) Visualize your life in weeks.
 - [json2resume](/json2resume) Generate a web resume from a standard JSON file.
 - [HabitHub](https://github.com/saikatkumardey/habithub) iOS app for tracking your habits.
