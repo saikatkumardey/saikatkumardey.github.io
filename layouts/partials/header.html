@@ -1,0 +1,18 @@
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+  <a href="{{ "" | relURL }}" class="title">
+    <h2>{{ .Site.Title }}</h2>
+  </a>
+  <button id="theme-toggle" style="
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  " onmouseover="this.style.backgroundColor='var(--border)'" onmouseout="this.style.backgroundColor='transparent'">🌙</button>
+</div>
+<nav>{{- partial "nav.html" . -}}</nav>
