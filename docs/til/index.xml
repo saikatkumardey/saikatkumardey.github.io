@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TIL on Saikat Kumar Dey</title><link>https://saikatkumardey.com/til/</link><description>Recent content in TIL on Saikat Kumar Dey</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 21 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://saikatkumardey.com/til/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-02-21</title><link>https://saikatkumardey.com/til/2026-02-21/</link><pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/til/2026-02-21/</guid><description>&lt;ul>
-&lt;li>Hugo&amp;rsquo;s content type is derived from the directory name. Content in &lt;code>content/til/&lt;/code> automatically gets type &lt;code>til&lt;/code>.&lt;/li>
-&lt;li>Use &lt;code>layouts/[type]/list.html&lt;/code> and &lt;code>layouts/[type]/single.html&lt;/code> for custom rendering per content type.&lt;/li>
-&lt;li>Menu items are added via &lt;code>menu = &amp;quot;main&amp;quot;&lt;/code> in frontmatter. The nav.html partial iterates &lt;code>Site.Menus.main&lt;/code>.&lt;/li>
-&lt;li>TIL entries work best with minimal frontmatter—just date and optional title. Keep friction low.&lt;/li>
-&lt;li>Bear Blog theme is minimal and clean; it uses CSS variables like &lt;code>--text-secondary&lt;/code> and &lt;code>--border&lt;/code> for theming. Good for dark mode support without extra work.&lt;/li>
-&lt;/ul></description></item><item><title>2026-02-20</title><link>https://saikatkumardey.com/til/2026-02-20/</link><pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/til/2026-02-20/</guid><description>&lt;ul>
-&lt;li>Sam Wilson&amp;rsquo;s TIL format is just a single markdown file per day with bullet points and links. No fancy structure.&lt;/li>
-&lt;li>The appeal: low friction, no pressure for polish. Observations, code snippets, links to interesting articles all mixed in.&lt;/li>
-&lt;li>Good for building a knowledge garden without the overhead of full blog posts.&lt;/li>
-&lt;li>Example: &amp;ldquo;Learned X about Y&amp;rdquo;, &amp;ldquo;Found this interesting: [link]&amp;rdquo;, &amp;ldquo;Bug fix: do Z instead of W&amp;rdquo;&lt;/li>
-&lt;/ul>
-&lt;p>&lt;a href="https://github.com/samwilson/samwilson.github.io/tree/master/_til">Sam Wilson&amp;rsquo;s TIL&lt;/a> - check out how he structures his entries.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TIL on Saikat Kumar Dey</title><link>https://saikatkumardey.com/til/</link><description>Recent content in TIL on Saikat Kumar Dey</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://saikatkumardey.com/til/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
