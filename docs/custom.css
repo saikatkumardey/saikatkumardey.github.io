@@ -88,11 +88,14 @@ a:hover {
 }
 
 nav a {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    text-decoration: none;
-    text-transform: lowercase;
-    letter-spacing: 0.02em;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    text-transform: lowercase !important;
+    letter-spacing: 0.01em !important;
+    margin-right: 1.5rem !important;
+    line-height: 1.6 !important;
 }
 
 .title h2 {
