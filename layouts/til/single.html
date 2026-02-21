@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article class="til-single">
+  <div style="margin-bottom: 2rem;">
+    <h1 style="margin: 0;">
+      <time datetime='{{ .Date.Format "2006-01-02" }}' style="font-size: 0.8em; color: var(--text-secondary);">
+        {{ .Date.Format "2006-01-02" }}
+      </time>
+    </h1>
+  </div>
+  <content style="line-height: 1.8;">
+    {{ .Content }}
+  </content>
+</article>
+<p>
+  <small>
+    <a href="{{ "til" | relURL }}">&larr; Back to TIL</a>
+  </small>
+</p>
+{{ end }}
