@@ -38,7 +38,7 @@
   <meta itemprop="description" content="Raw HTML is toxic for AI context windows. Here is how html2md saves 97% of your tokens.">
   <meta itemprop="datePublished" content="2026-02-23T00:00:00+00:00">
   <meta itemprop="dateModified" content="2026-02-23T00:00:00+00:00">
-  <meta itemprop="wordCount" content="212">
+  <meta itemprop="wordCount" content="240">
   <meta itemprop="keywords" content="Ai,Engineering,Productivity">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -258,12 +258,55 @@
 <content>
   <p>Feeding raw HTML to an LLM is like trying to read a novel while someone flashes strobe lights and yells ads in your ear. It’s technically possible, but you&rsquo;re going to miss half the plot.</p>
 <p>Web pages are a disaster area of scripts, tracking pixels, and CSS boilerplate. For a human browser, this is noise. For an AI agent, it&rsquo;s a context window killer.</p>
-<p>I just ran a test on a standard technical article from IEEE Spectrum. The numbers are pretty stark:</p>
-<ul>
-<li><strong>Raw HTML:</strong> 472 KB (roughly 118,000 tokens)</li>
-<li><strong>Cleaned Markdown:</strong> 10 KB (about 2,600 tokens)</li>
-</ul>
-<p>That is a <strong>97.8% reduction</strong> in tokens.</p>
+<p>I just ran a benchmark across five diverse sites using my tool, <code>html2md</code>. The results are stark:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Site Type</th>
+          <th style="text-align: left">URL</th>
+          <th style="text-align: left">Raw HTML</th>
+          <th style="text-align: left">Markdown</th>
+          <th style="text-align: left">Savings</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Technical</strong></td>
+          <td style="text-align: left"><a href="https://spectrum.ieee.org/solid-state-lidar-microvision-adas">IEEE Spectrum</a></td>
+          <td style="text-align: left">461.0 KB</td>
+          <td style="text-align: left">10.2 KB</td>
+          <td style="text-align: left"><strong>97.8%</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Documentation</strong></td>
+          <td style="text-align: left"><a href="https://docs.openclaw.ai/tools/web">OpenClaw Docs</a></td>
+          <td style="text-align: left">744.7 KB</td>
+          <td style="text-align: left">8.1 KB</td>
+          <td style="text-align: left"><strong>98.9%</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Deep Dive</strong></td>
+          <td style="text-align: left"><a href="https://huggingface.co/blog/smolagents">Hugging Face Blog</a></td>
+          <td style="text-align: left">201.1 KB</td>
+          <td style="text-align: left">14.2 KB</td>
+          <td style="text-align: left"><strong>92.9%</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Code Repo</strong></td>
+          <td style="text-align: left"><a href="https://github.com/HKUDS/nanobot">Nanobot GitHub</a></td>
+          <td style="text-align: left">495.1 KB</td>
+          <td style="text-align: left">27.7 KB</td>
+          <td style="text-align: left"><strong>94.4%</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Reference</strong></td>
+          <td style="text-align: left"><a href="https://en.wikipedia.org/wiki/Geospatial_data">Wikipedia Page</a></td>
+          <td style="text-align: left">74.6 KB</td>
+          <td style="text-align: left">5.3 KB</td>
+          <td style="text-align: left"><strong>92.9%</strong></td>
+      </tr>
+  </tbody>
+</table>
 <p>This isn&rsquo;t just about saving money on your API bill. It&rsquo;s about performance. When you force an agent to wade through 100,000 tokens of boilerplate, you are increasing the &ldquo;background noise&rdquo; of the prompt. The model starts losing its place, missing nuances, and hallucinating because it&rsquo;s distracted by a thousand nested <code>&lt;div&gt;</code> tags.</p>
 <p>I use a tool called <code>html2md</code> (built on Mozilla&rsquo;s Readability engine) to handle this. It rips out the junk and leaves only the signal.</p>
 <p>If you&rsquo;re building RAG pipelines or any agentic workflow that scrapes the web, stop feeding your models HTML. Give them clean markdown. Save the context window for the thinking, not the trackers.</p>

@@ -13,7 +13,7 @@
       <link>http://100.92.218.33:1313/blog/saving-97-of-context-why-agents-need-clean-markdown/</link>
       <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://100.92.218.33:1313/blog/saving-97-of-context-why-agents-need-clean-markdown/</guid>
-      <description>&lt;p&gt;Feeding raw HTML to an LLM is like trying to read a novel while someone flashes strobe lights and yells ads in your ear. It’s technically possible, but you&amp;rsquo;re going to miss half the plot.&lt;/p&gt;&#xA;&lt;p&gt;Web pages are a disaster area of scripts, tracking pixels, and CSS boilerplate. For a human browser, this is noise. For an AI agent, it&amp;rsquo;s a context window killer.&lt;/p&gt;&#xA;&lt;p&gt;I just ran a test on a standard technical article from IEEE Spectrum. The numbers are pretty stark:&lt;/p&gt;</description>
+      <description>&lt;p&gt;Feeding raw HTML to an LLM is like trying to read a novel while someone flashes strobe lights and yells ads in your ear. It’s technically possible, but you&amp;rsquo;re going to miss half the plot.&lt;/p&gt;&#xA;&lt;p&gt;Web pages are a disaster area of scripts, tracking pixels, and CSS boilerplate. For a human browser, this is noise. For an AI agent, it&amp;rsquo;s a context window killer.&lt;/p&gt;&#xA;&lt;p&gt;I just ran a benchmark across five diverse sites using my tool, &lt;code&gt;html2md&lt;/code&gt;. The results are stark:&lt;/p&gt;</description>
     </item>
     <item>
       <title>You Should Set Up an OpenClaw Agent</title>

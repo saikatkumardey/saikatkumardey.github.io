@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Saikat Kumar Dey</title>
-    <link>http://100.92.218.33:1313/tags/</link>
+    <link>https://saikatkumardey.com/tags/</link>
     <description>Recent content in Tags on Saikat Kumar Dey</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Feb 2026 04:30:00 +0000</lastBuildDate>
-    <atom:link href="http://100.92.218.33:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://saikatkumardey.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ai</title>
-      <link>http://100.92.218.33:1313/tags/ai/</link>
-      <pubDate>Mon, 23 Feb 2026 04:30:00 +0000</pubDate>
-      <guid>http://100.92.218.33:1313/tags/ai/</guid>
+      <link>https://saikatkumardey.com/tags/ai/</link>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://saikatkumardey.com/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Engineering</title>
-      <link>http://100.92.218.33:1313/tags/engineering/</link>
-      <pubDate>Mon, 23 Feb 2026 04:30:00 +0000</pubDate>
-      <guid>http://100.92.218.33:1313/tags/engineering/</guid>
+      <link>https://saikatkumardey.com/tags/engineering/</link>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://saikatkumardey.com/tags/engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>Productivity</title>
-      <link>http://100.92.218.33:1313/tags/productivity/</link>
-      <pubDate>Mon, 23 Feb 2026 04:30:00 +0000</pubDate>
-      <guid>http://100.92.218.33:1313/tags/productivity/</guid>
+      <link>https://saikatkumardey.com/tags/productivity/</link>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://saikatkumardey.com/tags/productivity/</guid>
       <description></description>
     </item>
     <item>
       <title>Agents</title>
-      <link>http://100.92.218.33:1313/tags/agents/</link>
+      <link>https://saikatkumardey.com/tags/agents/</link>
       <pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://100.92.218.33:1313/tags/agents/</guid>
+      <guid>https://saikatkumardey.com/tags/agents/</guid>
       <description></description>
     </item>
     <item>
       <title>Infrastructure</title>
-      <link>http://100.92.218.33:1313/tags/infrastructure/</link>
+      <link>https://saikatkumardey.com/tags/infrastructure/</link>
       <pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://100.92.218.33:1313/tags/infrastructure/</guid>
+      <guid>https://saikatkumardey.com/tags/infrastructure/</guid>
       <description></description>
     </item>
     <item>
       <title>Openclaw</title>
-      <link>http://100.92.218.33:1313/tags/openclaw/</link>
+      <link>https://saikatkumardey.com/tags/openclaw/</link>
       <pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://100.92.218.33:1313/tags/openclaw/</guid>
+      <guid>https://saikatkumardey.com/tags/openclaw/</guid>
       <description></description>
     </item>
   </channel>
