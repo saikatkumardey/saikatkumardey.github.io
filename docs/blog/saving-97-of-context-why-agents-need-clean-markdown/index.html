@@ -5,33 +5,43 @@
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Infrastructure | Saikat Kumar Dey</title>
-<meta name="title" content="Infrastructure" />
-<meta name="description" content="" />
-<meta name="keywords" content="agents,ai,engineering,infrastructure,openclaw,productivity," />
+<title>Saving 97% of context: Why agents need clean markdown | Saikat Kumar Dey</title>
+<meta name="title" content="Saving 97% of context: Why agents need clean markdown" />
+<meta name="description" content="Raw HTML is toxic for AI context windows. Here is how html2md saves 97% of your tokens." />
+<meta name="keywords" content="ai,engineering,productivity," />
 
 
-<meta property="og:url" content="http://100.92.218.33:1313/tags/infrastructure/">
+<meta property="og:url" content="http://100.92.218.33:1313/blog/saving-97-of-context-why-agents-need-clean-markdown/">
   <meta property="og:site_name" content="Saikat Kumar Dey">
-  <meta property="og:title" content="Infrastructure">
+  <meta property="og:title" content="Saving 97% of context: Why agents need clean markdown">
+  <meta property="og:description" content="Raw HTML is toxic for AI context windows. Here is how html2md saves 97% of your tokens.">
   <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2026-02-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-23T00:00:00+00:00">
+    <meta property="article:tag" content="Ai">
+    <meta property="article:tag" content="Engineering">
+    <meta property="article:tag" content="Productivity">
 
 
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Infrastructure">
+  <meta name="twitter:title" content="Saving 97% of context: Why agents need clean markdown">
+  <meta name="twitter:description" content="Raw HTML is toxic for AI context windows. Here is how html2md saves 97% of your tokens.">
 
 
 
 
-  <meta itemprop="name" content="Infrastructure">
-  <meta itemprop="datePublished" content="2026-02-22T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-02-22T00:00:00+00:00">
+  <meta itemprop="name" content="Saving 97% of context: Why agents need clean markdown">
+  <meta itemprop="description" content="Raw HTML is toxic for AI context windows. Here is how html2md saves 97% of your tokens.">
+  <meta itemprop="datePublished" content="2026-02-23T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-02-23T00:00:00+00:00">
+  <meta itemprop="wordCount" content="212">
+  <meta itemprop="keywords" content="Ai,Engineering,Productivity">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
-  <link rel="alternate" type="application/rss+xml" href="http://100.92.218.33:1313/tags/infrastructure/index.xml" title="Saikat Kumar Dey" />
   <style>
   body {
     font-family: Verdana, sans-serif;
@@ -235,30 +245,39 @@
 </nav>
 </header>
   <main>
+
+<h1>Saving 97% of context: Why agents need clean markdown</h1>
+<p>
+  <i>
+    <time datetime='2026-02-23' pubdate>
+      23 Feb, 2026
+    </time>
+  </i>
+</p>
+
 <content>
-  
-  <h3 style="margin-bottom:0">Filtering for "Infrastructure"</h3>
-  <small>
-    <a href="/blog">Remove filter</a>
-  </small>
-  
-  <ul class="blog-posts">
-    
-    <li>
-      <span>
-        <i>
-          <time datetime='2026-02-22' pubdate>
-            22 Feb, 2026
-          </time>
-        </i>
-      </span>
-      <a href="http://100.92.218.33:1313/blog/you-should-set-up-an-openclaw-agent/">You Should Set Up an OpenClaw Agent</a>
-    </li>
-    
-  </ul>
-  
-  
+  <p>Feeding raw HTML to an LLM is like trying to read a novel while someone flashes strobe lights and yells ads in your ear. It’s technically possible, but you&rsquo;re going to miss half the plot.</p>
+<p>Web pages are a disaster area of scripts, tracking pixels, and CSS boilerplate. For a human browser, this is noise. For an AI agent, it&rsquo;s a context window killer.</p>
+<p>I just ran a test on a standard technical article from IEEE Spectrum. The numbers are pretty stark:</p>
+<ul>
+<li><strong>Raw HTML:</strong> 472 KB (roughly 118,000 tokens)</li>
+<li><strong>Cleaned Markdown:</strong> 10 KB (about 2,600 tokens)</li>
+</ul>
+<p>That is a <strong>97.8% reduction</strong> in tokens.</p>
+<p>This isn&rsquo;t just about saving money on your API bill. It&rsquo;s about performance. When you force an agent to wade through 100,000 tokens of boilerplate, you are increasing the &ldquo;background noise&rdquo; of the prompt. The model starts losing its place, missing nuances, and hallucinating because it&rsquo;s distracted by a thousand nested <code>&lt;div&gt;</code> tags.</p>
+<p>I use a tool called <code>html2md</code> (built on Mozilla&rsquo;s Readability engine) to handle this. It rips out the junk and leaves only the signal.</p>
+<p>If you&rsquo;re building RAG pipelines or any agentic workflow that scrapes the web, stop feeding your models HTML. Give them clean markdown. Save the context window for the thinking, not the trackers.</p>
+
 </content>
+<p>
+  
+  <a href="http://100.92.218.33:1313/tags/ai/">#Ai</a>
+  
+  <a href="http://100.92.218.33:1313/tags/engineering/">#Engineering</a>
+  
+  <a href="http://100.92.218.33:1313/tags/productivity/">#Productivity</a>
+  
+</p>
 
   </main>
   <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>

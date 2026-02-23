@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TIL on Saikat Kumar Dey</title><link>https://saikatkumardey.com/til/</link><description>Recent content in TIL on Saikat Kumar Dey</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 21 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://saikatkumardey.com/til/index.xml" rel="self" type="application/rss+xml"/><item><title>SkillsBench: Models with Skills Beat Larger Models</title><link>https://saikatkumardey.com/til/2026-02-21/</link><pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/til/2026-02-21/</guid><description>&lt;p>Haiku with skills matches Opus without them. &lt;a href="https://arxiv.org/abs/2602.12670">SkillsBench&lt;/a> shows skill engineering beats model size.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TIL on Saikat Kumar Dey</title>
+    <link>http://100.92.218.33:1313/til/</link>
+    <description>Recent content in TIL on Saikat Kumar Dey</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://100.92.218.33:1313/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SkillsBench: Models with Skills Beat Larger Models</title>
+      <link>http://100.92.218.33:1313/til/2026-02-21/</link>
+      <pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://100.92.218.33:1313/til/2026-02-21/</guid>
+      <description>&lt;p&gt;Haiku with skills matches Opus without them. &lt;a href=&#34;https://arxiv.org/abs/2602.12670&#34;&gt;SkillsBench&lt;/a&gt; shows skill engineering beats model size.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
