@@ -2,11 +2,9 @@
 &lt;p>I didn&amp;rsquo;t write a single script for most of this. I just told it what I wanted.&lt;/p>
 &lt;p>Here&amp;rsquo;s why you should do the same, and how.&lt;/p></description></item><item><title>SkillsBench: Models with Skills Beat Larger Models</title><link>https://saikatkumardey.com/til/2026-02-21/</link><pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/til/2026-02-21/</guid><description>&lt;p>Haiku with skills matches Opus without them. &lt;a href="https://arxiv.org/abs/2602.12670">SkillsBench&lt;/a> shows skill engineering beats model size.&lt;/p></description></item><item><title>Projects</title><link>https://saikatkumardey.com/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/projects/</guid><description>&lt;p>Things I&amp;rsquo;ve built. Some useful, some just fun.&lt;/p>
 &lt;hr>
+&lt;h3 id="termstage">&lt;a href="https://github.com/saikatkumardey/termstage">termstage&lt;/a>&lt;/h3>
+&lt;p>Fake terminal demos. Write a YAML file describing the session, get an SVG. No recording, no live shell. Good for README headers and docs.&lt;/p>
 &lt;h3 id="python-doctor">&lt;a href="https://github.com/saikatkumardey/python-doctor">python-doctor&lt;/a>&lt;/h3>
 &lt;p>CLI that gives your Python codebase a 0-100 health score. Security, lint, complexity, dead code, and more. Built for AI agents.&lt;/p>
 &lt;h3 id="aidoc">&lt;a href="https://github.com/saikatkumardey/aidoc">aidoc&lt;/a>&lt;/h3>
-&lt;p>Auto-generates documentation for Python projects. Point it at your codebase, get clean docs. Available on &lt;a href="https://pypi.org/project/aidoc/">PyPI&lt;/a>.&lt;/p>
-&lt;h3 id="quickreadai">&lt;a href="https://github.com/saikatkumardey/quickreadai">quickreadai&lt;/a>&lt;/h3>
-&lt;p>Key takeaways from non-fiction books, powered by AI. Try it &lt;a href="https://quickreadai.streamlit.app">live&lt;/a>.&lt;/p>
-&lt;h3 id="habithub">&lt;a href="https://github.com/saikatkumardey/habithub">habithub&lt;/a>&lt;/h3>
-&lt;p>A minimal habit tracker for iOS. Built in Swift because I wanted something that stayed out of the way.&lt;/p></description></item></channel></rss>
+&lt;p>Auto-generates documentation for Python projects. Point it at your codebase, get clean docs. Available on &lt;a href="https://pypi.org/project/aidoc/">PyPI&lt;/a>.&lt;/p></description></item></channel></rss>

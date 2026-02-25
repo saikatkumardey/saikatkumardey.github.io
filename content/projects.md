@@ -7,6 +7,9 @@ Things I've built. Some useful, some just fun.
 
 ---
 
+### [termstage](https://github.com/saikatkumardey/termstage)
+Fake terminal demos. Write a YAML file describing the session, get an SVG. No recording, no live shell. Good for README headers and docs.
+
 ### [python-doctor](https://github.com/saikatkumardey/python-doctor)
 CLI that gives your Python codebase a 0-100 health score. Security, lint, complexity, dead code, and more. Built for AI agents.
 
