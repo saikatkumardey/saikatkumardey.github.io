@@ -1,0 +1,40 @@
+name: Build Hugo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'
+      - 'layouts/**'
+      - 'static/**'
+      - 'themes/**'
+      - 'config.toml'
+      - 'hugo.toml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.145.0'
+          extended: true
+
+      - name: Build
+        run: |
+          hugo --minify
+          cp CNAME docs/
+          touch docs/.nojekyll
+
+      - name: Commit docs
+        run: |
+          git config user.name "Dr Frost"
+          git config user.email "drfrostai@users.noreply.github.com"
+          git add docs/
+          git diff --staged --quiet || git commit -m "build: hugo [skip ci]"
+          git push
