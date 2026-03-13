@@ -7,6 +7,9 @@ Things I've built. Some useful, some just fun.
 
 ---
 
+### [html2md](https://github.com/saikatkumardey/html2md)
+Aggressive HTML-to-markdown converter for AI agents. Mozilla Readability strips navbars, ads, and footers. Turndown converts the rest to clean markdown. Supports token budgeting, stdin, local files, and JSON output. Built because agents kept drowning in boilerplate.
+
 ### [termstage](https://github.com/saikatkumardey/termstage)
 Fake terminal demos. Write a YAML file describing the session, get an SVG. No recording, no live shell. Good for README headers and docs.
 
