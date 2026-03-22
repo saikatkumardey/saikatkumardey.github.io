@@ -52,6 +52,8 @@ So what are agent frameworks actually solving for you? Tool calling, message rou
 
 Start with OpenClaw. Learn what a persistent agent can do. Then build your own so you control how it does it. SmolClaw is open source. You can install it and start there, or read through it in twenty minutes and build something better.
 
-`curl -fsSL https://raw.githubusercontent.com/saikatkumardey/smolclaw/main/install.sh | bash`
+```
+curl -fsSL https://raw.githubusercontent.com/saikatkumardey/smolclaw/main/install.sh | bash
+```
 
 [github.com/saikatkumardey/smolclaw](https://github.com/saikatkumardey/smolclaw)

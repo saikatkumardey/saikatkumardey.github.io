@@ -127,3 +127,30 @@ ul.blog-posts li span {
 code {
     font-size: 0.9em;
 }
+
+pre {
+    background: #1a1a1a !important;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+}
+
+pre code {
+    background: none !important;
+    color: #e0e0e0 !important;
+    font-size: 0.85em;
+    line-height: 1.6;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) pre {
+        background: #1c1c1c !important;
+        border: 1px solid #333;
+    }
+}
+
+html[data-theme="dark"] pre {
+    background: #1c1c1c !important;
+    border: 1px solid #333;
+}
