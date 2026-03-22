@@ -8,40 +8,21 @@
     --border: #e0e0e0;
 }
 
-/* Dark mode support for both system preference and manual toggle */
 @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
+    :root {
         --text: #e8e8e8;
         --text-muted: #999;
         --bg: #111;
         --accent: #fff;
         --border: #333;
     }
-    :root:not([data-theme="light"]) code {
+    code {
         background-color: #222 !important;
     }
-}
-
-/* Manual dark mode toggle */
-html[data-theme="dark"] {
-    --text: #e8e8e8;
-    --text-muted: #999;
-    --bg: #111;
-    --accent: #fff;
-    --border: #333;
-}
-
-html[data-theme="dark"] code {
-    background-color: #222 !important;
-}
-
-/* Manual light mode toggle */
-html[data-theme="light"] {
-    --text: #1a1a1a;
-    --text-muted: #666;
-    --bg: #fafafa;
-    --accent: #2a2a2a;
-    --border: #e0e0e0;
+    pre {
+        background: #1c1c1c !important;
+        border: 1px solid #333;
+    }
 }
 
 body {
@@ -141,16 +122,4 @@ pre code {
     color: #e0e0e0 !important;
     font-size: 0.85em;
     line-height: 1.6;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) pre {
-        background: #1c1c1c !important;
-        border: 1px solid #333;
-    }
-}
-
-html[data-theme="dark"] pre {
-    background: #1c1c1c !important;
-    border: 1px solid #333;
 }

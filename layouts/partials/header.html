@@ -1,13 +1,4 @@
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
-  <a href="{{ "" | relURL }}" class="title">
-    <h2>{{ .Site.Title }}</h2>
-  </a>
-  <button id="theme-toggle" style="
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0;
-  ">🌙</button>
-</div>
+<a href="{{ "" | relURL }}" class="title">
+  <h2>{{ .Site.Title }}</h2>
+</a>
 <nav>{{- partial "nav.html" . -}}</nav>
