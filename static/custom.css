@@ -33,16 +33,18 @@ body {
     max-width: 680px !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif !important;
-    color: var(--text) !important;
-    letter-spacing: -0.01em;
-}
-
 h1 {
+    font-family: 'Source Serif 4', Georgia, serif !important;
     font-size: 2.5rem !important;
     font-weight: 600 !important;
     letter-spacing: -0.02em !important;
+    color: var(--text) !important;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif !important;
+    color: var(--text) !important;
+    letter-spacing: -0.01em;
 }
 
 h2 {
