@@ -10,6 +10,9 @@ Things I've built. Some useful, some just fun.
 ### [indieclaw](https://saikatkumardey.com/indieclaw/)
 A personal AI agent that runs on Telegram. Persistent memory via markdown files, self-editing personality, cron scheduling, tool building, and Claude Code integration. The agent that manages my health tracking, morning briefings, and half my daily workflow.
 
+### [grokking-playground](https://saikatkumardey.com/grokking-playground/)
+Interactive browser demo of neural network grokking. Train a small net on modular multiplication and watch it memorize fast, then suddenly generalize. All sliders, all in-browser, no backend. [Code](https://github.com/saikatkumardey/grokking-playground).
+
 ### [html2md](https://github.com/saikatkumardey/html2md)
 Aggressive HTML-to-markdown converter for AI agents. Mozilla Readability strips navbars, ads, and footers. Turndown converts the rest to clean markdown. Supports token budgeting, stdin, local files, and JSON output. Built because agents kept drowning in boilerplate.
 
