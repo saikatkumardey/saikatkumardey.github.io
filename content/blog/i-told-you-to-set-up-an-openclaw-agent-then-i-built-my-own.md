@@ -1,7 +1,7 @@
 +++
 title = "I Told You to Set Up an OpenClaw Agent. Then I Built My Own."
 date = "2026-03-22"
-tags = ["agents", "smolclaw", "openclaw"]
+tags = ["agents", "indieclaw", "openclaw"]
 +++
 
 Let's say you set up a persistent AI agent. It runs on a cheap VPS, talks to you over Telegram, locks down your SSH, cleans up 97 GitHub repos, builds you a calorie tracker from a lunch photo. You're sold. You [write a blog post telling everyone to do the same thing](/blog/you-should-set-up-an-openclaw-agent/). That was me, a month ago, with OpenClaw.
@@ -18,15 +18,15 @@ So what went wrong? Nothing. That's the thing. The framework was doing exactly w
 
 What's the interesting part of running a persistent agent? It's not the Telegram bot or the cron scheduler. Those are solved problems. It's how the agent remembers, how it reviews its own work, how it decides what to keep and what to forget. That's where all the leverage is. And that's exactly the part you want full control over.
 
-So I built [SmolClaw](https://github.com/saikatkumardey/smolclaw). Claude on Telegram, backed by a folder of markdown files. The entire persistence layer is text files. `SOUL.md` defines who the agent is. `AGENT.md` has standing orders. `MEMORY.md` keeps facts that persist across sessions. Text files you can read, grep, and version-control.
+So I built [IndieClaw](https://github.com/saikatkumardey/indieclaw). Claude on Telegram, backed by a folder of markdown files. The entire persistence layer is text files. `SOUL.md` defines who the agent is. `AGENT.md` has standing orders. `MEMORY.md` keeps facts that persist across sessions. Text files you can read, grep, and version-control.
 
-Migration from OpenClaw took one session. I pointed SmolClaw at the old agent's workspace and it read everything: memories, tools, cron configs. One agent read another agent's brain because the brain was just files. I didn't write an export script or run a database migration.
+Migration from OpenClaw took one session. I pointed IndieClaw at the old agent's workspace and it read everything: memories, tools, cron configs. One agent read another agent's brain because the brain was just files. I didn't write an export script or run a database migration.
 
 ## What happens when the agent owns its own config
 
 Week one, the agent responds like a polite chatbot. It asks permission for everything. "Should I do this? Would you like me to build that?" You correct it. "Don't ask, just do it if it's reversible." It gets better for a session, then restarts and forgets. Back to square one.
 
-Now, week two. The agent starts writing the corrections itself. It reads through the day's conversations, notices the pattern ("user had to repeat the same instruction 4 times"), and edits its own `SOUL.md` to encode the rule. Next restart, the rule is still there because it's a file, not context window. I didn't build a self-editing feature. The agent has write access to its own files and Claude is smart enough to figure out that repeated corrections should be written down. The file system is the memory. Claude is the intelligence. SmolClaw just connects them.
+Now, week two. The agent starts writing the corrections itself. It reads through the day's conversations, notices the pattern ("user had to repeat the same instruction 4 times"), and edits its own `SOUL.md` to encode the rule. Next restart, the rule is still there because it's a file, not context window. I didn't build a self-editing feature. The agent has write access to its own files and Claude is smart enough to figure out that repeated corrections should be written down. The file system is the memory. Claude is the intelligence. IndieClaw just connects them.
 
 Week three, the agent is building its own tools. I uploaded a photo of my lunch. It logged the calories to a SQLite database it created, built a dashboard, hosted it on a local web server, sent me the URL. I asked for a Hacker News digest every morning. It wrote the cron config and the scraping logic. Running at 7am Jakarta time every day since. Early on it was writing raw SQL for every meal log, rediscovering the schema each session. Its nightly self-review caught the pattern and it built a dedicated tool. That fix came from the agent reviewing its own mistakes, not from me telling it to do anything.
 
@@ -50,10 +50,10 @@ Debugging is hard. When a cron stops running, you read log files. There's no das
 
 So what are agent frameworks actually solving for you? Tool calling, message routing, API wrappers. Solved problems. The hard problems (memory management, self-correction, knowing when to forget) are still yours. If you're solving those yourself anyway, you might as well own the easy ones too. The total code is small. The decisions are what matter.
 
-Start with OpenClaw. Learn what a persistent agent can do. Then build your own so you control how it does it. SmolClaw is open source. You can install it and start there, or read through it in twenty minutes and build something better.
+Start with OpenClaw. Learn what a persistent agent can do. Then build your own so you control how it does it. IndieClaw is open source. You can install it and start there, or read through it in twenty minutes and build something better.
 
 ```
-curl -fsSL https://raw.githubusercontent.com/saikatkumardey/smolclaw/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/saikatkumardey/indieclaw/main/install.sh | bash
 ```
 
-[github.com/saikatkumardey/smolclaw](https://github.com/saikatkumardey/smolclaw)
+[github.com/saikatkumardey/indieclaw](https://github.com/saikatkumardey/indieclaw)
