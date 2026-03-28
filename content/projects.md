@@ -7,7 +7,7 @@ Things I've built. Some useful, some just fun.
 
 ---
 
-### [smolclaw](https://saikatkumardey.com/smolclaw/)
+### [indieclaw](https://saikatkumardey.com/indieclaw/)
 A personal AI agent that runs on Telegram. Persistent memory via markdown files, self-editing personality, cron scheduling, tool building, and Claude Code integration. The agent that manages my health tracking, morning briefings, and half my daily workflow.
 
 ### [html2md](https://github.com/saikatkumardey/html2md)

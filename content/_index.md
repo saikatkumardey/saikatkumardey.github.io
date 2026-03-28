@@ -4,7 +4,7 @@ title = "Home"
 
 Data scientist at Gojek, working on maps and places. I like building small tools and figuring things out.
 
-Right now I'm building [SmolClaw](https://saikatkumardey.com/smolclaw/) -- a personal AI agent on Telegram that manages my health tracking, morning briefings, and half my daily workflow. Also maintaining [python-doctor](https://saikatkumardey.com/python-doctor/), a CLI that scores Python codebases on health.
+Right now I'm building [IndieClaw](https://saikatkumardey.com/indieclaw/) -- a personal AI agent on Telegram that manages my health tracking, morning briefings, and half my daily workflow. Also maintaining [python-doctor](https://saikatkumardey.com/python-doctor/), a CLI that scores Python codebases on health.
 
 ### Recent writing
 
