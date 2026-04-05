@@ -3,3 +3,8 @@ languageCode = 'en-us'
 title = 'Saikat Kumar Dey'
 theme = 'hugo-bearblog'
 publishDir = 'docs'
+
+[[menu.main]]
+  name = "ML Wiki"
+  url = "https://saikatkumardey.github.io/ml-wiki/"
+  weight = 10

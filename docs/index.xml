@@ -1,11 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Saikat Kumar Dey</title><link>https://saikatkumardey.com/</link><description>Recent content in Home on Saikat Kumar Dey</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 27 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Batch normalization works for the wrong reasons</title><link>https://saikatkumardey.com/til/2026-03-27/</link><pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/til/2026-03-27/</guid><description>&lt;p>Batch normalization (&lt;a href="https://arxiv.org/abs/1502.03167">Ioffe &amp;amp; Szegedy, 2015&lt;/a>) was justified as reducing &amp;ldquo;internal covariate shift.&amp;rdquo; &lt;a href="https://arxiv.org/abs/1805.11604">Santurkar et al. at MIT (2018)&lt;/a> tested this directly and found BN doesn&amp;rsquo;t reduce covariate shift. In some cases it increases it. The real reason it works: it smooths the loss landscape, making gradients more predictable so you can use higher learning rates. One of deep learning&amp;rsquo;s most used techniques, adopted for years on an incorrect theory.&lt;/p></description></item><item><title>I Told You to Set Up an OpenClaw Agent. Then I Built My Own.</title><link>https://saikatkumardey.com/blog/i-told-you-to-set-up-an-openclaw-agent-then-i-built-my-own/</link><pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/blog/i-told-you-to-set-up-an-openclaw-agent-then-i-built-my-own/</guid><description>&lt;p>Let&amp;rsquo;s say you set up a persistent AI agent. It runs on a cheap VPS, talks to you over Telegram, locks down your SSH, cleans up 97 GitHub repos, builds you a calorie tracker from a lunch photo. You&amp;rsquo;re sold. You &lt;a href="https://saikatkumardey.com/blog/you-should-set-up-an-openclaw-agent/">write a blog post telling everyone to do the same thing&lt;/a>. That was me, a month ago, with OpenClaw.&lt;/p>
-&lt;p>Then I stopped using it and built my own. Let&amp;rsquo;s talk about why.&lt;/p></description></item><item><title>Using my AI agent as a personal capture layer</title><link>https://saikatkumardey.com/til/2026-03-05/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/til/2026-03-05/</guid><description>&lt;p>Sending anything to my agent files it to Google Drive automatically. Screenshot, PDF, link. Right folder, date-prefixed filename, done.&lt;/p>
-&lt;p>Sent a screenshot of a paragraph with no attribution. The agent searched the text, found the original article and author. Reverse lookup from a photo.&lt;/p>
-&lt;p>Dropped a long article I&amp;rsquo;d been putting off. It split it into 14 themed sections and scheduled a daily email, one per day.&lt;/p></description></item><item><title>Every terminal SVG tool requires a live recording session</title><link>https://saikatkumardey.com/til/2026-02-24/</link><pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/til/2026-02-24/</guid><description>&lt;p>All the popular tools (&lt;a href="https://github.com/marionebl/svg-term-cli">svg-term-cli&lt;/a>, &lt;a href="https://github.com/nbedos/termtosvg">termtosvg&lt;/a>, &lt;a href="https://github.com/MrMarble/termsvg">MrMarble/termsvg&lt;/a>) convert asciinema recordings to SVG. You have to actually run the commands first. There is no tool that takes a static config and renders a fake terminal session as SVG, which is what you actually want for README demos: clean, controlled output without recording your real shell.&lt;/p></description></item><item><title>You Should Set Up an OpenClaw Agent</title><link>https://saikatkumardey.com/blog/you-should-set-up-an-openclaw-agent/</link><pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/blog/you-should-set-up-an-openclaw-agent/</guid><description>&lt;p>Last week I grabbed a €4/month Hetzner VPS, installed OpenClaw, and named it Dr Frost. Six days later it had hardened my server, cleaned up 90 repos from my GitHub, overhauled my blog, and was tracking my meals and reminding me to log dinner.&lt;/p>
-&lt;p>I didn&amp;rsquo;t write a single script for most of this. I just told it what I wanted.&lt;/p>
-&lt;p>Here&amp;rsquo;s why you should do the same, and how.&lt;/p></description></item><item><title>SkillsBench: Models with Skills Beat Larger Models</title><link>https://saikatkumardey.com/til/2026-02-21/</link><pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/til/2026-02-21/</guid><description>&lt;p>Haiku with skills matches Opus without them. &lt;a href="https://arxiv.org/abs/2602.12670">SkillsBench&lt;/a> shows skill engineering beats model size.&lt;/p></description></item><item><title>Projects</title><link>https://saikatkumardey.com/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://saikatkumardey.com/projects/</guid><description>&lt;p>Things I&amp;rsquo;ve built. Some useful, some just fun.&lt;/p>
-&lt;hr>
-&lt;h3 id="indieclaw">&lt;a href="https://saikatkumardey.com/indieclaw/">indieclaw&lt;/a>&lt;/h3>
-&lt;p>A personal AI agent that runs on Telegram. Persistent memory via markdown files, self-editing personality, cron scheduling, tool building, and Claude Code integration. The agent that manages my health tracking, morning briefings, and half my daily workflow.&lt;/p>
-&lt;h3 id="grokking-playground">&lt;a href="https://saikatkumardey.com/grokking-playground/">grokking-playground&lt;/a>&lt;/h3>
-&lt;p>Interactive browser demo of neural network grokking. Train a small net on modular multiplication and watch it memorize fast, then suddenly generalize. All sliders, all in-browser, no backend. &lt;a href="https://github.com/saikatkumardey/grokking-playground">Code&lt;/a>.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Saikat Kumar Dey</title>
+    <link>https://saikatkumardey.com/</link>
+    <description>Recent content in Home on Saikat Kumar Dey</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building in the age of Claude Code</title>
+      <link>https://saikatkumardey.com/blog/2026-04-04-building-in-the-age-of-claude-code/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://saikatkumardey.com/blog/2026-04-04-building-in-the-age-of-claude-code/</guid>
+      <description>&lt;p&gt;Once I got Claude Code Max plan, things changed.&lt;/p&gt;&#xA;&lt;p&gt;I am addicted to building.&lt;/p&gt;&#xA;&lt;p&gt;I have been coding for over a decade, building tools and utilities for my own usage.&lt;/p&gt;&#xA;&lt;p&gt;With &lt;strong&gt;Claude Code&lt;/strong&gt;, it is more fun than ever.&lt;/p&gt;&#xA;&lt;p&gt;Typing code out has always been the bottleneck between my ideas seeing the light of the day or just getting discarded.&lt;/p&gt;&#xA;&lt;p&gt;I am building more open source tools now - I start off with a conversation with Donna (my IndieClaw agent hosted on a VPS) and ask her to spec if out. Once the spec looks good, I ask it to build the first version. It spawns off a subagent (usually sonnet-4-6) that builds from the spec and hosts it on the VPS for me to check. Once it looks okay, I ask her to package it and publish it to my GitHub.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Batch normalization works for the wrong reasons</title>
+      <link>https://saikatkumardey.com/til/2026-03-27/</link>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://saikatkumardey.com/til/2026-03-27/</guid>
+      <description>&lt;p&gt;Batch normalization (&lt;a href=&#34;https://arxiv.org/abs/1502.03167&#34;&gt;Ioffe &amp;amp; Szegedy, 2015&lt;/a&gt;) was justified as reducing &amp;ldquo;internal covariate shift.&amp;rdquo; &lt;a href=&#34;https://arxiv.org/abs/1805.11604&#34;&gt;Santurkar et al. at MIT (2018)&lt;/a&gt; tested this directly and found BN doesn&amp;rsquo;t reduce covariate shift. In some cases it increases it. The real reason it works: it smooths the loss landscape, making gradients more predictable so you can use higher learning rates. One of deep learning&amp;rsquo;s most used techniques, adopted for years on an incorrect theory.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>I Told You to Set Up an OpenClaw Agent. Then I Built My Own.</title>
+      <link>https://saikatkumardey.com/blog/i-told-you-to-set-up-an-openclaw-agent-then-i-built-my-own/</link>
+      <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://saikatkumardey.com/blog/i-told-you-to-set-up-an-openclaw-agent-then-i-built-my-own/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s say you set up a persistent AI agent. It runs on a cheap VPS, talks to you over Telegram, locks down your SSH, cleans up 97 GitHub repos, builds you a calorie tracker from a lunch photo. You&amp;rsquo;re sold. You &lt;a href=&#34;https://saikatkumardey.com/blog/you-should-set-up-an-openclaw-agent/&#34;&gt;write a blog post telling everyone to do the same thing&lt;/a&gt;. That was me, a month ago, with OpenClaw.&lt;/p&gt;&#xA;&lt;p&gt;Then I stopped using it and built my own. Let&amp;rsquo;s talk about why.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Using my AI agent as a personal capture layer</title>
+      <link>https://saikatkumardey.com/til/2026-03-05/</link>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://saikatkumardey.com/til/2026-03-05/</guid>
+      <description>&lt;p&gt;Sending anything to my agent files it to Google Drive automatically. Screenshot, PDF, link. Right folder, date-prefixed filename, done.&lt;/p&gt;&#xA;&lt;p&gt;Sent a screenshot of a paragraph with no attribution. The agent searched the text, found the original article and author. Reverse lookup from a photo.&lt;/p&gt;&#xA;&lt;p&gt;Dropped a long article I&amp;rsquo;d been putting off. It split it into 14 themed sections and scheduled a daily email, one per day.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Every terminal SVG tool requires a live recording session</title>
+      <link>https://saikatkumardey.com/til/2026-02-24/</link>
+      <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://saikatkumardey.com/til/2026-02-24/</guid>
+      <description>&lt;p&gt;All the popular tools (&lt;a href=&#34;https://github.com/marionebl/svg-term-cli&#34;&gt;svg-term-cli&lt;/a&gt;, &lt;a href=&#34;https://github.com/nbedos/termtosvg&#34;&gt;termtosvg&lt;/a&gt;, &lt;a href=&#34;https://github.com/MrMarble/termsvg&#34;&gt;MrMarble/termsvg&lt;/a&gt;) convert asciinema recordings to SVG. You have to actually run the commands first. There is no tool that takes a static config and renders a fake terminal session as SVG, which is what you actually want for README demos: clean, controlled output without recording your real shell.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>You Should Set Up an OpenClaw Agent</title>
+      <link>https://saikatkumardey.com/blog/you-should-set-up-an-openclaw-agent/</link>
+      <pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://saikatkumardey.com/blog/you-should-set-up-an-openclaw-agent/</guid>
+      <description>&lt;p&gt;Last week I grabbed a €4/month Hetzner VPS, installed OpenClaw, and named it Dr Frost. Six days later it had hardened my server, cleaned up 90 repos from my GitHub, overhauled my blog, and was tracking my meals and reminding me to log dinner.&lt;/p&gt;&#xA;&lt;p&gt;I didn&amp;rsquo;t write a single script for most of this. I just told it what I wanted.&lt;/p&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s why you should do the same, and how.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SkillsBench: Models with Skills Beat Larger Models</title>
+      <link>https://saikatkumardey.com/til/2026-02-21/</link>
+      <pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://saikatkumardey.com/til/2026-02-21/</guid>
+      <description>&lt;p&gt;Haiku with skills matches Opus without them. &lt;a href=&#34;https://arxiv.org/abs/2602.12670&#34;&gt;SkillsBench&lt;/a&gt; shows skill engineering beats model size.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Projects</title>
+      <link>https://saikatkumardey.com/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://saikatkumardey.com/projects/</guid>
+      <description>&lt;p&gt;Things I&amp;rsquo;ve built. Some useful, some just fun.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;indieclaw&#34;&gt;&lt;a href=&#34;https://saikatkumardey.com/indieclaw/&#34;&gt;indieclaw&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;A personal AI agent that runs on Telegram. Persistent memory via markdown files, self-editing personality, cron scheduling, tool building, and Claude Code integration. The agent that manages my health tracking, morning briefings, and half my daily workflow.&lt;/p&gt;&#xA;&lt;h3 id=&#34;grokking-playground&#34;&gt;&lt;a href=&#34;https://saikatkumardey.com/grokking-playground/&#34;&gt;grokking-playground&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Interactive browser demo of neural network grokking. Train a small net on modular multiplication and watch it memorize fast, then suddenly generalize. All sliders, all in-browser, no backend. &lt;a href=&#34;https://github.com/saikatkumardey/grokking-playground&#34;&gt;Code&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

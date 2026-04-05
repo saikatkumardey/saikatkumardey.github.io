@@ -6,6 +6,8 @@ Data scientist at Gojek, working on maps and places. I like building small tools
 
 Right now I'm building [IndieClaw](https://saikatkumardey.com/indieclaw/) -- a personal AI agent on Telegram that manages my health tracking, morning briefings, and half my daily workflow. Also maintaining [python-doctor](https://saikatkumardey.com/python-doctor/), a CLI that scores Python codebases on health.
 
+I keep an [ML Wiki](https://saikatkumardey.github.io/ml-wiki/) — notes on machine learning concepts, papers, and ideas I'm working through.
+
 ### Recent writing
 
 - [I told you to set up an OpenClaw agent. Then I built my own.](/blog/i-told-you-to-set-up-an-openclaw-agent-then-i-built-my-own/)
@@ -13,4 +15,4 @@ Right now I'm building [IndieClaw](https://saikatkumardey.com/indieclaw/) -- a p
 
 ### Elsewhere
 
-[GitHub](https://github.com/saikatkumardey) · [Email](mailto:deysaikatkumar@gmail.com)
+[GitHub](https://github.com/saikatkumardey) · [Email](mailto:deysaikatkumar@gmail.com) · [ML Wiki](https://saikatkumardey.github.io/ml-wiki/)
