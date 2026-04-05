@@ -1,4 +1,5 @@
 +++
+draft = true
 title = "Building in the age of Claude Code"
 date = "2026-04-04"
 tags = ["building", "claude code", "donna", "indieclaw"]
