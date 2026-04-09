@@ -7,6 +7,9 @@ Things I've built. Some useful, some just fun.
 
 ---
 
+### [commonplace](https://github.com/saikatkumardey/commonplace)
+Agent-agnostic memory CLI. BM25 search across topic-organized markdown files. Built for AI agents that need persistent memory without a vector database. Stores facts, decisions, and preferences that survive across sessions.
+
 ### [indieclaw](https://saikatkumardey.com/indieclaw/)
 A personal AI agent that runs on Telegram. Persistent memory via markdown files, self-editing personality, cron scheduling, tool building, and Claude Code integration. The agent that manages my health tracking, morning briefings, and half my daily workflow.
 
