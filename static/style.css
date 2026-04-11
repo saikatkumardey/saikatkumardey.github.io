@@ -4,3 +4,14 @@
   --foreground: #d4d4d4;
   --accent: #39d353;
 }
+
+/* Mobile menu: prevent text wrapping in dropdown */
+@media (max-width: 684px) {
+  .menu {
+    min-width: 120px;
+    white-space: nowrap;
+  }
+  .menu a {
+    white-space: nowrap;
+  }
+}
