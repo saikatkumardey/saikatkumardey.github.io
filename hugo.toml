@@ -51,9 +51,9 @@ publishDir = 'docs'
         url = "/projects"
         weight = 2
       [[languages.en.menu.main]]
-        identifier = "til"
-        name = "til"
-        url = "/til"
+        identifier = "thoughts"
+        name = "thoughts"
+        url = "/thoughts"
         weight = 3
       [[languages.en.menu.main]]
         identifier = "ml-wiki"
