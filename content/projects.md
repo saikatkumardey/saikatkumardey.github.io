@@ -1,6 +1,5 @@
 +++
 title = "Projects"
-menu = "main"
 +++
 
 Things I've built. Some useful, some just fun.
