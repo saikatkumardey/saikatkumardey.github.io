@@ -7,11 +7,11 @@
 
 /* Mobile menu: prevent text wrapping in dropdown */
 @media (max-width: 684px) {
-  .menu {
+  .menu__dropdown {
     min-width: 120px;
     white-space: nowrap;
   }
-  .menu a {
+  .menu__dropdown a {
     white-space: nowrap;
   }
 }
