@@ -1,10 +1,62 @@
 baseURL = 'https://saikatkumardey.com/'
 languageCode = 'en-us'
-title = 'Saikat Kumar Dey'
-theme = 'hugo-bearblog'
+theme = 'terminal'
 publishDir = 'docs'
 
-[[menu.main]]
-  name = "ML Wiki"
-  url = "https://saikatkumardey.github.io/ml-wiki/"
-  weight = 10
+[pagination]
+  pagerSize = 10
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  style = "monokai"
+  codeFences = true
+
+[params]
+  contentTypeName = "blog"
+  showMenuItems = 4
+  fullWidthTheme = false
+  centerTheme = false
+  showLastUpdated = false
+
+[languages]
+  [languages.en]
+    title = "saikatkumardey.com"
+    languageName = "English"
+    weight = 1
+
+    [languages.en.params]
+      subtitle = "data scientist · maps · geospatial ml"
+      keywords = ""
+      menuMore = "more"
+      readMore = "read"
+      readOtherPosts = "more posts"
+      newerPosts = "newer"
+      olderPosts = "older"
+
+      [languages.en.params.logo]
+        logoText = "~/saikat"
+        logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "blog"
+        name = "writing"
+        url = "/blog"
+        weight = 1
+      [[languages.en.menu.main]]
+        identifier = "projects"
+        name = "projects"
+        url = "/projects"
+        weight = 2
+      [[languages.en.menu.main]]
+        identifier = "til"
+        name = "til"
+        url = "/til"
+        weight = 3
+      [[languages.en.menu.main]]
+        identifier = "ml-wiki"
+        name = "ml wiki"
+        url = "https://saikatkumardey.github.io/ml-wiki/"
+        weight = 4

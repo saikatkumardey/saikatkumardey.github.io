@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Indieclaw on Saikat Kumar Dey</title>
+    <title>Indieclaw on saikatkumardey.com</title>
     <link>https://saikatkumardey.com/tags/indieclaw/</link>
-    <description>Recent content in Indieclaw on Saikat Kumar Dey</description>
+    <description>Recent content in Indieclaw on saikatkumardey.com</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <language>en</language>
+    <lastBuildDate>Sun, 22 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://saikatkumardey.com/tags/indieclaw/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Building in the age of Claude Code</title>
-      <link>https://saikatkumardey.com/blog/2026-04-04-building-in-the-age-of-claude-code/</link>
-      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://saikatkumardey.com/blog/2026-04-04-building-in-the-age-of-claude-code/</guid>
-      <description>&lt;p&gt;Once I got Claude Code Max plan, things changed.&lt;/p&gt;&#xA;&lt;p&gt;I am addicted to building.&lt;/p&gt;&#xA;&lt;p&gt;I have been coding for over a decade, building tools and utilities for my own usage.&lt;/p&gt;&#xA;&lt;p&gt;With &lt;strong&gt;Claude Code&lt;/strong&gt;, it is more fun than ever.&lt;/p&gt;&#xA;&lt;p&gt;Typing code out has always been the bottleneck between my ideas seeing the light of the day or just getting discarded.&lt;/p&gt;&#xA;&lt;p&gt;I am building more open source tools now - I start off with a conversation with Donna (my IndieClaw agent hosted on a VPS) and ask her to spec if out. Once the spec looks good, I ask it to build the first version. It spawns off a subagent (usually sonnet-4-6) that builds from the spec and hosts it on the VPS for me to check. Once it looks okay, I ask her to package it and publish it to my GitHub.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>I Told You to Set Up an OpenClaw Agent. Then I Built My Own.</title>
       <link>https://saikatkumardey.com/blog/i-told-you-to-set-up-an-openclaw-agent-then-i-built-my-own/</link>

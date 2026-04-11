@@ -1,301 +1,420 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="en">
 <head>
-  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>I Told You to Set Up an OpenClaw Agent. Then I Built My Own. | Saikat Kumar Dey</title>
-<meta name="title" content="I Told You to Set Up an OpenClaw Agent. Then I Built My Own." />
+  
+    <title>I Told You to Set Up an OpenClaw Agent. Then I Built My Own. :: saikatkumardey.com</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Let&rsquo;s say you set up a persistent AI agent. It runs on a cheap VPS, talks to you over Telegram, locks down your SSH, cleans up 97 GitHub repos, builds you a calorie tracker from a lunch photo. You&rsquo;re sold. You write a blog post telling everyone to do the same thing. That was me, a month ago, with OpenClaw.
-Then I stopped using it and built my own. Let&rsquo;s talk about why." />
-<meta name="keywords" content="agents,indieclaw,openclaw," />
+Then I stopped using it and built my own. Let&rsquo;s talk about why.
+" />
+<meta name="keywords" content="" />
 
+  <meta name="robots" content="noodp" />
 
-<meta property="og:url" content="https://saikatkumardey.com/blog/i-told-you-to-set-up-an-openclaw-agent-then-i-built-my-own/">
-  <meta property="og:site_name" content="Saikat Kumar Dey">
-  <meta property="og:title" content="I Told You to Set Up an OpenClaw Agent. Then I Built My Own.">
-  <meta property="og:description" content="Let’s say you set up a persistent AI agent. It runs on a cheap VPS, talks to you over Telegram, locks down your SSH, cleans up 97 GitHub repos, builds you a calorie tracker from a lunch photo. You’re sold. You write a blog post telling everyone to do the same thing. That was me, a month ago, with OpenClaw.
-Then I stopped using it and built my own. Let’s talk about why.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2026-03-22T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-03-22T00:00:00+00:00">
-    <meta property="article:tag" content="Agents">
-    <meta property="article:tag" content="Indieclaw">
-    <meta property="article:tag" content="Openclaw">
+<link rel="canonical" href="https://saikatkumardey.com/blog/i-told-you-to-set-up-an-openclaw-agent-then-i-built-my-own/" />
 
 
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="I Told You to Set Up an OpenClaw Agent. Then I Built My Own.">
-  <meta name="twitter:description" content="Let’s say you set up a persistent AI agent. It runs on a cheap VPS, talks to you over Telegram, locks down your SSH, cleans up 97 GitHub repos, builds you a calorie tracker from a lunch photo. You’re sold. You write a blog post telling everyone to do the same thing. That was me, a month ago, with OpenClaw.
-Then I stopped using it and built my own. Let’s talk about why.">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/terminal.min.07ded06929ffa8b0d87ed406742c53c87cb7445508d2ca341fa00c4223f417f8.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
 
 
 
 
-  <meta itemprop="name" content="I Told You to Set Up an OpenClaw Agent. Then I Built My Own.">
-  <meta itemprop="description" content="Let’s say you set up a persistent AI agent. It runs on a cheap VPS, talks to you over Telegram, locks down your SSH, cleans up 97 GitHub repos, builds you a calorie tracker from a lunch photo. You’re sold. You write a blog post telling everyone to do the same thing. That was me, a month ago, with OpenClaw.
-Then I stopped using it and built my own. Let’s talk about why.">
-  <meta itemprop="datePublished" content="2026-03-22T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-03-22T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1023">
-  <meta itemprop="keywords" content="Agents,Indieclaw,Openclaw">
-<meta name="referrer" content="no-referrer-when-downgrade" />
 
-  <style>
-  body {
-    font-family: Verdana, sans-serif;
-    margin: auto;
-    padding: 20px;
-    max-width: 720px;
-    text-align: left;
-    background-color: #fff;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.5;
-    color: #444;
-  }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  strong,
-  b {
-    color: #222;
-  }
 
-  a {
-    color: #3273dc;
-     
-  }
+<link rel="shortcut icon" href="https://saikatkumardey.com/favicon.png">
+<link rel="apple-touch-icon" href="https://saikatkumardey.com/apple-touch-icon.png">
 
-  .title {
-    text-decoration: none;
-    border: 0;
-  }
 
-  .title span {
-    font-weight: 400;
-  }
+<meta name="twitter:card" content="summary" />
 
-  nav a {
-    margin-right: 10px;
-  }
 
-  textarea {
-    width: 100%;
-    font-size: 16px;
-  }
 
-  input {
-    font-size: 16px;
-  }
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="I Told You to Set Up an OpenClaw Agent. Then I Built My Own.">
+<meta property="og:description" content="Let&rsquo;s say you set up a persistent AI agent. It runs on a cheap VPS, talks to you over Telegram, locks down your SSH, cleans up 97 GitHub repos, builds you a calorie tracker from a lunch photo. You&rsquo;re sold. You write a blog post telling everyone to do the same thing. That was me, a month ago, with OpenClaw.
+Then I stopped using it and built my own. Let&rsquo;s talk about why.
+" />
+<meta property="og:url" content="https://saikatkumardey.com/blog/i-told-you-to-set-up-an-openclaw-agent-then-i-built-my-own/" />
+<meta property="og:site_name" content="saikatkumardey.com" />
 
-  content {
-    line-height: 1.6;
-  }
+  <meta property="og:image" content="https://saikatkumardey.com/og-image.png">
 
-  table {
-    width: 100%;
-  }
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
 
-  img {
-    max-width: 100%;
-  }
 
-  code {
-    padding: 2px 5px;
-    background-color: #f2f2f2;
-  }
+  <meta property="article:published_time" content="2026-03-22 00:00:00 &#43;0000 UTC" />
 
-  pre code {
-    color: #222;
-    display: block;
-    padding: 20px;
-    white-space: pre-wrap;
-    font-size: 14px;
-    overflow-x: auto;
-  }
 
-  div.highlight pre {
-    background-color: initial;
-    color: initial;
-  }
 
-  div.highlight code {
-    background-color: unset;
-    color: unset;
-  }
 
-  blockquote {
-    border-left: 1px solid #999;
-    color: #222;
-    padding-left: 20px;
-    font-style: italic;
-  }
 
-  footer {
-    padding: 25px;
-    text-align: center;
-  }
 
-  .helptext {
-    color: #777;
-    font-size: small;
-  }
 
-  .errorlist {
-    color: #eba613;
-    font-size: small;
-  }
 
-   
-  ul.blog-posts {
-    list-style-type: none;
-    padding: unset;
-  }
 
-  ul.blog-posts li {
-    display: flex;
-  }
 
-  ul.blog-posts li span {
-    flex: 0 0 130px;
-  }
 
-  ul.blog-posts li a:visited {
-    color: #8b6fcb;
-  }
 
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #333;
-      color: #ddd;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    strong,
-    b {
-      color: #eee;
-    }
-
-    a {
-      color: #8cc2dd;
-    }
-
-    code {
-      background-color: #777;
-    }
-
-    pre code {
-      color: #ddd;
-    }
-
-    blockquote {
-      color: #ccc;
-    }
-
-    textarea,
-    input {
-      background-color: #252525;
-      color: #ddd;
-    }
-
-    .helptext {
-      color: #aaa;
-    }
-  }
-
-</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="/custom.css">
 </head>
-
 <body>
-  <header><a href="/" class="title">
-  <h2>Saikat Kumar Dey</h2>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~/saikat
+  </div>
 </a>
-<nav><a href="/">Home</a>
 
-<a href="https://saikatkumardey.github.io/ml-wiki/">ML Wiki</a>
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/blog">writing</a></li>
+        
+      
+        
+          <li><a href="/projects">projects</a></li>
+        
+      
+        
+          <li><a href="/til">til</a></li>
+        
+      
+        
+          <li><a href="https://saikatkumardey.github.io/ml-wiki/">ml wiki</a></li>
+        
+      
+        
+          <li><a href="/projects/">Projects</a></li>
+        
+      
+        
+          <li><a href="/til/">TIL</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
 
-<a href="/projects/">Projects</a>
-
-<a href="/til/">TIL</a>
-
-
-<a href="/blog">Blog</a>
-
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/blog" >writing</a></li>
+        
+      
+        
+          <li><a href="/projects" >projects</a></li>
+        
+      
+        
+          <li><a href="/til" >til</a></li>
+        
+      
+        
+          <li><a href="https://saikatkumardey.github.io/ml-wiki/" >ml wiki</a></li>
+        
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">more&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/projects/" >Projects</a></li>
+                  
+                
+                  
+                    <li><a href="/til/" >TIL</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
 </nav>
+
+  
 </header>
-  <main>
 
-<h1>I Told You to Set Up an OpenClaw Agent. Then I Built My Own.</h1>
-<p>
-  <i>
-    <time datetime='2026-03-22' pubdate>
-      22 Mar, 2026
-    </time>
-  </i>
-</p>
 
-<content>
-  <p>Let&rsquo;s say you set up a persistent AI agent. It runs on a cheap VPS, talks to you over Telegram, locks down your SSH, cleans up 97 GitHub repos, builds you a calorie tracker from a lunch photo. You&rsquo;re sold. You <a href="/blog/you-should-set-up-an-openclaw-agent/">write a blog post telling everyone to do the same thing</a>. That was me, a month ago, with OpenClaw.</p>
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://saikatkumardey.com/blog/i-told-you-to-set-up-an-openclaw-agent-then-i-built-my-own/">I Told You to Set Up an OpenClaw Agent. Then I Built My Own.</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2026-03-22</time></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://saikatkumardey.com/tags/agents/">agents</a>&nbsp;
+      
+      #<a href="https://saikatkumardey.com/tags/indieclaw/">indieclaw</a>&nbsp;
+      
+      #<a href="https://saikatkumardey.com/tags/openclaw/">openclaw</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Let&rsquo;s say you set up a persistent AI agent. It runs on a cheap VPS, talks to you over Telegram, locks down your SSH, cleans up 97 GitHub repos, builds you a calorie tracker from a lunch photo. You&rsquo;re sold. You <a href="/blog/you-should-set-up-an-openclaw-agent/">write a blog post telling everyone to do the same thing</a>. That was me, a month ago, with OpenClaw.</p>
 <p>Then I stopped using it and built my own. Let&rsquo;s talk about why.</p>
-<h2 id="what-openclaw-got-right">What OpenClaw got right</h2>
+<h2 id="what-openclaw-got-right">What OpenClaw got right<a href="#what-openclaw-got-right" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p><a href="https://github.com/openclaw/openclaw">OpenClaw</a> gives you the hard part for free: a daemon process, Telegram integration, cron scheduling, shell access. You install it, write a <code>SOUL.md</code>, and you have a working agent in ten minutes. The agent ran morning news digests, tracked my meals, pushed back on bad ideas. For two weeks it just worked.</p>
 <p>So what went wrong? Nothing. That&rsquo;s the thing. The framework was doing exactly what it was designed to do. But I wanted to change how the agent stored memories. I wanted a self-review step at the end of each day. I wanted the handover between sessions to work differently. Every time I reached for something structural, I was reading someone else&rsquo;s code, working around someone else&rsquo;s abstractions. I wanted it to do something else.</p>
-<h2 id="the-case-for-building-your-own">The case for building your own</h2>
+<h2 id="the-case-for-building-your-own">The case for building your own<a href="#the-case-for-building-your-own" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>What&rsquo;s the interesting part of running a persistent agent? It&rsquo;s not the Telegram bot or the cron scheduler. Those are solved problems. It&rsquo;s how the agent remembers, how it reviews its own work, how it decides what to keep and what to forget. That&rsquo;s where all the leverage is. And that&rsquo;s exactly the part you want full control over.</p>
 <p>So I built <a href="https://github.com/saikatkumardey/indieclaw">IndieClaw</a>. Claude on Telegram, backed by a folder of markdown files. The entire persistence layer is text files. <code>SOUL.md</code> defines who the agent is. <code>AGENT.md</code> has standing orders. <code>MEMORY.md</code> keeps facts that persist across sessions. Text files you can read, grep, and version-control.</p>
 <p>Migration from OpenClaw took one session. I pointed IndieClaw at the old agent&rsquo;s workspace and it read everything: memories, tools, cron configs. One agent read another agent&rsquo;s brain because the brain was just files. I didn&rsquo;t write an export script or run a database migration.</p>
-<h2 id="what-happens-when-the-agent-owns-its-own-config">What happens when the agent owns its own config</h2>
+<h2 id="what-happens-when-the-agent-owns-its-own-config">What happens when the agent owns its own config<a href="#what-happens-when-the-agent-owns-its-own-config" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Week one, the agent responds like a polite chatbot. It asks permission for everything. &ldquo;Should I do this? Would you like me to build that?&rdquo; You correct it. &ldquo;Don&rsquo;t ask, just do it if it&rsquo;s reversible.&rdquo; It gets better for a session, then restarts and forgets. Back to square one.</p>
 <p>Now, week two. The agent starts writing the corrections itself. It reads through the day&rsquo;s conversations, notices the pattern (&ldquo;user had to repeat the same instruction 4 times&rdquo;), and edits its own <code>SOUL.md</code> to encode the rule. Next restart, the rule is still there because it&rsquo;s a file, not context window. I didn&rsquo;t build a self-editing feature. The agent has write access to its own files and Claude is smart enough to figure out that repeated corrections should be written down. The file system is the memory. Claude is the intelligence. IndieClaw just connects them.</p>
 <p>Week three, the agent is building its own tools. I uploaded a photo of my lunch. It logged the calories to a SQLite database it created, built a dashboard, hosted it on a local web server, sent me the URL. I asked for a Hacker News digest every morning. It wrote the cron config and the scraping logic. Running at 7am Jakarta time every day since. Early on it was writing raw SQL for every meal log, rediscovering the schema each session. Its nightly self-review caught the pattern and it built a dedicated tool. That fix came from the agent reviewing its own mistakes, not from me telling it to do anything.</p>
-<h2 id="the-80-line-constraint">The 80-line constraint</h2>
+<h2 id="the-80-line-constraint">The 80-line constraint<a href="#the-80-line-constraint" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p><code>MEMORY.md</code> is capped at 80 lines. This was an accident that turned into the best design decision in the project.</p>
 <p>Without the cap, the agent writes everything down. Every preference, every correction, every one-off instruction. Within a week the memory file is 400 lines of noise and the agent can&rsquo;t find anything useful. Sound familiar? It&rsquo;s the same problem humans have with note-taking apps.</p>
 <p>With the cap, the agent has to decide what matters. &ldquo;Would I search for this later?&rdquo; becomes the filter. Old entries get replaced by more important ones. The memory stays sharp because it&rsquo;s forced to be selective. You only discover this by owning the full system. No framework ships a &ldquo;limit your agent&rsquo;s memory to 80 lines&rdquo; feature. You find it yourself.</p>
-<h2 id="what-doesnt-work">What doesn&rsquo;t work</h2>
+<h2 id="what-doesnt-work">What doesn&rsquo;t work<a href="#what-doesnt-work" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The agent still repeats mistakes I&rsquo;ve corrected. I&rsquo;ll tell it to stop doing something, it&rsquo;ll agree, three days later it does the same thing. This is a model limitation. When the relevant instruction scrolls out of context and the agent doesn&rsquo;t happen to load the right memory file, the correction is gone. You can&rsquo;t fix this with better prompting. You fix it with constraints that don&rsquo;t depend on the agent remembering.</p>
 <p>Restarts are fragile. There&rsquo;s a handover system that saves a summary before shutdown so the agent can pick up where it left off. When it works, it&rsquo;s seamless. When it doesn&rsquo;t fire (crash, OOM kill), context is just gone.</p>
 <p>Debugging is hard. When a cron stops running, you read log files. There&rsquo;s no dashboard. And the obvious one: this is Claude with markdown files and glue code. It&rsquo;s not a new model or a reasoning breakthrough. If that framing doesn&rsquo;t interest you, this isn&rsquo;t for you.</p>
-<h2 id="why-you-should-build-yours">Why you should build yours</h2>
+<h2 id="why-you-should-build-yours">Why you should build yours<a href="#why-you-should-build-yours" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>So what are agent frameworks actually solving for you? Tool calling, message routing, API wrappers. Solved problems. The hard problems (memory management, self-correction, knowing when to forget) are still yours. If you&rsquo;re solving those yourself anyway, you might as well own the easy ones too. The total code is small. The decisions are what matter.</p>
 <p>Start with OpenClaw. Learn what a persistent agent can do. Then build your own so you control how it does it. IndieClaw is open source. You can install it and start there, or read through it in twenty minutes and build something better.</p>
-<pre tabindex="0"><code>curl -fsSL https://raw.githubusercontent.com/saikatkumardey/indieclaw/main/install.sh | bash
-</code></pre><p><a href="https://github.com/saikatkumardey/indieclaw">github.com/saikatkumardey/indieclaw</a></p>
 
-</content>
-<p>
-  
-  <a href="https://saikatkumardey.com/tags/agents/">#Agents</a>
-  
-  <a href="https://saikatkumardey.com/tags/indieclaw/">#Indieclaw</a>
-  
-  <a href="https://saikatkumardey.com/tags/openclaw/">#Openclaw</a>
-  
-</p>
 
-  </main>
-  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 744 25"
+      >
+      <g transform='translate(8,16)'>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='56' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='64' y='4' fill='currentColor' style='font-size:1em'>S</text>
+<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>L</text>
+<text text-anchor='middle' x='88' y='4' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='96' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='104' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='112' y='4' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='120' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='128' y='4' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='136' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='144' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='152' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='160' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='168' y='4' fill='currentColor' style='font-size:1em'>w</text>
+<text text-anchor='middle' x='176' y='4' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='184' y='4' fill='currentColor' style='font-size:1em'>g</text>
+<text text-anchor='middle' x='192' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='200' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='208' y='4' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='216' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='224' y='4' fill='currentColor' style='font-size:1em'>b</text>
+<text text-anchor='middle' x='232' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='240' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='248' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='256' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='264' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='272' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='280' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='288' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='296' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='304' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='312' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='320' y='4' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='328' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='336' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='344' y='4' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='352' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='360' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='368' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='376' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='384' y='4' fill='currentColor' style='font-size:1em'>k</text>
+<text text-anchor='middle' x='392' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='400' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='408' y='4' fill='currentColor' style='font-size:1em'>k</text>
+<text text-anchor='middle' x='416' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='424' y='4' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='432' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='440' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='448' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='456' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='464' y='4' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='472' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='480' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='488' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='496' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='504' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='512' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='520' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='528' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='536' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='544' y='4' fill='currentColor' style='font-size:1em'>w</text>
+<text text-anchor='middle' x='552' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='560' y='4' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='568' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='576' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='584' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='592' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='600' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='608' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='616' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='624' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='632' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='640' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='648' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='656' y='4' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='664' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='672' y='4' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='688' y='4' fill='currentColor' style='font-size:1em'>|</text>
+<text text-anchor='middle' x='704' y='4' fill='currentColor' style='font-size:1em'>b</text>
+<text text-anchor='middle' x='712' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='720' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='728' y='4' fill='currentColor' style='font-size:1em'>h</text>
+</g>
+
+    </svg>
+  
+</div>
+<p><a href="https://github.com/saikatkumardey/indieclaw">github.com/saikatkumardey/indieclaw</a></p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">more posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+    
+    
+      <a href="https://saikatkumardey.com/blog/you-should-set-up-an-openclaw-agent/" class="button inline next">
+         [<span class="button__text">You Should Set Up an OpenClaw Agent</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2026 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
 </footer>
 
-  
-</body>
 
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
 </html>

@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Saikat Kumar Dey</title>
+    <title>Home on saikatkumardey.com</title>
     <link>https://saikatkumardey.com/</link>
-    <description>Recent content in Home on Saikat Kumar Dey</description>
+    <description>Recent content in Home on saikatkumardey.com</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <language>en</language>
+    <lastBuildDate>Fri, 27 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://saikatkumardey.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Building in the age of Claude Code</title>
-      <link>https://saikatkumardey.com/blog/2026-04-04-building-in-the-age-of-claude-code/</link>
-      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://saikatkumardey.com/blog/2026-04-04-building-in-the-age-of-claude-code/</guid>
-      <description>&lt;p&gt;Once I got Claude Code Max plan, things changed.&lt;/p&gt;&#xA;&lt;p&gt;I am addicted to building.&lt;/p&gt;&#xA;&lt;p&gt;I have been coding for over a decade, building tools and utilities for my own usage.&lt;/p&gt;&#xA;&lt;p&gt;With &lt;strong&gt;Claude Code&lt;/strong&gt;, it is more fun than ever.&lt;/p&gt;&#xA;&lt;p&gt;Typing code out has always been the bottleneck between my ideas seeing the light of the day or just getting discarded.&lt;/p&gt;&#xA;&lt;p&gt;I am building more open source tools now - I start off with a conversation with Donna (my IndieClaw agent hosted on a VPS) and ask her to spec if out. Once the spec looks good, I ask it to build the first version. It spawns off a subagent (usually sonnet-4-6) that builds from the spec and hosts it on the VPS for me to check. Once it looks okay, I ask her to package it and publish it to my GitHub.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Batch normalization works for the wrong reasons</title>
       <link>https://saikatkumardey.com/til/2026-03-27/</link>
@@ -62,7 +55,7 @@
       <link>https://saikatkumardey.com/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://saikatkumardey.com/projects/</guid>
-      <description>&lt;p&gt;Things I&amp;rsquo;ve built. Some useful, some just fun.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;indieclaw&#34;&gt;&lt;a href=&#34;https://saikatkumardey.com/indieclaw/&#34;&gt;indieclaw&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;A personal AI agent that runs on Telegram. Persistent memory via markdown files, self-editing personality, cron scheduling, tool building, and Claude Code integration. The agent that manages my health tracking, morning briefings, and half my daily workflow.&lt;/p&gt;&#xA;&lt;h3 id=&#34;grokking-playground&#34;&gt;&lt;a href=&#34;https://saikatkumardey.com/grokking-playground/&#34;&gt;grokking-playground&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Interactive browser demo of neural network grokking. Train a small net on modular multiplication and watch it memorize fast, then suddenly generalize. All sliders, all in-browser, no backend. &lt;a href=&#34;https://github.com/saikatkumardey/grokking-playground&#34;&gt;Code&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Things I&amp;rsquo;ve built. Some useful, some just fun.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;commonplace-plugin&#34;&gt;&lt;a href=&#34;https://github.com/saikatkumardey/commonplace-plugin&#34;&gt;commonplace-plugin&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Claude Code plugin for commonplace. Teaches Claude Code when and how to use the commonplace CLI to store and recall memories across sessions. Install with &lt;code&gt;claude plugin add saikatkumardey/commonplace-plugin&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;commonplace&#34;&gt;&lt;a href=&#34;https://github.com/saikatkumardey/commonplace&#34;&gt;commonplace&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Agent-agnostic memory CLI. BM25 search across topic-organized markdown files. Built for AI agents that need persistent memory without a vector database. Stores facts, decisions, and preferences that survive across sessions.&lt;/p&gt;&#xA;&lt;h3 id=&#34;indieclaw&#34;&gt;&lt;a href=&#34;https://saikatkumardey.com/indieclaw/&#34;&gt;indieclaw&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;A personal AI agent that runs on Telegram. Persistent memory via markdown files, self-editing personality, cron scheduling, tool building, and Claude Code integration. The agent that manages my health tracking, morning briefings, and half my daily workflow.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

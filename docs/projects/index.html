@@ -1,280 +1,289 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="en">
 <head>
-  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Projects | Saikat Kumar Dey</title>
-<meta name="title" content="Projects" />
+  
+    <title>Projects :: saikatkumardey.com</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Things I&rsquo;ve built. Some useful, some just fun.
-
-indieclaw
-A personal AI agent that runs on Telegram. Persistent memory via markdown files, self-editing personality, cron scheduling, tool building, and Claude Code integration. The agent that manages my health tracking, morning briefings, and half my daily workflow.
-grokking-playground
-Interactive browser demo of neural network grokking. Train a small net on modular multiplication and watch it memorize fast, then suddenly generalize. All sliders, all in-browser, no backend. Code." />
+commonplace-plugin Claude Code plugin for commonplace. Teaches Claude Code when and how to use the commonplace CLI to store and recall memories across sessions. Install with claude plugin add saikatkumardey/commonplace-plugin.
+commonplace Agent-agnostic memory CLI. BM25 search across topic-organized markdown files. Built for AI agents that need persistent memory without a vector database. Stores facts, decisions, and preferences that survive across sessions.
+indieclaw A personal AI agent that runs on Telegram. Persistent memory via markdown files, self-editing personality, cron scheduling, tool building, and Claude Code integration. The agent that manages my health tracking, morning briefings, and half my daily workflow.
+" />
 <meta name="keywords" content="" />
 
+  <meta name="robots" content="noodp" />
 
-<meta property="og:url" content="https://saikatkumardey.com/projects/">
-  <meta property="og:site_name" content="Saikat Kumar Dey">
-  <meta property="og:title" content="Projects">
-  <meta property="og:description" content="Things I’ve built. Some useful, some just fun.
+<link rel="canonical" href="https://saikatkumardey.com/projects/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/terminal.min.07ded06929ffa8b0d87ed406742c53c87cb7445508d2ca341fa00c4223f417f8.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://saikatkumardey.com/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="https://saikatkumardey.com/favicon.png">
+<link rel="apple-touch-icon" href="https://saikatkumardey.com/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Projects">
+<meta property="og:description" content="Things I&rsquo;ve built. Some useful, some just fun.
+commonplace-plugin Claude Code plugin for commonplace. Teaches Claude Code when and how to use the commonplace CLI to store and recall memories across sessions. Install with claude plugin add saikatkumardey/commonplace-plugin.
+commonplace Agent-agnostic memory CLI. BM25 search across topic-organized markdown files. Built for AI agents that need persistent memory without a vector database. Stores facts, decisions, and preferences that survive across sessions.
 indieclaw A personal AI agent that runs on Telegram. Persistent memory via markdown files, self-editing personality, cron scheduling, tool building, and Claude Code integration. The agent that manages my health tracking, morning briefings, and half my daily workflow.
-grokking-playground Interactive browser demo of neural network grokking. Train a small net on modular multiplication and watch it memorize fast, then suddenly generalize. All sliders, all in-browser, no backend. Code.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
+" />
+<meta property="og:url" content="https://saikatkumardey.com/projects/" />
+<meta property="og:site_name" content="saikatkumardey.com" />
+
+  <meta property="og:image" content="https://saikatkumardey.com/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
 
 
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Projects">
-  <meta name="twitter:description" content="Things I’ve built. Some useful, some just fun.
-indieclaw A personal AI agent that runs on Telegram. Persistent memory via markdown files, self-editing personality, cron scheduling, tool building, and Claude Code integration. The agent that manages my health tracking, morning briefings, and half my daily workflow.
-grokking-playground Interactive browser demo of neural network grokking. Train a small net on modular multiplication and watch it memorize fast, then suddenly generalize. All sliders, all in-browser, no backend. Code.">
 
 
 
 
-  <meta itemprop="name" content="Projects">
-  <meta itemprop="description" content="Things I’ve built. Some useful, some just fun.
-indieclaw A personal AI agent that runs on Telegram. Persistent memory via markdown files, self-editing personality, cron scheduling, tool building, and Claude Code integration. The agent that manages my health tracking, morning briefings, and half my daily workflow.
-grokking-playground Interactive browser demo of neural network grokking. Train a small net on modular multiplication and watch it memorize fast, then suddenly generalize. All sliders, all in-browser, no backend. Code.">
-  <meta itemprop="wordCount" content="231">
-<meta name="referrer" content="no-referrer-when-downgrade" />
 
-  <style>
-  body {
-    font-family: Verdana, sans-serif;
-    margin: auto;
-    padding: 20px;
-    max-width: 720px;
-    text-align: left;
-    background-color: #fff;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.5;
-    color: #444;
-  }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  strong,
-  b {
-    color: #222;
-  }
 
-  a {
-    color: #3273dc;
-     
-  }
 
-  .title {
-    text-decoration: none;
-    border: 0;
-  }
 
-  .title span {
-    font-weight: 400;
-  }
-
-  nav a {
-    margin-right: 10px;
-  }
-
-  textarea {
-    width: 100%;
-    font-size: 16px;
-  }
-
-  input {
-    font-size: 16px;
-  }
-
-  content {
-    line-height: 1.6;
-  }
-
-  table {
-    width: 100%;
-  }
-
-  img {
-    max-width: 100%;
-  }
-
-  code {
-    padding: 2px 5px;
-    background-color: #f2f2f2;
-  }
-
-  pre code {
-    color: #222;
-    display: block;
-    padding: 20px;
-    white-space: pre-wrap;
-    font-size: 14px;
-    overflow-x: auto;
-  }
-
-  div.highlight pre {
-    background-color: initial;
-    color: initial;
-  }
-
-  div.highlight code {
-    background-color: unset;
-    color: unset;
-  }
-
-  blockquote {
-    border-left: 1px solid #999;
-    color: #222;
-    padding-left: 20px;
-    font-style: italic;
-  }
-
-  footer {
-    padding: 25px;
-    text-align: center;
-  }
-
-  .helptext {
-    color: #777;
-    font-size: small;
-  }
-
-  .errorlist {
-    color: #eba613;
-    font-size: small;
-  }
-
-   
-  ul.blog-posts {
-    list-style-type: none;
-    padding: unset;
-  }
-
-  ul.blog-posts li {
-    display: flex;
-  }
-
-  ul.blog-posts li span {
-    flex: 0 0 130px;
-  }
-
-  ul.blog-posts li a:visited {
-    color: #8b6fcb;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #333;
-      color: #ddd;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    strong,
-    b {
-      color: #eee;
-    }
-
-    a {
-      color: #8cc2dd;
-    }
-
-    code {
-      background-color: #777;
-    }
-
-    pre code {
-      color: #ddd;
-    }
-
-    blockquote {
-      color: #ccc;
-    }
-
-    textarea,
-    input {
-      background-color: #252525;
-      color: #ddd;
-    }
-
-    .helptext {
-      color: #aaa;
-    }
-  }
-
-</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="/custom.css">
 </head>
-
 <body>
-  <header><a href="/" class="title">
-  <h2>Saikat Kumar Dey</h2>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~/saikat
+  </div>
 </a>
-<nav><a href="/">Home</a>
 
-<a href="https://saikatkumardey.github.io/ml-wiki/">ML Wiki</a>
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/blog">writing</a></li>
+        
+      
+        
+          <li><a href="/projects">projects</a></li>
+        
+      
+        
+          <li><a href="/til">til</a></li>
+        
+      
+        
+          <li><a href="https://saikatkumardey.github.io/ml-wiki/">ml wiki</a></li>
+        
+      
+        
+          <li><a href="/projects/">Projects</a></li>
+        
+      
+        
+          <li><a href="/til/">TIL</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
 
-<a href="/projects/">Projects</a>
-
-<a href="/til/">TIL</a>
-
-
-<a href="/blog">Blog</a>
-
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/blog" >writing</a></li>
+        
+      
+        
+          <li><a href="/projects" >projects</a></li>
+        
+      
+        
+          <li><a href="/til" >til</a></li>
+        
+      
+        
+          <li><a href="https://saikatkumardey.github.io/ml-wiki/" >ml wiki</a></li>
+        
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">more&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/projects/" >Projects</a></li>
+                  
+                
+                  
+                    <li><a href="/til/" >TIL</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
 </nav>
-</header>
-  <main>
 
-<content>
-  <p>Things I&rsquo;ve built. Some useful, some just fun.</p>
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://saikatkumardey.com/projects/">Projects</a>
+  </h1>
+  <div class="post-meta"></div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Things I&rsquo;ve built. Some useful, some just fun.</p>
 <hr>
-<h3 id="indieclaw"><a href="https://saikatkumardey.com/indieclaw/">indieclaw</a></h3>
+<h3 id="commonplace-plugin"><a href="https://github.com/saikatkumardey/commonplace-plugin">commonplace-plugin</a><a href="#commonplace-plugin" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Claude Code plugin for commonplace. Teaches Claude Code when and how to use the commonplace CLI to store and recall memories across sessions. Install with <code>claude plugin add saikatkumardey/commonplace-plugin</code>.</p>
+<h3 id="commonplace"><a href="https://github.com/saikatkumardey/commonplace">commonplace</a><a href="#commonplace" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Agent-agnostic memory CLI. BM25 search across topic-organized markdown files. Built for AI agents that need persistent memory without a vector database. Stores facts, decisions, and preferences that survive across sessions.</p>
+<h3 id="indieclaw"><a href="https://saikatkumardey.com/indieclaw/">indieclaw</a><a href="#indieclaw" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>A personal AI agent that runs on Telegram. Persistent memory via markdown files, self-editing personality, cron scheduling, tool building, and Claude Code integration. The agent that manages my health tracking, morning briefings, and half my daily workflow.</p>
-<h3 id="grokking-playground"><a href="https://saikatkumardey.com/grokking-playground/">grokking-playground</a></h3>
+<h3 id="grokking-playground"><a href="https://saikatkumardey.com/grokking-playground/">grokking-playground</a><a href="#grokking-playground" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Interactive browser demo of neural network grokking. Train a small net on modular multiplication and watch it memorize fast, then suddenly generalize. All sliders, all in-browser, no backend. <a href="https://github.com/saikatkumardey/grokking-playground">Code</a>.</p>
-<h3 id="html2md"><a href="https://github.com/saikatkumardey/html2md">html2md</a></h3>
-<p>Aggressive HTML-to-markdown converter for AI agents. Mozilla Readability strips navbars, ads, and footers. Turndown converts the rest to clean markdown. Supports token budgeting, stdin, local files, and JSON output. Built because agents kept drowning in boilerplate.</p>
-<h3 id="termstage"><a href="https://github.com/saikatkumardey/termstage">termstage</a></h3>
+<h3 id="termstage"><a href="https://github.com/saikatkumardey/termstage">termstage</a><a href="#termstage" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Fake terminal demos. Write a YAML file describing the session, get an SVG. No recording, no live shell. Good for README headers and docs.</p>
-<h3 id="python-doctor"><a href="https://saikatkumardey.com/python-doctor/">python-doctor</a></h3>
+<h3 id="python-doctor"><a href="https://saikatkumardey.com/python-doctor/">python-doctor</a><a href="#python-doctor" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>CLI that gives your Python codebase a 0-100 health score. Security, lint, complexity, dead code, and more. Built for AI agents.</p>
-<h3 id="aidoc"><a href="https://github.com/saikatkumardey/aidoc">aidoc</a></h3>
+<h3 id="html2md"><a href="https://github.com/saikatkumardey/html2md">html2md</a><a href="#html2md" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Aggressive HTML-to-markdown converter for AI agents. Mozilla Readability strips navbars, ads, and footers. Turndown converts the rest to clean markdown. Supports token budgeting, stdin, local files, and JSON output. Built because agents kept drowning in boilerplate.</p>
+<h3 id="aidoc"><a href="https://github.com/saikatkumardey/aidoc">aidoc</a><a href="#aidoc" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Auto-generates documentation for Python projects. Point it at your codebase, get clean docs. Available on <a href="https://pypi.org/project/aidoc/">PyPI</a>.</p>
-<h3 id="quickreadai"><a href="https://github.com/saikatkumardey/quickreadai">quickreadai</a></h3>
+<h3 id="quickreadai"><a href="https://github.com/saikatkumardey/quickreadai">quickreadai</a><a href="#quickreadai" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Key takeaways from non-fiction books, powered by AI. Try it <a href="https://quickreadai.streamlit.app">live</a>.</p>
-<h3 id="habithub"><a href="https://github.com/saikatkumardey/habithub">habithub</a></h3>
+<h3 id="habithub"><a href="https://github.com/saikatkumardey/habithub">habithub</a><a href="#habithub" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>A minimal habit tracker for iOS. Built in Swift because I wanted something that stayed out of the way.</p>
-<h3 id="tweetspy"><a href="https://github.com/saikatkumardey/tweetSpy">tweetSpy</a></h3>
+<h3 id="tweetspy"><a href="https://github.com/saikatkumardey/tweetSpy">tweetSpy</a><a href="#tweetspy" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Real-time tweet monitoring dashboard. Track keywords, watch trends unfold.</p>
-<h3 id="interactive-dataviz"><a href="https://github.com/saikatkumardey/interactive-dataviz">interactive-dataviz</a></h3>
+<h3 id="interactive-dataviz"><a href="https://github.com/saikatkumardey/interactive-dataviz">interactive-dataviz</a><a href="#interactive-dataviz" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Interactive data visualization app built with Dash. Reactive charts, clean interface.</p>
 
-</content>
-<p>
-  
-</p>
+      </div></div>
 
-  </main>
-  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2026 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
 </footer>
 
-  
-</body>
 
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
 </html>
