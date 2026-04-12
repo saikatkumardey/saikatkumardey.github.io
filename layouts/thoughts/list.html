@@ -7,9 +7,10 @@
     <div style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.75rem;">
       {{ .Key }}
     </div>
-    {{ range .Pages }}
-    <article style="margin-bottom: 1rem; padding: 0.9rem 1.1rem; border: 1px solid var(--border); border-radius: 4px; font-size: 0.95rem; line-height: 1.75;">
-      {{ .Content }}
+    {{ range $i, $p := .Pages }}
+    {{ if gt $i 0 }}<hr style="margin: 1.25rem 0; border: none; border-top: 1px solid var(--border);">{{ end }}
+    <article style="font-size: 0.95rem; line-height: 1.75;">
+      {{ $p.Content }}
     </article>
     {{ end }}
   </div>
