@@ -1,27 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500&display=swap');
 
+/* Catppuccin Latte — light mode */
 :root {
-    --text: #1a1a1a;
-    --text-muted: #666;
-    --bg: #fafafa;
-    --accent: #2a2a2a;
-    --border: #e0e0e0;
+    --text: #4c4f69;
+    --text-muted: #8c8fa1;
+    --bg: #eff1f5;
+    --accent: #8839ef;
+    --border: #ccd0da;
 }
 
+/* Catppuccin Mocha — dark mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --text: #e8e8e8;
-        --text-muted: #999;
-        --bg: #111;
-        --accent: #fff;
-        --border: #333;
+        --text: #cdd6f4;
+        --text-muted: #a6adc8;
+        --bg: #1e1e2e;
+        --accent: #cba6f7;
+        --border: #313244;
     }
     code {
-        background-color: #222 !important;
+        background-color: #313244 !important;
     }
     pre {
-        background: #1c1c1c !important;
-        border: 1px solid #333;
+        background: #181825 !important;
+        border: 1px solid #313244;
     }
 }
 
@@ -112,7 +114,7 @@ code {
 }
 
 pre {
-    background: #1a1a1a !important;
+    background: var(--border) !important;
     border-radius: 6px;
     padding: 1rem 1.2rem;
     overflow-x: auto;
@@ -121,7 +123,7 @@ pre {
 
 pre code {
     background: none !important;
-    color: #e0e0e0 !important;
+    color: var(--text) !important;
     font-size: 0.85em;
     line-height: 1.6;
 }

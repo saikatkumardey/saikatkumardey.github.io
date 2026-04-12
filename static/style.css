@@ -1,8 +1,8 @@
-/* saikatkumardey.com — theme overrides */
+/* saikatkumardey.com — Catppuccin Mocha theme overrides */
 :root {
-  --background: #0d0d0d;
-  --foreground: #d4d4d4;
-  --accent: #39d353;
+  --background: #1e1e2e;
+  --foreground: #cdd6f4;
+  --accent: #cba6f7;
 }
 
 /* Mobile menu: prevent text wrapping in dropdown */
