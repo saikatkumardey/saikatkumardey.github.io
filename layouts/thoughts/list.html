@@ -8,10 +8,8 @@
       {{ .Key }}
     </div>
     {{ range .Pages }}
-    <article style="margin-bottom: 1.1rem; padding-left: 1rem; border-left: 2px solid var(--border);">
-      <div style="font-size: 0.95rem; line-height: 1.7;">
-        {{ .Content }}
-      </div>
+    <article style="margin-bottom: 1rem; padding: 0.9rem 1.1rem; border: 1px solid var(--border); border-radius: 4px; font-size: 0.95rem; line-height: 1.75;">
+      {{ .Content }}
     </article>
     {{ end }}
   </div>
