@@ -1,22 +1,22 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 <p><i>{{ .Content }}</i></p>
-<div class="til-entries">
-  {{ range (.Pages.ByDate.Reverse) }}
-  <article class="til-entry" style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);">
-    <h3 style="margin: 0.5rem 0;">
-      <a href="{{ .Permalink }}" style="text-decoration: none;">
-        <time datetime='{{ .Date.Format "2006-01-02" }}' style="color: var(--text-secondary);">
-          {{ .Date.Format "2006-01-02" }}
-        </time>
-      </a>
-    </h3>
-    <div style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-      {{ .Summary }}
+<div class="thoughts-entries">
+  {{ range (.Pages.GroupByDate "January 2, 2006" "desc") }}
+  <div style="margin-bottom: 2.5rem;">
+    <div style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.75rem;">
+      {{ .Key }}
     </div>
-  </article>
+    {{ range .Pages }}
+    <article style="margin-bottom: 1.1rem; padding-left: 1rem; border-left: 2px solid var(--border);">
+      <div style="font-size: 0.95rem; line-height: 1.7;">
+        {{ .Content }}
+      </div>
+    </article>
+    {{ end }}
+  </div>
   {{ else }}
-  <p>No TIL entries yet.</p>
+  <p>No thoughts yet.</p>
   {{ end }}
 </div>
 {{ end }}
