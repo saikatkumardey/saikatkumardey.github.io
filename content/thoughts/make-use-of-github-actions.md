@@ -1,6 +1,6 @@
 ---
-title: "Make use of GitHub actions"
-date: 2026-04-12T05:06:12Z
+title: "2026-04-12"
+date: 2026-04-12T05:07:15Z
 draft: false
 ---
 
