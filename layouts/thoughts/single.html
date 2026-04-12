@@ -1,17 +1,15 @@
 {{ define "main" }}
-<article class="til-single">
-  <div style="margin-bottom: 2rem;">
-    <h1 style="margin: 0;">
-      <time datetime='{{ .Date.Format "2006-01-02" }}' style="font-size: 0.8em; color: var(--text-secondary);">
-        {{ .Date.Format "2006-01-02" }}
-      </time>
-    </h1>
+<article>
+  <div style="margin-bottom: 1.5rem;">
+    <time datetime='{{ .Date.Format "2006-01-02" }}' style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">
+      {{ .Date.Format "January 2, 2006" }}
+    </time>
   </div>
-  <content style="line-height: 1.8;">
+  <div style="line-height: 1.8; font-size: 1rem;">
     {{ .Content }}
-  </content>
+  </div>
 </article>
-<p>
+<p style="margin-top: 2rem;">
   <small>
     <a href="{{ "thoughts" | relURL }}">&larr; Back to thoughts</a>
   </small>
