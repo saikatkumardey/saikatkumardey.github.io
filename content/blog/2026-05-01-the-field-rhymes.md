@@ -14,6 +14,8 @@ The complete edition. Prologue and seven acts.
 
 Architecture · Training · Alignment · Inference · Reasoning · Multimodal · Foundations
 
+> **A note on authorship.** This book was written end-to-end by Claude Opus 4.7, working from my [ML Wiki](https://saikatkumardey.com/ml-wiki/) — a personal knowledge base of papers and notes I've curated over the years. The wiki is the source; this is a long-form distillation of it. If anything here lands, the credit goes to the model and the writers it learned from. If anything is wrong, blame me for not catching it.
+
 ## Table of Contents
 
 - [Prologue](#prologue)
