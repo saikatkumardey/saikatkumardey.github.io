@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 title = "The Field Rhymes: A First-Principles Walk Through Modern Machine Learning in 93 Ideas"
 date = "2026-05-01"
 tags = ["machine learning", "deep learning", "ai", "education"]
