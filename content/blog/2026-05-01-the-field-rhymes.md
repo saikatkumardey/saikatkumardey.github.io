@@ -6,10 +6,66 @@ tags = ["machine learning", "deep learning", "ai", "education"]
 +++
 
 
-# The Field Rhymes.
+# The Field Rhymes
 
 
 A first-principles walk through modern machine learning, in 93 ideas.
+
+
+## Table of Contents
+
+- [Prologue](#prologue)
+- [Act I — The Apparatus](#the-apparatus)
+  - [Chapter 1: How a Network Learns](#how-a-network-learns)
+  - [Chapter 2: How a Network Reads](#how-a-network-reads)
+  - [Chapter 3: How a Network Speaks](#how-a-network-speaks)
+- [Act II — The Routing Insight](#the-routing-insight)
+  - [Chapter 4: The Puzzle of Long Sentences](#the-puzzle-of-long-sentences)
+  - [Chapter 5: Attention](#attention)
+  - [Chapter 6: Many Heads](#many-heads)
+  - [Chapter 7: Positional Encoding](#positional-encoding)
+  - [Chapter 8: Residuals and LayerNorm](#residuals-and-layernorm)
+  - [Chapter 9: The Transformer Block](#the-transformer-block)
+  - [Chapter 10: Encoder, Decoder, Both, Neither](#encoder-decoder-both-neither)
+- [Act III — The Scaling Discovery](#the-scaling-discovery)
+  - [Chapter 11: The Empirical Surprise](#the-empirical-surprise)
+  - [Chapter 12: Scaling Laws](#scaling-laws)
+  - [Chapter 13: The Chinchilla Correction](#the-chinchilla-correction)
+  - [Chapter 14: The Phase Transition](#the-phase-transition)
+  - [Chapter 15: Grokking](#grokking)
+- [Act IV — The Alignment Problem](#the-alignment-problem)
+  - [Chapter 16: Supervised Fine-Tuning](#supervised-fine-tuning)
+  - [Chapter 17: Reward Models](#reward-models)
+  - [Chapter 18: RLHF](#rlhf)
+  - [Chapter 19: The Magical Collapse: DPO](#the-magical-collapse-dpo)
+  - [Chapter 20: GRPO and the End of the Value Function](#grpo-and-the-end-of-the-value-function)
+  - [Chapter 21: Constitutional AI](#constitutional-ai)
+  - [Chapter 22: LoRA and the Affordable Fine-Tune](#lora-and-the-affordable-fine-tune)
+- [Act V — The Inference Problem](#the-inference-problem)
+  - [Chapter 23: Why Inference Is Hard](#why-inference-is-hard)
+  - [Chapter 24: The KV Cache](#the-kv-cache)
+  - [Chapter 25: Grouped-Query Attention](#grouped-query-attention)
+  - [Chapter 26: FlashAttention](#flashattention)
+  - [Chapter 27: Quantization](#quantization)
+  - [Chapter 28: Speculative Decoding](#speculative-decoding)
+  - [Chapter 29: Continuous Batching](#continuous-batching)
+  - [Chapter 30: Mixture of Experts](#mixture-of-experts)
+- [Act VI — The Reasoning Problem](#the-reasoning-problem)
+  - [Chapter 31: In-Context Learning](#in-context-learning)
+  - [Chapter 32: Chain-of-Thought](#chain-of-thought)
+  - [Chapter 33: Self-Consistency](#self-consistency)
+  - [Chapter 34: Tool Use](#tool-use)
+  - [Chapter 35: RAG](#rag)
+  - [Chapter 36: Reasoning RL](#reasoning-rl)
+- [Act VII — The Other Modalities](#the-other-modalities)
+  - [Chapter 37: Vision Transformers](#vision-transformers)
+  - [Chapter 38: CLIP and Multimodal Embeddings](#clip-and-multimodal-embeddings)
+  - [Chapter 39: Vision-Language Models](#vision-language-models)
+  - [Chapter 40: Segmentation: Open-Vocabulary and Promptable](#segmentation-open-vocabulary-and-promptable)
+  - [Chapter 41: Diffusion Models](#diffusion-models)
+  - [Chapter 42: Video Generation](#video-generation)
+  - [Chapter 43: AlphaFold](#alphafold)
+
 
 
 # Prologue
@@ -116,8 +172,6 @@ The knobs are called parameters. The function takes some input — a sentence, a
 That procedure is the entire content of this act. By the end you will be able to describe, from memory, the three things every modern model has in common: how it learns (Chapter 1), how it reads (Chapter 2), and how it speaks (Chapter 3). These
 
 
-# I
-
 
 are the apparatus. Act II will be the architecture that ties them together. Act
 
@@ -129,7 +183,7 @@ III will be what happens when you scale them up. Everything else in this book is
 ### How a Network Learns
 
 
-magine you have a function f(x; θ) — input x, parameters θ. You also have a loss function L(θ) that measures how badly the function performs on training data.
+Imagine you have a function f(x; θ) — input x, parameters θ. You also have a loss function L(θ) that measures how badly the function performs on training data.
 
 Lower loss is better; zero loss means perfect prediction. The loss is a number that depends on the parameters. As you turn the knobs, the loss moves. Training is the problem of turning the knobs to make the loss go down.
 
@@ -178,8 +232,6 @@ ResNets to Transformers to Mamba, is filtered by whether it cooperates with grad
 SGD to descend. This is a strong inductive bias — a prior on which functions the optimizer can find — and it shapes what we can build more than any theoretical argument. The architecture you can train is the architecture that wins. The history of the field is the history of architectures that play nicely with SGD; the others, however elegant, are footnotes.
 
 
-# N
-
 
 ## Chapter 2
 
@@ -187,7 +239,7 @@ SGD to descend. This is a strong inductive bias — a prior on which functions t
 ### How a Network Reads
 
 
-etworks operate on numbers.
+Networks operate on numbers.
 
 Language is text. The first job of any language model is to bridge that gap: turn text into numbers, in a way that preserves meaning and works at any length.
 
@@ -220,8 +272,6 @@ English ones into one. Performance on every Indonesian benchmark suffered, and n
 The fix is to design the vocabulary deliberately, on representative data, before pre-training. Most teams skip this step. They pay for it forever.
 
 
-# W
-
 
 ## Chapter 3
 
@@ -229,7 +279,7 @@ The fix is to design the vocabulary deliberately, on representative data, before
 ### How a Network Speaks
 
 
-e've turned text into vectors. We've optimized the network's parameters. Now we need to close the loop: how does the network turn its internal representations back into text?
+We've turned text into vectors. We've optimized the network's parameters. Now we need to close the loop: how does the network turn its internal representations back into text?
 
 The answer is, in spirit, the inverse of how it reads. The network produces, for each position in the sequence, a vector of numbers — one per token in the vocabulary — called the logits. These are unconstrained real numbers. To turn them into a probability distribution over the vocabulary, we apply softmax:
 
@@ -286,8 +336,6 @@ This act is about the trap, the people who fell into it, and the way out. By the
 Transformer block — and, more important, you will be able to say why each
 
 
-# L
-
 
 component had to exist. That second thing is the only kind of understanding that survives.
 
@@ -297,7 +345,7 @@ component had to exist. That second thing is the only kind of understanding that
 ### The Puzzle of Long Sentences
 
 
-et me describe the failure of recurrence honestly, because most introductions to the Transformer describe it carelessly.
+Let me describe the failure of recurrence honestly, because most introductions to the Transformer describe it carelessly.
 
 A recurrent network reads "The cat that the dog chased was tired." It begins with "The," updates a hidden state, reads "cat,"
 
@@ -336,8 +384,6 @@ Is All You Need." The architecture it proposed — the Transformer — has not b
 The rest of this act is about why.
 
 
-# A
-
 
 ## Chapter 5
 
@@ -345,7 +391,7 @@ The rest of this act is about why.
 ### Attention
 
 
-ttention is a soft, learnable lookup.
+Attention is a soft, learnable lookup.
 
 Three of those four words are doing real work; let me unpack them.
 
@@ -386,8 +432,6 @@ This is not a bug. It is the deepest property of the architecture. A recurrent n
 ML's flexibility traces to this one fact, and almost no introduction to attention mentions it.
 
 
-# T
-
 
 ## Chapter 6
 
@@ -395,7 +439,7 @@ ML's flexibility traces to this one fact, and almost no introduction to attentio
 ### Many Heads
 
 
-here is a question that should be bothering you. If a query, a key, and a value are each just vectors, then for each word the model computes one query and asks one question. Sentences are richer than that. The word "bank" might want to ask, simultaneously, am I a financial institution or a riverside?, what verb governs me?, am I the subject or the object?, is this a metaphor?
+There is a question that should be bothering you. If a query, a key, and a value are each just vectors, then for each word the model computes one query and asks one question. Sentences are richer than that. The word "bank" might want to ask, simultaneously, am I a financial institution or a riverside?, what verb governs me?, am I the subject or the object?, is this a metaphor?
 
 You cannot ask four questions with one query.
 
@@ -420,8 +464,6 @@ The cost is not free. Each head needs its own set of weight matrices, so multi-h
 The thing nobody mentions: in the original 2017 paper, they used eight heads of dimension 64, totaling 512. Modern frontier models use 96+ heads. But in 2023 a different idea took over for inference efficiency — Grouped-Query Attention, where many query heads share a single key/value pair (Act V). The reason: at inference time, you have to store all those keys and values in the KV cache, and the cache is the dominant memory cost. So we keep many query heads (cheap, only used during forward pass) but share their keys and values (expensive, stored across the entire generation). This is the kind of asymmetric trick that wins when you have to actually deploy the thing.
 
 
-# W
-
 
 ## Chapter 7
 
@@ -429,7 +471,7 @@ The thing nobody mentions: in the original 2017 paper, they used eight heads of 
 ### Positional Encoding
 
 
-e left a debt at the end of Chapter 5. Attention does not know which word came first. If we feed it a sentence, it will treat the sentence as a bag of words.
+We left a debt at the end of Chapter 5. Attention does not know which word came first. If we feed it a sentence, it will treat the sentence as a bag of words.
 
 We have to repay this debt before we can build a working model.
 
@@ -464,8 +506,6 @@ The thing nobody mentions: for years, it was an open question whether positions 
 This is the kind of empirical curiosity that makes ML feel less like engineering and more like ecology — the field is still discovering what its own creations can do.
 
 
-# W
-
 
 ## Chapter 8
 
@@ -473,7 +513,7 @@ This is the kind of empirical curiosity that makes ML feel less like engineering
 ### Residuals and LayerNorm
 
 
-e have attention. We will need to stack many attention layers, because one layer of attention can route information once but cannot reason about complex compositions. Stacking is what gives us depth, and depth is what gives us power.
+We have attention. We will need to stack many attention layers, because one layer of attention can route information once but cannot reason about complex compositions. Stacking is what gives us depth, and depth is what gives us power.
 
 Stacking, as we learned in Act I, is exactly what kills neural networks.
 
@@ -522,8 +562,6 @@ CNNs — uses both. They are not optional.
 They are the price of admission to being deep.
 
 
-# W
-
 
 ## Chapter 9
 
@@ -531,7 +569,7 @@ They are the price of admission to being deep.
 ### The Transformer Block
 
 
-e now have all the pieces to build one Transformer block.
+We now have all the pieces to build one Transformer block.
 
 A block takes a sequence of vectors in and produces a sequence of vectors out, of the same shape. Inside, there are exactly two sublayers, each wrapped in a residual connection and a LayerNorm.
 
@@ -572,8 +610,6 @@ Transformer block is, plausibly, the most important architectural unit invented 
 III) entered the picture, it became clear that the Transformer scales more cleanly with compute than anything else we've tried. A whole research community has spent eight years trying to find a successor. Mamba is the most credible challenger; it is still not the default. The block has refused to be replaced.
 
 
-# T
-
 
 ## Chapter 10
 
@@ -581,7 +617,7 @@ III) entered the picture, it became clear that the Transformer scales more clean
 ### Encoder, Decoder, Both, Neither
 
 
-he original 2017 paper proposed the
+The original 2017 paper proposed the
 
 Transformer for machine translation.
 
@@ -666,8 +702,6 @@ This act is what it meant.
 By the end you will be able to describe, from memory, why the field's center of gravity shifted from algorithmic
 
 
-# H
-
 
 cleverness to compute scale; what Kaplan and Hoffmann actually showed; why GPT-3 was the moment everyone took notice; what emergent abilities are and why people argue about whether they are real; and why grokking is the strangest open problem in deep learning. These are the load-bearing ideas of the modern era.
 
@@ -679,7 +713,7 @@ Every conversation about AI capability for the next ten years will reference at 
 ### The Empirical Surprise
 
 
-ere is the situation in 2018. The
+Here is the situation in 2018. The
 
 Transformer has been published.
 
@@ -720,8 +754,6 @@ The improvement was not random — it followed a precise mathematical pattern.
 The pattern had a name. It was called a scaling law.
 
 
-# I
-
 
 ## Chapter 12
 
@@ -729,7 +761,7 @@ The pattern had a name. It was called a scaling law.
 ### Scaling Laws
 
 
-n 2020, a team at OpenAI led by Jared
+In 2020, a team at OpenAI led by Jared
 
 Kaplan published a paper called "Scaling Laws for Neural Language
 
@@ -772,8 +804,6 @@ They were the discovery that turned ML from a research field into an industrial 
 Anthropic was founded on a thesis that included scaling laws. OpenAI's transition from research lab to product company was paid for by scaling laws. Every multibillion-dollar AI investment since 2020 is, in some sense, a bet on the continuation of a power law nobody fully understands.
 
 
-# T
-
 
 ## Chapter 13
 
@@ -781,7 +811,7 @@ Anthropic was founded on a thesis that included scaling laws. OpenAI's transitio
 ### The Chinchilla Correction
 
 
-here is a subtlety the Kaplan paper got wrong, and the field believed the wrong thing for two years before someone corrected it.
+There is a subtlety the Kaplan paper got wrong, and the field believed the wrong thing for two years before someone corrected it.
 
 The question is: given a fixed compute budget C, how should you spend it? You can train a small model on a lot of data, or a big model on less data, or anything in between. C is roughly proportional to N times D — number of parameters times number of training tokens. If you have a million dollars of compute, you can buy more parameters or more tokens, but not both.
 
@@ -812,8 +842,6 @@ Chinchilla paper is one of the rare instances in modern ML where a careful empir
 Chinchilla paper, then read three randomly selected papers from any 2024 conference. The difference in epistemic quality will teach you what to demand.
 
 
-# S
-
 
 ## Chapter 14
 
@@ -821,7 +849,7 @@ Chinchilla paper, then read three randomly selected papers from any 2024 confere
 ### The Phase Transition
 
 
-caling laws say loss falls smoothly with compute. They say nothing about capabilities. Capability is not the same as loss. A model with low loss is good at predicting next tokens; whether it can solve a multi-step word problem is a separate question, even if loss is the only thing the optimizer cares about.
+Scaling laws say loss falls smoothly with compute. They say nothing about capabilities. Capability is not the same as loss. A model with low loss is good at predicting next tokens; whether it can solve a multi-step word problem is a separate question, even if loss is the only thing the optimizer cares about.
 
 Around 2022, papers started appearing with a strange claim. Some capabilities, the claim went, do not improve smoothly with scale. They are absent at small scale, and then, past a certain compute threshold, they appear. The model becomes capable of three-digit multiplication, or analogical reasoning, or following multi-step instructions, at a specific size — not earlier, not gradually.
 
@@ -846,8 +874,6 @@ The thing nobody mentions: the question of what causes phase transitions in deep
 We have informal arguments that involve thresholds in the model's internal representations crossing some critical value. We do not have anything like the theory of phase transitions in physics, where you can write down an order parameter and a critical exponent and make predictions. ML phase transitions are observed. They are not understood.
 
 
-# T
-
 
 ## Chapter 15
 
@@ -855,7 +881,7 @@ We have informal arguments that involve thresholds in the model's internal repre
 ### Grokking
 
 
-here is an experiment that, when you first see it, breaks your model of how neural networks work.
+There is an experiment that, when you first see it, breaks your model of how neural networks work.
 
 In 2022, a team at OpenAI published a short paper called "Grokking:
 
@@ -902,12 +928,7 @@ But this act is the inflection point. Before this act, machine learning was a re
 End of Act III.
 
 
-## The Alignment
-
-
-## Problem
-
-
+## The Alignment Problem
 Turning a base model into something you can talk to.
 
 Where we left off
@@ -941,8 +962,6 @@ Constitutional AI, and the engineering trick called LoRA that makes all of this 
 The history of post-training is short. The first SFT-then-RLHF pipeline that became the modern recipe was published in 2022.
 
 
-# T
-
 
 Everything in this act has happened in the last four years. It is the most actively contested part of the field. People who worked on it five years ago disagree with people working on it now. We are still deciding what the right shape is.
 
@@ -952,7 +971,7 @@ Everything in this act has happened in the last four years. It is the most activ
 ### Supervised Fine-Tuning
 
 
-he simplest fix for a model that does not follow instructions is to show it instructions being followed. Take the pre-trained model. Collect a dataset of prompt-response pairs — questions and good answers, requests and good fulfillments — typically written by humans, sometimes by other models, sometimes a mixture. Continue training the model on this dataset, with the same next-token loss as during pre-training.
+The simplest fix for a model that does not follow instructions is to show it instructions being followed. Take the pre-trained model. Collect a dataset of prompt-response pairs — questions and good answers, requests and good fulfillments — typically written by humans, sometimes by other models, sometimes a mixture. Continue training the model on this dataset, with the same next-token loss as during pre-training.
 
 That is supervised fine-tuning. SFT.
 
@@ -979,8 +998,6 @@ LoRA (Chapter 22) that change the model's behavior without overwriting its weigh
 Most public discussion of SFT skips this and presents it as free. It is not free. The bigger your SFT dataset, the more carefully you have to manage what gets preserved.
 
 
-# T
-
 
 ## Chapter 17
 
@@ -988,7 +1005,7 @@ Most public discussion of SFT skips this and presents it as free. It is not free
 ### Reward Models
 
 
-o go beyond imitation, we need a way to tell the model that some responses are better than others. This is the central insight that turns post-training from a copying exercise into a learning exercise.
+To go beyond imitation, we need a way to tell the model that some responses are better than others. This is the central insight that turns post-training from a copying exercise into a learning exercise.
 
 Here is the move. Show humans pairs of responses to the same prompt. Ask: which one is better? Collect a dataset of these comparisons. Now train a separate model — usually the same architecture as the language model, sometimes initialized from the language model itself — to predict, given a prompt and a response, what humans would have rated this response.
 
@@ -1027,8 +1044,6 @@ Annotators have to be trained, calibrated, audited. A noisy or biased preference
 is correct, and the personalities live in the comparison data.
 
 
-# W
-
 
 ## Chapter 18
 
@@ -1036,7 +1051,7 @@ is correct, and the personalities live in the comparison data.
 ### RLHF
 
 
-e have a base model that has been
+We have a base model that has been
 
 SFT-ed. We have a reward model.
 
@@ -1077,8 +1092,6 @@ Claude or Gemini. The model produces responses that are helpful, that follow ins
 The thing nobody mentions: PPO was not designed for language. It was designed for environments with dense rewards, short trajectories, and continuous action spaces. Language is the opposite — sparse rewards (reward only at the end), long trajectories (hundreds of tokens), and discrete action spaces (one of fifty thousand tokens at each step). That PPO works at all is somewhere between a triumph of engineering and a happy accident. The community's insistence on using PPO for language for several years was, in retrospect, a path-dependent mistake — we used it because it was the available off-the-shelf tool, not because it was the right tool. The replacements that follow in this act are simpler precisely because they were designed for the actual problem instead of borrowed from a different one.
 
 
-# I
-
 
 ## Chapter 19
 
@@ -1086,7 +1099,7 @@ The thing nobody mentions: PPO was not designed for language. It was designed fo
 ### The Magical Collapse: DPO
 
 
-n 2023, a paper called "Direct
+In 2023, a paper called "Direct
 
 Preference Optimization" landed and quietly broke the field's assumption that
 
@@ -1135,19 +1148,12 @@ There is an active research thread arguing that DPO over-fits to the preference 
 Whether this matters in practice depends on the dataset and the use case. The honest framing is: DPO is dramatically simpler and almost as good for most purposes, and the cases where it is meaningfully worse are still being mapped.
 
 
-# D
-
 
 ## Chapter 20
 
 
-### GRPO and the End of the Value
-
-
-### Function
-
-
-eepSeek's R1 paper, published in early 2025, contained an algorithmic move that quickly spread across the field: Group
+### GRPO and the End of the Value Function
+DeepSeek's R1 paper, published in early 2025, contained an algorithmic move that quickly spread across the field: Group
 
 Relative Policy Optimization, GRPO. To understand what GRPO does, we need to remember what PPO does and what is annoying about it.
 
@@ -1166,8 +1172,6 @@ Reinforcement learning with verifiable rewards — RLVR — is the hot frontier 
 The thing nobody mentions: GRPO is, in some sense, a confession. The value function in PPO had been considered essential machinery. It was elegant, it had a long pedigree in RL, it provably reduced variance. And it turned out, for language models, to be unnecessary. A simpler thing worked just as well. This is a recurring pattern in the alignment literature: the field inherits machinery from classical RL, finds it cumbersome, and eventually realizes that the language-model setting allows simpler approaches. DPO eliminated the reward model. GRPO eliminated the value function. Each time, what was thought to be essential turned out to be a particular choice that did not have to be made. The next simplification has not yet been published, but it is probably already in someone's research notebook.
 
 
-# T
-
 
 ## Chapter 21
 
@@ -1175,7 +1179,7 @@ The thing nobody mentions: GRPO is, in some sense, a confession. The value funct
 ### Constitutional AI
 
 
-here is a different angle on alignment that deserves its own chapter, because it answers a question the previous chapters do not: where does the preference data come from?
+There is a different angle on alignment that deserves its own chapter, because it answers a question the previous chapters do not: where does the preference data come from?
 
 In the standard pipeline, preferences come from humans. Annotators rank responses, and the rankings train the reward model, and the reward model trains the policy. This is expensive — humans are slow and inconsistent — and it has a more troubling property: the model's behavior is whatever average human annotators happen to prefer. If annotators are biased, lazy, or working under time pressure, those properties get baked into the model. The model's "values" are the statistical averages of a particular labor pool's snap judgments. This is not what we want, but it is what we get if humans are the only source of preference signal.
 
@@ -1210,19 +1214,12 @@ Constitutional AI behaves badly, you can ask: did the constitution permit this? 
 Constitutional-style methods even when human labels are also available — not because AI feedback is better than human feedback, but because it is more legible.
 
 
-# W
-
 
 ## Chapter 22
 
 
-### LoRA and the Affordable Fine-
-
-
-### Tune
-
-
-e have one more piece to add to the picture, and it is mostly an engineering trick, but it has reshaped the economics of post-training enough that it deserves its own chapter.
+### LoRA and the Affordable Fine-Tune
+We have one more piece to add to the picture, and it is mostly an engineering trick, but it has reshaped the economics of post-training enough that it deserves its own chapter.
 
 The pre-trained model is enormous. A frontier model has hundreds of billions of parameters; even a "small" open model has tens of billions. Fine-tuning all of those parameters — running gradient descent on the entire weight set — requires a lot of memory. Optimizer state alone is several times the size of the parameters; with
 
@@ -1318,13 +1315,8 @@ If Act IV was about turning capability into behavior, Act V is about turning beh
 ### Why Inference Is Hard
 
 
-# L
 
-
-### y f
-
-
-et me start by describing the cost structure of language model inference, because almost every introductory account gets the emphasis wrong.
+Let me start by describing the cost structure of language model inference, because almost every introductory account gets the emphasis wrong.
 
 A Transformer processes a sequence in two distinguishable phases. Prefill is when you feed the model the entire prompt at once. The model runs a single forward pass over all the prompt tokens, computing attention and feed-forward outputs in parallel. Prefill is fast and compute-bound; you can keep the GPU's tensor cores fully utilized, and the wall-clock time scales roughly linearly with prompt length but is dominated by matrix-multiply throughput.
 
@@ -1343,8 +1335,6 @@ This is the central fact of inference, and almost every optimization in the rest
 The thing nobody mentions: the prefill-vs-decode distinction has economic consequences that don't show up in benchmarks. A user who sends a long prompt and gets a short response is mostly paying for prefill, which is cheap per token. A user who sends a short prompt and gets a long response is mostly paying for decode, which is expensive per token. Anthropic's API prices reflect this — input tokens are 3-5x cheaper than output tokens. This isn't pricing fiction; it tracks the actual hardware cost. Most product designs that fight token budgets are accidentally pushing users toward expensive token shapes. A frontend that pre-loads a long system prompt and returns terse responses is dramatically cheaper than one that streams long responses to a short query, even if total token counts are equal.
 
 
-# R
-
 
 ## Chapter 24
 
@@ -1352,7 +1342,7 @@ The thing nobody mentions: the prefill-vs-decode distinction has economic conseq
 ### The KV Cache
 
 
-ecall how attention works, from Act
+Recall how attention works, from Act
 
 II. For each query position, you compute its attention against the keys at every position, including all earlier ones.
 
@@ -1379,8 +1369,6 @@ Running out of cache memory means dropping requests or paging to slower storage.
 The thing nobody mentions: the KV cache problem is what made long context go from a benchmark headline to a serving headache. Doubling context length doubles cache memory per request. Going from 8K to 1M context is a 125x increase in cache size. Models that advertise million-token context windows are technically capable of using them, but the per-request memory cost makes most production deployments cap context far below the advertised limit. The capability is real; the economics are not.
 
 
-# W
-
 
 ## Chapter 25
 
@@ -1388,7 +1376,7 @@ The thing nobody mentions: the KV cache problem is what made long context go fro
 ### Grouped-Query Attention
 
 
-e introduced multi-head attention in Act II, Chapter 6. The standard setup uses many query heads (often 32, 64, or 96), and each head has its own key and value heads. In Multi-Head Attention (MHA), the count of Q, K, and V heads is the same.
+We introduced multi-head attention in Act II, Chapter 6. The standard setup uses many query heads (often 32, 64, or 96), and each head has its own key and value heads. In Multi-Head Attention (MHA), the count of Q, K, and V heads is the same.
 
 When the field discovered that the KV cache dominated serving cost, somebody asked an obvious question: do we need that many K and V heads?
 
@@ -1421,8 +1409,6 @@ If the inference team wins the architecture argument, the model has 4
 K/V heads. If the research team wins, it has 16. The numbers in published papers represent the outcome of internal organizational fights you never see.
 
 
-# T
-
 
 ## Chapter 26
 
@@ -1430,7 +1416,7 @@ K/V heads. If the research team wins, it has 16. The numbers in published papers
 ### FlashAttention
 
 
-he KV cache addresses one form of memory pressure during decode. But during prefill — and during training — there is a different memory problem, and it shows up in a place you might not expect.
+The KV cache addresses one form of memory pressure during decode. But during prefill — and during training — there is a different memory problem, and it shows up in a place you might not expect.
 
 Standard attention computes the matrix
 
@@ -1473,8 +1459,6 @@ ML researchers don't read systems papers; most systems papers don't get cited by
 The cost of being too pure about that division is leaving 3x performance on the table for two years until somebody else writes the kernel for you.
 
 
-# T
-
 
 ## Chapter 27
 
@@ -1482,7 +1466,7 @@ The cost of being too pure about that division is leaving 3x performance on the 
 ### Quantization
 
 
-he simplest way to reduce memory bandwidth is to reduce the number of bytes per parameter. Models are typically trained in 16-bit floating point — bfloat16 or float16. Each parameter is 2 bytes. A 70-billion-parameter model in bf16 is 140 GB.
+The simplest way to reduce memory bandwidth is to reduce the number of bytes per parameter. Models are typically trained in 16-bit floating point — bfloat16 or float16. Each parameter is 2 bytes. A 70-billion-parameter model in bf16 is 140 GB.
 
 What if we used 8-bit instead? Or 4-bit?
 
@@ -1515,8 +1499,6 @@ The thing nobody mentions:
 quantization has a cliff. Models behave normally down to 4 bits, then start to degrade unevenly below 3 bits, with quality collapsing at 2 bits or below. The cliff exists because the information capacity of a model is roughly bounded by the number of bits per parameter, and below 3-4 bits you start running into the entropy floor of what the model can represent. There are clever techniques (1.58-bit ternary networks, for instance) that try to push past the cliff, but they require quantization-aware training and architectural changes. The simple "take a trained model, quantize, ship" recipe stops working below 4 bits. This is one of the few hard limits in serving.
 
 
-# W
-
 
 ## Chapter 28
 
@@ -1524,7 +1506,7 @@ quantization has a cliff. Models behave normally down to 4 bits, then start to d
 ### Speculative Decoding
 
 
-e have shrunk the parameters with quantization. We have shrunk the cache with GQA. We have made attention faster with FlashAttention. The model is now as cheap to run, per token, as we can make it. The decode-time bandwidth bottleneck still exists — every token still requires reading every parameter — but each parameter is now smaller and there are fewer auxiliary structures to read.
+We have shrunk the parameters with quantization. We have shrunk the cache with GQA. We have made attention faster with FlashAttention. The model is now as cheap to run, per token, as we can make it. The decode-time bandwidth bottleneck still exists — every token still requires reading every parameter — but each parameter is now smaller and there are fewer auxiliary structures to read.
 
 What if we could produce more than one token per pass through the model?
 
@@ -1547,8 +1529,6 @@ Most production stacks took a year or two after the technique was published to g
 The thing nobody mentions: speculative decoding changes incentives for model design. If your serving stack uses speculation, you have a strong reason to ensure the draft model has a similar tokenizer and similar distribution to the target. This affects choices throughout the stack — model families that include matched draft models (like Llama with smaller variants in the same family) are easier to deploy with speculation than models without. The serving requirements are starting to influence the model release cadence.
 
 
-# S
-
 
 ## Chapter 29
 
@@ -1556,7 +1536,7 @@ The thing nobody mentions: speculative decoding changes incentives for model des
 ### Continuous Batching
 
 
-o far we have been thinking about a single request. In production, a server handles many concurrent requests. The naive way to batch them is static batching:
+So far we have been thinking about a single request. In production, a server handles many concurrent requests. The naive way to batch them is static batching:
 
 collect a fixed number of requests, run them all together, wait for the slowest one to finish, return all results, repeat.
 
@@ -1583,8 +1563,6 @@ Without these techniques, every request would need its own pre-allocated GPU mem
 The economic model of LLM APIs — pay per token, no minimum, instant response — depends on this stack. The user-facing pricing is downstream of the systems engineering. When you call an API and get a response in seconds for fractions of a cent, you are riding on top of continuous batching plus paged attention plus speculation plus quantization, all working together. Strip any one of them out and the economics collapse.
 
 
-# E
-
 
 ## Chapter 30
 
@@ -1592,7 +1570,7 @@ The economic model of LLM APIs — pay per token, no minimum, instant response �
 ### Mixture of Experts
 
 
-verything in this act so far accepts the basic structure of the Transformer:
+Everything in this act so far accepts the basic structure of the Transformer:
 
 every parameter is read for every token.
 
@@ -1651,12 +1629,7 @@ We have, finally, a usable model that can be served at scale. The next act is ab
 End of Act V.
 
 
-## The Reasoning
-
-
-## Problem
-
-
+## The Reasoning Problem
 When the leverage moved from pre-training to test-time compute.
 
 Where we left off
@@ -1678,8 +1651,6 @@ Act IV, but they have outsized consequences for what models can do. In particula
 From 2024 onward, an increasing fraction of capability gain came from making smaller models reason longer. That shift is
 
 
-# L
-
 
 the most important thing happening in the field right now, and this act is where it lives.
 
@@ -1689,7 +1660,7 @@ the most important thing happening in the field right now, and this act is where
 ### In-Context Learning
 
 
-et me describe a phenomenon that, when it was first observed, nobody could fully explain.
+Let me describe a phenomenon that, when it was first observed, nobody could fully explain.
 
 You take GPT-3. You give it a prompt that contains a few examples of a task.
 
@@ -1716,8 +1687,6 @@ What is not contested is the practical consequence. In-context learning meant th
 The thing nobody mentions: in-context learning has a capacity. You can fit only so many examples in the prompt before context length runs out, and the quality of in-context learning peaks somewhere between five and twenty examples for most tasks. Beyond that, more examples often hurt. Why? Probably because the model's attention is finite. With too many examples, it cannot weight them all properly, and the signal degrades. This is one of those facts that practitioners learn by hand and that the literature has barely formalized. If you want to do in-context learning well, the right number of examples is usually a small handful, chosen carefully. More is not better.
 
 
-# N
-
 
 ## Chapter 32
 
@@ -1725,7 +1694,7 @@ The thing nobody mentions: in-context learning has a capacity. You can fit only 
 ### Chain-of-Thought
 
 
-ow consider a different kind of prompt. Same model, different framing.
+Now consider a different kind of prompt. Same model, different framing.
 
 Q: A train leaves station A at 9 AM going 60 mph. Another leaves station B, 200 miles away, at 9:30 AM going 80 mph toward A.
 
@@ -1786,8 +1755,6 @@ There is real engineering work in deciding when to use CoT, ideally automaticall
 Some frontier models now have an internal "thinking" mode that they enter only when the prompt seems to benefit from it. The decision of when to think harder is itself becoming a learned behavior.
 
 
-# A
-
 
 ## Chapter 33
 
@@ -1795,7 +1762,7 @@ Some frontier models now have an internal "thinking" mode that they enter only w
 ### Self-Consistency
 
 
-reasoning chain is a sample. Different samples produce different chains, and different chains can lead to different final answers. Some chains contain mistakes.
+Areasoning chain is a sample. Different samples produce different chains, and different chains can lead to different final answers. Some chains contain mistakes.
 
 Some take dead ends and recover. Some happen to land on the right answer through a partly-wrong path.
 
@@ -1822,8 +1789,6 @@ Real-world problems often do not.
 Generalizing self-consistency to free-form domains is an open research problem and one of the areas where you can make a real contribution if you are looking for one.
 
 
-# C
-
 
 ## Chapter 34
 
@@ -1831,7 +1796,7 @@ Generalizing self-consistency to free-form domains is an open research problem a
 ### Tool Use
 
 
-hain-of-thought lets the model use its own outputs as scratch memory.
+Chain-of-thought lets the model use its own outputs as scratch memory.
 
 But the model is bad at certain things. It is bad at arithmetic with many digits. It is bad at remembering what happened on the internet last week. It is bad at executing code. It is bad at looking up specific facts in a structured database.
 
@@ -1868,8 +1833,6 @@ A wrong tool call is not just a wrong token; it can have real consequences. This
 The thing nobody mentions: most of the value of tool use comes from a small number of tools, used well. People building agentic systems tend to build large tool libraries — dozens or hundreds of functions — under the assumption that more tools means more capability. The data so far suggests the opposite. A model with five excellent tools (search, code execution, calculator, file I/O, web fetch) is usually more capable than one with fifty mediocre ones, because choosing the right tool out of five is a tractable problem and choosing out of fifty is not. The model gets confused. The right design is a small, well-described tool palette that covers a large fraction of use cases. Adding tools without adding capability is a real failure mode.
 
 
-# T
-
 
 ## Chapter 35
 
@@ -1877,7 +1840,7 @@ The thing nobody mentions: most of the value of tool use comes from a small numb
 ### RAG
 
 
-here is a special case of tool use that deserves its own chapter, because it is the most economically important deployed AI technique of 2024-2025.
+There is a special case of tool use that deserves its own chapter, because it is the most economically important deployed AI technique of 2024-2025.
 
 The problem: you want a model to answer questions using information that wasn't in its training data. Internal company documents. Recent news. A specific user's past conversations. You could fine-tune the model to know this information, but that's expensive and slow.
 
@@ -1904,8 +1867,6 @@ The honest caveats are real. RAG quality depends on retrieval quality, and retri
 The thing nobody mentions: RAG is, in some sense, a workaround for limited context windows. If models had truly unlimited context, you could just put your entire document corpus in the prompt and let the model find what it needs. We don't have that — million-token context windows exist but are expensive and degrade in quality at the long end — so we paste in only the most-relevant pieces. As context windows get longer and cheaper, the pressure on RAG decreases. There is an active debate in the field about whether RAG is a permanent architecture or a transitional hack on the way to long-context-everywhere. The honest answer is: probably permanent for documents that change frequently and where retrieval is cheap, probably replaced by long context for documents that are stable and where retrieval is expensive. Most production systems will use both.
 
 
-# W
-
 
 ## Chapter 36
 
@@ -1913,7 +1874,7 @@ The thing nobody mentions: RAG is, in some sense, a workaround for limited conte
 ### Reasoning RL
 
 
-e come, finally, to the move that defines 2025 frontier development.
+We come, finally, to the move that defines 2025 frontier development.
 
 This is where the field is, as of early 2026.
 
@@ -2029,8 +1990,6 @@ The other direction — coming from vision to language — has more cognitive fr
 ### Vision Transformers
 
 
-# W
-
 
 e have spent this book treating "tokens" as discrete linguistic units.
 
@@ -2073,19 +2032,12 @@ The thing nobody mentions: there is an open architectural question of what the r
 Transformer's hierarchical windows, perceiver-style cross-attention, downsampled patches) have been proposed. None has fully won. For your work on Insta360 360° street imagery, where images are very high-resolution, the patch-size question is a real engineering decision with no obvious right answer.
 
 
-# T
-
 
 ## Chapter 38
 
 
-### CLIP and Multimodal
-
-
-### Embeddings
-
-
-ake a vision encoder — a ViT, say. It produces a vector representation of an image. Take a text encoder — also a
+### CLIP and Multimodal Embeddings
+Wake a vision encoder — a ViT, say. It produces a vector representation of an image. Take a text encoder — also a
 
 Transformer. It produces a vector representation of a sentence. These two vectors live in different spaces. The image embedding does not "talk to" the text embedding; they are unrelated.
 
@@ -2121,8 +2073,6 @@ The thing nobody mentions: CLIP's quality depends enormously on the training dat
 
 OpenCLIP, used the LAION-5B dataset and produced a respectable CLIP-class model, but the original OpenAI CLIP had a small but real advantage that has been hard to fully reproduce. Most of what makes CLIP-class models good or bad is the data, not the architecture or training recipe. The same lesson keeps showing up everywhere in this book: the architecture is increasingly a commodity; the data is the moat.
 
-
-# C
 
 
 ## Chapter 39
@@ -2168,19 +2118,12 @@ Insta360 imagery, the analogy is direct:
 your MapOps annotators on Label Studio are doing the same kind of work, at smaller scale, that the frontier labs do at industrial scale. The bottleneck on quality is usually the data, not the model.
 
 
-# S
-
 
 ## Chapter 40
 
 
-### Segmentation: Open-Vocabulary
-
-
-### and Promptable
-
-
-egmentation — labeling each pixel of an image with the object it belongs to — is one of the oldest tasks in computer vision. For a long time, segmentation models were closed-vocabulary: you trained them on a fixed set of classes (cars, pedestrians, trees), and they could only segment those classes. Adding a new class meant collecting labeled data and retraining.
+### Segmentation: Open-Vocabulary and Promptable
+Segmentation — labeling each pixel of an image with the object it belongs to — is one of the oldest tasks in computer vision. For a long time, segmentation models were closed-vocabulary: you trained them on a fixed set of classes (cars, pedestrians, trees), and they could only segment those classes. Adding a new class meant collecting labeled data and retraining.
 
 Two paradigm shifts changed this in the 2022-2023 window.
 
@@ -2209,8 +2152,6 @@ Indonesian street sign is different), open-vocabulary plus targeted fine-tuning 
 The thing nobody mentions: SAM works astonishingly well for things, and surprisingly poorly for stuff. "Things" are countable objects with clear boundaries — cars, people, signs. "Stuff" is uncountable extent — sky, road, water, vegetation. SAM segments things beautifully and stuff inconsistently. This split is built into how segmentation has historically been formulated, and SAM inherited it. For your kind of work, this matters: if you are segmenting "the road" or "the sky" in street imagery, SAM may not be the right tool. Specialized stuff segmenters or panoptic models still beat SAM at extent-segmentation tasks.
 
 
-# S
-
 
 ## Chapter 41
 
@@ -2218,7 +2159,7 @@ The thing nobody mentions: SAM works astonishingly well for things, and surprisi
 ### Diffusion Models
 
 
-o far this act has been about understanding — making sense of inputs in non-text modalities. Now we come to generation. How do you make a model that produces a high-quality image, video, or audio from a prompt?
+So far this act has been about understanding — making sense of inputs in non-text modalities. Now we come to generation. How do you make a model that produces a high-quality image, video, or audio from a prompt?
 
 The dominant answer, for the last few years, has been diffusion. The story of diffusion is mathematically elegant, computationally heavy, and surprisingly different from how language models generate text. Worth slowing down for.
 
@@ -2269,8 +2210,6 @@ Video generation is diffusion in space and time, with U-Nets or Transformers att
 The thing nobody mentions: language models do not use diffusion. There have been many attempts (Diffusion-LM, SEDD, etc.), and they have not displaced autoregressive generation for text. The reason is partly that text is discrete (diffusion is most natural for continuous data), and partly that language models have a strong evaluation criterion (next-token prediction loss) that diffusion doesn't share. The two paradigms have settled into different niches: diffusion for continuous modalities, autoregressive for discrete ones. Whether this is a permanent split or a current local optimum is unclear. Some recent work on "diffusion language models" is interesting, but autoregressive LLMs are not in serious danger of being replaced soon.
 
 
-# V
-
 
 ## Chapter 42
 
@@ -2278,7 +2217,7 @@ The thing nobody mentions: language models do not use diffusion. There have been
 ### Video Generation
 
 
-ideo is, in the most literal sense, a sequence of images over time.
+Video is, in the most literal sense, a sequence of images over time.
 
 Generating realistic video means generating spatially coherent images that are also temporally coherent — objects persist, motion is plausible, lighting flows naturally. This is much harder than generating a single image.
 
@@ -2297,8 +2236,6 @@ The under-mentioned point relevant to your work: video generation and video unde
 serving economics determines what is practical.
 
 
-# I
-
 
 ## Chapter 43
 
@@ -2306,7 +2243,7 @@ serving economics determines what is practical.
 ### AlphaFold
 
 
-want to close this act with a different kind of system, because the language acts of this book leave one important thing unsaid: the apparatus we have built also works for science.
+Iwant to close this act with a different kind of system, because the language acts of this book leave one important thing unsaid: the apparatus we have built also works for science.
 
 Protein folding is the problem of predicting a protein's three-dimensional structure from its amino acid sequence.
 
