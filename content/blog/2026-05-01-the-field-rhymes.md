@@ -11,8 +11,6 @@ tags = ["machine learning", "deep learning", "ai", "education"]
 
 A first-principles walk through modern machine learning, in 93 ideas.
 
-I N F E R E N C E · R E A S O N I N G · M U LT I M O D A L
-
 
 # Prologue
 
@@ -125,7 +123,7 @@ are the apparatus. Act II will be the architecture that ties them together. Act
 
 III will be what happens when you scale them up. Everything else in this book is footnotes to those four things.
 
-C H A P T E R 1
+## Chapter 1
 
 
 ### How a Network Learns
@@ -183,7 +181,7 @@ SGD to descend. This is a strong inductive bias — a prior on which functions t
 # N
 
 
-C H A P T E R 2
+## Chapter 2
 
 
 ### How a Network Reads
@@ -225,7 +223,7 @@ The fix is to design the vocabulary deliberately, on representative data, before
 # W
 
 
-C H A P T E R 3
+## Chapter 3
 
 
 ### How a Network Speaks
@@ -293,7 +291,7 @@ Transformer block — and, more important, you will be able to say why each
 
 component had to exist. That second thing is the only kind of understanding that survives.
 
-C H A P T E R 4
+## Chapter 4
 
 
 ### The Puzzle of Long Sentences
@@ -341,7 +339,7 @@ The rest of this act is about why.
 # A
 
 
-C H A P T E R 5
+## Chapter 5
 
 
 ### Attention
@@ -391,7 +389,7 @@ ML's flexibility traces to this one fact, and almost no introduction to attentio
 # T
 
 
-C H A P T E R 6
+## Chapter 6
 
 
 ### Many Heads
@@ -425,7 +423,7 @@ The thing nobody mentions: in the original 2017 paper, they used eight heads of 
 # W
 
 
-C H A P T E R 7
+## Chapter 7
 
 
 ### Positional Encoding
@@ -469,7 +467,7 @@ This is the kind of empirical curiosity that makes ML feel less like engineering
 # W
 
 
-C H A P T E R 8
+## Chapter 8
 
 
 ### Residuals and LayerNorm
@@ -527,7 +525,7 @@ They are the price of admission to being deep.
 # W
 
 
-C H A P T E R 9
+## Chapter 9
 
 
 ### The Transformer Block
@@ -577,7 +575,7 @@ III) entered the picture, it became clear that the Transformer scales more clean
 # T
 
 
-C H A P T E R 1 0
+## Chapter 10
 
 
 ### Encoder, Decoder, Both, Neither
@@ -675,7 +673,7 @@ cleverness to compute scale; what Kaplan and Hoffmann actually showed; why GPT-3
 
 Every conversation about AI capability for the next ten years will reference at least one of them.
 
-C H A P T E R 1 1
+## Chapter 11
 
 
 ### The Empirical Surprise
@@ -725,7 +723,7 @@ The pattern had a name. It was called a scaling law.
 # I
 
 
-C H A P T E R 1 2
+## Chapter 12
 
 
 ### Scaling Laws
@@ -777,7 +775,7 @@ Anthropic was founded on a thesis that included scaling laws. OpenAI's transitio
 # T
 
 
-C H A P T E R 1 3
+## Chapter 13
 
 
 ### The Chinchilla Correction
@@ -817,7 +815,7 @@ Chinchilla paper, then read three randomly selected papers from any 2024 confere
 # S
 
 
-C H A P T E R 1 4
+## Chapter 14
 
 
 ### The Phase Transition
@@ -851,7 +849,7 @@ We have informal arguments that involve thresholds in the model's internal repre
 # T
 
 
-C H A P T E R 1 5
+## Chapter 15
 
 
 ### Grokking
@@ -948,7 +946,7 @@ The history of post-training is short. The first SFT-then-RLHF pipeline that bec
 
 Everything in this act has happened in the last four years. It is the most actively contested part of the field. People who worked on it five years ago disagree with people working on it now. We are still deciding what the right shape is.
 
-C H A P T E R 1 6
+## Chapter 16
 
 
 ### Supervised Fine-Tuning
@@ -984,7 +982,7 @@ Most public discussion of SFT skips this and presents it as free. It is not free
 # T
 
 
-C H A P T E R 1 7
+## Chapter 17
 
 
 ### Reward Models
@@ -1032,7 +1030,7 @@ is correct, and the personalities live in the comparison data.
 # W
 
 
-C H A P T E R 1 8
+## Chapter 18
 
 
 ### RLHF
@@ -1082,7 +1080,7 @@ The thing nobody mentions: PPO was not designed for language. It was designed fo
 # I
 
 
-C H A P T E R 1 9
+## Chapter 19
 
 
 ### The Magical Collapse: DPO
@@ -1140,7 +1138,7 @@ Whether this matters in practice depends on the dataset and the use case. The ho
 # D
 
 
-C H A P T E R 2 0
+## Chapter 20
 
 
 ### GRPO and the End of the Value
@@ -1171,7 +1169,7 @@ The thing nobody mentions: GRPO is, in some sense, a confession. The value funct
 # T
 
 
-C H A P T E R 2 1
+## Chapter 21
 
 
 ### Constitutional AI
@@ -1215,7 +1213,7 @@ Constitutional-style methods even when human labels are also available — not b
 # W
 
 
-C H A P T E R 2 2
+## Chapter 22
 
 
 ### LoRA and the Affordable Fine-
@@ -1314,7 +1312,7 @@ FlashAttention, paged attention, quantization); the algorithmic tricks that hide
 
 If Act IV was about turning capability into behavior, Act V is about turning behavior into a service. The two are different problems. Most of what your users experience — speed, cost, availability — comes from this act, not from the previous ones. Frontier labs win or lose on inference economics as much as on model quality. Sometimes more.
 
-C H A P T E R 2 3
+## Chapter 23
 
 
 ### Why Inference Is Hard
@@ -1348,7 +1346,7 @@ The thing nobody mentions: the prefill-vs-decode distinction has economic conseq
 # R
 
 
-C H A P T E R 2 4
+## Chapter 24
 
 
 ### The KV Cache
@@ -1384,7 +1382,7 @@ The thing nobody mentions: the KV cache problem is what made long context go fro
 # W
 
 
-C H A P T E R 2 5
+## Chapter 25
 
 
 ### Grouped-Query Attention
@@ -1426,7 +1424,7 @@ K/V heads. If the research team wins, it has 16. The numbers in published papers
 # T
 
 
-C H A P T E R 2 6
+## Chapter 26
 
 
 ### FlashAttention
@@ -1478,7 +1476,7 @@ The cost of being too pure about that division is leaving 3x performance on the 
 # T
 
 
-C H A P T E R 2 7
+## Chapter 27
 
 
 ### Quantization
@@ -1520,7 +1518,7 @@ quantization has a cliff. Models behave normally down to 4 bits, then start to d
 # W
 
 
-C H A P T E R 2 8
+## Chapter 28
 
 
 ### Speculative Decoding
@@ -1552,7 +1550,7 @@ The thing nobody mentions: speculative decoding changes incentives for model des
 # S
 
 
-C H A P T E R 2 9
+## Chapter 29
 
 
 ### Continuous Batching
@@ -1588,7 +1586,7 @@ The economic model of LLM APIs — pay per token, no minimum, instant response �
 # E
 
 
-C H A P T E R 3 0
+## Chapter 30
 
 
 ### Mixture of Experts
@@ -1685,7 +1683,7 @@ From 2024 onward, an increasing fraction of capability gain came from making sma
 
 the most important thing happening in the field right now, and this act is where it lives.
 
-C H A P T E R 3 1
+## Chapter 31
 
 
 ### In-Context Learning
@@ -1721,7 +1719,7 @@ The thing nobody mentions: in-context learning has a capacity. You can fit only 
 # N
 
 
-C H A P T E R 3 2
+## Chapter 32
 
 
 ### Chain-of-Thought
@@ -1791,7 +1789,7 @@ Some frontier models now have an internal "thinking" mode that they enter only w
 # A
 
 
-C H A P T E R 3 3
+## Chapter 33
 
 
 ### Self-Consistency
@@ -1827,7 +1825,7 @@ Generalizing self-consistency to free-form domains is an open research problem a
 # C
 
 
-C H A P T E R 3 4
+## Chapter 34
 
 
 ### Tool Use
@@ -1873,7 +1871,7 @@ The thing nobody mentions: most of the value of tool use comes from a small numb
 # T
 
 
-C H A P T E R 3 5
+## Chapter 35
 
 
 ### RAG
@@ -1909,7 +1907,7 @@ The thing nobody mentions: RAG is, in some sense, a workaround for limited conte
 # W
 
 
-C H A P T E R 3 6
+## Chapter 36
 
 
 ### Reasoning RL
@@ -2025,7 +2023,7 @@ Vision adds spatial structure and pixels are messy. Once you understand the lang
 
 The other direction — coming from vision to language — has more cognitive friction.
 
-C H A P T E R 3 7
+## Chapter 37
 
 
 ### Vision Transformers
@@ -2078,7 +2076,7 @@ Transformer's hierarchical windows, perceiver-style cross-attention, downsampled
 # T
 
 
-C H A P T E R 3 8
+## Chapter 38
 
 
 ### CLIP and Multimodal
@@ -2127,7 +2125,7 @@ OpenCLIP, used the LAION-5B dataset and produced a respectable CLIP-class model,
 # C
 
 
-C H A P T E R 3 9
+## Chapter 39
 
 
 ### Vision-Language Models
@@ -2173,7 +2171,7 @@ your MapOps annotators on Label Studio are doing the same kind of work, at small
 # S
 
 
-C H A P T E R 4 0
+## Chapter 40
 
 
 ### Segmentation: Open-Vocabulary
@@ -2214,7 +2212,7 @@ The thing nobody mentions: SAM works astonishingly well for things, and surprisi
 # S
 
 
-C H A P T E R 4 1
+## Chapter 41
 
 
 ### Diffusion Models
@@ -2274,7 +2272,7 @@ The thing nobody mentions: language models do not use diffusion. There have been
 # V
 
 
-C H A P T E R 4 2
+## Chapter 42
 
 
 ### Video Generation
@@ -2302,7 +2300,7 @@ serving economics determines what is practical.
 # I
 
 
-C H A P T E R 4 3
+## Chapter 43
 
 
 ### AlphaFold
