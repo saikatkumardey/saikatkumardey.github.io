@@ -29,5 +29,5 @@ enableRobotsTXT = true
   weight = 2
 [[menu.main]]
   name = "ML Wiki"
-  url = "https://saikatkumardey.github.io/ml-wiki/"
+  url = "https://saikatkumardey.com/ml-wiki/"
   weight = 3
