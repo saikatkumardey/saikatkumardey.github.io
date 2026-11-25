@@ -24,10 +24,6 @@ enableRobotsTXT = true
   url = "/projects"
   weight = 1
 [[menu.main]]
-  name = "Thoughts"
-  url = "/thoughts"
-  weight = 2
-[[menu.main]]
   name = "ML Wiki"
   url = "https://saikatkumardey.com/ml-wiki/"
-  weight = 3
+  weight = 2
