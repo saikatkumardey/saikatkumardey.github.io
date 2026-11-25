@@ -10,6 +10,19 @@ python3 tools/editor/write.py
 
 Or double-click `tools/editor/Write.command` in Finder. It opens http://127.0.0.1:4321.
 
+## Menu bar app (Mac)
+
+```bash
+tools/editor/mac/build.sh
+```
+
+This builds `Write.app`, installs it in `~/Applications`, and starts it. A pencil icon appears in the menu bar. Its menu has Open Editor, New Post, Open in Browser, Open at Login, Show Log, and Quit.
+
+- It needs Xcode Command Line Tools for `swiftc`. Install them with `xcode-select --install`.
+- The app runs the same editor in its own window and stops the editor when you quit.
+- The app remembers this blog folder. Rebuild it if you move the folder.
+- The editor's output goes to `~/Library/Logs/Write.log`.
+
 ## Keys
 
 | Key | Action |

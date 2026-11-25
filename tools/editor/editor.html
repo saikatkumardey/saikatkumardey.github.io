@@ -334,6 +334,9 @@ function insertAtCursor(text) {
 els.body.addEventListener("paste", async e => { if (e.clipboardData.files.length) { e.preventDefault(); await insertImages(e.clipboardData.files); } });
 els.body.addEventListener("drop", async e => { if (e.dataTransfer.files.length) { e.preventDefault(); await insertImages(e.dataTransfer.files); } });
 
+// a file dropped outside the text area must not replace the page
+["dragover", "drop"].forEach(t => document.addEventListener(t, e => { if (e.dataTransfer?.types.includes("Files")) e.preventDefault(); }));
+
 // ---------- editing niceties ----------
 els.title.addEventListener("input", changed);
 els.date.addEventListener("change", changed);

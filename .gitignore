@@ -3,3 +3,4 @@ docs/
 public/
 resources/
 .hugo_build.lock
+tools/editor/mac/build/
