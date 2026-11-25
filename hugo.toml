@@ -5,6 +5,7 @@ author = "Saikat Kumar Dey"
 theme = 'hugo-bearblog'
 publishDir = 'docs'
 enableRobotsTXT = true
+disableKinds = ['taxonomy', 'term']
 
 [markup.goldmark.renderer]
   unsafe = true

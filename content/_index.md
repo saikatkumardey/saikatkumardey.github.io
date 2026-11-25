@@ -6,8 +6,7 @@ Data scientist at Gojek, working on maps and places. I build small tools, mostly
 
 ### Recent writing
 
-- [I told you to set up an OpenClaw agent. Then I built my own.](/blog/i-told-you-to-set-up-an-openclaw-agent-then-i-built-my-own/)
-- [You should set up an OpenClaw agent](/blog/you-should-set-up-an-openclaw-agent/)
+{{< recent-posts >}}
 
 ### Elsewhere
 

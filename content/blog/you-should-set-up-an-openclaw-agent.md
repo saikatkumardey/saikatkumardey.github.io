@@ -1,7 +1,6 @@
 +++
 title = "You Should Set Up an OpenClaw Agent"
 date = "2026-02-22"
-tags = ["agents", "infrastructure", "openclaw"]
 +++
 
 Last week I grabbed a €4/month Hetzner VPS, installed OpenClaw, and named it Dr Frost. Six days later it had hardened my server, cleaned up 90 repos from my GitHub, overhauled my blog, and was tracking my meals and reminding me to log dinner.

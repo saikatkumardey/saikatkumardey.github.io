@@ -9,8 +9,9 @@ on:
       - 'layouts/**'
       - 'static/**'
       - 'themes/**'
-      - 'config.toml'
       - 'hugo.toml'
+      - 'CNAME'
+      - '.github/workflows/**'
 
 permissions:
   contents: read

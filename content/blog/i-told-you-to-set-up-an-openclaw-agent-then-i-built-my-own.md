@@ -1,7 +1,6 @@
 +++
 title = "I Told You to Set Up an OpenClaw Agent. Then I Built My Own."
 date = "2026-03-22"
-tags = ["agents", "indieclaw", "openclaw"]
 +++
 
 Let's say you set up a persistent AI agent. It runs on a cheap VPS, talks to you over Telegram, locks down your SSH, cleans up 97 GitHub repos, builds you a calorie tracker from a lunch photo. You're sold. You [write a blog post telling everyone to do the same thing](/blog/you-should-set-up-an-openclaw-agent/). That was me, a month ago, with OpenClaw.
