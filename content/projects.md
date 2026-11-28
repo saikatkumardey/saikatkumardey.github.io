@@ -6,6 +6,9 @@ Utilities and apps I built to scratch my own itch.
 
 ---
 
+### [SoundModes](https://github.com/saikatkumardey/soundmodes)
+Menu-bar app that gives your Mac TV-style sound modes: Cinema, Voice, Night and more. Taps all system audio with Core Audio, with no driver to install. Includes per-app volume, a speaker-safe Boost and optional AI voice isolation. Needs macOS 14.2+ on Apple silicon. [Read the post](/blog/i-built-a-sound-mode-switcher-for-my-mac/).
+
 ### [commonplace-plugin](https://github.com/saikatkumardey/commonplace-plugin)
 Claude Code plugin for commonplace. Teaches Claude Code when and how to use the commonplace CLI to store and recall memories across sessions. Install with `claude plugin add saikatkumardey/commonplace-plugin`.
 
