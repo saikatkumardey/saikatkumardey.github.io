@@ -1,6 +1,6 @@
 baseURL = 'https://saikatkumardey.com/'
 languageCode = 'en-us'
-title = "saikatkumardey.com"
+title = "Saikat Kumar Dey"
 author = "Saikat Kumar Dey"
 theme = 'hugo-bearblog'
 publishDir = 'docs'
